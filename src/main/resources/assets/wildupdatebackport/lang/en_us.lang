@@ -83,3 +83,15 @@ tile.wildupdatebackport.mud_brick_stairs.name=Mud Brick Stairs
 tile.wildupdatebackport.mud_brick_slab.name=Mud Brick Slab
 tile.wildupdatebackport.mud_brick_wall.name=Mud Brick Wall
 tile.wildupdatebackport.mud_brick_double_slab.name=Mud Brick Slab
+
+# --- boats ---
+item.wildupdatebackport.mangrove_boat.name=Mangrove Boat
+item.wildupdatebackport.oak_chest_boat.name=Oak Boat with Chest
+item.wildupdatebackport.spruce_chest_boat.name=Spruce Boat with Chest
+item.wildupdatebackport.birch_chest_boat.name=Birch Boat with Chest
+item.wildupdatebackport.jungle_chest_boat.name=Jungle Boat with Chest
+item.wildupdatebackport.acacia_chest_boat.name=Acacia Boat with Chest
+item.wildupdatebackport.dark_oak_chest_boat.name=Dark Oak Boat with Chest
+item.wildupdatebackport.mangrove_chest_boat.name=Mangrove Boat with Chest
+entity.wildupdatebackport.boat.name=Boat
+entity.wildupdatebackport.chest_boat.name=Boat with Chest

@@ -46,6 +46,7 @@ public final class SelfTestRunner {
             new ScaffoldSelfTest(),
             new MangroveSelfTest(),
             new MudSelfTest(),
+            new BoatSelfTest(),
     };
 
     private final List<String> wanted;

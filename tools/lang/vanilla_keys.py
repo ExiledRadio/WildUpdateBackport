@@ -27,6 +27,8 @@ SPECIAL = {
     # Items named after their block in 1.19 (door and sign items are blocks there).
     "item.%s.mangrove_door.name" % M: "block.minecraft.mangrove_door",
     "item.%s.mangrove_sign.name" % M: "block.minecraft.mangrove_sign",
+    "entity.%s.boat.name" % M: "entity.minecraft.boat",
+    "entity.%s.chest_boat.name" % M: "entity.minecraft.chest_boat",
 }
 
 
