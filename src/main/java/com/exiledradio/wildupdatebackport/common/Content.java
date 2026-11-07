@@ -3,6 +3,7 @@ package com.exiledradio.wildupdatebackport.common;
 import com.exiledradio.wildupdatebackport.WildUpdateBackport;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.properties.IProperty;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
@@ -10,6 +11,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -120,5 +122,33 @@ public final class Content {
 
     public static List<Block> multipartBlocks() {
         return Collections.unmodifiableList(MULTIPART);
+    }
+
+    /** Properties the client's state mapper leaves out of a block's variant names, per block. */
+    private static final Map<Block, List<IProperty<?>>> IGNORED = new LinkedHashMap<Block, List<IProperty<?>>>();
+
+    /**
+     * Declares properties a block's blockstate file does not name, as vanilla does for a door's
+     * {@code powered} or a slab's one-value {@code variant}. The client maps states without them, and the
+     * self-test's state dump leaves them out the same way, so the asset check sees what the client sees.
+     */
+    public static void ignore(Block block, IProperty<?>... properties) {
+        List<IProperty<?>> list = IGNORED.get(block);
+        if (list == null) {
+            list = new ArrayList<IProperty<?>>();
+            IGNORED.put(block, list);
+        }
+        list.addAll(Arrays.asList(properties));
+    }
+
+    /** @return every block with ignored properties, and those properties */
+    public static Map<Block, List<IProperty<?>>> ignoredProperties() {
+        return Collections.unmodifiableMap(IGNORED);
+    }
+
+    /** @return the properties ignored for one block (empty if none) */
+    public static List<IProperty<?>> ignored(Block block) {
+        List<IProperty<?>> list = IGNORED.get(block);
+        return list == null ? Collections.<IProperty<?>>emptyList() : list;
     }
 }

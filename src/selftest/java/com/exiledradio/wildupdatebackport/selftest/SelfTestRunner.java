@@ -103,8 +103,13 @@ public final class SelfTestRunner {
                 continue;
             }
             String kind = Content.multipartBlocks().contains(block) ? "multipart" : "variants";
+            // Ignored properties fold several states into one variant name; list each name once.
+            java.util.Set<String> names = new java.util.LinkedHashSet<String>();
             for (IBlockState state : block.getBlockState().getValidStates()) {
-                out.println(block.getRegistryName() + "\t" + variant(state) + "\t" + kind);
+                names.add(variant(state));
+            }
+            for (String name : names) {
+                out.println(block.getRegistryName() + "\t" + name + "\t" + kind);
             }
         }
         out.close();
@@ -116,6 +121,9 @@ public final class SelfTestRunner {
         Map<String, String> sorted = new TreeMap<String, String>();
         for (Map.Entry<IProperty<?>, Comparable<?>> e : state.getProperties().entrySet()) {
             IProperty p = e.getKey();
+            if (Content.ignored(state.getBlock()).contains(p)) {
+                continue;
+            }
             sorted.put(p.getName(), p.getName((Comparable) e.getValue()));
         }
         if (sorted.isEmpty()) {

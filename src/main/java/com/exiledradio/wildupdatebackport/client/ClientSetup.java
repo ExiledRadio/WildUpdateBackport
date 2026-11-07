@@ -6,7 +6,10 @@ import com.exiledradio.wildupdatebackport.common.Content;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;
+import net.minecraft.block.properties.IProperty;
+import java.util.List;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
@@ -23,6 +26,7 @@ import java.util.Map;
  *   <li>A model for every item model request in {@link Content#itemModels()} - by exact name, never by
  *       walking the model registry's keys, which some performance mods bake lazily.</li>
  *   <li>One model name per multipart block ({@link Content#multipart}).</li>
+ *   <li>Properties left out of variant names ({@link Content#ignore}).</li>
  * </ul>
  */
 public final class ClientSetup {
@@ -50,6 +54,12 @@ public final class ClientSetup {
                     return one;
                 }
             });
+        }
+        for (Map.Entry<Block, List<IProperty<?>>> entry : Content.ignoredProperties().entrySet()) {
+            if (!Content.multipartBlocks().contains(entry.getKey())) {
+                ModelLoader.setCustomStateMapper(entry.getKey(),
+                        new StateMap.Builder().ignore(entry.getValue().toArray(new IProperty<?>[0])).build());
+            }
         }
     }
 }
