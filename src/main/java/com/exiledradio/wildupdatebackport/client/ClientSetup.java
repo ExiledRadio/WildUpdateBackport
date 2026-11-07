@@ -36,6 +36,8 @@ public final class ClientSetup {
 
     public static void init() {
         MinecraftForge.EVENT_BUS.register(new ClientSetup());
+        // Entity renderers must be registered in pre-init: one line per stream that has entities.
+        com.exiledradio.wildupdatebackport.boat.client.BoatClient.init();
     }
 
     @SubscribeEvent

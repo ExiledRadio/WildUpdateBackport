@@ -70,7 +70,7 @@ Backport Core is asked to take over unchanged.
 | DD | Deep dark, ancient cities, reinforced deepslate | `deepdark` | `deepDark` | 20-24 | 60-64 | 25872 | S, W, I; Core's template loader; **the user's answer** |
 | Wl | Waterlogging pass | (Core's adapter) | - | - | 65-69 | 25873 | Core's `Waterloggable` adapter |
 
-Order: G, M, D, B, S, F, A, W, I, C (blocks, mobs and items first), then Sw and DD once the user has
+Order: M, D, B (done), then G, S, F, A, W, I, C (blocks, mobs and items first), then Sw and DD once the user has
 answered, then Wl once Core has the adapter.
 
 ### G. Game events and vibrations
@@ -108,8 +108,8 @@ Core (`CORE_REQUESTS.md`, request 1), so moving it is a package rename.
   flammability, fuel values, recipes, ore dictionary (`logWood`, `plankWood`, `slabWood`, `stairWood`,
   `fenceWood`, `fenceGateWood`, `doorWood`, `trapdoorWood`), and axe stripping of our two logs.
 - **Mangrove leaves** (decay as 1.12.2 leaves; bone meal grows a hanging propagule below, **now:**), and
-  **mangrove propagule**: standing (stage 0-4) and hanging (age 0-4); grows hanging under leaves; a
-  fully grown hanging one drops; placeable on grass, dirt, mud, clay, farmland, and underwater; grows a
+  **mangrove propagule**: standing (stage 0-4) and hanging (age 0-4); grows hanging under leaves (only a
+  fully grown one drops when broken); placeable on grass, dirt, mud, clay, farmland, and underwater; grows a
   mangrove tree (two kinds: normal and tall) from random ticks and bone meal; fits a flower pot
   (`potted_mangrove_propagule`).
 - **Mangrove roots** (axe-mined, can be powered meaning they conduct) and **muddy mangrove roots**
@@ -140,10 +140,9 @@ Core (`CORE_REQUESTS.md`, request 1), so moving it is a package rename.
 - **Mangrove boat**: an `EntityBoat` subclass with its own wood and renderer (1.12.2's boat type enum
   indexes a texture array, so new woods cannot join it).
 - **Boat with chest** for the six old woods and mangrove: 27 slots, opened by sneaking + right-click (or
-  right-click when a passenger already sits), one seat, drops its contents and itself (**now:** a boat
-  breaks into the boat item, never planks), hoppers and minecart-like hopper interaction no (Java boats
-  have none). Crafted chest + boat (shapeless). Opening is a `container_open` game event; piglins are a
-  Nether Update concern.
+  right-click when the seat is taken), one seat, drops its contents and itself when broken; hoppers fill and
+  empty it, as 1.19's (an `IInventory` entity, as minecarts with chests are). Crafted chest + boat
+  (shapeless). Opening is a `container_open` game event (G); piglins are a Nether Update concern.
 - 1.19's boat retextures (paddles in their wood's color) are vanilla's look: they go to Core's texture
   packs (`CORE_REQUESTS.md`), ours ship with the new look.
 - A small wood registry so Trails & Tales (cherry, bamboo raft) and Tricky Trials (pale oak) can add
