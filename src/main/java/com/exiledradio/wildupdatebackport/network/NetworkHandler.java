@@ -33,5 +33,7 @@ public final class NetworkHandler {
     public static void init() {
         channel = NetworkRegistry.INSTANCE.newSimpleChannel(CHANNEL);
         // Streams register their packets below, in id order.
+        channel.registerMessage(com.exiledradio.wildupdatebackport.gameevent.VibrationPacket.Handler.class,
+                com.exiledradio.wildupdatebackport.gameevent.VibrationPacket.class, 5, net.minecraftforge.fml.relauncher.Side.CLIENT);
     }
 }
