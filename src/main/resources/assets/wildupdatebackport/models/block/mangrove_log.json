@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "wildupdatebackport:block/mangrove_log_top",
+    "side": "wildupdatebackport:block/mangrove_log"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "wildupdatebackport:mangrove_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "wildupdatebackport:mangrove_log"
+    },
+    "axis=z": {
+      "model": "wildupdatebackport:mangrove_log_horizontal",
+      "x": 90
+    },
+    "axis=none": {
+      "model": "wildupdatebackport:mangrove_wood"
+    }
+  }
+}

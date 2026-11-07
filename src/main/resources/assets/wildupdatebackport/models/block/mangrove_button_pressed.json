@@ -1,0 +1,6 @@
+{
+  "parent": "block/button_pressed",
+  "textures": {
+    "texture": "wildupdatebackport:block/mangrove_planks"
+  }
+}

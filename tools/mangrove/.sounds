@@ -1,0 +1,11 @@
+block.mangrove_roots.break
+block.mangrove_roots.fall
+block.mangrove_roots.hit
+block.mangrove_roots.place
+block.mangrove_roots.step
+block.muddy_mangrove_roots.break
+block.muddy_mangrove_roots.fall
+block.muddy_mangrove_roots.hit
+block.muddy_mangrove_roots.place
+block.muddy_mangrove_roots.step
+item.axe.strip

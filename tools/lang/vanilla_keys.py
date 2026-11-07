@@ -21,9 +21,11 @@ import assets  # noqa: E402
 
 M = assets.MODID
 SPECIAL = {
-    # 1.13 renamed vanilla's own wooden trapdoor and pressure plate once the other woods had theirs.
-    "tile.trapdoor.name": "block.minecraft.oak_trapdoor",
-    "tile.pressurePlateWood.name": "block.minecraft.oak_pressure_plate",
+    # 1.12.2's double slabs are blocks of their own; their name is the slab's.
+    "tile.%s.mangrove_double_slab.name" % M: "block.minecraft.mangrove_slab",
+    # Items named after their block in 1.19 (door and sign items are blocks there).
+    "item.%s.mangrove_door.name" % M: "block.minecraft.mangrove_door",
+    "item.%s.mangrove_sign.name" % M: "block.minecraft.mangrove_sign",
 }
 
 

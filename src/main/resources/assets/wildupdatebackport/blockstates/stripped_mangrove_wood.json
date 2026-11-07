@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "wildupdatebackport:stripped_mangrove_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "wildupdatebackport:stripped_mangrove_wood"
+    },
+    "axis=z": {
+      "model": "wildupdatebackport:stripped_mangrove_wood",
+      "x": 90
+    },
+    "axis=none": {
+      "model": "wildupdatebackport:stripped_mangrove_wood"
+    }
+  }
+}
