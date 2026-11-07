@@ -1,0 +1,6 @@
+{
+  "parent": "block/leaves",
+  "textures": {
+    "all": "wildupdatebackport:block/mangrove_leaves"
+  }
+}

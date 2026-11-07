@@ -1,0 +1,6 @@
+{
+  "parent": "wildupdatebackport:block/template_orientable_trapdoor_bottom",
+  "textures": {
+    "texture": "wildupdatebackport:block/mangrove_trapdoor"
+  }
+}

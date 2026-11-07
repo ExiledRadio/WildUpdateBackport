@@ -1,0 +1,7 @@
+{
+  "parent": "wildupdatebackport:block/door_bottom_right_open",
+  "textures": {
+    "bottom": "wildupdatebackport:block/mangrove_door_bottom",
+    "top": "wildupdatebackport:block/mangrove_door_top"
+  }
+}

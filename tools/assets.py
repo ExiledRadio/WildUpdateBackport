@@ -134,6 +134,20 @@ OLD_LANG = dict(l.split("=", 1) for l in OLD_JAR.read("assets/minecraft/lang/en_
 _OLD_TEXTURE_DIRS = {"block/": "blocks/", "item/": "items/"}
 
 
+def vanilla_or_ours(tpath):
+    """A 1.19 texture path as our model should name it.
+
+    A texture 1.12.2 has under its old folder and the same name (block/dirt -> blocks/dirt) stays vanilla's,
+    so resource packs and Backport Core's modern-texture pack apply to it; anything else is copied to ours.
+    """
+    for new, old in _OLD_TEXTURE_DIRS.items():
+        if tpath.startswith(new):
+            old_path = old + tpath[len(new):]
+            if ("assets/minecraft/textures/%s.png" % old_path) in OLD_NAMES:
+                return old_path
+    return texture(tpath)
+
+
 def port_model(path, ours=None, textures_from_jar=True):
     """Ports models/<path>.json from the 1.19.2 jar into our namespace, ready for 1.12.2.
 
@@ -157,7 +171,7 @@ def port_model(path, ours=None, textures_from_jar=True):
             continue
         tns, _, tpath = value.rpartition(":")
         if (tns or "minecraft") == "minecraft" and textures_from_jar:
-            data["textures"][key] = texture(tpath)
+            data["textures"][key] = vanilla_or_ours(tpath)
     write_json("models/%s.json" % ours, data)
     return "%s:%s" % (MODID, ours)
 

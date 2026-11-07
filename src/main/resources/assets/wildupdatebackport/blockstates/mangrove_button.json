@@ -1,0 +1,66 @@
+{
+  "variants": {
+    "facing=up,powered=false": {
+      "model": "wildupdatebackport:mangrove_button"
+    },
+    "facing=down,powered=false": {
+      "model": "wildupdatebackport:mangrove_button",
+      "x": 180,
+      "y": 180
+    },
+    "facing=north,powered=false": {
+      "model": "wildupdatebackport:mangrove_button",
+      "uvlock": true,
+      "x": 90
+    },
+    "facing=south,powered=false": {
+      "model": "wildupdatebackport:mangrove_button",
+      "uvlock": true,
+      "x": 90,
+      "y": 180
+    },
+    "facing=east,powered=false": {
+      "model": "wildupdatebackport:mangrove_button",
+      "uvlock": true,
+      "x": 90,
+      "y": 90
+    },
+    "facing=west,powered=false": {
+      "model": "wildupdatebackport:mangrove_button",
+      "uvlock": true,
+      "x": 90,
+      "y": 270
+    },
+    "facing=up,powered=true": {
+      "model": "wildupdatebackport:mangrove_button_pressed"
+    },
+    "facing=down,powered=true": {
+      "model": "wildupdatebackport:mangrove_button_pressed",
+      "x": 180,
+      "y": 180
+    },
+    "facing=north,powered=true": {
+      "model": "wildupdatebackport:mangrove_button_pressed",
+      "uvlock": true,
+      "x": 90
+    },
+    "facing=south,powered=true": {
+      "model": "wildupdatebackport:mangrove_button_pressed",
+      "uvlock": true,
+      "x": 90,
+      "y": 180
+    },
+    "facing=east,powered=true": {
+      "model": "wildupdatebackport:mangrove_button_pressed",
+      "uvlock": true,
+      "x": 90,
+      "y": 90
+    },
+    "facing=west,powered=true": {
+      "model": "wildupdatebackport:mangrove_button_pressed",
+      "uvlock": true,
+      "x": 90,
+      "y": 270
+    }
+  }
+}

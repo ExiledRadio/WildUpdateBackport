@@ -1,0 +1,97 @@
+package com.exiledradio.wildupdatebackport.mangrove;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockRotatedPillar;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.MapColor;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
+/**
+ * Mangrove roots and muddy mangrove roots.
+ *
+ * <h2>Mangrove roots</h2>
+ * 1.19: wood material (axe), hardness and resistance 0.7, podzol map color, see-through like leaves
+ * (cutout), never suffocating or blocking sight, and two roots stacked hide the faces between them
+ * (vertically only). They still conduct redstone and hold blocks as a full block, as 1.19's do.
+ * 1.19 waterlogs them; until the family's waterlogging pass they generate dry inside water.
+ *
+ * <h2>Muddy mangrove roots</h2>
+ * A rotated pillar of dirt material (shovel), hardness 0.7: mud and roots, crafted shapeless.
+ */
+public final class BlockMangroveRoots {
+
+    private BlockMangroveRoots() {
+    }
+
+    /** {@code mangrove_roots}. */
+    public static class Roots extends Block {
+
+        public Roots(SoundType sound) {
+            super(Material.WOOD, MapColor.OBSIDIAN);
+            this.setHardness(0.7F);
+            this.setResistance(0.7F * 5.0F / 3.0F);
+            this.setSoundType(sound);
+            this.setLightOpacity(1);
+        }
+
+        @Override
+        @SuppressWarnings("deprecation")
+        public boolean isOpaqueCube(IBlockState state) {
+            return false;
+        }
+
+        @Override
+        @SideOnly(Side.CLIENT)
+        public BlockRenderLayer getRenderLayer() {
+            return BlockRenderLayer.CUTOUT_MIPPED;
+        }
+
+        @Override
+        @SideOnly(Side.CLIENT)
+        @SuppressWarnings("deprecation")
+        public boolean shouldSideBeRendered(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing side) {
+            IBlockState other = world.getBlockState(pos.offset(side));
+            if (other.getBlock() == this && side.getAxis() == EnumFacing.Axis.Y) {
+                return false;
+            }
+            return super.shouldSideBeRendered(state, world, pos, side);
+        }
+
+        @Override
+        @SuppressWarnings("deprecation")
+        public boolean isNormalCube(IBlockState state) {
+            // Conducts redstone and supports torches, as 1.19's (it is a full, solid block there).
+            return true;
+        }
+
+        @Override
+        @SuppressWarnings("deprecation")
+        public boolean causesSuffocation(IBlockState state) {
+            return false;
+        }
+
+        @Override
+        public boolean canEntitySpawn(IBlockState state, Entity entity) {
+            return true;
+        }
+    }
+
+    /** {@code muddy_mangrove_roots}. */
+    public static class Muddy extends BlockRotatedPillar {
+
+        public Muddy(SoundType sound) {
+            super(Material.GROUND, MapColor.OBSIDIAN);
+            this.setHardness(0.7F);
+            this.setResistance(0.7F * 5.0F / 3.0F);
+            this.setSoundType(sound);
+        }
+    }
+}

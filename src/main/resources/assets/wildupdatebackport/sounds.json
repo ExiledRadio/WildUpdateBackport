@@ -1,1 +1,343 @@
-{}
+{
+  "block.mangrove_roots.break": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/break1",
+        "pitch": 1.2,
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/break2",
+        "pitch": 1.2,
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/break3",
+        "pitch": 1.2,
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/break4",
+        "pitch": 1.2,
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/break5",
+        "pitch": 1.2,
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/break6",
+        "pitch": 1.2,
+        "volume": 0.25
+      }
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.mangrove_roots.step": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/step1",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/step2",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/step3",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/step4",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/step5",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/step6",
+        "volume": 0.25
+      }
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.mangrove_roots.place": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/break1",
+        "pitch": 1.2,
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/break2",
+        "pitch": 1.2,
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/break3",
+        "pitch": 1.2,
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/break4",
+        "pitch": 1.2,
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/break5",
+        "pitch": 1.2,
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/break6",
+        "pitch": 1.2,
+        "volume": 0.25
+      }
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.mangrove_roots.hit": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/step1",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/step2",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/step3",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/step4",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/step5",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/step6",
+        "volume": 0.25
+      }
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.mangrove_roots.fall": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/step1",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/step2",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/step3",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/step4",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/step5",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/mangrove_roots/step6",
+        "volume": 0.25
+      }
+    ]
+  },
+  "block.muddy_mangrove_roots.break": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/break1",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/break2",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/break3",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/break4",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/break5",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/break6",
+        "volume": 0.25
+      }
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.muddy_mangrove_roots.step": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/step1",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/step2",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/step3",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/step4",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/step5",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/step6",
+        "volume": 0.25
+      }
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.muddy_mangrove_roots.place": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/break1",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/break2",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/break3",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/break4",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/break5",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/break6",
+        "volume": 0.25
+      }
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.muddy_mangrove_roots.hit": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/step1",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/step2",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/step3",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/step4",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/step5",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/step6",
+        "volume": 0.25
+      }
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.muddy_mangrove_roots.fall": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/step1",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/step2",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/step3",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/step4",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/step5",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:block/muddy_mangrove_roots/step6",
+        "volume": 0.25
+      }
+    ]
+  },
+  "item.axe.strip": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:item/axe/strip1",
+        "volume": 0.9
+      },
+      {
+        "name": "wildupdatebackport:item/axe/strip1",
+        "pitch": 0.85,
+        "volume": 0.9
+      },
+      {
+        "name": "wildupdatebackport:item/axe/strip2",
+        "volume": 0.9
+      },
+      {
+        "name": "wildupdatebackport:item/axe/strip2",
+        "pitch": 0.85,
+        "volume": 0.9
+      },
+      {
+        "name": "wildupdatebackport:item/axe/strip3",
+        "volume": 0.9
+      },
+      {
+        "name": "wildupdatebackport:item/axe/strip3",
+        "pitch": 0.85,
+        "volume": 0.9
+      },
+      {
+        "name": "wildupdatebackport:item/axe/strip4",
+        "volume": 0.9
+      },
+      {
+        "name": "wildupdatebackport:item/axe/strip4",
+        "pitch": 0.85,
+        "volume": 0.9
+      }
+    ],
+    "subtitle": "subtitles.wildupdatebackport.item.axe.strip"
+  }
+}

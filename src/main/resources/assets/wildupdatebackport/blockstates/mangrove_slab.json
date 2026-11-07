@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom": {
+      "model": "wildupdatebackport:mangrove_slab"
+    },
+    "half=top": {
+      "model": "wildupdatebackport:mangrove_slab_top"
+    }
+  }
+}
