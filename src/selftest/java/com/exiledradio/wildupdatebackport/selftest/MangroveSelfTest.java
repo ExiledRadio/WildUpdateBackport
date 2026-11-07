@@ -84,7 +84,6 @@ public final class MangroveSelfTest implements SelfTest {
         }
         c.eq(null, item("mangrove_double_slab"), "the double slab has no item");
         c.eq(null, item("mangrove_wall_sign"), "the wall sign has no item");
-        c.eq(null, Owners.ourBlock("mud"), "mud is not part of this stream (looked up by name)");
         c.eq(16, item("mangrove_sign").getItemStackLimit(new ItemStack(item("mangrove_sign"))), "signs stack to 16");
 
         // hanging propagule metadata is 8 + age, standing 0 + stage

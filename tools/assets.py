@@ -226,3 +226,111 @@ def item_generated(name, texture_name):
 def item_from_block(name, model=None):
     """Writes models/item/<name>.json that shows the block model."""
     write_json("models/item/%s.json" % name, {"parent": "%s:block/%s" % (MODID, model or name)})
+
+
+# --- Blockstates and item models ported from 1.19 (shared by the streams' generators) ----------------
+
+def blockstate_model(name):
+    """'minecraft:block/x' in a 1.19 blockstate -> ported model, named 'wildupdatebackport:x' as 1.12.2 wants."""
+    path = name.split(":", 1)[-1]
+    port_model(path)
+    return "%s:%s" % (MODID, path[len("block/"):])
+
+
+def vanilla_blockstate(name):
+    return jar_json("assets/minecraft/blockstates/%s.json" % name)
+
+
+def port_variants(variants):
+    """Converts 1.19 variants: models ported, '' becomes 'normal'."""
+    out = {}
+    for key, entry in variants.items():
+        entries = entry if isinstance(entry, list) else [entry]
+        conv = [dict(e, model=blockstate_model(e["model"])) for e in entries]
+        out["normal" if key == "" else key] = conv if isinstance(entry, list) else conv[0]
+    return out
+
+
+def port_blockstate(name, ours=None, when_map=None):
+    """Ports blockstates/<name>.json from 1.19.
+
+    @param when_map for multipart files, maps one 'when' dict to 1.12.2's (or None to drop the part)
+    """
+    data = vanilla_blockstate(name)
+    if "multipart" in data:
+        parts = []
+        for part in data["multipart"]:
+            part = dict(part)
+            if "when" in part and when_map:
+                part["when"] = when_map(part["when"])
+                if part["when"] is None:
+                    continue
+            applies = part["apply"]
+            if isinstance(applies, list):
+                part["apply"] = [dict(a, model=blockstate_model(a["model"])) for a in applies]
+            else:
+                part["apply"] = dict(applies, model=blockstate_model(applies["model"]))
+            parts.append(part)
+        write_json("blockstates/%s.json" % (ours or name), {"multipart": parts})
+    else:
+        write_json("blockstates/%s.json" % (ours or name), {"variants": port_variants(data["variants"])})
+
+
+def port_slab(name, double_name):
+    """1.19's one slab block (type=bottom/top/double) as 1.12.2's half and double blocks."""
+    v = vanilla_blockstate(name)["variants"]
+    write_json("blockstates/%s.json" % name, {"variants": {
+        "half=bottom": dict(v["type=bottom"], model=blockstate_model(v["type=bottom"]["model"])),
+        "half=top": dict(v["type=top"], model=blockstate_model(v["type=top"]["model"])),
+    }})
+    write_json("blockstates/%s.json" % double_name, {"variants": {
+        "normal": dict(v["type=double"], model=blockstate_model(v["type=double"]["model"])),
+    }})
+
+
+def wall_when(when):
+    """1.19 walls name each side none/low/tall; 1.12.2's walls have a side or not (low)."""
+    out = {}
+    for k, v in when.items():
+        if k == "up":
+            out[k] = v
+        elif v == "tall":
+            return None
+        else:
+            out[k] = "true" if v == "low" else "false"
+    return out
+
+
+def port_item(name, ours=None):
+    """models/item/<name>.json from 1.19's: a block parent is ported, flat items copy their textures."""
+    data = jar_json("assets/minecraft/models/item/%s.json" % name)
+    parent = data.get("parent", "").split(":")[-1]
+    if parent.startswith("block/"):
+        blockstate_model("minecraft:" + parent)
+        data["parent"] = "%s:%s" % (MODID, parent)
+    elif parent.startswith("item/") and parent not in ("item/generated", "item/handheld", "item/handheld_rod"):
+        data["parent"] = port_model(parent)
+    elif parent:
+        data["parent"] = parent
+    for key, value in list(data.get("textures", {}).items()):
+        if not value.startswith("#"):
+            data["textures"][key] = texture(value.split(":")[-1])
+    write_json("models/item/%s.json" % (ours or name), data)
+
+
+def block_sounds(*names):
+    """Copies the five block.<name>.<break|step|place|hit|fall> events of each sound type."""
+    events = {}
+    for n in names:
+        for kind in ("break", "step", "place", "hit", "fall"):
+            e = "block.%s.%s" % (n, kind)
+            events[e] = copy_sound(e)
+    return events
+
+
+def block_names(names, extra=None):
+    """tile.<mod>.<name>.name lines with 1.19's English names; extra maps our name -> 1.19 key."""
+    lines = ["tile.%s.%s.name=%s" % (MODID, n, name("block.minecraft." + n)) for n in names]
+    for ours, key in (extra or {}).items():
+        lines.append("tile.%s.%s.name=%s" % (MODID, ours, name(key)))
+    return lines

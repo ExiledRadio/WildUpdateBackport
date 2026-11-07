@@ -1,0 +1,8 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "bottom": "wildupdatebackport:block/mud_bricks",
+    "side": "wildupdatebackport:block/mud_bricks",
+    "top": "wildupdatebackport:block/mud_bricks"
+  }
+}

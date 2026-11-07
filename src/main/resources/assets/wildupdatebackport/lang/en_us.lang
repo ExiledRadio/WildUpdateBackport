@@ -74,3 +74,12 @@ tile.wildupdatebackport.mangrove_double_slab.name=Mangrove Slab
 item.wildupdatebackport.mangrove_door.name=Mangrove Door
 item.wildupdatebackport.mangrove_sign.name=Mangrove Sign
 subtitles.wildupdatebackport.item.axe.strip=Axe strips
+
+# --- mud ---
+tile.wildupdatebackport.mud.name=Mud
+tile.wildupdatebackport.packed_mud.name=Packed Mud
+tile.wildupdatebackport.mud_bricks.name=Mud Bricks
+tile.wildupdatebackport.mud_brick_stairs.name=Mud Brick Stairs
+tile.wildupdatebackport.mud_brick_slab.name=Mud Brick Slab
+tile.wildupdatebackport.mud_brick_wall.name=Mud Brick Wall
+tile.wildupdatebackport.mud_brick_double_slab.name=Mud Brick Slab

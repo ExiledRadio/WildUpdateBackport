@@ -1,0 +1,15 @@
+block.mud.break
+block.mud.fall
+block.mud.hit
+block.mud.place
+block.mud.step
+block.mud_bricks.break
+block.mud_bricks.fall
+block.mud_bricks.hit
+block.mud_bricks.place
+block.mud_bricks.step
+block.packed_mud.break
+block.packed_mud.fall
+block.packed_mud.hit
+block.packed_mud.place
+block.packed_mud.step

@@ -23,6 +23,7 @@ M = assets.MODID
 SPECIAL = {
     # 1.12.2's double slabs are blocks of their own; their name is the slab's.
     "tile.%s.mangrove_double_slab.name" % M: "block.minecraft.mangrove_slab",
+    "tile.%s.mud_brick_double_slab.name" % M: "block.minecraft.mud_brick_slab",
     # Items named after their block in 1.19 (door and sign items are blocks there).
     "item.%s.mangrove_door.name" % M: "block.minecraft.mangrove_door",
     "item.%s.mangrove_sign.name" % M: "block.minecraft.mangrove_sign",
