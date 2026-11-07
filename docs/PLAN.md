@@ -17,9 +17,9 @@ and records the values it used in its `docs/streams/<stream>.md`.
 | In | Out (and why) |
 | --- | --- |
 | Every new block, item, mob, effect, enchantment and biome of 1.19, the 1.19.x drops' visible changes, the game-event system the sculk needs | Chat signing and reporting, `/place`, `/locate poi`, data-driven world presets, the `filter` pack section, debug-screen and options changes: technical, and 1.12.2 cannot take them |
-| Deep dark and ancient cities, mangrove swamps: **planned, placement waits on the user** (see *Still open*) | The four 2x2 paintings (earth, wind, fire, water): not placeable in survival in 1.19 either, and 1.12.2's painting enum and atlas would need replacing |
+| Deep dark and ancient cities, mangrove swamps: placed as vanilla places them (see *Decided*) | The four 2x2 paintings (earth, wind, fire, water): not placeable in survival in 1.19 either, and 1.12.2's painting enum and atlas would need replacing |
 | 1.19.3's and 1.19.4's non-experimental changes (golem spawn eggs, creepers and fire charges, jukeboxes and hoppers, armor swapping, foal stats) | Everything behind 1.19.3/1.19.4's *Update 1.20* toggle: Trails & Tales' (bamboo wood, hanging signs, chiseled bookshelves, camels, sniffers, cherry, trims) |
-| | Changes that need bytecode patching: jukebox redstone output, removing the potion glint, the door-top fix, the HUD armor-bar texture (texture: Core's pack, see `CORE_REQUESTS.md`) |
+| Small changes that need bytecode patching are **in** (jukebox redstone output, no potion glint, door tops): our own ASM coremod, see *Patches* | The HUD armor-bar and other vanilla retextures: Core's texture packs (`CORE_REQUESTS.md`) |
 
 ## Who owns what (family Rule 1)
 
@@ -38,7 +38,7 @@ session is in the shared notes folder (`wild-update-for-caves-and-cliffs.md`).
 
 | What | Owner | Here |
 | --- | --- | --- |
-| Goats (they drop goat horns) | Caves & Cliffs (`cavesandcliffsbackport`) | **Not copied.** A goat is a whole mob stream; copying it would put a second goat entity into worlds. Goat horns are ours and obtainable without goats (pillager outposts, 1.19's loot); with Caves & Cliffs installed its goats drop ours through a small hook it calls (requested in the note). |
+| Goats (they drop goat horns) | Caves & Cliffs (`cavesandcliffsbackport`) | **Copied when it is absent** (family rule: every mod works on its own): an identical goat, built from Caves & Cliffs' own goat code once it exists, registered only without it, so its goats ram blocks and drop our horns as 1.19's do. With Caves & Cliffs installed its goats drop ours (by name, or Core's hook). Stream Gt. |
 | Deepslate, cobbled deepslate, deepslate tiles (ancient cities are built of them), pointed dripstone (mud dries into clay under it), rooted dirt (water bottle makes mud), moss carpet (mangrove trees), glow lichen's multiface technique | Caves & Cliffs | Looked up by name (`Owners`). Without Caves & Cliffs, ancient cities build from our own copies of the deepslate set (copy-when-absent, exactly as Update Aquatic's `woodset`); the others are simply skipped. |
 | Bee nests in mangrove trees | Buzzy Bees (`buzzybeesbackport`) | By name; none without it. |
 | Stripped logs of the six old woods, axe stripping, sign dyeing, the wandering trader, pillager outposts, scaffolding, the composter | Village & Pillage (`villagerbackport`) | Axe stripping and our stripped mangrove: our own handler for our logs only. Trader (mangrove propagule) through Core's `TradeRegistry`. Goat horn loot in V&P's outpost chests by loot-table name. Scaffolding fuel by name. Composting through `Compat.compost`. |
@@ -66,12 +66,13 @@ Backport Core is asked to take over unchanged.
 | W | Warden and Darkness | `warden` | `warden` | 15-19 | 40-44 | 25868 | G; S's shrieker calls it by name |
 | I | Items: recovery compass, echo shards, disc 5, Swift Sneak, goat horns | `items` | `items` | none | 45-49 | 25869 | nothing |
 | C | Other 1.19.x changes | `changes` | `changes` | none | 50-54 | 25870 | nothing |
-| Sw | Mangrove swamp biome and its generation | `swamp` | `swamp` | none | 55-59 | 25871 | M, D, F; **the user's answer** |
-| DD | Deep dark, ancient cities, reinforced deepslate | `deepdark` | `deepDark` | 20-24 | 60-64 | 25872 | S, W, I; Core's template loader; **the user's answer** |
+| Sw | Mangrove swamp biome and its generation | `swamp` | `swamp` | none | 55-59 | 25871 | M, D, F |
+| DD | Deep dark, ancient cities, reinforced deepslate | `deepdark` | `deepDark` | 20-24 | 60-64 | 25872 | S, W, I; local template loader (Core request 2) |
+| Gt | Goats, copied when Caves & Cliffs is absent | `goat` | `goats` | 25-29 | 70-74 | 25874 | Caves & Cliffs' goat code to copy |
 | Wl | Waterlogging pass | (Core's adapter) | - | - | 65-69 | 25873 | Core's `Waterloggable` adapter |
 
-Order: M, D, B (done), then G, S, F, A, W, I, C (blocks, mobs and items first), then Sw and DD once the user has
-answered, then Wl once Core has the adapter.
+Order: M, D, B (done), then G, S, F, A, W, I, C (blocks, mobs and items first), then Sw and DD (with the
+local template loader), Gt once Caves & Cliffs' goats exist to copy, then Wl once Core has the adapter.
 
 ### G. Game events and vibrations
 
@@ -225,7 +226,7 @@ Core (`CORE_REQUESTS.md`, request 1), so moving it is a package rename.
 - **Recovery compass**: 8 echo shards around a compass; points to the player's last death location in
   that dimension, spins elsewhere or with none; the location is stored per player (1.19's
   `LastDeathLocation`, kept through death and saved) and sent to the client.
-- **Echo shard**: ancient-city loot (DD); until DD exists, see *Still open*.
+- **Echo shard**: ancient-city loot (DD); until DD exists, the temporary chest fallback (*Decided* 3).
 - **Music disc 5** (crafted from 9 **disc fragments**, the disc's sound and description); fragments are
   ancient-city loot.
 - **Swift Sneak** I-III on leggings: sneaking speed 0.3 + 0.15 per level (client movement input through
@@ -255,49 +256,54 @@ Each behind its own switch in `changes`:
 - Potion colors: 1.19.4's thirteen new effect colors (1.12.2's effects keep their color in a field set
   once by reflection).
 - Scaffolding burns as long as bamboo: Village & Pillage's scaffolding by name.
-- Not done, and why: jukebox redstone output (vanilla block, needs patching), potion glint removal
-  (vanilla item method), door tops flipping, Nether light levels and the skeleton/enderman spawn changes
-  (1.18's light rules are Caves & Cliffs'; 1.19.3's are on vanilla spawn code), shulker boxes popping
-  attached blocks (would replace vanilla's tile).
+- Through patches (`asm`, see *Patches*): jukeboxes give a redstone signal of 15 while playing (1.19.4),
+  potions lose their enchantment glint (1.19.4), door tops no longer flip (1.19), shulker boxes pop the blocks
+  attached to their opening faces (1.19.3), 1.19.3's Nether light limit of 7 for endermen and skeletons.
+- Left to their owners: 1.18's light rules are Caves & Cliffs'.
 
-### Sw. Mangrove swamp (waits on the user)
+### Sw. Mangrove swamp
 
 The biome (warm, teal water `0x3A7A6A`, fog, grass and foliage colors of 1.19, warm frogs and slimes),
-mud floors, mangrove trees (M's feature), Lena Raine's swamp music. How it is placed is *Still open* 2.
+mud floors, mangrove trees (M's feature), Lena Raine's swamp music. A real biome, placed where vanilla
+places it: see *Decided* 2.
 Temperate frogs in swamps come with F, independent of this.
 
-### DD. Deep dark and ancient cities (waits on the user and Core)
+### DD. Deep dark and ancient cities
 
 The deep dark (sculk patches, sensors and shriekers that can summon, no natural mob spawning, *Ancestry*),
 ancient cities (the 1.19 templates, loot: echo shards, disc fragments, Swift Sneak books, disc 5; the
-reinforced deepslate frame, which is unobtainable and unbreakable in survival). Placement is *Still open* 1;
-loading the templates needs Core's request 2.
+reinforced deepslate frame, which is unobtainable and unbreakable in survival), built properly from 1.19's
+templates and jigsaw pools. Heights: *Decided* 1. The template loader and jigsaw assembly are built here as
+a local package written to Core's requested API (`CORE_REQUESTS.md` request 2), as the game events are, so
+DD does not wait for Core. The deepslate set the cities are built of is Caves & Cliffs'; copied when it is
+absent (Rule 1).
 
-## Still open (the user's call)
+## Decided (the user, 2026-11-07: closest to vanilla, always)
 
-1. **Deep dark and ancient cities below y 0.** In 1.19 the deep dark fills y -64 to about 0 under
-   mountains, and ancient cities sit with their floor at y -51, about 30 blocks tall and 200 across.
-   1.12.2's world is y 0-255. How they fit depends on Caves & Cliffs' terrain decision:
-   - **If Caves & Cliffs extends the world to -64..319** (as the extended-height mods Backport Core already
-     adapts to do): use 1.19's heights unchanged through Core's `WorldHeights`.
-   - **If the world stays 0-255** (the proposal for vanilla 1.12.2 terrain): the deep dark is an
-     underground *region*, not a surface biome, since 1.12.2's biomes are 2D. A low-frequency noise picks
-     regions under land at least 8 chunks from oceans (as 1.19's erosion/depth rule does: the deep dark
-     sits under mountains), and in them y 1-40 is deep dark: sculk patches on the cave floors, no natural
-     spawns, *Ancestry* on the client, `deep_dark` reported as the biome to our own code (spawning,
-     advancements) while the column keeps its surface biome. Ancient cities go into such a region with
-     their floor at **y 8** (bedrock 0-4, then 3 blocks of margin), the top under y 40, so they stay
-     below sea level and below most caves' floors. That is 1.19's -51 shifted by +59.
-   - Sculk sensors and shriekers that can summon generate only in deep dark regions in both cases.
-2. **Mangrove swamps**: a registered biome placed by replacing part of the swamps in hot climates (1.19
-   puts it where a swamp would be, but warm), through Forge's biome-generation hook, with a config switch;
-   or not placed at all (blocks, trees from propagules and frogs only) in packs that keep vanilla's biome
-   map. The proposal is the first, off when Caves & Cliffs' terrain replaces the biome map (it then places
-   it itself through its own climate parameters).
-3. **Echo shards, disc fragments and Swift Sneak before ancient cities exist** have no survival source in
-   1.19's rules. Proposal: until DD ships, a config switch (on by default) adds them to strongholds' and
-   dungeons' chests at ancient-city rates; off once DD is built.
+1. **Deep dark and ancient cities.** Caves & Cliffs is building real extended height. With it installed,
+   the deep dark and ancient cities use 1.19's own heights (deep dark down to y -64, city floors at y -51)
+   through Core's `WorldHeights`. Without it, in 1.12.2's 0-255 world: the deep dark is an underground
+   region chosen as 1.19 chooses it (under inland high ground, away from oceans), y 1-40, with sculk on the
+   cave floors, no natural spawns, *Ancestry*, and `deep_dark` reported as the biome there; ancient cities
+   sit in it with their floor at y 8 (1.19's -51 shifted by +59), their top under y 40. Sensors and
+   shriekers that can summon generate only in the deep dark.
+2. **Mangrove swamps**: a real biome, placed where vanilla places it: 1.19 puts the mangrove swamp in the
+   swamp slot of the hot climate band, so in 1.12.2's biome map it joins the hot band (Forge's `DESERT`
+   biome list, with desert, savanna and plains) at swampland's weight. With Caves & Cliffs' 1.18 terrain
+   installed, its climate parameters place it instead, exactly as 1.19's do.
+3. **Echo shards, disc fragments and Swift Sneak** come from ancient cities, as in vanilla. Only while DD
+   is not built, a temporary fallback adds them to stronghold and dungeon chests at ancient-city rates; it
+   is removed in the commit that adds ancient cities.
 4. **Waterlogging** of the blocks listed under M, D and S waits for Core's adapter (the family decision).
+
+## Patches
+
+Allowed wherever vanilla parity needs them (the family rule of 2026-11-07): our own small ASM coremod,
+package `com.exiledradio.wildupdatebackport.asm`, one transformer per patch, each documented in
+`docs/PATCHES.md` (target class and method by SRG and MCP name, what changes, why no event does it), no
+MixinBooter, written to coexist with Fluidlogged API's transformers. Everything an event or a subclass can
+do is still done that way. Planned patches: the five listed under C; Darkness's lightmap if the patch-free
+version proves visibly different from 1.19's (decided in W).
 
 ## Shared files and rules
 
@@ -328,7 +334,7 @@ As Update Aquatic's plan, with this repo's names:
   last (run tasks leave an unobfuscated jar in `build/libs`).
 - Before any Gradle run: at least 8 GB free RAM. Gradle `-Xmx2G`, daemon off. Never `cleanRunServer`. Kill
   only our own server, by PID.
-- Client-only types only in `client/` classes. No mixins, no coremod, no ASM.
+- Client-only types only in `client/` classes. No mixins; ASM only in the `asm` coremod (*Patches*).
 
 ## Integrations with other mods of the family (Rule 2)
 
