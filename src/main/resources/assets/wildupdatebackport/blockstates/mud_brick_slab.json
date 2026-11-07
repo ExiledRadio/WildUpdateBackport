@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom": {
+      "model": "wildupdatebackport:mud_brick_slab"
+    },
+    "half=top": {
+      "model": "wildupdatebackport:mud_brick_slab_top"
+    }
+  }
+}

@@ -57,6 +57,7 @@ public final class WildUpdateBackport {
     public void init(FMLInitializationEvent event) {
         com.exiledradio.wildupdatebackport.common.Compat.init();
         com.exiledradio.wildupdatebackport.mangrove.MangroveContent.init();
+        com.exiledradio.wildupdatebackport.mud.MudContent.init();
     }
 
     @Mod.EventHandler
