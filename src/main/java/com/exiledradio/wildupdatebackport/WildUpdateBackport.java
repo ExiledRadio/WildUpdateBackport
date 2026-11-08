@@ -29,7 +29,7 @@ import org.apache.logging.log4j.Logger;
         name = WildUpdateBackport.MOD_NAME,
         version = WildUpdateBackport.VERSION,
         acceptedMinecraftVersions = "[1.12.2]",
-        dependencies = "required-after:backportcore@[1.3.0,)"
+        dependencies = "required-after:backportcore@[1.1.0,)"
 )
 public final class WildUpdateBackport {
 
