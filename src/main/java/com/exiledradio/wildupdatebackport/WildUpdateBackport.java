@@ -29,7 +29,7 @@ import org.apache.logging.log4j.Logger;
         name = WildUpdateBackport.MOD_NAME,
         version = WildUpdateBackport.VERSION,
         acceptedMinecraftVersions = "[1.12.2]",
-        dependencies = "required-after:backportcore@[1.0.0,)"
+        dependencies = "required-after:backportcore@[1.1.0,)"
 )
 public final class WildUpdateBackport {
 
@@ -44,6 +44,9 @@ public final class WildUpdateBackport {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        // This mod's spawn eggs in Miscellaneous where vanilla lists each mob's (Backport Core's creative
+        // placement).
+        com.exiledradio.backportcore.creative.CreativePlacement.placeSpawnEggs(MOD_ID);
         NetworkHandler.init();
         com.exiledradio.wildupdatebackport.gameevent.AvoidVibrationTrigger.register();
 

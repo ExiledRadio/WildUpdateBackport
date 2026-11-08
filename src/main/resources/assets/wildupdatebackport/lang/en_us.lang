@@ -1,5 +1,4 @@
 # --- common ---
-itemGroup.wildupdatebackport=Wild Update Backport
 config.wildupdatebackport.vibrations=Vibrations
 config.wildupdatebackport.vibrations.tooltip=Game events and vibrations: what sculk sensors, shriekers, wardens and allays hear.
 config.wildupdatebackport.vibrations.enabled=Enabled
