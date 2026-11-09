@@ -1,5 +1,6 @@
 package com.exiledradio.wildupdatebackport;
 
+import com.exiledradio.backportcore.settings.Setting;
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
@@ -24,39 +25,51 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
  */
 @Config(modid = WildUpdateBackport.MOD_ID, name = WildUpdateBackport.MOD_ID)
 public final class ModConfig {
+    @Setting.Feature(icon = "minecraft:noteblock")
     @Config.LangKey("config.wildupdatebackport.vibrations")
     @Config.Comment("Game events and vibrations: what sculk sensors, shriekers, wardens and allays hear.")
     public static final Vibrations vibrations = new Vibrations();
+    @Setting.Feature(icon = "wildupdatebackport:mangrove_log")
     @Config.LangKey("config.wildupdatebackport.mangrove")
     @Config.Comment("The mangrove wood set, mangrove roots, muddy mangrove roots, leaves and propagules.")
     public static final Mangrove mangrove = new Mangrove();
+    @Setting.Feature(icon = "wildupdatebackport:mud")
     @Config.LangKey("config.wildupdatebackport.mud")
     @Config.Comment("Mud, packed mud, mud bricks and their stairs, slabs and walls.")
     public static final Mud mud = new Mud();
+    @Setting.Feature(icon = "wildupdatebackport:oak_chest_boat")
     @Config.LangKey("config.wildupdatebackport.boats")
     @Config.Comment("The mangrove boat and boats with chests.")
     public static final Boats boats = new Boats();
+    @Setting.Feature(icon = "minecraft:stained_hardened_clay@9")
     @Config.LangKey("config.wildupdatebackport.sculk")
     @Config.Comment("Sculk, sculk veins, sculk catalysts, sculk sensors and sculk shriekers.")
     public static final Sculk sculk = new Sculk();
+    @Setting.Feature(icon = "minecraft:waterlily")
     @Config.LangKey("config.wildupdatebackport.frogs")
     @Config.Comment("Frogs, tadpoles, frogspawn and froglights.")
     public static final Frogs frogs = new Frogs();
+    @Setting.Feature(icon = "minecraft:jukebox")
     @Config.LangKey("config.wildupdatebackport.allay")
     @Config.Comment("The allay.")
     public static final Allay allay = new Allay();
+    @Setting.Feature(icon = "minecraft:skull@1")
     @Config.LangKey("config.wildupdatebackport.warden")
     @Config.Comment("The warden and the Darkness effect.")
     public static final Warden warden = new Warden();
+    @Setting.Feature(icon = "minecraft:compass")
     @Config.LangKey("config.wildupdatebackport.items")
     @Config.Comment("The recovery compass, echo shards, music disc 5, disc fragments, goat horns and Swift Sneak.")
     public static final Items items = new Items();
+    @Setting.Feature(icon = "minecraft:book")
     @Config.LangKey("config.wildupdatebackport.changes")
     @Config.Comment("Smaller changes from 1.19 to 1.19.4 to existing blocks, items and mobs.")
     public static final Changes changes = new Changes();
+    @Setting.Feature(icon = "minecraft:vine")
     @Config.LangKey("config.wildupdatebackport.swamp")
     @Config.Comment("Mangrove swamps.")
     public static final Swamp swamp = new Swamp();
+    @Setting.Feature(icon = "minecraft:stonebrick@2")
     @Config.LangKey("config.wildupdatebackport.deepDark")
     @Config.Comment("The deep dark and ancient cities.")
     public static final DeepDark deepDark = new DeepDark();
@@ -136,6 +149,7 @@ public final class ModConfig {
     public static final class Swamp {
         @Config.RequiresWorldRestart
         @Config.Comment("Mangrove swamps generate in newly generated chunks.")
+        @Setting.NewChunks
         @Config.LangKey("config.wildupdatebackport.swamp.enabled")
         public boolean enabled = true;
     }
@@ -143,6 +157,7 @@ public final class ModConfig {
     public static final class DeepDark {
         @Config.RequiresWorldRestart
         @Config.Comment("The deep dark and ancient cities generate in newly generated chunks.")
+        @Setting.NewChunks
         @Config.LangKey("config.wildupdatebackport.deepDark.enabled")
         public boolean enabled = true;
     }
