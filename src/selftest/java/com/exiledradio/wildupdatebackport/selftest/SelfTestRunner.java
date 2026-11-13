@@ -53,6 +53,7 @@ public final class SelfTestRunner {
             new AllaySelfTest(),
             new ItemsSelfTest(),
             new WardenSelfTest(),
+            new LookFeelSelfTest(),
     };
 
     private final List<String> wanted;

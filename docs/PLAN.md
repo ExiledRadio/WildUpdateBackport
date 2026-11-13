@@ -70,6 +70,7 @@ Backport Core is asked to take over unchanged.
 | DD | Deep dark, ancient cities, reinforced deepslate | `deepdark` | `deepDark` | 20-24 | 60-64 | 25872 | S, W, I; local template loader (Core request 2) |
 | Gt | Goats, copied when Caves & Cliffs is absent | `goat` | `goats` | 25-29 | 70-74 | 25874 | Caves & Cliffs' goat code to copy |
 | Wl | Waterlogging pass | (Core's adapter) | - | - | 65-69 | 25873 | Core's `Waterloggable` adapter |
+| Lf | Look and feel (1.19.x's panorama, splashes, menu music, options, F3, defaults) | `lookfeel` | none (Backport Core's `presentation` settings) | none | 75-79 (none used) | 25875 | Backport Core 1.1.0; the `asm` coremod (P1-P3) |
 
 Order: M, D, B (done), then G, S, F, A, W, I, C (blocks, mobs and items first), then Sw and DD (with the
 local template loader), Gt once Caves & Cliffs' goats exist to copy, then Wl once Core has the adapter.
@@ -278,6 +279,19 @@ a local package written to Core's requested API (`CORE_REQUESTS.md` request 2), 
 DD does not wait for Core. The deepslate set the cities are built of is Caves & Cliffs'; copied when it is
 absent (Rule 1).
 
+### Lf. Look and feel
+
+1.19.x's changes beyond its content, handed to Backport Core's `presentation` module, which shows the newest
+installed backport's (family Rule 6, `family-notes/PRESENTATION_PLAN.md`). Versions 1.19, 1.19.1, 1.19.3 and 1.19.4
+are registered. The mangrove swamp panorama and 1.19.4's title assets; 1.19.1's and 1.19.3's splashes; *Aerie*,
+*Firebugs* and *Labyrinthine* on the title screen in place of 1.18's five tracks; F3 + F removed and the F3
+"Allocation rate" line; Darkness Pulsing (read by W), Damage Tilt, Glint Speed and Glint Strength (patches P1-P3,
+the mod's first coremod); Auto-Jump off by default once per instance (1.19.4); vanilla's own text as 1.19.4 words
+it. Everything shared that only Core can build (Notification Time, High Contrast, the 1.19.3 creative tabs and
+Operator Items Tab, the 1.19.4 Create World tabs and onboarding screen, Smooth Lighting's values, key-conflict
+tooltips, the Credits button, the pause menu heading, Open to LAN's port, subtitle shadows, the menu tracks'
+volume) is `CORE_REQUESTS.md` Lf-1 to Lf-4. Details: `docs/streams/lookfeel.md`.
+
 ## Decided (the user, 2026-11-07: closest to vanilla, always)
 
 1. **Deep dark and ancient cities.** Caves & Cliffs is building real extended height. With it installed,
@@ -304,6 +318,10 @@ package `com.exiledradio.wildupdatebackport.asm`, one transformer per patch, eac
 MixinBooter, written to coexist with Fluidlogged API's transformers. Everything an event or a subclass can
 do is still done that way. Planned patches: the five listed under C; Darkness's lightmap if the patch-free
 version proves visibly different from 1.19's (decided in W).
+
+The coremod is `asm.WildUpdateCore` (manifest `FMLCorePlugin`; `-Dfml.coreMods.load` in the run tasks), added by
+stream Lf with patches P1-P3 (`docs/PATCHES.md`). A stream with patches adds its own transformer class to
+`WildUpdateCore.getASMTransformerClass` and its patches to `PATCHES.md`, numbered on from the last.
 
 ## Shared files and rules
 

@@ -54,6 +54,7 @@ public final class WildUpdateBackport {
         com.exiledradio.wildupdatebackport.sculk.KillMobNearCatalystTrigger.register();
         com.exiledradio.wildupdatebackport.frog.FrogContent.registerTriggers();
         com.exiledradio.wildupdatebackport.allay.AllayContent.preInit();
+        com.exiledradio.wildupdatebackport.lookfeel.LookAndFeel.preInit();
 
         // Client-only setup lives in a class a dedicated server never loads. The call names no client
         // type, so this class verifies on a server - a guarded method here would not.

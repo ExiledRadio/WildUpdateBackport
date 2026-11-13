@@ -49,7 +49,15 @@
     "config.wildupdatebackport.deepDark.enabled",
     "config.wildupdatebackport.deepDark.enabled.tooltip",
     "subtitles.wildupdatebackport.entity.tadpole.grow_up",
-    "subtitles.wildupdatebackport.block.generic.fall"
+    "subtitles.wildupdatebackport.block.generic.fall",
+    "options.darknessEffectScale",
+    "options.darknessEffectScale.tooltip",
+    "options.damageTiltStrength",
+    "options.damageTiltStrength.tooltip",
+    "options.glintSpeed",
+    "options.glintSpeed.tooltip",
+    "options.glintStrength",
+    "options.glintStrength.tooltip"
   ],
   "vanilla": {
     "advancements.wildupdatebackport.husbandry.allay_deliver_cake_to_note_block.description": "advancements.husbandry.allay_deliver_cake_to_note_block.description",
