@@ -777,5 +777,143 @@
         "volume": 0.5
       }
     ]
+  },
+  "entity.allay.ambient_with_item": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:mob/allay/idle_with_item1",
+        "pitch": 1.25,
+        "volume": 0.3
+      },
+      {
+        "name": "wildupdatebackport:mob/allay/idle_with_item2",
+        "pitch": 1.25,
+        "volume": 0.3
+      },
+      {
+        "name": "wildupdatebackport:mob/allay/idle_with_item3",
+        "pitch": 1.25,
+        "volume": 0.3
+      },
+      {
+        "name": "wildupdatebackport:mob/allay/idle_with_item4",
+        "pitch": 1.25,
+        "volume": 0.3
+      }
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.allay.ambient_with_item"
+  },
+  "entity.allay.ambient_without_item": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:mob/allay/idle_without_item1",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:mob/allay/idle_without_item2",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:mob/allay/idle_without_item3",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:mob/allay/idle_without_item4",
+        "volume": 0.25
+      }
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.allay.ambient_without_item"
+  },
+  "entity.allay.death": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:mob/allay/death1",
+        "volume": 0.6
+      },
+      {
+        "name": "wildupdatebackport:mob/allay/death2",
+        "volume": 0.6
+      }
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.allay.death"
+  },
+  "entity.allay.hurt": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:mob/allay/hurt1",
+        "pitch": 1.5,
+        "volume": 0.8
+      },
+      {
+        "name": "wildupdatebackport:mob/allay/hurt2",
+        "pitch": 1.5,
+        "volume": 0.8
+      }
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.allay.hurt"
+  },
+  "entity.allay.item_given": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:mob/allay/item_given1",
+        "volume": 0.1
+      },
+      {
+        "name": "wildupdatebackport:mob/allay/item_given2",
+        "volume": 0.1
+      },
+      {
+        "name": "wildupdatebackport:mob/allay/item_given3",
+        "volume": 0.1
+      },
+      {
+        "name": "wildupdatebackport:mob/allay/item_given4",
+        "volume": 0.1
+      }
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.allay.item_given"
+  },
+  "entity.allay.item_taken": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:mob/allay/item_taken1",
+        "pitch": 1.25,
+        "volume": 0.1
+      },
+      {
+        "name": "wildupdatebackport:mob/allay/item_taken2",
+        "pitch": 1.25,
+        "volume": 0.1
+      },
+      {
+        "name": "wildupdatebackport:mob/allay/item_taken3",
+        "pitch": 1.25,
+        "volume": 0.1
+      },
+      {
+        "name": "wildupdatebackport:mob/allay/item_taken4",
+        "pitch": 1.25,
+        "volume": 0.1
+      }
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.allay.item_taken"
+  },
+  "entity.allay.item_thrown": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:mob/allay/item_thrown1",
+        "volume": 0.25
+      }
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.allay.item_thrown"
+  },
+  "block.amethyst_block.chime": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/amethyst/shimmer",
+        "volume": 0.2
+      }
+    ],
+    "subtitle": "subtitles.wildupdatebackport.block.amethyst_block.chime"
   }
 }

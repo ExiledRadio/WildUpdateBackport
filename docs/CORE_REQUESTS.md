@@ -166,3 +166,22 @@ public final class GoatHorns {
 
 Until it exists: Caves & Cliffs can call `wildupdatebackport:goat_horn` by name with an `instrument` NBT
 string (`ponder_goat_horn` ... `dream_goat_horn`), which is the stack format stream I uses.
+
+## 7. Jigsaw pool elements and template entities (allays in Village & Pillage's outposts)
+
+1.19's outposts add a third cage, `feature_cage_with_allays`, to the `pillager_outpost/features` pool, and
+its two allays are template entities. Village & Pillage keeps its 1.14 pools and template entities private,
+so stream A reaches in by name (`allay/AllayStructures`): it adds the element to the pool by reflection after
+`feature_cage2`, ships the converted template where Village & Pillage's loader looks
+(`assets/villagerbackport/structures/pillager_outpost/feature_cage_with_allays.nbt`), and spawns the two
+allays itself after Village & Pillage builds each chunk. Wanted instead, in Core (Village & Pillage and any
+later jigsaw structure using it):
+
+```java
+public final class JigsawPools {
+    /** Adds an element to a pool after the element named {@code after} (or at the end), with its weight. */
+    public static void addSingle(String pool, String location, int weight, @Nullable String after);
+    /** Registers who builds a template entity of a kind ("allay" -> our entity), for template entity lists. */
+    public static void registerEntityKind(String kind, BiFunction<World, NBTTagCompound, Entity> factory);
+}
+```

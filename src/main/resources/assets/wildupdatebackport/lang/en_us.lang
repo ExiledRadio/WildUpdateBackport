@@ -94,3 +94,18 @@ item.wildupdatebackport.dark_oak_chest_boat.name=Dark Oak Boat with Chest
 item.wildupdatebackport.mangrove_chest_boat.name=Mangrove Boat with Chest
 entity.wildupdatebackport.boat.name=Boat
 entity.wildupdatebackport.chest_boat.name=Boat with Chest
+
+# --- allay ---
+entity.wildupdatebackport.allay.name=Allay
+advancements.wildupdatebackport.husbandry.allay_deliver_item_to_player.title=You've Got a Friend in Me
+advancements.wildupdatebackport.husbandry.allay_deliver_item_to_player.description=Have an Allay deliver items to you
+advancements.wildupdatebackport.husbandry.allay_deliver_cake_to_note_block.title=Birthday Song
+advancements.wildupdatebackport.husbandry.allay_deliver_cake_to_note_block.description=Have an Allay drop a Cake at a Note Block
+subtitles.wildupdatebackport.block.amethyst_block.chime=Amethyst chimes
+subtitles.wildupdatebackport.entity.allay.ambient_with_item=Allay seeks
+subtitles.wildupdatebackport.entity.allay.ambient_without_item=Allay yearns
+subtitles.wildupdatebackport.entity.allay.death=Allay dies
+subtitles.wildupdatebackport.entity.allay.hurt=Allay hurts
+subtitles.wildupdatebackport.entity.allay.item_given=Allay chortles
+subtitles.wildupdatebackport.entity.allay.item_taken=Allay allays
+subtitles.wildupdatebackport.entity.allay.item_thrown=Allay tosses
