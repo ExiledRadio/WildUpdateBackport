@@ -166,3 +166,35 @@ public final class GoatHorns {
 
 Until it exists: Caves & Cliffs can call `wildupdatebackport:goat_horn` by name with an `instrument` NBT
 string (`ponder_goat_horn` ... `dream_goat_horn`), which is the stack format stream I uses.
+
+## 7. Keyframe entity animations (from stream F, frogs)
+
+1.19 and later animate their new mobs (frog, warden, allay's dance, camel, sniffer, armadillo, breeze,
+creaking...) with keyframe definitions (`AnimationDefinition`, `KeyframeAnimations`, `AnimationState`)
+on parts that have a scale and 1.19's x-y-z rotation order. Every backport with such a mob needs the same
+small runtime. Stream F has it locally, written to this API, so moving it is a package rename:
+
+```java
+/** Client only. 1.19's ModelPart: initial pose, scale, 1.19's rotation order. */
+public class Part extends ModelRenderer {
+    public float xScale, yScale, zScale;
+    public Part pose(float x, float y, float z);                         // PartPose.offset, remembered
+    public Part box(int u, int v, float x, float y, float z, int w, int h, int d, float grow);
+    public void reset();                                                 // resetPose
+}
+/** Common. 1.19's AnimationState (start, startIfStopped, stop, updateTime, accumulatedTime). */
+public final class AnimationClock { ... }
+/** Client only. Definitions read from assets/<mod>/animations/<entity>.json (generated from Mojang's code). */
+public final class Keyframes {
+    public static Map<String, Definition> load(ResourceLocation file);
+    public static void animate(Map<String, Part> parts, AnimationClock clock, Definition def, float ageInTicks, float speed);
+}
+```
+
+JSON format: `{"<animation>": {"length": s, "looping": b, "channels": [{"bone": name, "target":
+"position|rotation|scale", "keyframes": [[time, x, y, z, "linear|catmullrom"], ...]}]}}`, values already in
+model units (1.19's `posVec` y-flip, `degreeVec` radians, `scaleVec` minus one). Local copy:
+`frog/AnimationClock`, `frog/client/Part`, `frog/client/Keyframes`; generator: `tools/frogs/generate.py`.
+
+Also small and shared: 1.13's `minecraft:filled_bucket` advancement trigger (1.12.2 lacks it; Update Aquatic
+and stream F each have their own, `wildupdatebackport:filled_bucket` here), with an `item` predicate.

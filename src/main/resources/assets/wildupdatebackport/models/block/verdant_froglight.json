@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "wildupdatebackport:block/verdant_froglight_top",
+    "side": "wildupdatebackport:block/verdant_froglight_side"
+  }
+}

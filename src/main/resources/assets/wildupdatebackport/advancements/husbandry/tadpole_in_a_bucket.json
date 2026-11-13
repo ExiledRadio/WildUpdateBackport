@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:husbandry/root",
+  "display": {
+    "icon": {
+      "item": "wildupdatebackport:tadpole_bucket"
+    },
+    "title": {
+      "translate": "advancements.wildupdatebackport.husbandry.tadpole_in_a_bucket.title"
+    },
+    "description": {
+      "translate": "advancements.wildupdatebackport.husbandry.tadpole_in_a_bucket.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "tadpole_bucket": {
+      "trigger": "wildupdatebackport:filled_bucket",
+      "conditions": {
+        "item": {
+          "item": "wildupdatebackport:tadpole_bucket"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "tadpole_bucket"
+    ]
+  ]
+}

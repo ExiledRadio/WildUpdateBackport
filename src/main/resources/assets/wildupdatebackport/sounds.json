@@ -777,5 +777,586 @@
         "volume": 0.5
       }
     ]
+  },
+  "entity.frog.ambient": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:mob/frog/idle1",
+        "pitch": 0.95,
+        "volume": 0.8
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/idle2",
+        "pitch": 0.9
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/idle3",
+        "pitch": 0.9,
+        "volume": 0.9
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/idle4",
+        "pitch": 0.95,
+        "volume": 0.8
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/idle5",
+        "pitch": 0.9,
+        "volume": 0.85
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/idle6",
+        "pitch": 0.9,
+        "volume": 0.9
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/idle7",
+        "pitch": 0.9,
+        "volume": 0.7
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/idle8",
+        "pitch": 0.9,
+        "volume": 0.3
+      }
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.frog.ambient"
+  },
+  "entity.frog.death": {
+    "sounds": [
+      "wildupdatebackport:mob/frog/death1",
+      "wildupdatebackport:mob/frog/death2",
+      "wildupdatebackport:mob/frog/death3"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.frog.death"
+  },
+  "entity.frog.eat": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:mob/frog/eat1",
+        "volume": 0.6
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/eat1",
+        "pitch": 0.9,
+        "volume": 0.6
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/eat2",
+        "volume": 0.6
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/eat2",
+        "pitch": 0.9,
+        "volume": 0.6
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/eat3",
+        "volume": 0.6
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/eat3",
+        "pitch": 0.9,
+        "volume": 0.6
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/eat4",
+        "volume": 0.6
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/eat4",
+        "pitch": 0.9,
+        "volume": 0.6
+      }
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.frog.eat"
+  },
+  "entity.frog.hurt": {
+    "sounds": [
+      "wildupdatebackport:mob/frog/hurt1",
+      "wildupdatebackport:mob/frog/hurt2",
+      "wildupdatebackport:mob/frog/hurt3",
+      "wildupdatebackport:mob/frog/hurt4",
+      "wildupdatebackport:mob/frog/hurt5"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.frog.hurt"
+  },
+  "entity.frog.lay_spawn": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:mob/frog/lay_spawn1",
+        "volume": 0.25
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/lay_spawn2",
+        "volume": 0.25
+      }
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.frog.lay_spawn"
+  },
+  "entity.frog.long_jump": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:mob/frog/long_jump1",
+        "volume": 0.12
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/long_jump1",
+        "pitch": 0.8,
+        "volume": 0.12
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/long_jump2",
+        "volume": 0.12
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/long_jump2",
+        "pitch": 0.8,
+        "volume": 0.12
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/long_jump3",
+        "volume": 0.12
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/long_jump3",
+        "pitch": 0.8,
+        "volume": 0.12
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/long_jump4",
+        "volume": 0.12
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/long_jump4",
+        "pitch": 0.8,
+        "volume": 0.12
+      }
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.frog.long_jump"
+  },
+  "entity.frog.step": {
+    "sounds": [
+      "wildupdatebackport:mob/frog/step1",
+      "wildupdatebackport:mob/frog/step2",
+      "wildupdatebackport:mob/frog/step3",
+      "wildupdatebackport:mob/frog/step4"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "entity.frog.tongue": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:mob/frog/tongue1",
+        "volume": 0.5
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/tongue2",
+        "volume": 0.5
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/tongue3",
+        "volume": 0.5
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/tongue4",
+        "volume": 0.5
+      }
+    ]
+  },
+  "entity.tadpole.death": {
+    "sounds": [
+      "wildupdatebackport:mob/tadpole/death1",
+      "wildupdatebackport:mob/tadpole/death2"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.tadpole.death"
+  },
+  "entity.tadpole.flop": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:entity/fish/flop1",
+        "volume": 0.3
+      },
+      {
+        "name": "wildupdatebackport:entity/fish/flop2",
+        "volume": 0.3
+      },
+      {
+        "name": "wildupdatebackport:entity/fish/flop3",
+        "volume": 0.3
+      },
+      {
+        "name": "wildupdatebackport:entity/fish/flop4",
+        "volume": 0.3
+      }
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.tadpole.flop"
+  },
+  "entity.tadpole.grow_up": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:mob/frog/idle1",
+        "pitch": 1.2,
+        "volume": 0.75
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/idle2",
+        "pitch": 1.2,
+        "volume": 0.75
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/idle3",
+        "pitch": 1.2,
+        "volume": 0.75
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/idle4",
+        "pitch": 1.2,
+        "volume": 0.75
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/idle5",
+        "pitch": 1.2,
+        "volume": 0.75
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/idle6",
+        "pitch": 1.2,
+        "volume": 0.75
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/idle7",
+        "pitch": 1.2,
+        "volume": 0.75
+      },
+      {
+        "name": "wildupdatebackport:mob/frog/idle8",
+        "pitch": 1.2,
+        "volume": 0.75
+      }
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.tadpole.grow_up"
+  },
+  "entity.tadpole.hurt": {
+    "sounds": [
+      "wildupdatebackport:mob/tadpole/hurt1",
+      "wildupdatebackport:mob/tadpole/hurt2",
+      "wildupdatebackport:mob/tadpole/hurt3",
+      "wildupdatebackport:mob/tadpole/hurt4"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.tadpole.hurt"
+  },
+  "item.bucket.empty_tadpole": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:item/bucket/empty_fish1",
+        "pitch": 1.5,
+        "volume": 0.5
+      },
+      {
+        "name": "wildupdatebackport:item/bucket/empty_fish2",
+        "pitch": 1.5,
+        "volume": 0.5
+      },
+      {
+        "name": "wildupdatebackport:item/bucket/empty_fish3",
+        "pitch": 1.5,
+        "volume": 0.5
+      }
+    ],
+    "subtitle": "subtitles.item.bucket.empty"
+  },
+  "item.bucket.fill_tadpole": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:item/bucket/fill_fish1",
+        "pitch": 1.5,
+        "volume": 0.5
+      },
+      {
+        "name": "wildupdatebackport:item/bucket/fill_fish2",
+        "pitch": 1.5,
+        "volume": 0.5
+      },
+      {
+        "name": "wildupdatebackport:item/bucket/fill_fish3",
+        "pitch": 1.5,
+        "volume": 0.5
+      }
+    ],
+    "subtitle": "subtitles.wildupdatebackport.item.bucket.fill_tadpole"
+  },
+  "block.frogspawn.break": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/frogspawn/break1",
+        "pitch": 1.2,
+        "volume": 0.1
+      },
+      {
+        "name": "wildupdatebackport:block/frogspawn/break2",
+        "pitch": 1.2,
+        "volume": 0.1
+      },
+      {
+        "name": "wildupdatebackport:block/frogspawn/break3",
+        "pitch": 1.2,
+        "volume": 0.1
+      },
+      {
+        "name": "wildupdatebackport:block/frogspawn/break4",
+        "pitch": 1.2,
+        "volume": 0.1
+      }
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.frogspawn.fall": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/frogspawn/step1",
+        "pitch": 1.3,
+        "volume": 0.3
+      },
+      {
+        "name": "wildupdatebackport:block/frogspawn/step2",
+        "pitch": 1.3,
+        "volume": 0.3
+      },
+      {
+        "name": "wildupdatebackport:block/frogspawn/step3",
+        "pitch": 1.3,
+        "volume": 0.3
+      },
+      {
+        "name": "wildupdatebackport:block/frogspawn/step4",
+        "pitch": 1.3,
+        "volume": 0.3
+      },
+      {
+        "name": "wildupdatebackport:block/frogspawn/step5",
+        "pitch": 1.3,
+        "volume": 0.3
+      },
+      {
+        "name": "wildupdatebackport:block/frogspawn/step6",
+        "pitch": 1.3,
+        "volume": 0.3
+      }
+    ],
+    "subtitle": "subtitles.wildupdatebackport.block.generic.fall"
+  },
+  "block.frogspawn.hatch": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/frogspawn/hatch1",
+        "pitch": 1.2,
+        "volume": 0.6
+      },
+      {
+        "name": "wildupdatebackport:block/frogspawn/hatch2",
+        "pitch": 1.2,
+        "volume": 0.6
+      },
+      {
+        "name": "wildupdatebackport:block/frogspawn/hatch3",
+        "pitch": 1.2,
+        "volume": 0.6
+      },
+      {
+        "name": "wildupdatebackport:block/frogspawn/hatch4",
+        "pitch": 1.2,
+        "volume": 0.6
+      }
+    ],
+    "subtitle": "subtitles.wildupdatebackport.block.frogspawn.hatch"
+  },
+  "block.frogspawn.hit": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/frogspawn/step1",
+        "pitch": 1.3,
+        "volume": 0.3
+      },
+      {
+        "name": "wildupdatebackport:block/frogspawn/step2",
+        "pitch": 1.3,
+        "volume": 0.3
+      },
+      {
+        "name": "wildupdatebackport:block/frogspawn/step3",
+        "pitch": 1.3,
+        "volume": 0.3
+      },
+      {
+        "name": "wildupdatebackport:block/frogspawn/step4",
+        "pitch": 1.3,
+        "volume": 0.3
+      },
+      {
+        "name": "wildupdatebackport:block/frogspawn/step5",
+        "pitch": 1.3,
+        "volume": 0.3
+      },
+      {
+        "name": "wildupdatebackport:block/frogspawn/step6",
+        "pitch": 1.3,
+        "volume": 0.3
+      }
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.frogspawn.place": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/frogspawn/break1",
+        "pitch": 1.5,
+        "volume": 0.2
+      },
+      {
+        "name": "wildupdatebackport:block/frogspawn/break2",
+        "pitch": 1.5,
+        "volume": 0.2
+      },
+      {
+        "name": "wildupdatebackport:block/frogspawn/break3",
+        "pitch": 1.5,
+        "volume": 0.2
+      },
+      {
+        "name": "wildupdatebackport:block/frogspawn/break4",
+        "pitch": 1.5,
+        "volume": 0.2
+      }
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.frogspawn.step": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/frogspawn/step1",
+        "volume": 0.3
+      },
+      {
+        "name": "wildupdatebackport:block/frogspawn/step2",
+        "volume": 0.3
+      },
+      {
+        "name": "wildupdatebackport:block/frogspawn/step3",
+        "volume": 0.3
+      },
+      {
+        "name": "wildupdatebackport:block/frogspawn/step4",
+        "volume": 0.3
+      },
+      {
+        "name": "wildupdatebackport:block/frogspawn/step5",
+        "volume": 0.3
+      },
+      {
+        "name": "wildupdatebackport:block/frogspawn/step6",
+        "volume": 0.3
+      }
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.froglight.break": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/froglight/break1",
+        "volume": 0.8
+      },
+      {
+        "name": "wildupdatebackport:block/froglight/break2",
+        "volume": 0.8
+      },
+      {
+        "name": "wildupdatebackport:block/froglight/break3",
+        "volume": 0.8
+      },
+      {
+        "name": "wildupdatebackport:block/froglight/break4",
+        "volume": 0.8
+      }
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.froglight.fall": {
+    "sounds": [
+      "wildupdatebackport:block/froglight/step1",
+      "wildupdatebackport:block/froglight/step2",
+      "wildupdatebackport:block/froglight/step3",
+      "wildupdatebackport:block/froglight/step4",
+      "wildupdatebackport:block/froglight/step5",
+      "wildupdatebackport:block/froglight/step6"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.block.generic.fall"
+  },
+  "block.froglight.hit": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/froglight/step1",
+        "pitch": 1.3,
+        "volume": 0.83
+      },
+      {
+        "name": "wildupdatebackport:block/froglight/step2",
+        "pitch": 1.3,
+        "volume": 0.83
+      },
+      {
+        "name": "wildupdatebackport:block/froglight/step3",
+        "pitch": 1.3,
+        "volume": 0.83
+      },
+      {
+        "name": "wildupdatebackport:block/froglight/step4",
+        "pitch": 1.3,
+        "volume": 0.83
+      },
+      {
+        "name": "wildupdatebackport:block/froglight/step5",
+        "pitch": 1.3,
+        "volume": 0.83
+      },
+      {
+        "name": "wildupdatebackport:block/froglight/step6",
+        "pitch": 1.3,
+        "volume": 0.83
+      }
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.froglight.place": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/froglight/break1",
+        "volume": 0.8
+      },
+      {
+        "name": "wildupdatebackport:block/froglight/break2",
+        "volume": 0.8
+      },
+      {
+        "name": "wildupdatebackport:block/froglight/break3",
+        "volume": 0.8
+      },
+      {
+        "name": "wildupdatebackport:block/froglight/break4",
+        "volume": 0.8
+      }
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.froglight.step": {
+    "sounds": [
+      "wildupdatebackport:block/froglight/step1",
+      "wildupdatebackport:block/froglight/step2",
+      "wildupdatebackport:block/froglight/step3",
+      "wildupdatebackport:block/froglight/step4",
+      "wildupdatebackport:block/froglight/step5",
+      "wildupdatebackport:block/froglight/step6"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
   }
 }
