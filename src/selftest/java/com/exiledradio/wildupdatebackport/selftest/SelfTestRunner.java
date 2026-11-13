@@ -51,6 +51,7 @@ public final class SelfTestRunner {
             new SculkSelfTest(),
             new FrogSelfTest(),
             new AllaySelfTest(),
+            new ItemsSelfTest(),
     };
 
     private final List<String> wanted;

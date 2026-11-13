@@ -37,5 +37,7 @@ public final class NetworkHandler {
                 com.exiledradio.wildupdatebackport.gameevent.VibrationPacket.class, 5, net.minecraftforge.fml.relauncher.Side.CLIENT);
         channel.registerMessage(com.exiledradio.wildupdatebackport.sculk.SculkEffectPacket.Handler.class,
                 com.exiledradio.wildupdatebackport.sculk.SculkEffectPacket.class, 25, net.minecraftforge.fml.relauncher.Side.CLIENT);
+        channel.registerMessage(com.exiledradio.wildupdatebackport.items.LastDeathLocation.Handler.class,
+                com.exiledradio.wildupdatebackport.items.LastDeathLocation.Packet.class, 45, net.minecraftforge.fml.relauncher.Side.CLIENT);
     }
 }

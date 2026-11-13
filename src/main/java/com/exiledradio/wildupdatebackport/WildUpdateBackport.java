@@ -69,6 +69,7 @@ public final class WildUpdateBackport {
         com.exiledradio.wildupdatebackport.mud.MudContent.init();
         com.exiledradio.wildupdatebackport.frog.FrogContent.init();
         com.exiledradio.wildupdatebackport.allay.AllayContent.init();
+        com.exiledradio.wildupdatebackport.items.ItemsContent.init();
     }
 
     @Mod.EventHandler
