@@ -106,6 +106,24 @@ public final class ChangesHooks {
     // ------------------------------------------------------------------------------------------
     // P7: an open shulker box supports blocks on its base only (1.19.3's ShulkerBoxBlock.getBlockSupportShape).
 
+    /** P7's arguments, stashed at the method's first line: vanilla's ProGuard frames drop the parameters before its returns. */
+    private static final ThreadLocal<Object[]> SHULKER_ARGS = new ThreadLocal<Object[]>();
+
+    /** P7, from the first line of {@code BlockShulkerBox.getBlockFaceShape}. */
+    public static void shulkerBegin(IBlockAccess world, IBlockState state, BlockPos pos, EnumFacing face) {
+        SHULKER_ARGS.set(new Object[] {world, state, pos, face});
+    }
+
+    /** P7, before each return of {@code BlockShulkerBox.getBlockFaceShape}: the stashed arguments' answer. */
+    public static BlockFaceShape shulkerFace(BlockFaceShape vanilla) {
+        Object[] args = SHULKER_ARGS.get();
+        if (args == null) {
+            return vanilla;
+        }
+        SHULKER_ARGS.remove();
+        return shulkerFace(vanilla, (IBlockAccess) args[0], (IBlockState) args[1], (BlockPos) args[2], (EnumFacing) args[3]);
+    }
+
     /**
      * {@code BlockShulkerBox.getBlockFaceShape}. 1.19.3: while not closed, the support shape is a one-pixel plate on the
      * face opposite the lid, so only that face holds a torch; closed, every face does. 1.12.2 had the lid and base

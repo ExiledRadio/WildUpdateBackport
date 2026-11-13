@@ -225,7 +225,7 @@ public final class ChangesTransformer implements IClassTransformer {
         return Asm.write(node);
     }
 
-    /** P7: {@code ALOAD 1, 2, 3, 4; INVOKESTATIC shulkerFace} before each {@code ARETURN} of {@code getBlockFaceShape}. */
+    /** P7: {@code ALOAD 1, 2, 3, 4; INVOKESTATIC shulkerBegin} first, and {@code INVOKESTATIC shulkerFace} before each {@code ARETURN}. */
     private static byte[] shulker(byte[] bytes, boolean live) {
         ClassNode node = Asm.read(bytes);
         String desc = "(Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/util/math/BlockPos;"
@@ -237,14 +237,16 @@ public final class ChangesTransformer implements IClassTransformer {
                     SHULKER);
             return null;
         }
+        // The parameters are read only at the first line: vanilla's ProGuard frames mark them TOP before the returns.
+        InsnList begin = new InsnList();
+        for (int i = 1; i <= 4; i++) {
+            begin.add(new VarInsnNode(Opcodes.ALOAD, i));
+        }
+        begin.add(new MethodInsnNode(Opcodes.INVOKESTATIC, HOOKS, "shulkerBegin", desc.substring(0, desc.indexOf(')') + 1) + "V", false));
+        m.instructions.insert(begin);
         for (AbstractInsnNode r : returns) {
-            InsnList add = new InsnList();
-            for (int i = 1; i <= 4; i++) {
-                add.add(new VarInsnNode(Opcodes.ALOAD, i));
-            }
-            add.add(new MethodInsnNode(Opcodes.INVOKESTATIC, HOOKS, "shulkerFace", "(Lnet/minecraft/block/state/BlockFaceShape;" + desc.substring(1),
-                    false));
-            m.instructions.insertBefore(r, add);
+            m.instructions.insertBefore(r, new MethodInsnNode(Opcodes.INVOKESTATIC, HOOKS, "shulkerFace",
+                    "(Lnet/minecraft/block/state/BlockFaceShape;)Lnet/minecraft/block/state/BlockFaceShape;", false));
         }
         if (live) {
             appliedP7 = true;
