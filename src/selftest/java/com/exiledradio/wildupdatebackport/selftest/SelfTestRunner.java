@@ -50,6 +50,7 @@ public final class SelfTestRunner {
             new VibrationSelfTest(),
             new SculkSelfTest(),
             new FrogSelfTest(),
+            new AllaySelfTest(),
     };
 
     private final List<String> wanted;

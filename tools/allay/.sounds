@@ -1,0 +1,8 @@
+block.amethyst_block.chime
+entity.allay.ambient_with_item
+entity.allay.ambient_without_item
+entity.allay.death
+entity.allay.hurt
+entity.allay.item_given
+entity.allay.item_taken
+entity.allay.item_thrown
