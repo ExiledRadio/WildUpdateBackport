@@ -27,6 +27,7 @@ public final class WildUpdateCore implements IFMLLoadingPlugin {
         return new String[] {
                 LookTransformer.class.getName(),
                 ChangesTransformer.class.getName(),
+                SwampTransformer.class.getName(),
         };
     }
 

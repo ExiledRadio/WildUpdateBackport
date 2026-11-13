@@ -233,6 +233,43 @@ public final class JigsawPools {
 }
 ```
 
+## 9. Biome music (stream Sw, the mangrove swamp)
+
+**Why in Core**: 1.18 gave overworld biomes their own music (Caves & Cliffs plays it for its cave and mountain
+regions through its own `MusicRegions`, a fixed enum), and every later backport adds biomes with music: 1.19's swamp
+and mangrove swamp (*Aerie*, *Firebugs*, *Labyrinthine*, which this mod already ships for the title screen), 1.19's
+deep dark (*Ancestry*), 1.20's cherry grove, bamboo jungle and others. One player, so two mods never play two tracks.
+
+**Wanted**:
+
+```java
+package com.exiledradio.backportcore.music;
+
+public final class BiomeMusic {
+    /** 1.19's Musics.createGameMusic(event): min delay 12000, max 24000 ticks, does not replace the current track. */
+    public static void register(Biome biome, SoundEvent music);
+    /** Or by a test, for regions that are not 1.12 biomes (the deep dark under Wild Update's own placement). */
+    public static void register(ResourceLocation id, BiPredicate<World, BlockPos> where, SoundEvent music);
+}
+```
+
+1.19's rules: survival or adventure in the overworld plays the biome's music where it has one, otherwise the default
+game music; creative plays the creative music unless the biome has its own.
+
+**Local shim**: none. The mangrove swamp has no music of its own until Core has this (`docs/streams/swamp.md`).
+
+## 10. Modern water and underwater fog colors for a mod's biome (stream Sw)
+
+**Why in Core**: with Update Aquatic's 1.13 water texture in place, it gives every biome it does not know a filtered
+default blue and the default underwater fog. Wild Update sets the mangrove swamp's water color itself (the
+`GetWaterColor` event, last), but the fog color is Update Aquatic's alone, so the swamp's fog is 1.13's default
+`0x050533`, not 1.19's `0x4D7A60`. Every later backport's biomes (the cherry grove, the pale garden) need the same.
+
+**Wanted**: `com.exiledradio.backportcore.water.WaterColors.register(Biome biome, int water, int fog)`, read by Update
+Aquatic's `WaterColors.known` before its own fallback.
+
+**Local shim**: `swamp/SwampContent.waterColor` sets the water color; the fog waits for this.
+
 ## Lf. Look and feel (stream Lf): 1.19.x pieces only Core can build
 
 Stream Lf registers 1.19, 1.19.1, 1.19.3 and 1.19.4 with Core's `presentation` module (panorama, splashes, menu music,

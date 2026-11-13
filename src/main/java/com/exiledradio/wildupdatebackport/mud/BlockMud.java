@@ -71,6 +71,19 @@ public class BlockMud extends Block {
         return true;
     }
 
+    /**
+     * 1.19's {@code #dirt} holds mud, so what grows on dirt grows on mud (grass, flowers, saplings, dead bushes,
+     * sugar cane beside water): asked as dirt would be. Cactus stays on sand.
+     */
+    @Override
+    public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, net.minecraft.util.EnumFacing direction,
+                                   net.minecraftforge.common.IPlantable plantable) {
+        if (plantable.getPlant(world, pos.offset(direction)).getBlock() == Blocks.CACTUS) {
+            return false;
+        }
+        return Blocks.DIRT.canSustainPlant(Blocks.DIRT.getDefaultState(), world, pos, direction, plantable);
+    }
+
     @Override
     public void updateTick(World world, BlockPos pos, IBlockState state, Random random) {
         if (world.isRemote || world.provider.doesWaterVaporize()) {
