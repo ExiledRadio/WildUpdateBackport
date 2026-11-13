@@ -196,7 +196,7 @@ public final class ChangesTransformer implements IClassTransformer {
         return Asm.write(node);
     }
 
-    /** P6: {@code ALOAD 1; INVOKESTATIC potionGlint} before each {@code IRETURN} of {@code hasEffect}. */
+    /** P6: {@code ALOAD 1; INVOKESTATIC potionBegin} first, and {@code INVOKESTATIC potionGlint} before each {@code IRETURN}. */
     private static byte[] potion(byte[] bytes, boolean live) {
         ClassNode node = Asm.read(bytes);
         MethodNode m = Asm.method(node, "hasEffect", "func_77636_d", "(Lnet/minecraft/item/ItemStack;)Z");
@@ -212,11 +212,13 @@ public final class ChangesTransformer implements IClassTransformer {
             Asm.LOG.warn("P6 potion glint: {}.hasEffect has no return; patch skipped, vanilla behavior kept.", POTION);
             return null;
         }
+        // The stack is read only at the first line: vanilla's ProGuard frames mark it TOP before the returns.
+        InsnList begin = new InsnList();
+        begin.add(new VarInsnNode(Opcodes.ALOAD, 1));
+        begin.add(new MethodInsnNode(Opcodes.INVOKESTATIC, HOOKS, "potionBegin", "(Lnet/minecraft/item/ItemStack;)V", false));
+        m.instructions.insert(begin);
         for (AbstractInsnNode r : returns) {
-            InsnList add = new InsnList();
-            add.add(new VarInsnNode(Opcodes.ALOAD, 1));
-            add.add(new MethodInsnNode(Opcodes.INVOKESTATIC, HOOKS, "potionGlint", "(ZLnet/minecraft/item/ItemStack;)Z", false));
-            m.instructions.insertBefore(r, add);
+            m.instructions.insertBefore(r, new MethodInsnNode(Opcodes.INVOKESTATIC, HOOKS, "potionGlint", "(Z)Z", false));
         }
         if (live) {
             appliedP6 = true;

@@ -98,6 +98,24 @@ public final class ChangesHooks {
     // ------------------------------------------------------------------------------------------
     // P6: potions lose their glint (1.19.4 removed PotionItem.isFoil, so only an enchanted potion shines).
 
+    /** P6's stack, stashed at the method's first line: vanilla's ProGuard frames drop the parameter before its returns. */
+    private static final ThreadLocal<ItemStack> POTION_STACK = new ThreadLocal<ItemStack>();
+
+    /** P6, from the first line of {@code ItemPotion.hasEffect}. */
+    public static void potionBegin(ItemStack stack) {
+        POTION_STACK.set(stack);
+    }
+
+    /** P6, before each return of {@code ItemPotion.hasEffect}: the stashed stack's answer. */
+    public static boolean potionGlint(boolean vanilla) {
+        ItemStack stack = POTION_STACK.get();
+        if (stack == null) {
+            return vanilla;
+        }
+        POTION_STACK.remove();
+        return potionGlint(vanilla, stack);
+    }
+
     /** {@code ItemPotion.hasEffect}. */
     public static boolean potionGlint(boolean vanilla, ItemStack stack) {
         return on(ModConfig.changes.potionGlint) ? stack.isItemEnchanted() : vanilla;
