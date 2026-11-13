@@ -52,6 +52,7 @@ public final class WildUpdateBackport {
         NetworkHandler.init();
         com.exiledradio.wildupdatebackport.gameevent.AvoidVibrationTrigger.register();
         com.exiledradio.wildupdatebackport.sculk.KillMobNearCatalystTrigger.register();
+        com.exiledradio.wildupdatebackport.frog.FrogContent.registerTriggers();
 
         // Client-only setup lives in a class a dedicated server never loads. The call names no client
         // type, so this class verifies on a server - a guarded method here would not.
@@ -65,6 +66,7 @@ public final class WildUpdateBackport {
         com.exiledradio.wildupdatebackport.common.Compat.init();
         com.exiledradio.wildupdatebackport.mangrove.MangroveContent.init();
         com.exiledradio.wildupdatebackport.mud.MudContent.init();
+        com.exiledradio.wildupdatebackport.frog.FrogContent.init();
     }
 
     @Mod.EventHandler

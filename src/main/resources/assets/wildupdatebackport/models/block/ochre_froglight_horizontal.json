@@ -1,0 +1,7 @@
+{
+  "parent": "wildupdatebackport:block/cube_column_horizontal",
+  "textures": {
+    "end": "wildupdatebackport:block/ochre_froglight_top",
+    "side": "wildupdatebackport:block/ochre_froglight_side"
+  }
+}

@@ -40,6 +40,7 @@ public final class ClientSetup {
         com.exiledradio.wildupdatebackport.boat.client.BoatClient.init();
         com.exiledradio.wildupdatebackport.gameevent.client.VibrationClient.init();
         com.exiledradio.wildupdatebackport.sculk.client.SculkClient.init();
+        com.exiledradio.wildupdatebackport.frog.client.FrogClient.init();
     }
 
     @SubscribeEvent

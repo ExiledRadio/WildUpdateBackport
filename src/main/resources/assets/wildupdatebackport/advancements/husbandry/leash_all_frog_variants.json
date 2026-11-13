@@ -1,0 +1,49 @@
+{
+  "parent": "wildupdatebackport:husbandry/tadpole_in_a_bucket",
+  "display": {
+    "icon": {
+      "item": "minecraft:lead"
+    },
+    "title": {
+      "translate": "advancements.wildupdatebackport.husbandry.leash_all_frog_variants.title"
+    },
+    "description": {
+      "translate": "advancements.wildupdatebackport.husbandry.leash_all_frog_variants.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "temperate": {
+      "trigger": "wildupdatebackport:leashed_frog",
+      "conditions": {
+        "variant": "minecraft:temperate"
+      }
+    },
+    "warm": {
+      "trigger": "wildupdatebackport:leashed_frog",
+      "conditions": {
+        "variant": "minecraft:warm"
+      }
+    },
+    "cold": {
+      "trigger": "wildupdatebackport:leashed_frog",
+      "conditions": {
+        "variant": "minecraft:cold"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "temperate"
+    ],
+    [
+      "warm"
+    ],
+    [
+      "cold"
+    ]
+  ]
+}

@@ -49,6 +49,7 @@ public final class SelfTestRunner {
             new BoatSelfTest(),
             new VibrationSelfTest(),
             new SculkSelfTest(),
+            new FrogSelfTest(),
     };
 
     private final List<String> wanted;
