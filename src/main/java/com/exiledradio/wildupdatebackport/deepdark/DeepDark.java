@@ -37,6 +37,32 @@ public final class DeepDark {
     private DeepDark() {
     }
 
+    /** The 1.18 terrain's Beardifier, whose BEARD_BOX field says it carves 1.19's beard_box (DD-5). */
+    private static final String TERRAIN_BEARDIFIER = "com.exiledradio.cavesandcliffsbackport.terrain.core.Beardifier";
+    private static Boolean beardBox;
+
+    /**
+     * @return true where the world's terrain carves an ancient city's {@code beard_box} in its own noise: 1.18 terrain
+     *     whose Beardifier has it (Backport Core's {@code TerrainAdaptation} has no way to ask yet). Elsewhere the city
+     *     carves its beard into the blocks itself.
+     */
+    public static boolean terrainCarvesCities(World world) {
+        if (!modern(world)) {
+            return false;
+        }
+        if (beardBox == null) {
+            boolean found;
+            try {
+                Class.forName(TERRAIN_BEARDIFIER, false, DeepDark.class.getClassLoader()).getField("BEARD_BOX");
+                found = true;
+            } catch (ReflectiveOperationException | LinkageError e) {
+                found = false;
+            }
+            beardBox = found;
+        }
+        return beardBox;
+    }
+
     /** @return how far 1.19's y moves in this world: 0 where the world goes down to y -64, else 59 */
     public static int shift(World world) {
         return WorldHeights.minY(world) < 0 ? 0 : SHIFT;

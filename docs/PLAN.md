@@ -281,7 +281,9 @@ absent (Rule 1).
 
 **Built** (stream DD, `docs/streams/deepdark.md`): 1.19.2's layouts piece for piece, its grid, and in 1.18 terrain its
 biome check, all against vanilla 1.19.2's own code; Core's template loader with a local 1.19 jigsaw assembler
-(`CORE_REQUESTS.md` DD-1 to DD-4).
+(`CORE_REQUESTS.md` DD-1 to DD-5). Later fixed (branch `wu-deepdark-terrain`, with Caves & Cliffs' `cc-beardbox`):
+1.19.2's `beard_box` in the terrain's noise, or carved into a 1.12 chunk's primer, and the sculk features run whole,
+once their neighbors exist. A census of the same city matches vanilla 1.19.2's open space and sculk.
 
 ### Lf. Look and feel
 

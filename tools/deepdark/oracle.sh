@@ -13,4 +13,4 @@ cp="$mc/client-named.jar;$mc/libs/*"
 # Run from the build folder: Minecraft writes logs/ into the working directory.
 cd "$out"
 "$jdk/bin/java" -Xmx2G -cp "$out;$cp" net.minecraft.world.level.levelgen.structure.AncientCityOracle119 \
-    "$here/oracle119.txt" 8 3 42 12345 -7346534567 8675309
+    "$here/oracle119.txt" 8 3 42 12345 -7346534567 8675309 852203380978249405

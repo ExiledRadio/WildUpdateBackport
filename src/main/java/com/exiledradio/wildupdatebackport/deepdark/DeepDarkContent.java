@@ -5,6 +5,7 @@ import com.exiledradio.backportcore.structure.JigsawPools;
 import com.exiledradio.backportcore.structure.ModernPalette;
 import com.exiledradio.backportcore.structure.ScatteredStructure;
 import com.exiledradio.backportcore.structure.Structures;
+import com.exiledradio.backportcore.structure.TerrainAdaptation;
 import com.exiledradio.wildupdatebackport.ModConfig;
 import com.exiledradio.wildupdatebackport.WildUpdateBackport;
 import com.exiledradio.wildupdatebackport.common.Content;
@@ -129,6 +130,14 @@ public final class DeepDarkContent {
         ScatteredStructure.register(Structures.ANCIENT_CITY,
                 world -> cities() && world.provider.getDimension() == 0 ? new AncientCityStructure() : null);
         StructureLocate.scattered("minecraft:ancient_cities", Structures.ANCIENT_CITY, null, "minecraft:ancient_city");
+        MinecraftForge.TERRAIN_GEN_BUS.register(new AncientCityStructure.PrimerBeard());
+        // 1.19's terrain_adaptation beard_box: a terrain that adapts to structures carves the city's cavern.
+        TerrainAdaptation.register(Structures.ANCIENT_CITY, TerrainAdaptation.Kind.BEARD_BOX, (world, cx, cz, out) -> {
+            ScatteredStructure s = ScatteredStructure.of(world, Structures.ANCIENT_CITY);
+            if (s instanceof AncientCityStructure) {
+                ((AncientCityStructure) s).startsNear(world, cx, cz, out);
+            }
+        });
     }
 
     /** @return the id the templates' loot tables are served under */

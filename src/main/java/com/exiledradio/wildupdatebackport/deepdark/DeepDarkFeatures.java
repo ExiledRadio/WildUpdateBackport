@@ -34,12 +34,14 @@ import java.util.Random;
  *   <li>{@code sculk_vein}: 204 to 250 tries, spread in the chunk, uniform from the bottom of the world to y 256, kept
  *       where the deep dark is; each a {@code MultifaceGrowthFeature} of sculk vein, search range 20, on floors, walls
  *       and ceilings of stone, andesite, diorite, granite, dripstone, calcite, tuff and deepslate, always spreading.</li>
- *   <li>{@code sculk_patch_deep_dark}: 256 tries, spread in the chunk, uniform from the bottom to y 256, scanned down up
- *       to 12 blocks through air to a solid block, then up one, kept where the deep dark is: stream S's
- *       {@link SculkPatch#DEEP_DARK}.</li>
+ *   <li>{@code sculk_patch_deep_dark}: 256 tries, spread in the chunk, uniform from the bottom to y 256, kept where
+ *       the deep dark is, each placed right there (no environment scan): stream S's {@link SculkPatch#DEEP_DARK},
+ *       which starts only in air or water beside a full block.</li>
  * </ul>
  * Heights are 1.19's, moved by {@link DeepDark#shift}. With Caves &amp; Cliffs' 1.18 terrain these run after its own
- * decoration (it places no sculk) rather than at their place in 1.19's feature order, with this populate random.
+ * decoration (it places no sculk) rather than at their place in 1.19's feature order. They run, with the city's sculk
+ * patches before them, once the chunks they can reach are generated ({@link DeepDarkPending}), from a random of the
+ * chunk's own.
  *
  * <p>{@link Spawns}: nothing spawns naturally in the deep dark (1.19's empty {@code MobSpawnSettings}). Spawners and
  * shriekers' wardens are not natural spawns.
@@ -53,90 +55,67 @@ public final class DeepDarkFeatures implements IWorldGenerator {
         if (world.provider.getDimension() != 0 || !DeepDarkContent.enabled() || !SculkContent.enabled() || SculkContent.veinBlock() == null) {
             return;
         }
+        DeepDarkPending pending = DeepDarkPending.of(world);
         int x0 = (chunkX << 4) + 8;
         int z0 = (chunkZ << 4) + 8;
-        boolean modern = DeepDark.modern(world);
-        if (!modern && !DeepDark.highGround(world.getBiomeProvider().getBiome(new BlockPos(x0 + 8, 0, z0 + 8), null))
-                && !DeepDark.highGround(world.getBiomeProvider().getBiome(new BlockPos(x0, 0, z0), null))
-                && !DeepDark.highGround(world.getBiomeProvider().getBiome(new BlockPos(x0 + 15, 0, z0 + 15), null))) {
-            return;
+        if (DeepDark.modern(world) || DeepDark.highGround(world.getBiomeProvider().getBiome(new BlockPos(x0 + 8, 0, z0 + 8), null))
+                || DeepDark.highGround(world.getBiomeProvider().getBiome(new BlockPos(x0, 0, z0), null))
+                || DeepDark.highGround(world.getBiomeProvider().getBiome(new BlockPos(x0 + 15, 0, z0 + 15), null))) {
+            pending.features(chunkX, chunkZ);
         }
+        pending.runReady(world, chunkX, chunkZ, DeepDarkFeatures::decorate);
+    }
+
+    /** A populate area's deep dark decoration, its chunks all generated: the city's patches, then the features. */
+    static void decorate(World world, int chunkX, int chunkZ, DeepDarkPending.Entry entry) {
+        Random random = chunkRandom(world.getSeed(), chunkX, chunkZ);
+        int x0 = (chunkX << 4) + 8;
+        int z0 = (chunkZ << 4) + 8;
         int shift = DeepDark.shift(world);
         int bottom = WorldHeights.minY(world) < 0 ? WorldHeights.minY(world) : -64;
         try (AutoCloseable full = WorldHeights.enterFullHeight()) {
-            QuietGen.run(world, () -> place(world, random, x0, z0, shift, bottom));
+            QuietGen.run(world, () -> {
+                for (BlockPos p : entry.patches) {
+                    SculkPatch.ANCIENT_CITY.place(world, random, p);
+                }
+                if (entry.features) {
+                    place(world, random, x0, z0, shift, bottom);
+                }
+            });
         } catch (Exception e) {
             throw e instanceof RuntimeException ? (RuntimeException) e : new IllegalStateException(e);
         }
+    }
+
+    /** A random of the chunk's own (Forge's populate seeding, salted), the same whenever its decoration runs. */
+    static Random chunkRandom(long worldSeed, int chunkX, int chunkZ) {
+        Random r = new Random(worldSeed);
+        long a = (r.nextLong() >> 2) + 1L;
+        long b = (r.nextLong() >> 2) + 1L;
+        return new Random((a * chunkX + b * chunkZ) ^ worldSeed ^ 0x5C01CDA4L);
     }
 
     private static void place(World world, Random random, int x0, int z0, int shift, int bottom) {
         int veins = 204 + random.nextInt(250 - 204 + 1);
         for (int i = 0; i < veins; i++) {
             BlockPos p = new BlockPos(x0 + random.nextInt(16), bottom + random.nextInt(256 - bottom + 1) + shift, z0 + random.nextInt(16));
-            if (inWorld(world, p) && generated(world, p, VEIN_REACH) && DeepDark.at(world, p)) {
+            if (inWorld(world, p) && DeepDark.at(world, p)) {
                 placeVein(world, p, random);
             }
         }
         for (int i = 0; i < 256; i++) {
             BlockPos p = new BlockPos(x0 + random.nextInt(16), bottom + random.nextInt(256 - bottom + 1) + shift, z0 + random.nextInt(16));
-            if (!inWorld(world, p) || !generated(world, p, PATCH_REACH)) {
+            if (!inWorld(world, p)) {
                 continue;
             }
-            BlockPos floor = scanDown(world, p);
-            if (floor != null) {
-                BlockPos origin = floor.up();
-                if (DeepDark.at(world, origin)) {
-                    SculkPatch.DEEP_DARK.place(world, random, origin);
-                }
+            if (DeepDark.at(world, p)) {
+                SculkPatch.DEEP_DARK.place(world, random, p);
             }
         }
-    }
-
-    /** How far a vein's search and spread reach: the search range and one more. */
-    static final int VEIN_REACH = SEARCH_RANGE + 2;
-    /** How far a patch's charges wander in practice (they spread a cursor at a time, 32 to a charge). */
-    public static final int PATCH_REACH = 16;
-
-    /**
-     * 1.19 decorates inside a 3 x 3 chunk region; 1.12.2 populates a half chunk in, with only the 2 x 2 chunks below
-     * it sure to exist. A try whose reach would generate a new chunk (cascading generation) is left out.
-     */
-    public static boolean generated(World world, BlockPos p, int reach) {
-        net.minecraft.world.chunk.IChunkProvider provider = world.getChunkProvider();
-        for (int cx = (p.getX() - reach) >> 4; cx <= (p.getX() + reach) >> 4; cx++) {
-            for (int cz = (p.getZ() - reach) >> 4; cz <= (p.getZ() + reach) >> 4; cz++) {
-                if (!provider.isChunkGeneratedAt(cx, cz)) {
-                    return false;
-                }
-            }
-        }
-        return true;
     }
 
     private static boolean inWorld(World world, BlockPos p) {
         return p.getY() > WorldHeights.minY(world) && p.getY() < WorldHeights.maxYExclusive(world);
-    }
-
-    /** {@code EnvironmentScanPlacement.scanningFor(DOWN, solid, ONLY_IN_AIR, 12)}: the solid block, or null. */
-    static BlockPos scanDown(World world, BlockPos start) {
-        BlockPos.MutableBlockPos p = new BlockPos.MutableBlockPos(start);
-        if (!world.isAirBlock(p)) {
-            return null;
-        }
-        for (int i = 0; i < 12; i++) {
-            if (world.getBlockState(p).getMaterial().isSolid()) {
-                return p.toImmutable();
-            }
-            p.move(EnumFacing.DOWN);
-            if (p.getY() <= WorldHeights.minY(world)) {
-                return null;
-            }
-            if (!world.isAirBlock(p) && !world.getBlockState(p).getMaterial().isSolid()) {
-                return null;
-            }
-        }
-        return world.getBlockState(p).getMaterial().isSolid() ? p.toImmutable() : null;
     }
 
     // ---- MultifaceGrowthFeature

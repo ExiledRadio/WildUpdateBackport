@@ -34,6 +34,7 @@ import net.minecraft.world.level.levelgen.structure.pools.StructurePoolElement;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
 import net.minecraft.world.level.storage.LevelStorageSource;
 
+import net.minecraft.world.level.levelgen.structure.TerrainAdjustment;
 import java.io.PrintWriter;
 import java.lang.reflect.Field;
 import java.nio.file.Files;
@@ -53,6 +54,48 @@ import java.util.Optional;
  * Arguments: out.txt regions pieces seeds...
  */
 public final class AncientCityOracle119 {
+    /**
+     * The terrain's beard around a city: Beardifier.forStructuresInChunk's pieces and junctions for a few chunks of
+     * it, and compute at points in them, as "beard seed cx cz x y z bits" (Double.doubleToLongBits).
+     */
+    static void dumpBeard(PrintWriter out, long seed, ChunkPos start, List<StructurePiece> pieces, TerrainAdjustment adjustment) {
+        int[][] offsets = {{0, 0}, {2, 1}, {-3, 0}, {1, -4}, {-5, 3}};
+        for (int[] o : offsets) {
+            ChunkPos chunk = new ChunkPos(start.x + o[0], start.z + o[1]);
+            int minX = chunk.getMinBlockX();
+            int minZ = chunk.getMinBlockZ();
+            it.unimi.dsi.fastutil.objects.ObjectArrayList<net.minecraft.world.level.levelgen.Beardifier.Rigid> rigids =
+                    new it.unimi.dsi.fastutil.objects.ObjectArrayList<>();
+            it.unimi.dsi.fastutil.objects.ObjectArrayList<net.minecraft.world.level.levelgen.structure.pools.JigsawJunction> junctions =
+                    new it.unimi.dsi.fastutil.objects.ObjectArrayList<>();
+            for (StructurePiece piece : pieces) {
+                if (!piece.isCloseToChunk(chunk, 12)) {
+                    continue;
+                }
+                PoolElementStructurePiece pp = (PoolElementStructurePiece) piece;
+                if (pp.getElement().getProjection() == net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool.Projection.RIGID) {
+                    rigids.add(new net.minecraft.world.level.levelgen.Beardifier.Rigid(pp.getBoundingBox(), adjustment, pp.getGroundLevelDelta()));
+                }
+                for (net.minecraft.world.level.levelgen.structure.pools.JigsawJunction j : pp.getJunctions()) {
+                    if (j.getSourceX() > minX - 12 && j.getSourceZ() > minZ - 12 && j.getSourceX() < minX + 15 + 12
+                            && j.getSourceZ() < minZ + 15 + 12) {
+                        junctions.add(j);
+                    }
+                }
+            }
+            net.minecraft.world.level.levelgen.Beardifier beard =
+                    new net.minecraft.world.level.levelgen.Beardifier(rigids.listIterator(), junctions.listIterator());
+            java.util.Random r = new java.util.Random(seed ^ chunk.toLong());
+            for (int i = 0; i < 64; i++) {
+                int x = minX + r.nextInt(16);
+                int y = -64 + r.nextInt(64);
+                int z = minZ + r.nextInt(16);
+                double v = beard.compute(new net.minecraft.world.level.levelgen.DensityFunction.SinglePointContext(x, y, z));
+                out.println("beard " + seed + " " + start.x + " " + start.z + " " + x + " " + y + " " + z + " " + Double.doubleToLongBits(v));
+            }
+        }
+    }
+
     public static void main(String[] args) throws Exception {
         SharedConstants.tryDetectVersion();
         Bootstrap.bootStrap();
@@ -109,6 +152,7 @@ public final class AncientCityOracle119 {
                                         + pp.getRotation().name() + " " + box.minX() + " " + box.minY() + " " + box.minZ() + " " + box.maxX()
                                         + " " + box.maxY() + " " + box.maxZ());
                             }
+                            dumpBeard(out, seed, c, pieces, city.terrainAdaptation());
                         }
                     }
                 }

@@ -363,15 +363,22 @@ piece against vanilla 1.19.2 (`tools/deepdark/oracle.sh`).
 
 **DD-3. Terrain adaptation and decoration in 1.18 terrain (Caves & Cliffs, through Core).**
 
-- `beard_box`: `TerrainAdaptation.Kind.BEARD_BOX` exists, but Caves & Cliffs' `StructureBeards` maps it to none.
-  1.19's Beardifier `BEARD_BOX` case: the vertical distance is measured to the box (`max(0, max(floor - y,
-  y - maxY))`), not to the floor. Until then DD clears each rigid piece's box and fills under its floor in the chunk.
+- `beard_box`: **done in Caves & Cliffs' branch `cc-beardbox`** (2026-11-13): `StructureBeards` maps
+  `TerrainAdaptation.Kind.BEARD_BOX` to a new `Beardifier.BEARD_BOX`, 1.19.2's formula and kernel, checked against
+  vanilla's Beardifier (`tools/terrain/beardbox119.sh`, 0 differences). DD registers the city with
+  `TerrainAdaptation` and its pieces are `AdaptingPiece`s (junctions included). Without that branch, DD carves the same
+  beard into the blocks itself (`CityBeard`).
 - The deep dark's `sculk_vein` and `sculk_patch_deep_dark` at their place in 1.19's feature order, with their
   per-feature seed. Caves & Cliffs' decorator lists them and skips them. Wanted: a way for a backport to supply a
   placed feature's placer to the generator's decorator by name (with the world and the feature's random). Until then
   DD places them from an `IWorldGenerator` after the generator's decoration.
 - `MapGenStructure.generateStructure` clips each chunk to y 1-255. `ScatteredStructure`'s driver could pass the world's
   full height (DD widens it in its own `StructureStart`).
+
+**DD-5. Ask whether the terrain does a terrain adaptation.** `TerrainAdaptation` has no way to ask whether a world's
+generator carves a given `Kind` (an older Caves & Cliffs logs `BEARD_BOX` as unsupported and skips it). DD checks by
+reflection for `Beardifier.BEARD_BOX` in Caves & Cliffs' terrain core (`DeepDark.terrainCarvesCities`). Wanted:
+`TerrainAdaptation.supported(World, Kind)`, answered by the world's generator.
 
 **DD-4. Biome music: Ancestry.** 1.19's deep dark plays `music.overworld.deep_dark` (*Ancestry*). This belongs with
 the shared biome music player stream Sw asks for (request 9). It would need to work for 1.18 terrain's 3D biome, and for a

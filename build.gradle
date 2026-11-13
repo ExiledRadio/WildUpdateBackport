@@ -90,6 +90,10 @@ jar {
     task.outputs.upToDateWhen { false }
     if (selftest) {
         task.systemProperty 'wildupdatebackport.selftest', selftest
+        // -PselftestNear=x,z: where the deep dark test looks for its ancient city from (default 0,0).
+        if (project.findProperty('selftestNear')) {
+            task.systemProperty 'wildupdatebackport.selftest.near', project.findProperty('selftestNear')
+        }
     }
 }
 

@@ -237,6 +237,17 @@ public final class CityLayout {
                             free.taken.add(new StructureBoundingBox(moved));
                             int childGround = childRigid ? parent.groundLevelDelta() - delta : candidate.groundLevelDelta();
                             CityPiece child = new CityPiece(candidate, childPos, childGround, r, moved);
+                            // The junctions, both ways: the terrain's beard follows them (1.19's Beardifier).
+                            int sourceGroundY;
+                            if (parentRigid) {
+                                sourceGroundY = parentMinY + connectorY;
+                            } else if (childRigid) {
+                                sourceGroundY = targetMinY + theirY;
+                            } else {
+                                sourceGroundY = at.getY() + delta / 2;
+                            }
+                            parent.addJunction(joint.getX(), sourceGroundY - connectorY + parent.groundLevelDelta(), joint.getZ());
+                            child.addJunction(at.getX(), sourceGroundY - theirY + childGround, at.getZ());
                             pieces.add(child);
                             if (depth + 1 <= MAX_DEPTH) {
                                 placing.addLast(new State(child, free, depth + 1));

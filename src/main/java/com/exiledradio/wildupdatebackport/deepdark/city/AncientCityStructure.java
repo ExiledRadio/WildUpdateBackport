@@ -7,16 +7,18 @@ import com.exiledradio.backportcore.terrain.WorldHeights;
 import com.exiledradio.wildupdatebackport.deepdark.DeepDark;
 import com.exiledradio.wildupdatebackport.deepdark.DeepDarkContent;
 import com.exiledradio.wildupdatebackport.deepdark.QuietGen;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.World;
+import net.minecraftforge.event.terraingen.ChunkGeneratorEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.StructureComponent;
 import net.minecraft.world.gen.structure.StructureStart;
 
 import java.util.List;
 import java.util.Random;
+import java.util.function.Consumer;
 
 /**
  * 1.19's ancient city: structure set {@code ancient_cities} ({@code RandomSpreadStructurePlacement(24, 8, LINEAR,
@@ -24,10 +26,12 @@ import java.util.Random;
  * world that starts at y 0), valid where the deep dark is at the stub's position (1.19's {@code Structure.isValidBiome}:
  * the noise biome of the stub's quart). Built from the populate step by Backport Core's scattered driver.
  *
- * <p>Terrain: 1.19 shapes it with {@code beard_box}, a cavern the city's boxes cut out of the noise. Neither 1.12.2's
- * terrain nor Caves &amp; Cliffs' 1.18.2 has it, so each chunk of the city is cleared to air in every rigid piece's box
- * above its floor and filled below it ({@link Start#generateStructure}) before the pieces are placed; the beard's
- * twelve-block falloff around the boxes is left out.
+ * <p>Terrain: 1.19 shapes it with {@code beard_box}, a cavern the city's boxes cut out of the noise: air through each
+ * rigid piece's box above its ground, ground under it, falling off past its sides, top and bottom, added to the
+ * terrain's density so that it opens into the caves around it. A terrain that adapts to structures (Backport Core's
+ * {@code TerrainAdaptation}, which {@link #startsNear} plans for) carves it in its own noise, as 1.19 does. Elsewhere
+ * (1.12.2's terrain, which has no density to add it to) {@link Start#generateStructure} carves the same beard into
+ * the blocks before the pieces are placed: {@link CityBeard}.
  */
 public final class AncientCityStructure extends ScatteredStructure {
 
@@ -63,6 +67,69 @@ public final class AncientCityStructure extends ScatteredStructure {
         return new BlockPos(p.getX() >> 2 << 2, p.getY() >> 2 << 2, p.getZ() >> 2 << 2);
     }
 
+    /** How far, in chunks, a city's pieces and their beard reach from its start chunk (116 blocks, 12 more, a piece). */
+    private static final int REACH_CHUNKS = 10;
+
+    /** True while this places starts (iterating its start map), during which a new chunk must not add to the map. */
+    private boolean building;
+
+    @Override
+    public synchronized boolean generateStructure(World world, Random random, ChunkPos chunk) {
+        this.building = true;
+        try {
+            return super.generateStructure(world, random, chunk);
+        } finally {
+            this.building = false;
+        }
+    }
+
+    /**
+     * Backport Core's terrain adaptation planner: every start whose box, grown by 12 blocks, reaches chunk (cx, cz),
+     * laid out (and kept) as the populate step will lay it out. Loads no chunks: the biome check reads the terrain's
+     * noise biome.
+     */
+    public void startsNear(World world, int cx, int cz, Consumer<StructureStart> out) {
+        this.world = world;
+        if (!DeepDarkContent.cities()) {
+            return;
+        }
+        ScatteredPlacement grid = placement();
+        int s = grid.spacing();
+        for (int gx = Math.floorDiv(cx - REACH_CHUNKS, s); gx <= Math.floorDiv(cx + REACH_CHUNKS, s); gx++) {
+            for (int gz = Math.floorDiv(cz - REACH_CHUNKS, s); gz <= Math.floorDiv(cz + REACH_CHUNKS, s); gz++) {
+                ChunkPos c = grid.candidate(world.getSeed(), gx * s, gz * s);
+                if (Math.abs(c.x - cx) > REACH_CHUNKS || Math.abs(c.z - cz) > REACH_CHUNKS) {
+                    continue;
+                }
+                long key = ChunkPos.asLong(c.x, c.z);
+                StructureStart start = this.structureMap.get(key);
+                if (start == null) {
+                    if (!canSpawnStructureAtCoords(c.x, c.z)) {
+                        continue;
+                    }
+                    if (this.building) {
+                        // A chunk generated while starts are placed (another mod's populate): the same layout, not kept.
+                        start = getStructureStart(c.x, c.z);
+                    } else {
+                        // Lays out every start within eight chunks, each from its own seed, as the populate step does.
+                        generate(world, c.x, c.z, null);
+                        start = this.structureMap.get(key);
+                    }
+                }
+                if (start != null && start.isSizeableStructure() && reaches(start.getBoundingBox(), cx, cz)) {
+                    out.accept(start);
+                }
+            }
+        }
+    }
+
+    /** Whether a box grown by 12 blocks (the beard's reach) reaches chunk (cx, cz). */
+    static boolean reaches(StructureBoundingBox b, int cx, int cz) {
+        int x = cx << 4;
+        int z = cz << 4;
+        return b != null && b.maxX + 12 >= x && b.minX - 12 <= x + 15 && b.maxZ + 12 >= z && b.minZ - 12 <= z + 15;
+    }
+
     @Override
     protected StructureStart getStructureStart(int chunkX, int chunkZ) {
         return new Start(this.world, chunkX, chunkZ);
@@ -86,7 +153,10 @@ public final class AncientCityStructure extends ScatteredStructure {
                     box.maxX, Math.max(box.maxY, WorldHeights.maxYExclusive(world) - 1), box.maxZ);
             try (AutoCloseable full = WorldHeights.enterFullHeight()) {
                 QuietGen.run(world, () -> {
-                    beardBox(world, chunk);
+                    // Where the chunk generator let the beard into its primer (PrimerBeard), this finds it there.
+                    if (!DeepDark.terrainCarvesCities(world)) {
+                        CityBeard.carve(world, this.components, chunk);
+                    }
                     super.generateStructure(world, random, chunk);
                 });
             } catch (RuntimeException e) {
@@ -95,42 +165,29 @@ public final class AncientCityStructure extends ScatteredStructure {
                 throw new IllegalStateException(e);
             }
         }
+    }
 
-        /** The stand-in for {@code beard_box} described on the class. */
-        void beardBox(World world, StructureBoundingBox chunk) {
-            IBlockState air = Blocks.AIR.getDefaultState();
-            IBlockState fill = DeepDarkContent.fillBlock();
-            BlockPos.MutableBlockPos p = new BlockPos.MutableBlockPos();
-            for (StructureComponent c : this.components) {
-                if (!(c instanceof CityPiece) || ((CityPiece) c).isFeature() || !((CityPiece) c).element().rigid()) {
-                    continue;
-                }
-                StructureBoundingBox b = c.getBoundingBox();
-                if (!b.intersectsWith(chunk)) {
-                    continue;
-                }
-                int floor = b.minY;
-                int x0 = Math.max(b.minX, chunk.minX), x1 = Math.min(b.maxX, chunk.maxX);
-                int z0 = Math.max(b.minZ, chunk.minZ), z1 = Math.min(b.maxZ, chunk.maxZ);
-                int bottom = Math.max(WorldHeights.minY(world) + 1, floor - 2);
-                for (int x = x0; x <= x1; x++) {
-                    for (int z = z0; z <= z1; z++) {
-                        for (int y = bottom; y <= b.maxY; y++) {
-                            p.setPos(x, y, z);
-                            IBlockState s = world.getBlockState(p);
-                            if (CityProcessors.cannotReplace(s.getBlock())) {
-                                continue;
-                            }
-                            if (y >= floor) {
-                                if (s.getMaterial() != net.minecraft.block.material.Material.AIR) {
-                                    world.setBlockState(p, air, 2);
-                                }
-                            } else if (!s.isFullCube()) {
-                                world.setBlockState(p, fill, 2);
-                            }
-                        }
-                    }
-                }
+    /**
+     * 1.12.2's terrain: each new chunk gets the beard of the cities that reach it in its primer, before the carvers
+     * and before anything is decorated ({@link CityBeard#carvePrimer}). Not in 1.18 terrain, which has no 1.12 primer
+     * for the depths and carves the beard itself.
+     */
+    public static final class PrimerBeard {
+        @SubscribeEvent
+        public void replaceBiomeBlocks(ChunkGeneratorEvent.ReplaceBiomeBlocks event) {
+            World world = event.getWorld();
+            if (world == null || world.isRemote || event.getPrimer() == null || world.provider.getDimension() != 0
+                    || !DeepDarkContent.cities() || DeepDark.modern(world)) {
+                return;
+            }
+            ScatteredStructure s = ScatteredStructure.of(world, com.exiledradio.backportcore.structure.Structures.ANCIENT_CITY);
+            if (!(s instanceof AncientCityStructure)) {
+                return;
+            }
+            List<StructureComponent> pieces = new java.util.ArrayList<StructureComponent>();
+            ((AncientCityStructure) s).startsNear(world, event.getX(), event.getZ(), start -> pieces.addAll(start.getComponents()));
+            if (!pieces.isEmpty()) {
+                CityBeard.carvePrimer(world, event.getPrimer(), event.getX(), event.getZ(), pieces);
             }
         }
     }

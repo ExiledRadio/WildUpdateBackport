@@ -9,8 +9,10 @@ import com.exiledradio.wildupdatebackport.common.Owners;
 import com.exiledradio.wildupdatebackport.deepdark.AncientCityLoot;
 import com.exiledradio.wildupdatebackport.deepdark.DeepDark;
 import com.exiledradio.wildupdatebackport.deepdark.DeepDarkContent;
+import com.exiledradio.wildupdatebackport.deepdark.DeepDarkPending;
 import com.exiledradio.wildupdatebackport.deepdark.DeepslateCopies;
 import com.exiledradio.wildupdatebackport.deepdark.city.AncientCityStructure;
+import com.exiledradio.wildupdatebackport.deepdark.city.CityBeard;
 import com.exiledradio.wildupdatebackport.deepdark.city.CityLayout;
 import com.exiledradio.wildupdatebackport.deepdark.city.CityPiece;
 import com.exiledradio.wildupdatebackport.items.ItemsContent;
@@ -125,6 +127,7 @@ public final class DeepDarkSelfTest implements SelfTest {
         int cands = 0, grid = 0, stubs = 0, valid = 0, worldCands = 0, worldSame = 0;
         boolean modern = DeepDark.modern(c.world);
         Map<String, List<String[]>> pieces = new LinkedHashMap<String, List<String[]>>();
+        Map<String, List<String[]>> beards = new LinkedHashMap<String, List<String[]>>();
         for (String line : Files.readAllLines(file.toPath(), StandardCharsets.UTF_8)) {
             String[] a = line.split(" ");
             if (a[0].equals("cand")) {
@@ -159,11 +162,12 @@ public final class DeepDarkSelfTest implements SelfTest {
                         c.fail("1.18 terrain: chunk " + cx + "," + cz + " vanilla " + a[7] + ", ours " + (starts ? "a city" : "none"));
                     }
                 }
-            } else if (a[0].equals("piece")) {
+            } else if (a[0].equals("piece") || a[0].equals("beard")) {
                 String key = a[1] + " " + a[2] + " " + a[3];
-                List<String[]> list = pieces.get(key);
+                Map<String, List<String[]>> into = a[0].equals("piece") ? pieces : beards;
+                List<String[]> list = into.get(key);
                 if (list == null) {
-                    pieces.put(key, list = new ArrayList<String[]>());
+                    into.put(key, list = new ArrayList<String[]>());
                 }
                 list.add(a);
             }
@@ -176,7 +180,7 @@ public final class DeepDarkSelfTest implements SelfTest {
             c.eq(worldCands, worldSame, "1.18 terrain: a city starts exactly where 1.19.2 has one (" + worldSame + "/" + worldCands + ")");
         }
 
-        int cities = 0, same = 0;
+        int cities = 0, same = 0, beardPoints = 0, beardSame = 0, beardNonZero = 0;
         for (Map.Entry<String, List<String[]>> e : pieces.entrySet()) {
             String[] k = e.getKey().split(" ");
             long seed = Long.parseLong(k[0]);
@@ -206,7 +210,28 @@ public final class DeepDarkSelfTest implements SelfTest {
             } else {
                 c.fail("layout seed " + seed + " chunk " + cx + "," + cz + ": " + first);
             }
+            // The terrain's beard_box around it (rigid boxes, ground level deltas, junctions), value for value.
+            List<String[]> beard = beards.get(e.getKey());
+            if (beard != null) {
+                for (String[] b : beard) {
+                    int x = Integer.parseInt(b[4]), y = Integer.parseInt(b[5]), z = Integer.parseInt(b[6]);
+                    double want2 = Double.longBitsToDouble(Long.parseLong(b[7]));
+                    double got = CityBeard.density(ours, x, y, z);
+                    beardPoints++;
+                    if (want2 != 0.0) {
+                        beardNonZero++;
+                    }
+                    if (Double.doubleToLongBits(got) == Double.doubleToLongBits(want2)) {
+                        beardSame++;
+                    } else if (beardPoints - beardSame <= 5) {
+                        c.fail("beard seed " + seed + " city " + cx + "," + cz + " at " + x + " " + y + " " + z + ": vanilla " + want2
+                                + " ours " + got);
+                    }
+                }
+            }
         }
+        c.ok(beardNonZero > 0, "oracle beard values read: " + beardPoints + " (" + beardNonZero + " in a beard)");
+        c.eq(beardPoints, beardSame, "the city's beard_box is 1.19.2's, value for value (" + beardSame + "/" + beardPoints + ")");
         c.ok(cities > 0, "oracle layouts read: " + cities);
         c.eq(cities, same, "every city lays out piece for piece as 1.19.2's (" + same + "/" + cities + ")");
     }
@@ -265,7 +290,7 @@ public final class DeepDarkSelfTest implements SelfTest {
 
     // ---- this world
 
-    private void world(Check c) {
+    private void world(Check c) throws Exception {
         WorldServer world = c.world;
         ScatteredStructure cities = ScatteredStructure.of(world, Structures.ANCIENT_CITY);
         c.ok(cities instanceof AncientCityStructure, "ancient cities are in the overworld");
@@ -273,7 +298,9 @@ public final class DeepDarkSelfTest implements SelfTest {
         c.eq(modern ? -27 : 32, AncientCityStructure.startY(world), "the start height (1.19's -27; moved up 59 in a 0-255 world)");
         BlockPos found;
         try {
-            found = StructureLocate.nearest(world, BlockPos.ORIGIN, "minecraft:ancient_city").pos;
+            String near = System.getProperty("wildupdatebackport.selftest.near", "0,0");
+            BlockPos from = new BlockPos(Integer.parseInt(near.split(",")[0].trim()), 0, Integer.parseInt(near.split(",")[1].trim()));
+            found = StructureLocate.nearest(world, from, "minecraft:ancient_city").pos;
         } catch (Exception e) {
             c.fail("/locate structure minecraft:ancient_city: " + e);
             return;
@@ -294,12 +321,21 @@ public final class DeepDarkSelfTest implements SelfTest {
         c.ok(layout.size() > 20, "the city has " + layout.size() + " pieces");
         int lo = modern ? -63 : 1, hi = modern ? 4 : 64;
         c.ok(all.minY >= lo && all.maxY < hi, "the city sits in y " + all.minY + "-" + all.maxY);
-        // Generate every chunk of it, and the ring around, so each is populated.
-        for (int x = (all.minX >> 4) - 1; x <= (all.maxX >> 4) + 1; x++) {
-            for (int z = (all.minZ >> 4) - 1; z <= (all.maxZ >> 4) + 1; z++) {
+        // Generate every chunk of it, and the rings around, so each is populated and its deep dark decoration (which
+        // waits for the chunks it can reach) runs.
+        for (int x = (all.minX >> 4) - 2; x <= (all.maxX >> 4) + 3; x++) {
+            for (int z = (all.minZ >> 4) - 2; z <= (all.maxZ >> 4) + 3; z++) {
                 world.getChunk(x, z);
             }
         }
+        DeepDarkPending pending = DeepDarkPending.of(world);
+        int waiting = 0;
+        for (int x = (all.minX - 8) >> 4; x <= (all.maxX - 8) >> 4; x++) {
+            for (int z = (all.minZ - 8) >> 4; z <= (all.maxZ - 8) >> 4; z++) {
+                waiting += pending.isWaiting(x, z) ? 1 : 0;
+            }
+        }
+        c.eq(0, waiting, "every chunk of the city got its deep dark decoration (" + pending.waiting() + " waiting at the edge)");
         Block reinforced = DeepDarkContent.reinforcedDeepslate();
         List<String> otherChests = new ArrayList<String>();
         int portal = 0, chests = 0, cityChests = 0, tiles = 0, shriekers = 0, summoners = 0, sculk = 0;
@@ -370,6 +406,68 @@ public final class DeepDarkSelfTest implements SelfTest {
                 "SELFTEST city at {}: {} pieces, box {}, portal {}, chests {}/{}, tiles {}, sculk {}, shriekers {}/{}", found, layout.size(), all,
                 portal, cityChests, chests, tiles, sculk, summoners, shriekers);
 
+        // The beard: where it carves past the pieces (beard_box: below minus squeeze(1)), no rock is left. 1.12.2's
+        // carve leaves none. 1.18 terrain keeps aquifer barriers and the like there, and dripstone grows into it
+        // afterwards, as 1.19 does: at the same blocks around the player's city on seed 852203380978249405, vanilla
+        // 1.19.2's own world has 327 rock in 28,863 (1.1%), ours 460 (1.6%).
+        int carved = 0, rock = 0;
+        Map<String, Integer> rocks = new LinkedHashMap<String, Integer>();
+        // The carved blocks, for tools/deepdark/census.py to look up in another world (vanilla's).
+        java.io.PrintWriter carvedOut = new java.io.PrintWriter(new File("beard-carved.txt"), "UTF-8");
+        for (BlockPos p : BlockPos.getAllInBoxMutable(new BlockPos(all.minX - 12, all.minY - 12, all.minZ - 12),
+                new BlockPos(all.maxX + 12, all.maxY + 12, all.maxZ + 12))) {
+            if ((p.getX() + p.getZ()) % 3 != 0) {
+                continue;
+            }
+            boolean inPiece = false;
+            for (CityPiece piece : layout) {
+                if (piece.getBoundingBox().isVecInside(p)) {
+                    inPiece = true;
+                    break;
+                }
+            }
+            if (inPiece || CityBeard.density(layout, p.getX(), p.getY(), p.getZ()) >= -(0.5 - 1.0 / 24.0)) {
+                continue;
+            }
+            carved++;
+            if (carvedOut != null) {
+                carvedOut.println(p.getX() + " " + p.getY() + " " + p.getZ());
+            }
+            IBlockState s = world.getBlockState(p);
+            String n = String.valueOf(s.getBlock().getRegistryName());
+            if (s.isFullCube() && !n.contains("sculk") && !n.contains("ore") && !n.contains("dripstone")
+                    && s.getMaterial() != net.minecraft.block.material.Material.WATER) {
+                rock++;
+                rocks.merge(n, 1, Integer::sum);
+            }
+        }
+        carvedOut.close();
+        com.exiledradio.wildupdatebackport.WildUpdateBackport.LOGGER.info("SELFTEST beard carves {} blocks past the pieces, rock {} {}",
+                carved, rock, rocks);
+        c.ok(carved > 100 && (modern ? rock * 25 <= carved : rock == 0), "the city's beard_box carves its cavern: " + carved
+                + " blocks past the pieces, " + rock + " rock " + rocks);
+
+        // Sculk over the floors around it: the first block under open space, in the city's area.
+        int floors = 0, sculkFloors = 0;
+        for (int x = all.minX; x <= all.maxX; x++) {
+            for (int z = all.minZ; z <= all.maxZ; z++) {
+                boolean open = false;
+                for (int y = all.maxY + 12; y >= all.minY - 4; y--) {
+                    IBlockState s = world.getBlockState(new BlockPos(x, y, z));
+                    if (s.getMaterial() == net.minecraft.block.material.Material.AIR) {
+                        open = true;
+                    } else if (open && s.isFullCube()) {
+                        floors++;
+                        sculkFloors += s.getBlock() == SculkContent.sculkBlock() ? 1 : 0;
+                        break;
+                    }
+                }
+            }
+        }
+        com.exiledradio.wildupdatebackport.WildUpdateBackport.LOGGER.info("SELFTEST floors {}, sculk {} ({}%)", floors, sculkFloors,
+                100 * sculkFloors / Math.max(1, floors));
+        c.ok(floors > 0 && sculkFloors * 100 >= floors * 15, "sculk covers the floors around the city: " + sculkFloors + "/" + floors);
+
         // The deep dark: no natural spawns at the stub.
         EntityZombie zombie = new EntityZombie(world);
         BlockPos at = stub.position;
@@ -388,13 +486,32 @@ public final class DeepDarkSelfTest implements SelfTest {
         }
 
         // Sculk veins and patches in the deep dark around the city's chunks.
-        int veins = 0;
+        int veins = 0, floating = 0;
+        BlockPos firstFloating = null;
         for (BlockPos p : BlockPos.getAllInBoxMutable(new BlockPos(all.minX - 16, lo, all.minZ - 16), new BlockPos(all.maxX + 16, all.maxY, all.maxZ + 16))) {
             if (world.getBlockState(p).getBlock() == SculkContent.veinBlock()) {
                 veins++;
+                // Floating: no face of it rests on anything (the rock it grew on was carved away afterwards).
+                int mask = com.exiledradio.wildupdatebackport.sculk.BlockSculkVein.faces(world, p);
+                boolean held = false;
+                for (net.minecraft.util.EnumFacing f : net.minecraft.util.EnumFacing.VALUES) {
+                    if (com.exiledradio.wildupdatebackport.sculk.BlockSculkVein.has(mask, f)
+                            && com.exiledradio.wildupdatebackport.sculk.BlockSculkVein.canAttachTo(world, f, p.offset(f))) {
+                        held = true;
+                        break;
+                    }
+                }
+                if (!held) {
+                    floating++;
+                    if (firstFloating == null) {
+                        firstFloating = p.toImmutable();
+                    }
+                }
             }
         }
         c.ok(veins > 0, "sculk veins grow in the deep dark: " + veins);
+        c.ok(floating * 200 <= veins, "sculk veins rest on something: " + floating + " of " + veins + " float"
+                + (firstFloating == null ? "" : " (first at " + firstFloating + ")"));
         com.exiledradio.wildupdatebackport.WildUpdateBackport.LOGGER.info("SELFTEST veins {}", veins);
     }
 }
