@@ -1,6 +1,5 @@
 package com.exiledradio.wildupdatebackport.warden.client;
 
-import com.exiledradio.wildupdatebackport.ModConfig;
 import com.exiledradio.wildupdatebackport.WildUpdateBackport;
 import com.exiledradio.wildupdatebackport.warden.DarknessFactor;
 import com.exiledradio.wildupdatebackport.warden.WardenContent;
@@ -99,7 +98,7 @@ public final class DarknessClient {
     }
 
     private static float scale() {
-        return (float) MathHelper.clamp(ModConfig.warden.darknessEffectScale, 0.0D, 1.0D);
+        return MathHelper.clamp(com.exiledradio.wildupdatebackport.lookfeel.LookAndFeel.darknessScale(), 0.0F, 1.0F);
     }
 
     // --- the light -------------------------------------------------------------------------------------------------

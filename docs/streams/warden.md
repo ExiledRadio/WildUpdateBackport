@@ -14,7 +14,7 @@ and `MobEffectInstance.FactorData`; the model and animations from `WardenModel`,
     shrieker summons it, gives Darkness to players nearby, and digs back down after a minute without disturbance.
     500 health, drops a sculk catalyst. Parrots imitate it. Spawn egg in Miscellaneous.
 *   Added the **Darkness** effect: the world's light pulses darker and the fog closes in. Night Vision does not lift
-    it. *Darkness Pulsing* (client setting `warden.darknessEffectScale`, 0 to 1) tones the pulse down.
+    it. *Darkness Pulsing* (the Accessibility slider from stream Lf, `LookAndFeel.darknessScale()`, 0 to 1) tones the pulse down.
 
 ## How it works
 

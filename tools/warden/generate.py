@@ -49,8 +49,6 @@ lines = [
     "death.attack.sonic_boom=%s" % assets.name("death.attack.sonic_boom"),
     "death.attack.sonic_boom.player=%s" % assets.name("death.attack.sonic_boom.player"),
     "death.attack.sonic_boom.item=%s" % assets.name("death.attack.sonic_boom.item"),
-    "config.%s.warden.darknessEffectScale=%s" % (M, assets.name("options.darknessEffectScale")),
-    "config.%s.warden.darknessEffectScale.tooltip=%s (0 to 1)" % (M, assets.name("options.darknessEffectScale.tooltip")),
 ]
 lines += assets.subtitle_lines(events)
 assets.merge_lang("warden", lines)
