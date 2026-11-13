@@ -54,6 +54,7 @@ public final class SelfTestRunner {
             new ItemsSelfTest(),
             new WardenSelfTest(),
             new LookFeelSelfTest(),
+            new SwampSelfTest(),
     };
 
     private final List<String> wanted;

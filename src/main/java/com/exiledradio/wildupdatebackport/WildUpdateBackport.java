@@ -79,6 +79,11 @@ public final class WildUpdateBackport {
     }
 
     @Mod.EventHandler
+    public void serverAboutToStart(net.minecraftforge.fml.common.event.FMLServerAboutToStartEvent event) {
+        com.exiledradio.wildupdatebackport.swamp.SwampContent.applyPlacement();
+    }
+
+    @Mod.EventHandler
     public void serverStarting(FMLServerStartingEvent event) {
     }
 
