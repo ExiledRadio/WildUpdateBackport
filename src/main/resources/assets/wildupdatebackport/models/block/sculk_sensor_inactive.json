@@ -1,0 +1,6 @@
+{
+  "parent": "wildupdatebackport:block/sculk_sensor",
+  "textures": {
+    "tendrils": "wildupdatebackport:block/sculk_sensor_tendril_inactive"
+  }
+}

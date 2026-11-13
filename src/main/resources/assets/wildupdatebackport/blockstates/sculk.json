@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "normal": [
+      {
+        "model": "wildupdatebackport:sculk"
+      },
+      {
+        "model": "wildupdatebackport:sculk_mirrored"
+      },
+      {
+        "model": "wildupdatebackport:sculk",
+        "y": 180
+      },
+      {
+        "model": "wildupdatebackport:sculk_mirrored",
+        "y": 180
+      }
+    ]
+  }
+}

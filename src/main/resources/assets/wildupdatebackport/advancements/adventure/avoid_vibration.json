@@ -1,0 +1,28 @@
+{
+  "parent": "minecraft:adventure/root",
+  "display": {
+    "icon": {
+      "item": "wildupdatebackport:sculk_sensor"
+    },
+    "title": {
+      "translate": "advancements.wildupdatebackport.avoid_vibration.title"
+    },
+    "description": {
+      "translate": "advancements.wildupdatebackport.avoid_vibration.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "avoid_vibration": {
+      "trigger": "wildupdatebackport:avoid_vibration"
+    }
+  },
+  "requirements": [
+    [
+      "avoid_vibration"
+    ]
+  ]
+}

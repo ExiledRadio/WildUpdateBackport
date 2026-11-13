@@ -1,0 +1,10 @@
+{
+  "parent": "wildupdatebackport:block/template_sculk_shrieker",
+  "textures": {
+    "bottom": "wildupdatebackport:block/sculk_shrieker_bottom",
+    "inner_top": "wildupdatebackport:block/sculk_shrieker_inner_top",
+    "particle": "wildupdatebackport:block/sculk_shrieker_bottom",
+    "side": "wildupdatebackport:block/sculk_shrieker_side",
+    "top": "wildupdatebackport:block/sculk_shrieker_top"
+  }
+}

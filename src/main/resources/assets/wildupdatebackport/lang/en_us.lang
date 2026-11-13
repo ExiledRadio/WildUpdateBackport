@@ -94,3 +94,24 @@ item.wildupdatebackport.dark_oak_chest_boat.name=Dark Oak Boat with Chest
 item.wildupdatebackport.mangrove_chest_boat.name=Mangrove Boat with Chest
 entity.wildupdatebackport.boat.name=Boat
 entity.wildupdatebackport.chest_boat.name=Boat with Chest
+
+# --- sculk ---
+tile.wildupdatebackport.sculk.name=Sculk
+tile.wildupdatebackport.sculk_vein.name=Sculk Vein
+tile.wildupdatebackport.sculk_catalyst.name=Sculk Catalyst
+tile.wildupdatebackport.sculk_sensor.name=Sculk Sensor
+tile.wildupdatebackport.sculk_shrieker.name=Sculk Shrieker
+advancements.wildupdatebackport.kill_mob_near_sculk_catalyst.title=It Spreads
+advancements.wildupdatebackport.kill_mob_near_sculk_catalyst.description=Kill a mob near a Sculk Catalyst
+advancements.wildupdatebackport.avoid_vibration.title=Sneak 100
+advancements.wildupdatebackport.avoid_vibration.description=Sneak near a Sculk Sensor or Warden to prevent it from detecting you
+subtitles.wildupdatebackport.block.sculk.charge=Sculk bubbles
+subtitles.wildupdatebackport.block.sculk.spread=Sculk spreads
+subtitles.wildupdatebackport.block.sculk_catalyst.bloom=Sculk Catalyst blooms
+subtitles.wildupdatebackport.block.sculk_sensor.clicking=Sculk Sensor starts clicking
+subtitles.wildupdatebackport.block.sculk_sensor.clicking_stop=Sculk Sensor stops clicking
+subtitles.wildupdatebackport.block.sculk_shrieker.shriek=Sculk Shrieker shrieks
+subtitles.wildupdatebackport.entity.warden.listening_angry=Warden takes notice angrily
+subtitles.wildupdatebackport.entity.warden.nearby_close=Warden approaches
+subtitles.wildupdatebackport.entity.warden.nearby_closer=Warden advances
+subtitles.wildupdatebackport.entity.warden.nearby_closest=Warden draws close

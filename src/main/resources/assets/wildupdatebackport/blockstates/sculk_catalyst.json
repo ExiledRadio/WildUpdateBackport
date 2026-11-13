@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "bloom=false": {
+      "model": "wildupdatebackport:sculk_catalyst"
+    },
+    "bloom=true": {
+      "model": "wildupdatebackport:sculk_catalyst_bloom"
+    }
+  }
+}

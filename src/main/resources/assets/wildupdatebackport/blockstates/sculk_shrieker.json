@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "can_summon=false": {
+      "model": "wildupdatebackport:sculk_shrieker"
+    },
+    "can_summon=true": {
+      "model": "wildupdatebackport:sculk_shrieker_can_summon"
+    }
+  }
+}
