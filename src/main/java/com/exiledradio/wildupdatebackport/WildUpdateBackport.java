@@ -70,6 +70,7 @@ public final class WildUpdateBackport {
         com.exiledradio.wildupdatebackport.frog.FrogContent.init();
         com.exiledradio.wildupdatebackport.allay.AllayContent.init();
         com.exiledradio.wildupdatebackport.items.ItemsContent.init();
+        com.exiledradio.wildupdatebackport.warden.WardenContent.init();
     }
 
     @Mod.EventHandler

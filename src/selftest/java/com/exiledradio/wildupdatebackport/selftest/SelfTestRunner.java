@@ -52,6 +52,7 @@ public final class SelfTestRunner {
             new FrogSelfTest(),
             new AllaySelfTest(),
             new ItemsSelfTest(),
+            new WardenSelfTest(),
     };
 
     private final List<String> wanted;

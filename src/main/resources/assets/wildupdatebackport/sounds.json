@@ -2180,5 +2180,190 @@
         "stream": true
       }
     ]
+  },
+  "entity.warden.agitated": {
+    "sounds": [
+      "wildupdatebackport:mob/warden/agitated_1",
+      "wildupdatebackport:mob/warden/agitated_2",
+      "wildupdatebackport:mob/warden/agitated_3",
+      "wildupdatebackport:mob/warden/agitated_4",
+      "wildupdatebackport:mob/warden/agitated_5",
+      "wildupdatebackport:mob/warden/agitated_6"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.warden.agitated"
+  },
+  "entity.warden.ambient": {
+    "sounds": [
+      "wildupdatebackport:mob/warden/ambient_1",
+      "wildupdatebackport:mob/warden/ambient_2",
+      "wildupdatebackport:mob/warden/ambient_3",
+      "wildupdatebackport:mob/warden/ambient_4",
+      "wildupdatebackport:mob/warden/ambient_5",
+      "wildupdatebackport:mob/warden/ambient_6",
+      "wildupdatebackport:mob/warden/ambient_7",
+      "wildupdatebackport:mob/warden/ambient_8",
+      "wildupdatebackport:mob/warden/ambient_9",
+      "wildupdatebackport:mob/warden/ambient_10",
+      "wildupdatebackport:mob/warden/ambient_11",
+      "wildupdatebackport:mob/warden/ambient_12"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.warden.ambient"
+  },
+  "entity.warden.angry": {
+    "sounds": [
+      "wildupdatebackport:mob/warden/angry_1",
+      "wildupdatebackport:mob/warden/angry_2",
+      "wildupdatebackport:mob/warden/angry_3",
+      "wildupdatebackport:mob/warden/angry_4",
+      "wildupdatebackport:mob/warden/angry_5",
+      "wildupdatebackport:mob/warden/angry_6"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.warden.angry"
+  },
+  "entity.warden.attack_impact": {
+    "sounds": [
+      "wildupdatebackport:mob/warden/attack_impact_1",
+      "wildupdatebackport:mob/warden/attack_impact_2"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.warden.attack_impact"
+  },
+  "entity.warden.death": {
+    "sounds": [
+      "wildupdatebackport:mob/warden/death_1",
+      "wildupdatebackport:mob/warden/death_2"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.warden.death"
+  },
+  "entity.warden.dig": {
+    "sounds": [
+      "wildupdatebackport:mob/warden/dig"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.warden.dig"
+  },
+  "entity.warden.emerge": {
+    "sounds": [
+      "wildupdatebackport:mob/warden/emerge"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.warden.emerge"
+  },
+  "entity.warden.heartbeat": {
+    "sounds": [
+      "wildupdatebackport:mob/warden/heartbeat_1",
+      "wildupdatebackport:mob/warden/heartbeat_2",
+      "wildupdatebackport:mob/warden/heartbeat_3",
+      "wildupdatebackport:mob/warden/heartbeat_4"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.warden.heartbeat"
+  },
+  "entity.warden.hurt": {
+    "sounds": [
+      "wildupdatebackport:mob/warden/hurt_1",
+      "wildupdatebackport:mob/warden/hurt_2",
+      "wildupdatebackport:mob/warden/hurt_3",
+      "wildupdatebackport:mob/warden/hurt_4"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.warden.hurt"
+  },
+  "entity.warden.listening": {
+    "sounds": [
+      "wildupdatebackport:mob/warden/listening_1",
+      "wildupdatebackport:mob/warden/listening_2",
+      "wildupdatebackport:mob/warden/listening_3",
+      "wildupdatebackport:mob/warden/listening_4",
+      "wildupdatebackport:mob/warden/listening_5"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.warden.listening"
+  },
+  "entity.warden.roar": {
+    "sounds": [
+      "wildupdatebackport:mob/warden/roar_1",
+      "wildupdatebackport:mob/warden/roar_2",
+      "wildupdatebackport:mob/warden/roar_3",
+      "wildupdatebackport:mob/warden/roar_4",
+      "wildupdatebackport:mob/warden/roar_5"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.warden.roar"
+  },
+  "entity.warden.sniff": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:mob/warden/sniff_1",
+        "volume": 0.75
+      },
+      {
+        "name": "wildupdatebackport:mob/warden/sniff_2",
+        "volume": 0.75
+      },
+      {
+        "name": "wildupdatebackport:mob/warden/sniff_3",
+        "volume": 0.75
+      },
+      {
+        "name": "wildupdatebackport:mob/warden/sniff_4",
+        "volume": 0.75
+      }
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.warden.sniff"
+  },
+  "entity.warden.sonic_boom": {
+    "sounds": [
+      "wildupdatebackport:mob/warden/sonic_boom1",
+      "wildupdatebackport:mob/warden/sonic_boom2",
+      "wildupdatebackport:mob/warden/sonic_boom3",
+      "wildupdatebackport:mob/warden/sonic_boom4"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.warden.sonic_boom"
+  },
+  "entity.warden.sonic_charge": {
+    "sounds": [
+      "wildupdatebackport:mob/warden/sonic_charge1",
+      "wildupdatebackport:mob/warden/sonic_charge2",
+      "wildupdatebackport:mob/warden/sonic_charge3",
+      "wildupdatebackport:mob/warden/sonic_charge4"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.warden.sonic_charge"
+  },
+  "entity.warden.step": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:mob/warden/step_1",
+        "volume": 0.3
+      },
+      {
+        "name": "wildupdatebackport:mob/warden/step_2",
+        "volume": 0.3
+      },
+      {
+        "name": "wildupdatebackport:mob/warden/step_3",
+        "volume": 0.3
+      },
+      {
+        "name": "wildupdatebackport:mob/warden/step_4",
+        "volume": 0.3
+      }
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.warden.step"
+  },
+  "entity.warden.tendril_clicks": {
+    "sounds": [
+      "wildupdatebackport:mob/warden/tendril_clicks_1",
+      "wildupdatebackport:mob/warden/tendril_clicks_2",
+      "wildupdatebackport:mob/warden/tendril_clicks_3",
+      "wildupdatebackport:mob/warden/tendril_clicks_4",
+      "wildupdatebackport:mob/warden/tendril_clicks_5",
+      "wildupdatebackport:mob/warden/tendril_clicks_6"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.warden.tendril_clicks"
+  },
+  "entity.parrot.imitate.warden": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:entity.warden.tendril_clicks",
+        "pitch": 2.0,
+        "type": "event",
+        "volume": 0.8
+      }
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.parrot.imitate.warden"
   }
 }

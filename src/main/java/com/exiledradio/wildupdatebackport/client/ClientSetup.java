@@ -43,6 +43,7 @@ public final class ClientSetup {
         com.exiledradio.wildupdatebackport.frog.client.FrogClient.init();
         com.exiledradio.wildupdatebackport.allay.client.AllayClient.init();
         com.exiledradio.wildupdatebackport.items.client.ItemsClient.init();
+        com.exiledradio.wildupdatebackport.warden.client.WardenClient.init();
     }
 
     @SubscribeEvent
