@@ -592,7 +592,7 @@ public final class SculkSelfTest implements SelfTest {
             for (int level = 2; level <= 4; level++) {
                 this.shrieker.onEntityWalk(world, at, player);
                 c.eq(level, WardenSpawnTracker.of(player).warningLevel(), "warning level " + level);
-                // The response (sound, or a warden at 4: none here without stream W) must not fail.
+                // The response (sound, or a warden at 4 when stream W is built) must not fail.
                 this.shrieker.updateTick(world, at, world.getBlockState(at), world.rand);
                 for (int i = 0; i < 200; i++) {
                     WardenSpawnTracker.tick(player);
@@ -606,6 +606,20 @@ public final class SculkSelfTest implements SelfTest {
                 WardenSpawnTracker.tick(player);
             }
             c.eq(3, WardenSpawnTracker.of(player).warningLevel(), "12000 ticks later the level is 3");
+            // With stream W built, the level-4 shrieks above summoned wardens; a warden within 48 blocks stops
+            // every warning (1.19's hasNearbyWarden), so take them away before the next ones.
+            List<Entity> wardens = new ArrayList<Entity>();
+            for (Entity e : world.getEntitiesWithinAABB(Entity.class, new AxisAlignedBB(at).grow(24.0D))) {
+                if (TileSculkShrieker.WARDEN.equals(net.minecraft.entity.EntityList.getKey(e))) {
+                    wardens.add(e);
+                }
+            }
+            if (net.minecraftforge.fml.common.registry.ForgeRegistries.ENTITIES.containsKey(TileSculkShrieker.WARDEN)) {
+                c.ok(!wardens.isEmpty(), "a level-4 shriek summons a warden (stream W)");
+            }
+            for (Entity e : wardens) {
+                world.removeEntityDangerously(e);
+            }
             // Another player near shares the highest level.
             EntityPlayerMP other = Players.real(world, "shrieker2");
             other.setPosition(at.getX() + 3.5D, at.getY(), at.getZ() + 0.5D);
