@@ -68,6 +68,13 @@ public final class AllaySelfTest implements SelfTest {
         // attributes and size
         BlockPos area = c.area();
         BlockPos at = area.add(8, 2, 8);
+        // World.updateEntityWithOptionalForce skips an entity unless every chunk within 32 blocks is loaded; whether
+        // the area's neighbors still are depends on chunk unloading, so load them.
+        for (int dx = -3; dx <= 3; dx++) {
+            for (int dz = -3; dz <= 3; dz++) {
+                world.getChunk(at.add(dx * 16, 0, dz * 16));
+            }
+        }
         EntityAllay allay = spawn(world, at);
         c.eq(20.0D, allay.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).getBaseValue(), "health 20");
         c.eq(0.1D, round(allay.getEntityAttribute(SharedMonsterAttributes.FLYING_SPEED).getBaseValue()), "flying speed 0.1");

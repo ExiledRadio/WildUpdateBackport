@@ -1,0 +1,7 @@
+{
+  "parent": "wildupdatebackport:block/door_bottom_right",
+  "textures": {
+    "bottom": "blocks/door_birch_lower",
+    "top": "blocks/door_birch_upper"
+  }
+}

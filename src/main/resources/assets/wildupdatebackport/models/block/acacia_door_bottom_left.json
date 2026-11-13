@@ -1,0 +1,7 @@
+{
+  "parent": "wildupdatebackport:block/door_bottom_left",
+  "textures": {
+    "bottom": "blocks/door_acacia_lower",
+    "top": "blocks/door_acacia_upper"
+  }
+}

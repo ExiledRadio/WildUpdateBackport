@@ -144,6 +144,73 @@ public final class ModConfig {
         @Config.Comment("The smaller 1.19.x changes to existing blocks, items and mobs. Off, all of them are left as 1.12.2 has them.")
         @Config.LangKey("config.wildupdatebackport.changes.enabled")
         public boolean enabled = true;
+
+        @Config.RequiresMcRestart
+        @Config.Comment("Minecarts with chest, furnace, TNT and hopper drop themselves when broken and are crafted shapeless (1.19).")
+        @Config.LangKey("config.wildupdatebackport.changes.minecarts")
+        public boolean minecarts = true;
+
+        @Config.Comment("Ores and spawners blown up by TNT a player lit drop experience (1.19).")
+        @Config.LangKey("config.wildupdatebackport.changes.explosionExperience")
+        public boolean explosionExperience = true;
+
+        @Config.RequiresMcRestart
+        @Config.Comment("Iron golem and snow golem spawn eggs (1.19.3).")
+        @Config.LangKey("config.wildupdatebackport.changes.golemSpawnEggs")
+        public boolean golemSpawnEggs = true;
+
+        @Config.Comment("Creepers can be ignited with a fire charge (1.19.3).")
+        @Config.LangKey("config.wildupdatebackport.changes.creeperFireCharge")
+        public boolean creeperFireCharge = true;
+
+        @Config.Comment("An enderman's carried block drops as if mined with a Silk Touch tool (1.19.3).")
+        @Config.LangKey("config.wildupdatebackport.changes.endermanBlockDrops")
+        public boolean endermanBlockDrops = true;
+
+        @Config.RequiresWorldRestart
+        @Config.Comment("Rabbits always drop one raw rabbit, cooked when on fire (1.19.3).")
+        @Config.LangKey("config.wildupdatebackport.changes.rabbitDrops")
+        public boolean rabbitDrops = true;
+
+        @Config.Comment("Playing jukeboxes show notes, give a redstone signal of 15, and take discs from hoppers and droppers (1.19.4).")
+        @Config.LangKey("config.wildupdatebackport.changes.jukeboxes")
+        public boolean jukeboxes = true;
+
+        @Config.Comment("Using a chestplate, elytra or other armor swaps it with what is worn (1.19.4).")
+        @Config.LangKey("config.wildupdatebackport.changes.armorSwap")
+        public boolean armorSwap = true;
+
+        @Config.Comment("Foals' health, speed and jump vary around their parents' average (1.19.4).")
+        @Config.LangKey("config.wildupdatebackport.changes.foalStats")
+        public boolean foalStats = true;
+
+        @Config.RequiresMcRestart
+        @Config.Comment("The effect colors of potions and tipped arrows of 1.19.4.")
+        @Config.LangKey("config.wildupdatebackport.changes.potionColors")
+        public boolean potionColors = true;
+
+        @Setting.Client
+        @Config.Comment("Potions have no enchantment glint unless enchanted (1.19.4).")
+        @Config.LangKey("config.wildupdatebackport.changes.potionGlint")
+        public boolean potionGlint = true;
+
+        @Setting.Client
+        @Config.RequiresMcRestart
+        @Config.Comment("The tops of doors no longer flip when they open (1.19's door models).")
+        @Config.LangKey("config.wildupdatebackport.changes.doorModels")
+        public boolean doorModels = true;
+
+        @Config.Comment("Opening shulker boxes pop the blocks attached to their open faces (1.19.3).")
+        @Config.LangKey("config.wildupdatebackport.changes.shulkerBoxes")
+        public boolean shulkerBoxes = true;
+
+        @Config.Comment("Endermen and skeletons spawn in the Nether at light level 7 and below (1.19.3).")
+        @Config.LangKey("config.wildupdatebackport.changes.netherSpawnLight")
+        public boolean netherSpawnLight = true;
+
+        @Config.Comment("Scaffolding burns in a furnace as long as bamboo (1.19).")
+        @Config.LangKey("config.wildupdatebackport.changes.scaffoldingFuel")
+        public boolean scaffoldingFuel = true;
     }
 
     public static final class Swamp {

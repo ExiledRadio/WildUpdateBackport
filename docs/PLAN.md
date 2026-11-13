@@ -316,8 +316,10 @@ Allowed wherever vanilla parity needs them (the family rule of 2026-11-07): our 
 package `com.exiledradio.wildupdatebackport.asm`, one transformer per patch, each documented in
 `docs/PATCHES.md` (target class and method by SRG and MCP name, what changes, why no event does it), no
 MixinBooter, written to coexist with Fluidlogged API's transformers. Everything an event or a subclass can
-do is still done that way. Planned patches: the five listed under C; Darkness's lightmap if the patch-free
-version proves visibly different from 1.19's (decided in W).
+do is still done that way. Stream C's are P4 to P7 (minecart drops, jukebox signal, potion glint, shulker box
+faces); of the five planned under C, the door tops turned out to be 1.19's models (a client state mapper) and the
+Nether's light limit an event (`docs/streams/changes.md`). Darkness's lightmap if the patch-free version proves
+visibly different from 1.19's (decided in W).
 
 The coremod is `asm.WildUpdateCore` (manifest `FMLCorePlugin`; `-Dfml.coreMods.load` in the run tasks), added by
 stream Lf with patches P1-P3 (`docs/PATCHES.md`). A stream with patches adds its own transformer class to
