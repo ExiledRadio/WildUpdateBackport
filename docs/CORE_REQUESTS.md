@@ -166,3 +166,18 @@ public final class GoatHorns {
 
 Until it exists: Caves & Cliffs can call `wildupdatebackport:goat_horn` by name with an `instrument` NBT
 string (`ponder_goat_horn` ... `dream_goat_horn`), which is the stack format stream I uses.
+
+**From stream I (2026-11-13):** 1.19's `Goat.createHorn` seeds its random with the goat's UUID hash
+(`new Random(goat.getUniqueID().hashCode())`, one draw of 4), so one goat always drops the same instrument. The
+hook should pass that random, or take the UUID instead:
+`public static ItemStack drop(boolean screaming, UUID goat)`. Wild Update's supplier is
+`items.GoatHorns.create(boolean screaming, UUID goat)` (and `GoatHorns.drop(EntityLivingBase, boolean)`, which
+also throws the item as 1.19's `dropHorn`). The stack is `wildupdatebackport:goat_horn` with the string tag
+`instrument` = `minecraft:<name>_goat_horn` (1.19's format; a bare `<name>_goat_horn` reads too).
+
+**Local shim until Caves & Cliffs calls it**: `items.GoatHorns.Events` watches Caves & Cliffs' goats (by
+entity name) and adds 1.19's `RamTarget` block hit from outside, by reflection on their goat's
+`isLoweringHead`, `hasLeftHorn`, `hasRightHorn`, `setHorns`, `isScreamingGoat`, `setLoweringHead`,
+`setRamCooldown` and `nextRamCooldown`. A ram that charges into a `#snaps_goat_horn` block plays the ram
+impact, drops a horn and ends with a full cooldown. When Caves & Cliffs' ram does this itself and calls the
+hook, the shim goes.

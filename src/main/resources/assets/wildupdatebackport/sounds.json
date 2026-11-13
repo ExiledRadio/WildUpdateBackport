@@ -777,5 +777,82 @@
         "volume": 0.5
       }
     ]
+  },
+  "item.goat_horn.sound.0": {
+    "sounds": [
+      "wildupdatebackport:item/goat_horn/call0"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.item.goat_horn.play"
+  },
+  "item.goat_horn.sound.1": {
+    "sounds": [
+      "wildupdatebackport:item/goat_horn/call1"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.item.goat_horn.play"
+  },
+  "item.goat_horn.sound.2": {
+    "sounds": [
+      "wildupdatebackport:item/goat_horn/call2"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.item.goat_horn.play"
+  },
+  "item.goat_horn.sound.3": {
+    "sounds": [
+      "wildupdatebackport:item/goat_horn/call3"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.item.goat_horn.play"
+  },
+  "item.goat_horn.sound.4": {
+    "sounds": [
+      "wildupdatebackport:item/goat_horn/call4"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.item.goat_horn.play"
+  },
+  "item.goat_horn.sound.5": {
+    "sounds": [
+      "wildupdatebackport:item/goat_horn/call5"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.item.goat_horn.play"
+  },
+  "item.goat_horn.sound.6": {
+    "sounds": [
+      "wildupdatebackport:item/goat_horn/call6"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.item.goat_horn.play"
+  },
+  "item.goat_horn.sound.7": {
+    "sounds": [
+      "wildupdatebackport:item/goat_horn/call7"
+    ],
+    "subtitle": "subtitles.wildupdatebackport.item.goat_horn.play"
+  },
+  "entity.goat.horn_break": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:mob/goat/horn_break1",
+        "volume": 0.9
+      },
+      {
+        "name": "wildupdatebackport:mob/goat/horn_break2",
+        "volume": 0.9
+      },
+      {
+        "name": "wildupdatebackport:mob/goat/horn_break3",
+        "volume": 0.9
+      },
+      {
+        "name": "wildupdatebackport:mob/goat/horn_break4",
+        "volume": 0.9
+      }
+    ],
+    "subtitle": "subtitles.wildupdatebackport.entity.goat.horn_break"
+  },
+  "music_disc.5": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:records/5",
+        "stream": true
+      }
+    ]
   }
 }

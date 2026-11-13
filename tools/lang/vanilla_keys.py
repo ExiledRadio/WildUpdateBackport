@@ -29,6 +29,8 @@ SPECIAL = {
     "item.%s.mangrove_sign.name" % M: "block.minecraft.mangrove_sign",
     "entity.%s.boat.name" % M: "entity.minecraft.boat",
     "entity.%s.chest_boat.name" % M: "entity.minecraft.chest_boat",
+    # 1.12.2's records name their description line item.record.<name>.desc.
+    "item.record.5.desc": "item.minecraft.music_disc_5.desc",
 }
 
 
@@ -42,6 +44,10 @@ def candidates(key):
     if key.startswith("item.%s." % M) and key.endswith(".name"):
         name = ".".join(parts[2:-1])
         return ["item.minecraft." + name, "block.minecraft." + name]
+    if key.startswith("item.%s." % M) and key.endswith(".desc"):
+        return ["item.minecraft." + ".".join(parts[2:])]
+    if key.startswith("instrument.%s." % M) or key.startswith("enchantment.%s." % M):
+        return [parts[0] + ".minecraft." + ".".join(parts[2:])]
     if key.startswith("subtitles.%s." % M):
         return ["subtitles." + key[len("subtitles.%s." % M):]]
     return []
