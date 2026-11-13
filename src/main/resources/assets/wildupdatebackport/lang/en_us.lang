@@ -207,3 +207,32 @@ options.glintSpeed=Glint Speed
 options.glintSpeed.tooltip=Controls how fast the visual glint shimmers across enchanted items.
 options.glintStrength=Glint Strength
 options.glintStrength.tooltip=Controls how transparent the visual glint is on enchanted items.
+
+# --- deepdark-deepslate ---
+tile.wildupdatebackport.chiseled_deepslate.name=Chiseled Deepslate
+tile.wildupdatebackport.cobbled_deepslate.name=Cobbled Deepslate
+tile.wildupdatebackport.cobbled_deepslate_double_slab.name=Cobbled Deepslate Slab
+tile.wildupdatebackport.cobbled_deepslate_slab.name=Cobbled Deepslate Slab
+tile.wildupdatebackport.cobbled_deepslate_stairs.name=Cobbled Deepslate Stairs
+tile.wildupdatebackport.cobbled_deepslate_wall.name=Cobbled Deepslate Wall
+tile.wildupdatebackport.cracked_deepslate_bricks.name=Cracked Deepslate Bricks
+tile.wildupdatebackport.cracked_deepslate_tiles.name=Cracked Deepslate Tiles
+tile.wildupdatebackport.deepslate.name=Deepslate
+tile.wildupdatebackport.deepslate_brick_double_slab.name=Deepslate Brick Slab
+tile.wildupdatebackport.deepslate_brick_slab.name=Deepslate Brick Slab
+tile.wildupdatebackport.deepslate_brick_stairs.name=Deepslate Brick Stairs
+tile.wildupdatebackport.deepslate_brick_wall.name=Deepslate Brick Wall
+tile.wildupdatebackport.deepslate_bricks.name=Deepslate Bricks
+tile.wildupdatebackport.deepslate_tile_double_slab.name=Deepslate Tile Slab
+tile.wildupdatebackport.deepslate_tile_slab.name=Deepslate Tile Slab
+tile.wildupdatebackport.deepslate_tile_stairs.name=Deepslate Tile Stairs
+tile.wildupdatebackport.deepslate_tile_wall.name=Deepslate Tile Wall
+tile.wildupdatebackport.deepslate_tiles.name=Deepslate Tiles
+tile.wildupdatebackport.polished_deepslate.name=Polished Deepslate
+tile.wildupdatebackport.polished_deepslate_double_slab.name=Polished Deepslate Slab
+tile.wildupdatebackport.polished_deepslate_slab.name=Polished Deepslate Slab
+tile.wildupdatebackport.polished_deepslate_stairs.name=Polished Deepslate Stairs
+tile.wildupdatebackport.polished_deepslate_wall.name=Polished Deepslate Wall
+
+# --- deepdark ---
+tile.wildupdatebackport.reinforced_deepslate.name=Reinforced Deepslate

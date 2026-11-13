@@ -1,0 +1,2149 @@
+version 1.19.2
+cand 42 -189 -181 -3019 -27 -2896 wooded_badlands
+piece 42 -189 -181 0 minecraft:ancient_city/city_center/city_center_1 CLOCKWISE_180 -3028 -52 -2916 -3011 -22 -2876
+piece 42 -189 -181 1 minecraft:ancient_city/city_center/walls/bottom_2 CLOCKWISE_180 -3010 -51 -2916 -2997 -28 -2876
+piece 42 -189 -181 2 minecraft:ancient_city/city_center/walls/top CLOCKWISE_180 -3042 -51 -2916 -3029 -28 -2876
+piece 42 -189 -181 3 minecraft:ancient_city/city_center/walls/left CLOCKWISE_180 -3028 -51 -2875 -3011 -28 -2862
+piece 42 -189 -181 4 minecraft:ancient_city/city_center/walls/right CLOCKWISE_180 -3028 -51 -2930 -3011 -28 -2917
+piece 42 -189 -181 5 minecraft:ancient_city/city_center/walls/bottom_left_corner CLOCKWISE_180 -3010 -51 -2875 -2997 -28 -2862
+piece 42 -189 -181 6 minecraft:ancient_city/city_center/walls/bottom_right_corner_2 CLOCKWISE_180 -3010 -51 -2930 -2997 -28 -2917
+piece 42 -189 -181 7 minecraft:ancient_city/city/entrance/entrance_connector CLOCKWISE_180 -2996 -51 -2915 -2967 -37 -2877
+piece 42 -189 -181 8 minecraft:ancient_city/city_center/walls/top_left_corner CLOCKWISE_180 -3042 -51 -2875 -3029 -28 -2862
+piece 42 -189 -181 9 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 CLOCKWISE_180 -3060 -51 -2905 -3043 -37 -2885
+piece 42 -189 -181 10 minecraft:ancient_city/city_center/walls/top_right_corner CLOCKWISE_180 -3042 -51 -2930 -3029 -28 -2917
+piece 42 -189 -181 11 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 CLOCKWISE_90 -3030 -51 -2861 -3010 -37 -2844
+piece 42 -189 -181 12 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_90 -3029 -51 -2948 -3009 -37 -2931
+piece 42 -189 -181 13 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 COUNTERCLOCKWISE_90 -2996 -51 -2933 -2976 -37 -2916
+piece 42 -189 -181 14 minecraft:ancient_city/city/entrance/entrance_path_5 CLOCKWISE_180 -2966 -51 -2915 -2932 -37 -2877
+piece 42 -189 -181 15 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 CLOCKWISE_90 -2996 -51 -2876 -2976 -37 -2859
+piece 42 -189 -181 16 minecraft:ancient_city/structures/small_statue CLOCKWISE_90 -3054 -51 -2884 -3047 -44 -2875
+piece 42 -189 -181 17 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 CLOCKWISE_180 -3078 -51 -2905 -3061 -37 -2885
+piece 42 -189 -181 18 minecraft:ancient_city/structures/medium_ruin_2 COUNTERCLOCKWISE_90 -3057 -51 -2921 -3047 -47 -2906
+piece 42 -189 -181 19 minecraft:ancient_city/structures/small_statue NONE -3009 -51 -2855 -3000 -44 -2848
+piece 42 -189 -181 20 minecraft:ancient_city/structures/tall_ruin_3 COUNTERCLOCKWISE_90 -3047 -51 -2860 -3031 -29 -2844
+piece 42 -189 -181 21 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 CLOCKWISE_90 -3030 -51 -2843 -3010 -37 -2826
+piece 42 -189 -181 22 minecraft:ancient_city/structures/small_statue NONE -3008 -51 -2944 -2999 -44 -2937
+piece 42 -189 -181 23 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 CLOCKWISE_90 -3029 -51 -2966 -3009 -37 -2949
+piece 42 -189 -181 24 minecraft:ancient_city/structures/barracks CLOCKWISE_180 -3050 -51 -2947 -3030 -40 -2931
+piece 42 -189 -181 25 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 COUNTERCLOCKWISE_90 -2996 -51 -2951 -2976 -37 -2934
+piece 42 -189 -181 26 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 CLOCKWISE_90 -2956 -51 -2933 -2936 -37 -2916
+piece 42 -189 -181 27 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 CLOCKWISE_90 -2956 -51 -2876 -2936 -37 -2859
+piece 42 -189 -181 28 minecraft:ancient_city/walls/intact_corner_wall_1 NONE -2996 -51 -2858 -2976 -37 -2838
+piece 42 -189 -181 29 minecraft:ancient_city/structures/chamber_1 CLOCKWISE_180 -2975 -51 -2874 -2957 -42 -2860
+piece 42 -189 -181 30 minecraft:ancient_city/structures/chamber_1 CLOCKWISE_90 -3077 -51 -2924 -3063 -42 -2906
+piece 42 -189 -181 31 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_180 -3096 -51 -2905 -3079 -37 -2885
+piece 42 -189 -181 32 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_90 -3030 -51 -2825 -3010 -37 -2808
+piece 42 -189 -181 33 minecraft:ancient_city/structures/barracks CLOCKWISE_180 -3050 -51 -2965 -3030 -40 -2949
+piece 42 -189 -181 34 minecraft:ancient_city/walls/intact_corner_wall_1 CLOCKWISE_180 -3029 -51 -2987 -3009 -37 -2967
+piece 42 -189 -181 35 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_180 -3008 -51 -2962 -2999 -46 -2952
+piece 42 -189 -181 36 feature CLOCKWISE_180 -3041 -47 -2933 -3041 -47 -2933
+piece 42 -189 -181 37 feature NONE -3040 -47 -2941 -3040 -47 -2941
+piece 42 -189 -181 38 minecraft:ancient_city/structures/tall_ruin_3 CLOCKWISE_90 -2975 -51 -2951 -2959 -29 -2935
+piece 42 -189 -181 39 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 COUNTERCLOCKWISE_90 -2996 -51 -2969 -2976 -37 -2952
+piece 42 -189 -181 40 minecraft:ancient_city/structures/large_pillar_1 CLOCKWISE_180 -2935 -51 -2927 -2930 -37 -2922
+piece 42 -189 -181 41 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_90 -2956 -51 -2951 -2936 -37 -2934
+piece 42 -189 -181 42 minecraft:ancient_city/structures/small_statue NONE -2935 -51 -2872 -2926 -44 -2865
+piece 42 -189 -181 43 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 COUNTERCLOCKWISE_90 -2956 -51 -2858 -2936 -37 -2841
+piece 42 -189 -181 44 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_90 -2996 -51 -2837 -2976 -37 -2820
+piece 42 -189 -181 45 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 CLOCKWISE_180 -2975 -51 -2858 -2958 -37 -2838
+piece 42 -189 -181 46 feature NONE -2962 -47 -2861 -2962 -47 -2861
+piece 42 -189 -181 47 feature COUNTERCLOCKWISE_90 -2969 -50 -2866 -2969 -50 -2866
+piece 42 -189 -181 48 feature NONE -3069 -50 -2912 -3069 -50 -2912
+piece 42 -189 -181 49 feature CLOCKWISE_180 -3064 -47 -2919 -3064 -47 -2919
+piece 42 -189 -181 50 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 NONE -3114 -51 -2905 -3097 -37 -2885
+piece 42 -189 -181 51 minecraft:ancient_city/structures/chamber_2 COUNTERCLOCKWISE_90 -3094 -51 -2884 -3084 -46 -2873
+piece 42 -189 -181 52 minecraft:ancient_city/structures/small_ruin_2 COUNTERCLOCKWISE_90 -3090 -51 -2913 -3087 -47 -2906
+piece 42 -189 -181 53 minecraft:ancient_city/structures/chamber_2 CLOCKWISE_180 -3009 -51 -2820 -2998 -46 -2810
+piece 42 -189 -181 54 minecraft:ancient_city/walls/ruined_corner_wall_2 NONE -3030 -51 -2807 -3010 -37 -2787
+piece 42 -189 -181 55 minecraft:ancient_city/structures/tall_ruin_1 COUNTERCLOCKWISE_90 -3047 -51 -2824 -3031 -29 -2808
+piece 42 -189 -181 56 feature CLOCKWISE_180 -3040 -47 -2959 -3040 -47 -2959
+piece 42 -189 -181 57 feature NONE -3041 -47 -2951 -3041 -47 -2951
+piece 42 -189 -181 58 minecraft:ancient_city/walls/intact_horizontal_wall_bridge CLOCKWISE_180 -3047 -51 -2987 -3030 -37 -2967
+piece 42 -189 -181 59 minecraft:ancient_city/walls/intact_horizontal_wall_2 CLOCKWISE_90 -3029 -51 -3005 -3009 -37 -2988
+piece 42 -189 -181 60 feature COUNTERCLOCKWISE_90 -3003 -50 -2959 -3003 -50 -2959
+piece 42 -189 -181 61 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_90 -2996 -51 -2987 -2976 -37 -2970
+piece 42 -189 -181 62 minecraft:ancient_city/structures/tall_ruin_2 COUNTERCLOCKWISE_90 -2975 -51 -2968 -2959 -29 -2952
+piece 42 -189 -181 63 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 COUNTERCLOCKWISE_90 -2956 -51 -2969 -2936 -37 -2952
+piece 42 -189 -181 64 minecraft:ancient_city/structures/tall_ruin_4 COUNTERCLOCKWISE_90 -2935 -51 -2857 -2919 -29 -2841
+piece 42 -189 -181 65 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 COUNTERCLOCKWISE_90 -2956 -51 -2840 -2936 -37 -2823
+piece 42 -189 -181 66 minecraft:ancient_city/structures/small_statue NONE -2975 -51 -2831 -2966 -44 -2824
+piece 42 -189 -181 67 minecraft:ancient_city/walls/intact_horizontal_wall_2 COUNTERCLOCKWISE_90 -2996 -51 -2819 -2976 -37 -2802
+piece 42 -189 -181 68 minecraft:ancient_city/structures/chamber_3 NONE -3006 -51 -2833 -2997 -46 -2823
+piece 42 -189 -181 69 minecraft:ancient_city/structures/chamber_3 COUNTERCLOCKWISE_90 -3110 -51 -2884 -3100 -46 -2875
+piece 42 -189 -181 70 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 NONE -3132 -51 -2905 -3115 -37 -2885
+piece 42 -189 -181 71 feature CLOCKWISE_180 -3089 -49 -2881 -3089 -49 -2881
+piece 42 -189 -181 72 feature CLOCKWISE_90 -3006 -49 -2815 -3006 -49 -2815
+piece 42 -189 -181 73 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_180 -3048 -51 -2807 -3031 -37 -2787
+piece 42 -189 -181 74 minecraft:ancient_city/structures/chamber_2 CLOCKWISE_90 -3043 -51 -2999 -3033 -46 -2988
+piece 42 -189 -181 75 minecraft:ancient_city/structures/chamber_1 CLOCKWISE_180 -3008 -51 -3003 -2990 -42 -2989
+piece 42 -189 -181 76 minecraft:ancient_city/structures/medium_ruin_1 CLOCKWISE_180 -3004 -51 -2984 -2997 -47 -2972
+piece 42 -189 -181 77 minecraft:ancient_city/structures/tall_ruin_3 CLOCKWISE_90 -2975 -51 -2986 -2959 -29 -2970
+piece 42 -189 -181 78 minecraft:ancient_city/walls/intact_lshape_wall_1 CLOCKWISE_90 -2956 -51 -2990 -2936 -37 -2970
+piece 42 -189 -181 79 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_180 -2935 -51 -2966 -2926 -46 -2956
+piece 42 -189 -181 80 minecraft:ancient_city/structures/large_pillar_1 NONE -2962 -51 -2834 -2957 -37 -2829
+piece 42 -189 -181 81 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 CLOCKWISE_90 -2956 -51 -2822 -2936 -37 -2805
+piece 42 -189 -181 82 minecraft:ancient_city/structures/tall_ruin_2 COUNTERCLOCKWISE_90 -2935 -51 -2839 -2919 -29 -2823
+piece 42 -189 -181 83 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_180 -2975 -51 -2815 -2966 -46 -2805
+piece 42 -189 -181 84 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 COUNTERCLOCKWISE_90 -2996 -51 -2801 -2976 -37 -2784
+piece 42 -189 -181 85 feature CLOCKWISE_90 -3002 -50 -2826 -3002 -50 -2826
+piece 42 -189 -181 86 feature CLOCKWISE_180 -3103 -50 -2879 -3103 -50 -2879
+piece 42 -189 -181 87 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_90 -3128 -51 -2915 -3118 -46 -2906
+piece 42 -189 -181 88 minecraft:ancient_city/structures/tall_ruin_4 NONE -3132 -51 -2884 -3116 -29 -2868
+piece 42 -189 -181 89 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_180 -3066 -51 -2807 -3049 -37 -2787
+piece 42 -189 -181 90 feature CLOCKWISE_180 -3038 -49 -2991 -3038 -49 -2991
+piece 42 -189 -181 91 feature COUNTERCLOCKWISE_90 -3002 -50 -2995 -3002 -50 -2995
+cand 42 -184 -157 -2944 -27 -2507 badlands
+piece 42 -184 -157 0 minecraft:ancient_city/city_center/city_center_2 COUNTERCLOCKWISE_90 -2964 -52 -2516 -2924 -22 -2499
+piece 42 -184 -157 1 minecraft:ancient_city/city_center/walls/left COUNTERCLOCKWISE_90 -2978 -51 -2516 -2965 -28 -2499
+piece 42 -184 -157 2 minecraft:ancient_city/city_center/walls/right COUNTERCLOCKWISE_90 -2923 -51 -2516 -2910 -28 -2499
+piece 42 -184 -157 3 minecraft:ancient_city/city_center/walls/bottom_1 COUNTERCLOCKWISE_90 -2964 -51 -2498 -2924 -28 -2485
+piece 42 -184 -157 4 minecraft:ancient_city/city_center/walls/top COUNTERCLOCKWISE_90 -2964 -51 -2530 -2924 -28 -2517
+piece 42 -184 -157 5 minecraft:ancient_city/walls/intact_intersection_wall_1 NONE -2999 -51 -2518 -2979 -37 -2498
+piece 42 -184 -157 6 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 NONE -2909 -51 -2517 -2892 -37 -2497
+piece 42 -184 -157 7 minecraft:ancient_city/city_center/walls/bottom_left_corner COUNTERCLOCKWISE_90 -2978 -51 -2498 -2965 -28 -2485
+piece 42 -184 -157 8 minecraft:ancient_city/city_center/walls/bottom_right_corner_2 COUNTERCLOCKWISE_90 -2923 -51 -2498 -2910 -28 -2485
+piece 42 -184 -157 9 minecraft:ancient_city/city/entrance/entrance_connector COUNTERCLOCKWISE_90 -2963 -51 -2484 -2925 -37 -2455
+piece 42 -184 -157 10 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 COUNTERCLOCKWISE_90 -2955 -51 -2548 -2935 -37 -2531
+piece 42 -184 -157 11 minecraft:ancient_city/city_center/walls/top_left_corner COUNTERCLOCKWISE_90 -2978 -51 -2530 -2965 -28 -2517
+piece 42 -184 -157 12 minecraft:ancient_city/city_center/walls/top_right_corner COUNTERCLOCKWISE_90 -2923 -51 -2530 -2910 -28 -2517
+piece 42 -184 -157 13 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 CLOCKWISE_90 -2999 -51 -2497 -2979 -37 -2480
+piece 42 -184 -157 14 minecraft:ancient_city/walls/intact_horizontal_wall_1 CLOCKWISE_180 -3017 -51 -2518 -3000 -37 -2498
+piece 42 -184 -157 15 minecraft:ancient_city/walls/intact_corner_wall_1 CLOCKWISE_90 -2891 -51 -2517 -2871 -37 -2497
+piece 42 -184 -157 16 minecraft:ancient_city/structures/tall_ruin_4 CLOCKWISE_180 -2907 -51 -2534 -2891 -29 -2518
+piece 42 -184 -157 17 minecraft:ancient_city/structures/small_ruin_2 CLOCKWISE_90 -2901 -51 -2496 -2898 -47 -2489
+piece 42 -184 -157 18 minecraft:ancient_city/walls/ruined_corner_wall_1 CLOCKWISE_90 -2924 -51 -2484 -2904 -37 -2464
+piece 42 -184 -157 19 minecraft:ancient_city/city/entrance/entrance_path_4 COUNTERCLOCKWISE_90 -2963 -51 -2454 -2925 -37 -2420
+piece 42 -184 -157 20 minecraft:ancient_city/structures/chamber_2 NONE -2967 -51 -2546 -2956 -46 -2536
+piece 42 -184 -157 21 minecraft:ancient_city/structures/large_ruin_1 NONE -2934 -51 -2547 -2918 -47 -2531
+piece 42 -184 -157 22 minecraft:ancient_city/walls/intact_horizontal_wall_2 COUNTERCLOCKWISE_90 -2955 -51 -2566 -2935 -37 -2549
+piece 42 -184 -157 23 minecraft:ancient_city/structures/chamber_1 NONE -3018 -51 -2495 -3000 -42 -2481
+piece 42 -184 -157 24 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_90 -2999 -51 -2479 -2979 -37 -2462
+piece 42 -184 -157 25 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 NONE -3035 -51 -2518 -3018 -37 -2498
+piece 42 -184 -157 26 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 NONE -2870 -51 -2517 -2853 -37 -2497
+piece 42 -184 -157 27 minecraft:ancient_city/walls/intact_horizontal_wall_2 CLOCKWISE_90 -2891 -51 -2496 -2871 -37 -2479
+piece 42 -184 -157 28 minecraft:ancient_city/walls/intact_horizontal_wall_2 COUNTERCLOCKWISE_90 -2924 -51 -2463 -2904 -37 -2446
+piece 42 -184 -157 29 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 CLOCKWISE_180 -2924 -51 -2444 -2907 -37 -2424
+piece 42 -184 -157 30 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 NONE -2981 -51 -2444 -2964 -37 -2424
+piece 42 -184 -157 31 feature COUNTERCLOCKWISE_90 -2959 -49 -2541 -2959 -49 -2541
+piece 42 -184 -157 32 minecraft:ancient_city/structures/tall_ruin_2 CLOCKWISE_90 -2972 -51 -2567 -2956 -29 -2551
+piece 42 -184 -157 33 minecraft:ancient_city/walls/intact_horizontal_wall_2 CLOCKWISE_90 -2955 -51 -2584 -2935 -37 -2567
+piece 42 -184 -157 34 feature NONE -3006 -50 -2489 -3006 -50 -2489
+piece 42 -184 -157 35 feature COUNTERCLOCKWISE_90 -3013 -47 -2494 -3013 -47 -2494
+piece 42 -184 -157 36 minecraft:ancient_city/structures/small_statue NONE -2978 -51 -2475 -2969 -44 -2468
+piece 42 -184 -157 37 minecraft:ancient_city/structures/medium_ruin_1 CLOCKWISE_180 -3007 -51 -2476 -3000 -47 -2464
+piece 42 -184 -157 38 list:minecraft:ancient_city/structures/camp_1 COUNTERCLOCKWISE_90 -3033 -51 -2535 -3017 -47 -2519
+piece 42 -184 -157 39 minecraft:ancient_city/structures/chamber_1 COUNTERCLOCKWISE_90 -3033 -51 -2497 -3019 -42 -2479
+piece 42 -184 -157 40 minecraft:ancient_city/walls/intact_horizontal_wall_1 CLOCKWISE_180 -3053 -51 -2518 -3036 -37 -2498
+piece 42 -184 -157 41 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_90 -2866 -51 -2527 -2856 -46 -2518
+piece 42 -184 -157 42 minecraft:ancient_city/walls/intact_lshape_wall_1 CLOCKWISE_90 -2852 -51 -2517 -2832 -37 -2497
+piece 42 -184 -157 43 minecraft:ancient_city/structures/small_ruin_1 CLOCKWISE_90 -2865 -51 -2496 -2858 -47 -2490
+piece 42 -184 -157 44 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 CLOCKWISE_90 -2891 -51 -2478 -2871 -37 -2461
+piece 42 -184 -157 45 minecraft:ancient_city/structures/small_ruin_2 NONE -2903 -51 -2456 -2896 -47 -2453
+piece 42 -184 -157 46 minecraft:ancient_city/walls/intact_horizontal_wall_2 NONE -2906 -51 -2444 -2889 -37 -2424
+piece 42 -184 -157 47 minecraft:ancient_city/structures/medium_ruin_1 CLOCKWISE_90 -2922 -51 -2423 -2910 -47 -2416
+piece 42 -184 -157 48 minecraft:ancient_city/structures/medium_ruin_2 COUNTERCLOCKWISE_90 -2977 -51 -2460 -2967 -47 -2445
+piece 42 -184 -157 49 minecraft:ancient_city/structures/barracks CLOCKWISE_90 -2980 -51 -2423 -2964 -40 -2403
+piece 42 -184 -157 50 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 NONE -2999 -51 -2444 -2982 -37 -2424
+piece 42 -184 -157 51 minecraft:ancient_city/structures/small_statue NONE -2934 -51 -2580 -2925 -44 -2573
+piece 42 -184 -157 52 minecraft:ancient_city/walls/intact_horizontal_wall_1 COUNTERCLOCKWISE_90 -2955 -51 -2602 -2935 -37 -2585
+piece 42 -184 -157 53 feature CLOCKWISE_90 -3032 -47 -2484 -3032 -47 -2484
+piece 42 -184 -157 54 feature COUNTERCLOCKWISE_90 -3027 -50 -2491 -3027 -50 -2491
+piece 42 -184 -157 55 minecraft:ancient_city/structures/medium_ruin_2 CLOCKWISE_90 -3050 -51 -2497 -3040 -47 -2482
+piece 42 -184 -157 56 feature NONE -2863 -50 -2523 -2863 -50 -2523
+piece 42 -184 -157 57 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 CLOCKWISE_90 -2852 -51 -2496 -2832 -37 -2479
+piece 42 -184 -157 58 minecraft:ancient_city/structures/medium_ruin_1 COUNTERCLOCKWISE_90 -2903 -51 -2452 -2891 -47 -2445
+piece 42 -184 -157 59 minecraft:ancient_city/structures/large_pillar_1 COUNTERCLOCKWISE_90 -2900 -51 -2423 -2895 -37 -2418
+piece 42 -184 -157 60 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 NONE -2888 -51 -2444 -2871 -37 -2424
+piece 42 -184 -157 61 feature CLOCKWISE_180 -2966 -47 -2412 -2966 -47 -2412
+piece 42 -184 -157 62 feature COUNTERCLOCKWISE_90 -2974 -47 -2413 -2974 -47 -2413
+piece 42 -184 -157 63 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 NONE -3017 -51 -2444 -3000 -37 -2424
+piece 42 -184 -157 64 minecraft:ancient_city/structures/tall_ruin_4 NONE -2999 -51 -2423 -2983 -29 -2407
+piece 42 -184 -157 65 minecraft:ancient_city/structures/medium_ruin_2 COUNTERCLOCKWISE_90 -2995 -51 -2460 -2985 -47 -2445
+piece 42 -184 -157 66 minecraft:ancient_city/structures/chamber_1 CLOCKWISE_180 -2934 -51 -2600 -2916 -42 -2586
+piece 42 -184 -157 67 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 CLOCKWISE_90 -2955 -51 -2620 -2935 -37 -2603
+piece 42 -184 -157 68 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_90 -2852 -51 -2478 -2832 -37 -2461
+piece 42 -184 -157 69 minecraft:ancient_city/structures/chamber_3 COUNTERCLOCKWISE_90 -2884 -51 -2423 -2874 -46 -2414
+piece 42 -184 -157 70 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 CLOCKWISE_180 -2870 -51 -2444 -2853 -37 -2424
+piece 42 -184 -157 71 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_180 -3035 -51 -2444 -3018 -37 -2424
+piece 42 -184 -157 72 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_90 -3013 -51 -2454 -3003 -46 -2445
+piece 42 -184 -157 73 feature COUNTERCLOCKWISE_90 -2921 -47 -2587 -2921 -47 -2587
+piece 42 -184 -157 74 feature NONE -2928 -50 -2592 -2928 -50 -2592
+piece 42 -184 -157 75 minecraft:ancient_city/structures/tall_ruin_3 COUNTERCLOCKWISE_90 -2972 -51 -2619 -2956 -29 -2603
+cand 42 -181 -132 -2900 -27 -2112 desert
+piece 42 -181 -132 0 minecraft:ancient_city/city_center/city_center_2 NONE -2909 -52 -2132 -2892 -22 -2092
+piece 42 -181 -132 1 minecraft:ancient_city/city_center/walls/bottom_1 NONE -2923 -51 -2132 -2910 -28 -2092
+piece 42 -181 -132 2 minecraft:ancient_city/city_center/walls/right NONE -2909 -51 -2091 -2892 -28 -2078
+piece 42 -181 -132 3 minecraft:ancient_city/city_center/walls/top NONE -2891 -51 -2132 -2878 -28 -2092
+piece 42 -181 -132 4 minecraft:ancient_city/city_center/walls/left NONE -2909 -51 -2146 -2892 -28 -2133
+piece 42 -181 -132 5 minecraft:ancient_city/city_center/walls/bottom_left_corner NONE -2923 -51 -2146 -2910 -28 -2133
+piece 42 -181 -132 6 minecraft:ancient_city/city_center/walls/bottom_right_corner_2 NONE -2923 -51 -2091 -2910 -28 -2078
+piece 42 -181 -132 7 minecraft:ancient_city/city/entrance/entrance_connector NONE -2953 -51 -2131 -2924 -37 -2093
+piece 42 -181 -132 8 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_90 -2911 -51 -2077 -2891 -37 -2060
+piece 42 -181 -132 9 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 NONE -2877 -51 -2123 -2860 -37 -2103
+piece 42 -181 -132 10 minecraft:ancient_city/city_center/walls/top_left_corner NONE -2891 -51 -2146 -2878 -28 -2133
+piece 42 -181 -132 11 minecraft:ancient_city/city_center/walls/top_right_corner NONE -2891 -51 -2091 -2878 -28 -2078
+piece 42 -181 -132 12 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 CLOCKWISE_90 -2910 -51 -2164 -2890 -37 -2147
+piece 42 -181 -132 13 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 COUNTERCLOCKWISE_90 -2944 -51 -2092 -2924 -37 -2075
+piece 42 -181 -132 14 minecraft:ancient_city/city/entrance/entrance_path_5 NONE -2988 -51 -2131 -2954 -37 -2093
+piece 42 -181 -132 15 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 COUNTERCLOCKWISE_90 -2944 -51 -2149 -2924 -37 -2132
+piece 42 -181 -132 16 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 COUNTERCLOCKWISE_90 -2911 -51 -2059 -2891 -37 -2042
+piece 42 -181 -132 17 minecraft:ancient_city/structures/chamber_2 CLOCKWISE_90 -2872 -51 -2135 -2862 -46 -2124
+piece 42 -181 -132 18 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 NONE -2859 -51 -2123 -2842 -37 -2103
+piece 42 -181 -132 19 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_180 -2889 -51 -2160 -2880 -46 -2150
+piece 42 -181 -132 20 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 COUNTERCLOCKWISE_90 -2910 -51 -2182 -2890 -37 -2165
+piece 42 -181 -132 21 minecraft:ancient_city/structures/chamber_2 NONE -2922 -51 -2161 -2911 -46 -2151
+piece 42 -181 -132 22 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_90 -2944 -51 -2074 -2924 -37 -2057
+piece 42 -181 -132 23 minecraft:ancient_city/structures/chamber_3 NONE -2954 -51 -2089 -2945 -46 -2079
+piece 42 -181 -132 24 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_90 -2984 -51 -2092 -2964 -37 -2075
+piece 42 -181 -132 25 minecraft:ancient_city/walls/ruined_corner_wall_2 CLOCKWISE_180 -2984 -51 -2152 -2964 -37 -2132
+piece 42 -181 -132 26 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 COUNTERCLOCKWISE_90 -2944 -51 -2167 -2924 -37 -2150
+piece 42 -181 -132 27 minecraft:ancient_city/structures/tall_ruin_3 COUNTERCLOCKWISE_90 -2961 -51 -2149 -2945 -29 -2133
+piece 42 -181 -132 28 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 COUNTERCLOCKWISE_90 -2911 -51 -2041 -2891 -37 -2024
+piece 42 -181 -132 29 minecraft:ancient_city/structures/tall_ruin_3 CLOCKWISE_90 -2890 -51 -2059 -2874 -29 -2043
+piece 42 -181 -132 30 feature NONE -2867 -49 -2127 -2867 -49 -2127
+piece 42 -181 -132 31 minecraft:ancient_city/structures/chamber_1 COUNTERCLOCKWISE_90 -2857 -51 -2102 -2843 -42 -2084
+piece 42 -181 -132 32 minecraft:ancient_city/structures/barracks COUNTERCLOCKWISE_90 -2858 -51 -2144 -2842 -40 -2124
+piece 42 -181 -132 33 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 NONE -2841 -51 -2123 -2824 -37 -2103
+piece 42 -181 -132 34 minecraft:ancient_city/walls/ruined_corner_wall_2 CLOCKWISE_180 -2910 -51 -2203 -2890 -37 -2183
+piece 42 -181 -132 35 minecraft:ancient_city/structures/small_statue NONE -2889 -51 -2177 -2880 -44 -2170
+piece 42 -181 -132 36 minecraft:ancient_city/structures/small_ruin_2 CLOCKWISE_180 -2918 -51 -2175 -2911 -47 -2172
+piece 42 -181 -132 37 feature COUNTERCLOCKWISE_90 -2914 -49 -2156 -2914 -49 -2156
+piece 42 -181 -132 38 minecraft:ancient_city/structures/chamber_3 NONE -2954 -51 -2070 -2945 -46 -2060
+piece 42 -181 -132 39 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 CLOCKWISE_90 -2944 -51 -2056 -2924 -37 -2039
+piece 42 -181 -132 40 feature NONE -2950 -50 -2082 -2950 -50 -2082
+piece 42 -181 -132 41 minecraft:ancient_city/structures/small_ruin_2 NONE -2963 -51 -2085 -2956 -47 -2082
+piece 42 -181 -132 42 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 COUNTERCLOCKWISE_90 -2984 -51 -2074 -2964 -37 -2057
+piece 42 -181 -132 43 minecraft:ancient_city/structures/small_statue CLOCKWISE_180 -2994 -51 -2085 -2985 -44 -2078
+piece 42 -181 -132 44 minecraft:ancient_city/walls/intact_horizontal_wall_2 COUNTERCLOCKWISE_90 -2984 -51 -2170 -2964 -37 -2153
+piece 42 -181 -132 45 minecraft:ancient_city/walls/intact_horizontal_wall_bridge CLOCKWISE_180 -3002 -51 -2152 -2985 -37 -2132
+piece 42 -181 -132 46 minecraft:ancient_city/structures/small_statue CLOCKWISE_180 -2954 -51 -2163 -2945 -44 -2156
+piece 42 -181 -132 47 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 CLOCKWISE_90 -2944 -51 -2185 -2924 -37 -2168
+piece 42 -181 -132 48 minecraft:ancient_city/structures/chamber_1 CLOCKWISE_180 -2890 -51 -2040 -2872 -42 -2026
+piece 42 -181 -132 49 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 COUNTERCLOCKWISE_90 -2911 -51 -2023 -2891 -37 -2006
+piece 42 -181 -132 50 minecraft:ancient_city/structures/small_statue CLOCKWISE_180 -2921 -51 -2035 -2912 -44 -2028
+piece 42 -181 -132 51 feature CLOCKWISE_180 -2856 -47 -2089 -2856 -47 -2089
+piece 42 -181 -132 52 feature NONE -2851 -50 -2096 -2851 -50 -2096
+piece 42 -181 -132 53 feature COUNTERCLOCKWISE_90 -2848 -47 -2134 -2848 -47 -2134
+piece 42 -181 -132 54 minecraft:ancient_city/walls/ruined_corner_wall_2 NONE -2823 -51 -2123 -2803 -37 -2103
+piece 42 -181 -132 55 list:minecraft:ancient_city/structures/camp_1 COUNTERCLOCKWISE_90 -2839 -51 -2140 -2823 -47 -2124
+piece 42 -181 -132 56 minecraft:ancient_city/walls/intact_horizontal_wall_bridge COUNTERCLOCKWISE_90 -2910 -51 -2221 -2890 -37 -2204
+piece 42 -181 -132 57 minecraft:ancient_city/walls/intact_horizontal_wall_2 CLOCKWISE_180 -2889 -51 -2203 -2872 -37 -2183
+piece 42 -181 -132 58 feature CLOCKWISE_180 -2950 -50 -2063 -2950 -50 -2063
+piece 42 -181 -132 59 minecraft:ancient_city/structures/chamber_2 CLOCKWISE_180 -2923 -51 -2051 -2912 -46 -2041
+piece 42 -181 -132 60 minecraft:ancient_city/structures/small_ruin_1 CLOCKWISE_180 -2951 -51 -2051 -2945 -47 -2044
+piece 42 -181 -132 61 minecraft:ancient_city/walls/intact_horizontal_wall_2 COUNTERCLOCKWISE_90 -2944 -51 -2038 -2924 -37 -2021
+piece 42 -181 -132 62 minecraft:ancient_city/walls/intact_corner_wall_1 NONE -2984 -51 -2056 -2964 -37 -2036
+piece 42 -181 -132 63 minecraft:ancient_city/structures/large_pillar_1 CLOCKWISE_180 -2963 -51 -2069 -2958 -37 -2064
+piece 42 -181 -132 64 minecraft:ancient_city/structures/medium_ruin_2 CLOCKWISE_180 -3000 -51 -2071 -2985 -47 -2061
+piece 42 -181 -132 65 minecraft:ancient_city/structures/barracks CLOCKWISE_180 -3005 -51 -2170 -2985 -40 -2154
+piece 42 -181 -132 66 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 CLOCKWISE_90 -2984 -51 -2188 -2964 -37 -2171
+piece 42 -181 -132 67 minecraft:ancient_city/structures/medium_pillar_1 CLOCKWISE_180 -2963 -51 -2165 -2957 -41 -2158
+piece 42 -181 -132 68 minecraft:ancient_city/structures/small_statue CLOCKWISE_90 -2996 -51 -2131 -2989 -44 -2122
+piece 42 -181 -132 69 minecraft:ancient_city/walls/intact_corner_wall_1 COUNTERCLOCKWISE_90 -2944 -51 -2206 -2924 -37 -2186
+piece 42 -181 -132 70 feature CLOCKWISE_90 -2884 -50 -2032 -2884 -50 -2032
+piece 42 -181 -132 71 minecraft:ancient_city/structures/chamber_1 CLOCKWISE_180 -2890 -51 -2022 -2872 -42 -2008
+piece 42 -181 -132 72 minecraft:ancient_city/structures/small_statue CLOCKWISE_180 -2921 -51 -2019 -2912 -44 -2012
+piece 42 -181 -132 73 minecraft:ancient_city/walls/intact_horizontal_wall_1 CLOCKWISE_90 -2823 -51 -2102 -2803 -37 -2085
+piece 42 -181 -132 74 minecraft:ancient_city/walls/intact_horizontal_wall_1 NONE -2802 -51 -2123 -2785 -37 -2103
+piece 42 -181 -132 75 minecraft:ancient_city/structures/large_ruin_1 NONE -2889 -51 -2220 -2873 -47 -2204
+piece 42 -181 -132 76 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 NONE -2871 -51 -2203 -2854 -37 -2183
+piece 42 -181 -132 77 feature CLOCKWISE_180 -2920 -49 -2046 -2920 -49 -2046
+piece 42 -181 -132 78 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 CLOCKWISE_90 -2944 -51 -2020 -2924 -37 -2003
+piece 42 -181 -132 79 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 NONE -3002 -51 -2056 -2985 -37 -2036
+piece 42 -181 -132 80 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 CLOCKWISE_90 -2984 -51 -2035 -2964 -37 -2018
+piece 42 -181 -132 81 feature NONE -2995 -47 -2164 -2995 -47 -2164
+piece 42 -181 -132 82 feature CLOCKWISE_90 -2996 -47 -2156 -2996 -47 -2156
+piece 42 -181 -132 83 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 COUNTERCLOCKWISE_90 -2984 -51 -2206 -2964 -37 -2189
+piece 42 -181 -132 84 minecraft:ancient_city/structures/small_statue NONE -2963 -51 -2182 -2954 -44 -2175
+piece 42 -181 -132 85 minecraft:ancient_city/structures/small_ruin_1 CLOCKWISE_180 -2991 -51 -2183 -2985 -47 -2176
+piece 42 -181 -132 86 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 NONE -2962 -51 -2206 -2945 -37 -2186
+piece 42 -181 -132 87 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_90 -2944 -51 -2224 -2924 -37 -2207
+piece 42 -181 -132 88 feature CLOCKWISE_90 -2884 -50 -2014 -2884 -50 -2014
+piece 42 -181 -132 89 feature CLOCKWISE_180 -2877 -47 -2009 -2877 -47 -2009
+piece 42 -181 -132 90 minecraft:ancient_city/structures/small_ruin_1 NONE -2802 -51 -2096 -2796 -47 -2089
+piece 42 -181 -132 91 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 COUNTERCLOCKWISE_90 -2823 -51 -2084 -2803 -37 -2067
+piece 42 -181 -132 92 minecraft:ancient_city/structures/small_statue CLOCKWISE_180 -2833 -51 -2096 -2824 -44 -2089
+piece 42 -181 -132 93 minecraft:ancient_city/structures/chamber_1 CLOCKWISE_90 -2800 -51 -2142 -2786 -42 -2124
+piece 42 -181 -132 94 minecraft:ancient_city/structures/large_pillar_1 COUNTERCLOCKWISE_90 -2864 -51 -2182 -2859 -37 -2177
+piece 42 -181 -132 95 list:minecraft:ancient_city/structures/ice_box_1 CLOCKWISE_90 -2869 -51 -2222 -2855 -42 -2204
+piece 42 -181 -132 96 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 NONE -2853 -51 -2203 -2836 -37 -2183
+cand 42 -192 -106 -3076 -27 -1696 warm_ocean
+cand 42 -186 -83 -2971 -27 -1328 savanna
+cand 42 -179 -63 -2859 -27 -1008 savanna
+cand 42 -192 -45 -3072 -27 -715 savanna
+cand 42 -178 -20 -2848 -27 -324 old_growth_birch_forest
+cand 42 -183 9 -2928 -27 148 beach
+cand 42 -189 36 -3028 -27 576 meadow
+cand 42 -183 63 -2928 -27 1012 dripstone_caves
+cand 42 -182 83 -2916 -27 1328 forest
+cand 42 -178 109 -2848 -27 1739 old_growth_pine_taiga
+cand 42 -177 128 -2832 -27 2052 forest
+cand 42 -179 154 -2864 -27 2459 dripstone_caves
+cand 42 -178 169 -2848 -27 2708 birch_forest
+cand 42 -168 -177 -2688 -27 -2836 badlands
+cand 42 -165 -167 -2640 -27 -2667 eroded_badlands
+cand 42 -157 -133 -2507 -27 -2128 desert
+cand 42 -164 -119 -2624 -27 -1899 sparse_jungle
+cand 42 -154 -94 -2468 -27 -1504 forest
+cand 42 -158 -72 -2532 -27 -1152 forest
+cand 42 -153 -34 -2448 -27 -548 dripstone_caves
+cand 42 -160 -12 -2560 -27 -196 plains
+cand 42 -156 14 -2496 -27 228 forest
+cand 42 -155 27 -2480 -27 427 forest
+cand 42 -154 53 -2468 -27 848 forest
+cand 42 -165 80 -2640 -27 1284 deep_dark
+cand 42 -164 100 -2628 -27 1600 old_growth_pine_taiga
+cand 42 -154 123 -2464 -27 1972 deep_dark
+cand 42 -168 149 -2688 -27 2379 dripstone_caves
+cand 42 -165 175 -2644 -27 2800 meadow
+cand 42 -138 -191 -2208 -27 -3060 eroded_badlands
+cand 42 -134 -153 -2144 -27 -2452 badlands
+cand 42 -141 -138 -2256 -27 -2212 badlands
+cand 42 -131 -119 -2096 -27 -1908 sparse_jungle
+cand 42 -139 -96 -2224 -27 -1540 river
+cand 42 -138 -59 -2203 -27 -944 dripstone_caves
+cand 42 -132 -38 -2116 -27 -608 dripstone_caves
+cand 42 -135 -20 -2155 -27 -320 sunflower_plains
+cand 42 -129 11 -2064 -27 180 ocean
+cand 42 -131 33 -2100 -27 528 forest
+cand 42 -143 61 -2288 -27 980 forest
+cand 42 -129 75 -2068 -27 1200 cold_ocean
+cand 42 -132 100 -2112 -27 1595 deep_dark
+cand 42 -134 132 -2144 -27 2116 deep_dark
+cand 42 -141 156 -2256 -27 2500 birch_forest
+cand 42 -140 178 -2240 -27 2843 plains
+cand 42 -108 -187 -1723 -27 -2992 desert
+cand 42 -112 -166 -1787 -27 -2656 badlands
+cand 42 -112 -136 -1792 -27 -2180 eroded_badlands
+cand 42 -118 -113 -1883 -27 -1808 desert
+cand 42 -106 -87 -1696 -27 -1396 dripstone_caves
+cand 42 -118 -72 -1888 -27 -1156 dripstone_caves
+cand 42 -115 -40 -1840 -27 -644 sunflower_plains
+cand 42 -106 -22 -1700 -27 -352 plains
+cand 42 -120 5 -1920 -27 75 plains
+cand 42 -115 30 -1840 -27 475 forest
+cand 42 -114 49 -1828 -27 784 forest
+cand 42 -115 73 -1835 -27 1168 cold_ocean
+cand 42 -107 103 -1716 -27 1648 old_growth_birch_forest
+cand 42 -110 120 -1760 -27 1924 lush_caves
+cand 42 -117 154 -1867 -27 2464 dark_forest
+cand 42 -108 180 -1723 -27 2880 savanna
+cand 42 -84 -183 -1348 -27 -2928 warm_ocean
+cand 42 -92 -168 -1467 -27 -2688 lush_caves
+cand 42 -89 -138 -1424 -27 -2203 desert
+cand 42 -93 -111 -1488 -27 -1771 desert
+cand 42 -96 -89 -1536 -27 -1428 forest
+cand 42 -93 -66 -1488 -27 -1060 forest
+cand 42 -89 -46 -1428 -27 -736 plains
+cand 42 -89 -20 -1424 -27 -324 forest
+cand 42 -81 1 -1300 -27 16 lush_caves
+cand 42 -81 37 -1300 -27 592 river
+cand 42 -83 55 -1328 -27 884 forest
+cand 42 -95 84 -1520 -27 1348 ocean
+cand 42 -83 98 -1323 -27 1568 ocean
+cand 42 -86 133 -1380 -27 2128 ocean
+cand 42 -96 157 -1536 -27 2516 lush_caves
+cand 42 -96 177 -1536 -27 2836 jungle
+cand 42 -61 -190 -976 -27 -3044 warm_ocean
+cand 42 -65 -161 -1040 -27 -2580 warm_ocean
+cand 42 -71 -141 -1136 -27 -2251 warm_ocean
+cand 42 -64 -115 -1028 -27 -1840 lukewarm_ocean
+cand 42 -63 -88 -1003 -27 -1408 beach
+cand 42 -62 -62 -996 -27 -992 river
+cand 42 -71 -46 -1136 -27 -740 flower_forest
+cand 42 -61 -17 -976 -27 -276 windswept_savanna
+cand 42 -68 3 -1088 -27 52 beach
+cand 42 -72 31 -1152 -27 491 river
+cand 42 -59 63 -948 -27 1008 forest
+cand 42 -64 87 -1028 -27 1392 lukewarm_ocean
+cand 42 -57 108 -912 -27 1732 lukewarm_ocean
+cand 42 -60 129 -960 -27 2059 deep_ocean
+cand 42 -63 155 -1012 -27 2480 jungle
+cand 42 -62 168 -992 -27 2683 jungle
+cand 42 -35 -183 -560 -27 -2932 forest
+cand 42 -42 -161 -676 -27 -2576 lush_caves
+cand 42 -37 -137 -587 -27 -2192 warm_ocean
+cand 42 -36 -106 -571 -27 -1696 lukewarm_ocean
+cand 42 -35 -88 -560 -27 -1403 lukewarm_ocean
+cand 42 -42 -61 -672 -27 -971 ocean
+cand 42 -40 -48 -640 -27 -763 plains
+cand 42 -46 -22 -736 -27 -356 swamp
+cand 42 -45 1 -720 -27 11 plains
+cand 42 -46 30 -731 -27 480 ocean
+cand 42 -43 56 -688 -27 900 ocean
+cand 42 -48 75 -768 -27 1195 lukewarm_ocean
+cand 42 -43 98 -688 -27 1572 lukewarm_ocean
+cand 42 -36 120 -576 -27 1924 lush_caves
+cand 42 -34 158 -544 -27 2523 savanna
+cand 42 -33 171 -532 -27 2736 beach
+cand 42 -9 -177 -144 -27 -2827 sparse_jungle
+cand 42 -21 -159 -340 -27 -2544 lukewarm_ocean
+cand 42 -12 -144 -196 -27 -2304 lush_caves
+cand 42 -17 -105 -272 -27 -1675 deep_lukewarm_ocean
+cand 42 -9 -82 -144 -27 -1307 ocean
+cand 42 -20 -72 -320 -27 -1147 ocean
+cand 42 -22 -36 -356 -27 -576 plains
+cand 42 -13 -24 -208 -27 -379 dark_forest
+cand 42 -14 9 -224 -27 139 swamp
+cand 42 -11 37 -180 -27 592 swamp
+cand 42 -17 51 -276 -27 816 beach
+cand 42 -11 75 -176 -27 1195 lush_caves
+cand 42 -15 107 -240 -27 1707 lukewarm_ocean
+cand 42 -23 131 -368 -27 2091 lukewarm_ocean
+cand 42 -16 158 -260 -27 2528 lukewarm_ocean
+cand 42 -12 180 -192 -27 2875 desert
+cand 42 7 -177 116 -27 -2832 forest
+cand 42 3 -157 48 -27 -2516 lukewarm_ocean
+cand 42 15 -137 235 -27 -2192 windswept_savanna
+cand 42 3 -114 48 -27 -1819 lukewarm_ocean
+cand 42 15 -88 235 -27 -1408 forest
+cand 42 14 -61 224 -27 -971 forest
+cand 42 14 -44 219 -27 -704 plains
+cand 42 8 -20 132 -27 -320 old_growth_birch_forest
+cand 42 9 11 144 -27 171 lush_caves
+cand 42 0 32 -4 -27 512 lush_caves
+cand 42 0 54 4 -27 864 birch_forest
+cand 42 8 74 123 -27 1184 old_growth_birch_forest
+cand 42 7 99 107 -27 1584 plains
+cand 42 7 130 112 -27 2084 lukewarm_ocean
+cand 42 13 158 212 -27 2528 sparse_jungle
+cand 42 10 181 164 -27 2896 wooded_badlands
+cand 42 27 -190 427 -27 -3040 savanna
+cand 42 28 -165 448 -27 -2635 forest
+cand 42 38 -144 603 -27 -2304 forest
+cand 42 36 -115 571 -27 -1840 sunflower_plains
+cand 42 39 -96 628 -27 -1536 plains
+cand 42 25 -67 404 -27 -1072 stony_shore
+cand 42 26 -48 411 -27 -768 plains
+cand 42 39 -10 628 -27 -160 cold_ocean
+cand 42 39 3 624 -27 43 deep_ocean
+cand 42 38 31 612 -27 496 ocean
+cand 42 28 63 443 -27 1008 beach
+cand 42 34 80 539 -27 1280 swamp
+cand 42 33 98 528 -27 1563 forest
+cand 42 28 130 448 -27 2084 savanna_plateau
+cand 42 33 153 532 -27 2448 jungle
+cand 42 38 178 608 -27 2843 deep_dark
+cand 42 50 -191 804 -27 -3056 river
+cand 42 50 -162 795 -27 -2592 ocean
+cand 42 62 -130 992 -27 -2084 birch_forest
+cand 42 51 -111 816 -27 -1780 plains
+cand 42 58 -82 928 -27 -1307 forest
+cand 42 49 -69 779 -27 -1104 forest
+cand 42 51 -47 816 -27 -756 deep_dark
+cand 42 49 -19 784 -27 -308 cold_ocean
+cand 42 58 4 932 -27 64 deep_cold_ocean
+cand 42 60 38 960 -27 612 ocean
+cand 42 54 48 864 -27 772 ocean
+cand 42 50 75 795 -27 1200 swamp
+cand 42 49 105 788 -27 1680 river
+cand 42 63 120 1012 -27 1920 jungle
+cand 42 61 156 980 -27 2496 savanna_plateau
+cand 42 50 182 800 -27 2907 deep_dark
+cand 42 75 -192 1200 -27 -3076 birch_forest
+cand 42 72 -165 1156 -27 -2640 lush_caves
+cand 42 76 -138 1211 -27 -2208 lush_caves
+cand 42 84 -120 1344 -27 -1924 taiga
+cand 42 78 -84 1243 -27 -1344 forest
+cand 42 73 -63 1172 -27 -1008 cold_ocean
+cand 42 74 -34 1184 -27 -539 cold_ocean
+cand 42 85 -18 1360 -27 -283 cold_ocean
+cand 42 85 1 1364 -27 16 stony_shore
+cand 42 72 35 1147 -27 560 ocean
+cand 42 85 52 1364 -27 832 ocean
+cand 42 76 77 1216 -27 1227 swamp
+cand 42 72 103 1152 -27 1652 sparse_jungle
+cand 42 75 126 1204 -27 2016 sparse_jungle
+cand 42 84 159 1344 -27 2548 plains
+cand 42 81 177 1296 -27 2827 plains
+cand 42 111 -177 1776 -27 -2836 ocean
+cand 42 103 -165 1652 -27 -2640 ocean
+cand 42 105 -136 1675 -27 -2176 ocean
+cand 42 100 -108 1595 -27 -1728 forest
+cand 42 98 -88 1563 -27 -1408 taiga
+cand 42 111 -62 1776 -27 -987 birch_forest
+cand 42 107 -46 1712 -27 -740 dark_forest
+cand 42 101 -22 1620 -27 -352 ocean
+cand 42 107 11 1707 -27 176 plains
+cand 42 109 38 1739 -27 608 deep_ocean
+cand 42 100 59 1600 -27 948 river
+cand 42 110 73 1760 -27 1163 forest
+cand 42 103 111 1652 -27 1776 sparse_jungle
+cand 42 108 122 1723 -27 1952 desert
+cand 42 103 158 1648 -27 2523 savanna
+cand 42 106 183 1696 -27 2923 savanna
+cand 42 135 -179 2160 -27 -2859 ocean
+cand 42 122 -165 1956 -27 -2640 deep_ocean
+cand 42 128 -141 2043 -27 -2256 sunflower_plains
+cand 42 125 -113 2000 -27 -1803 swamp
+cand 42 120 -82 1915 -27 -1312 swamp
+cand 42 135 -60 2160 -27 -955 swamp
+cand 42 121 -48 1931 -27 -768 birch_forest
+cand 42 123 -15 1968 -27 -235 ocean
+cand 42 130 13 2084 -27 208 ocean
+cand 42 130 39 2080 -27 619 ocean
+cand 42 125 61 2000 -27 980 savanna
+cand 42 124 76 1984 -27 1220 lukewarm_ocean
+cand 42 121 105 1940 -27 1680 lush_caves
+cand 42 132 129 2116 -27 2064 lush_caves
+cand 42 131 147 2096 -27 2347 desert
+cand 42 133 174 2128 -27 2779 warm_ocean
+cand 42 155 -190 2480 -27 -3035 plains
+cand 42 144 -156 2299 -27 -2496 ocean
+cand 42 156 -134 2496 -27 -2148 forest
+cand 42 146 -108 2336 -27 -1723 swamp
+cand 42 151 -91 2411 -27 -1456 swamp
+cand 42 154 -61 2468 -27 -976 swamp
+cand 42 144 -43 2304 -27 -692 windswept_forest
+cand 42 153 -20 2452 -27 -320 dark_forest
+cand 42 157 10 2512 -27 155 birch_forest
+cand 42 151 27 2416 -27 436 deep_ocean
+cand 42 147 61 2352 -27 971 lukewarm_ocean
+cand 42 158 79 2528 -27 1259 lukewarm_ocean
+cand 42 148 97 2372 -27 1552 lush_caves
+cand 42 147 133 2347 -27 2128 warm_ocean
+cand 42 144 152 2308 -27 2432 desert
+cand 42 149 171 2384 -27 2740 desert
+cand 42 169 -186 2699 -27 -2976 river
+cand 42 171 -159 2731 -27 -2544 plains
+cand 42 182 -130 2907 -27 -2080 river
+cand 42 181 -114 2896 -27 -1819 forest
+cand 42 171 -92 2740 -27 -1472 ocean
+cand 42 178 -62 2843 -27 -992 lush_caves
+cand 42 176 -42 2816 -27 -676 lush_caves
+cand 42 180 -16 2875 -27 -256 lush_caves
+cand 42 181 1 2900 -27 16 deep_ocean
+cand 42 180 36 2875 -27 576 deep_ocean
+cand 42 176 51 2811 -27 816 deep_ocean
+cand 42 172 83 2752 -27 1323 lukewarm_ocean
+cand 42 178 110 2848 -27 1755 warm_ocean
+cand 42 183 131 2928 -27 2100 desert
+cand 42 170 153 2724 -27 2448 desert
+cand 42 178 182 2843 -27 2912 warm_ocean
+cand 12345 -184 -184 -2948 -27 -2944 ocean
+piece 12345 -184 -184 0 minecraft:ancient_city/city_center/city_center_1 NONE -2957 -52 -2964 -2940 -22 -2924
+piece 12345 -184 -184 1 minecraft:ancient_city/city_center/walls/bottom_2 NONE -2971 -51 -2964 -2958 -28 -2924
+piece 12345 -184 -184 2 minecraft:ancient_city/city_center/walls/left NONE -2957 -51 -2978 -2940 -28 -2965
+piece 12345 -184 -184 3 minecraft:ancient_city/city_center/walls/right NONE -2957 -51 -2923 -2940 -28 -2910
+piece 12345 -184 -184 4 minecraft:ancient_city/city_center/walls/top NONE -2939 -51 -2964 -2926 -28 -2924
+piece 12345 -184 -184 5 minecraft:ancient_city/city_center/walls/bottom_right_corner_2 NONE -2971 -51 -2923 -2958 -28 -2910
+piece 12345 -184 -184 6 minecraft:ancient_city/city_center/walls/bottom_left_corner NONE -2971 -51 -2978 -2958 -28 -2965
+piece 12345 -184 -184 7 minecraft:ancient_city/city/entrance/entrance_connector NONE -3001 -51 -2963 -2972 -37 -2925
+piece 12345 -184 -184 8 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 COUNTERCLOCKWISE_90 -2958 -51 -2996 -2938 -37 -2979
+piece 12345 -184 -184 9 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 COUNTERCLOCKWISE_90 -2959 -51 -2909 -2939 -37 -2892
+piece 12345 -184 -184 10 minecraft:ancient_city/city_center/walls/top_left_corner NONE -2939 -51 -2978 -2926 -28 -2965
+piece 12345 -184 -184 11 minecraft:ancient_city/city_center/walls/top_right_corner NONE -2939 -51 -2923 -2926 -28 -2910
+piece 12345 -184 -184 12 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 NONE -2925 -51 -2955 -2908 -37 -2935
+piece 12345 -184 -184 13 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 CLOCKWISE_90 -2992 -51 -2981 -2972 -37 -2964
+piece 12345 -184 -184 14 minecraft:ancient_city/city/entrance/entrance_path_2 NONE -3036 -51 -2963 -3002 -37 -2925
+piece 12345 -184 -184 15 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 COUNTERCLOCKWISE_90 -2992 -51 -2924 -2972 -37 -2907
+piece 12345 -184 -184 16 minecraft:ancient_city/walls/ruined_corner_wall_2 NONE -2958 -51 -3017 -2938 -37 -2997
+piece 12345 -184 -184 17 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_180 -2937 -51 -2993 -2928 -46 -2983
+piece 12345 -184 -184 18 minecraft:ancient_city/structures/large_pillar_1 NONE -2964 -51 -2990 -2959 -37 -2985
+piece 12345 -184 -184 19 minecraft:ancient_city/structures/chamber_2 CLOCKWISE_180 -2938 -51 -2905 -2927 -46 -2895
+piece 12345 -184 -184 20 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 COUNTERCLOCKWISE_90 -2959 -51 -2891 -2939 -37 -2874
+piece 12345 -184 -184 21 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 CLOCKWISE_180 -2907 -51 -2955 -2890 -37 -2935
+piece 12345 -184 -184 22 minecraft:ancient_city/structures/chamber_2 COUNTERCLOCKWISE_90 -2922 -51 -2934 -2912 -46 -2923
+piece 12345 -184 -184 23 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 COUNTERCLOCKWISE_90 -2992 -51 -2999 -2972 -37 -2982
+piece 12345 -184 -184 24 minecraft:ancient_city/structures/chamber_3 NONE -3002 -51 -2977 -2993 -46 -2967
+piece 12345 -184 -184 25 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 CLOCKWISE_90 -3032 -51 -2924 -3012 -37 -2907
+piece 12345 -184 -184 26 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 COUNTERCLOCKWISE_90 -3032 -51 -2981 -3012 -37 -2964
+piece 12345 -184 -184 27 minecraft:ancient_city/structures/chamber_3 NONE -3002 -51 -2921 -2993 -46 -2911
+piece 12345 -184 -184 28 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 CLOCKWISE_90 -2992 -51 -2906 -2972 -37 -2889
+piece 12345 -184 -184 29 minecraft:ancient_city/walls/intact_horizontal_wall_1 CLOCKWISE_180 -2937 -51 -3017 -2920 -37 -2997
+piece 12345 -184 -184 30 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 CLOCKWISE_90 -2958 -51 -3035 -2938 -37 -3018
+piece 12345 -184 -184 31 feature NONE -2935 -49 -2900 -2935 -49 -2900
+piece 12345 -184 -184 32 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 CLOCKWISE_90 -2959 -51 -2873 -2939 -37 -2856
+piece 12345 -184 -184 33 minecraft:ancient_city/structures/small_statue NONE -2938 -51 -2886 -2929 -44 -2879
+piece 12345 -184 -184 34 minecraft:ancient_city/structures/small_ruin_2 CLOCKWISE_180 -2967 -51 -2884 -2960 -47 -2881
+piece 12345 -184 -184 35 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 NONE -2889 -51 -2955 -2872 -37 -2935
+piece 12345 -184 -184 36 minecraft:ancient_city/structures/tall_ruin_4 CLOCKWISE_180 -2906 -51 -2972 -2890 -29 -2956
+piece 12345 -184 -184 37 minecraft:ancient_city/structures/chamber_1 COUNTERCLOCKWISE_90 -2906 -51 -2934 -2892 -42 -2916
+piece 12345 -184 -184 38 feature COUNTERCLOCKWISE_90 -2917 -49 -2931 -2917 -49 -2931
+piece 12345 -184 -184 39 minecraft:ancient_city/structures/small_ruin_1 NONE -2971 -51 -2991 -2965 -47 -2984
+piece 12345 -184 -184 40 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 CLOCKWISE_90 -2992 -51 -3017 -2972 -37 -3000
+piece 12345 -184 -184 41 minecraft:ancient_city/structures/small_ruin_2 CLOCKWISE_180 -3000 -51 -2992 -2993 -47 -2989
+piece 12345 -184 -184 42 feature CLOCKWISE_180 -2998 -50 -2970 -2998 -50 -2970
+piece 12345 -184 -184 43 minecraft:ancient_city/walls/intact_horizontal_wall_2 COUNTERCLOCKWISE_90 -3032 -51 -2906 -3012 -37 -2889
+piece 12345 -184 -184 44 minecraft:ancient_city/structures/medium_ruin_1 NONE -3011 -51 -2921 -3004 -47 -2909
+piece 12345 -184 -184 45 minecraft:ancient_city/structures/small_statue CLOCKWISE_180 -3042 -51 -2919 -3033 -44 -2912
+piece 12345 -184 -184 46 minecraft:ancient_city/structures/barracks CLOCKWISE_180 -3053 -51 -2981 -3033 -40 -2965
+piece 12345 -184 -184 47 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 CLOCKWISE_90 -3032 -51 -2999 -3012 -37 -2982
+piece 12345 -184 -184 48 minecraft:ancient_city/structures/small_ruin_2 NONE -3011 -51 -2972 -3004 -47 -2969
+piece 12345 -184 -184 49 minecraft:ancient_city/structures/small_statue CLOCKWISE_180 -3002 -51 -2899 -2993 -44 -2892
+piece 12345 -184 -184 50 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 COUNTERCLOCKWISE_90 -2992 -51 -2888 -2972 -37 -2871
+piece 12345 -184 -184 51 minecraft:ancient_city/structures/small_statue COUNTERCLOCKWISE_90 -2933 -51 -3027 -2926 -44 -3018
+piece 12345 -184 -184 52 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_180 -2919 -51 -3017 -2902 -37 -2997
+piece 12345 -184 -184 53 minecraft:ancient_city/structures/medium_ruin_2 CLOCKWISE_180 -2974 -51 -3031 -2959 -47 -3021
+piece 12345 -184 -184 54 minecraft:ancient_city/walls/intact_horizontal_wall_1 COUNTERCLOCKWISE_90 -2958 -51 -3053 -2938 -37 -3036
+piece 12345 -184 -184 55 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_180 -2938 -51 -2869 -2929 -46 -2859
+piece 12345 -184 -184 56 minecraft:ancient_city/structures/small_statue CLOCKWISE_180 -2969 -51 -2866 -2960 -44 -2859
+piece 12345 -184 -184 57 minecraft:ancient_city/walls/intact_lshape_wall_1 COUNTERCLOCKWISE_90 -2959 -51 -2855 -2939 -37 -2835
+piece 12345 -184 -184 58 minecraft:ancient_city/structures/barracks COUNTERCLOCKWISE_90 -2888 -51 -2976 -2872 -40 -2956
+piece 12345 -184 -184 59 minecraft:ancient_city/structures/barracks CLOCKWISE_90 -2888 -51 -2934 -2872 -40 -2914
+piece 12345 -184 -184 60 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 NONE -2871 -51 -2955 -2854 -37 -2935
+piece 12345 -184 -184 61 feature CLOCKWISE_90 -2900 -50 -2928 -2900 -50 -2928
+piece 12345 -184 -184 62 feature COUNTERCLOCKWISE_90 -2905 -47 -2921 -2905 -47 -2921
+piece 12345 -184 -184 63 minecraft:ancient_city/structures/small_statue NONE -2971 -51 -3013 -2962 -44 -3006
+piece 12345 -184 -184 64 minecraft:ancient_city/structures/chamber_3 NONE -3002 -51 -3013 -2993 -46 -3003
+piece 12345 -184 -184 65 minecraft:ancient_city/structures/barracks CLOCKWISE_180 -3053 -51 -2906 -3033 -40 -2890
+piece 12345 -184 -184 66 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_90 -3032 -51 -2888 -3012 -37 -2871
+piece 12345 -184 -184 67 minecraft:ancient_city/structures/small_ruin_1 NONE -3011 -51 -2900 -3005 -47 -2893
+piece 12345 -184 -184 68 feature NONE -3044 -47 -2967 -3044 -47 -2967
+piece 12345 -184 -184 69 feature NONE -3043 -47 -2975 -3043 -47 -2975
+piece 12345 -184 -184 70 minecraft:ancient_city/structures/small_ruin_1 NONE -3011 -51 -2993 -3005 -47 -2986
+piece 12345 -184 -184 71 minecraft:ancient_city/structures/tall_ruin_3 COUNTERCLOCKWISE_90 -3049 -51 -2998 -3033 -29 -2982
+piece 12345 -184 -184 72 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 CLOCKWISE_90 -3032 -51 -3017 -3012 -37 -3000
+piece 12345 -184 -184 73 minecraft:ancient_city/structures/small_statue CLOCKWISE_180 -3002 -51 -2882 -2993 -44 -2875
+piece 12345 -184 -184 74 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 CLOCKWISE_90 -2992 -51 -2870 -2972 -37 -2853
+piece 12345 -184 -184 75 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 NONE -2901 -51 -3017 -2884 -37 -2997
+piece 12345 -184 -184 76 minecraft:ancient_city/structures/chamber_2 CLOCKWISE_90 -2915 -51 -3029 -2905 -46 -3018
+piece 12345 -184 -184 77 minecraft:ancient_city/structures/small_statue CLOCKWISE_90 -2913 -51 -2996 -2906 -44 -2987
+piece 12345 -184 -184 78 minecraft:ancient_city/structures/chamber_1 NONE -2977 -51 -3052 -2959 -42 -3038
+piece 12345 -184 -184 79 minecraft:ancient_city/structures/tall_ruin_3 CLOCKWISE_90 -2937 -51 -3052 -2921 -29 -3036
+piece 12345 -184 -184 80 feature CLOCKWISE_180 -2933 -50 -2866 -2933 -50 -2866
+piece 12345 -184 -184 81 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 CLOCKWISE_180 -2938 -51 -2855 -2921 -37 -2835
+piece 12345 -184 -184 82 feature NONE -2886 -47 -2967 -2886 -47 -2967
+piece 12345 -184 -184 83 feature CLOCKWISE_90 -2878 -47 -2966 -2878 -47 -2966
+piece 12345 -184 -184 84 feature COUNTERCLOCKWISE_90 -2874 -47 -2923 -2874 -47 -2923
+piece 12345 -184 -184 85 minecraft:ancient_city/structures/small_statue CLOCKWISE_90 -2864 -51 -2934 -2857 -44 -2925
+piece 12345 -184 -184 86 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 NONE -2853 -51 -2955 -2836 -37 -2935
+piece 12345 -184 -184 87 feature CLOCKWISE_90 -2998 -50 -3006 -2998 -50 -3006
+piece 12345 -184 -184 88 feature CLOCKWISE_180 -3043 -47 -2900 -3043 -47 -2900
+piece 12345 -184 -184 89 minecraft:ancient_city/walls/intact_lshape_wall_1 CLOCKWISE_180 -3032 -51 -2870 -3012 -37 -2850
+piece 12345 -184 -184 90 minecraft:ancient_city/structures/chamber_3 NONE -3042 -51 -2884 -3033 -46 -2874
+piece 12345 -184 -184 91 minecraft:ancient_city/structures/small_ruin_2 NONE -3011 -51 -2881 -3004 -47 -2878
+piece 12345 -184 -184 92 minecraft:ancient_city/structures/large_ruin_1 CLOCKWISE_180 -3049 -51 -3017 -3033 -47 -3001
+piece 12345 -184 -184 93 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 COUNTERCLOCKWISE_90 -3032 -51 -3035 -3012 -37 -3018
+piece 12345 -184 -184 94 minecraft:ancient_city/structures/medium_pillar_1 CLOCKWISE_180 -3011 -51 -3012 -3005 -41 -3005
+piece 12345 -184 -184 95 minecraft:ancient_city/structures/large_pillar_1 NONE -2998 -51 -2863 -2993 -37 -2858
+piece 12345 -184 -184 96 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 COUNTERCLOCKWISE_90 -2992 -51 -2852 -2972 -37 -2835
+piece 12345 -184 -184 97 minecraft:ancient_city/structures/chamber_2 CLOCKWISE_90 -2896 -51 -3029 -2886 -46 -3018
+piece 12345 -184 -184 98 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 NONE -2883 -51 -3017 -2866 -37 -2997
+piece 12345 -184 -184 99 feature NONE -2910 -49 -3021 -2910 -49 -3021
+piece 12345 -184 -184 100 feature CLOCKWISE_180 -2972 -47 -3051 -2972 -47 -3051
+piece 12345 -184 -184 101 feature COUNTERCLOCKWISE_90 -2965 -50 -3046 -2965 -50 -3046
+piece 12345 -184 -184 102 minecraft:ancient_city/walls/ruined_corner_wall_2 CLOCKWISE_180 -2920 -51 -2855 -2900 -37 -2835
+piece 12345 -184 -184 103 minecraft:ancient_city/structures/barracks COUNTERCLOCKWISE_90 -2852 -51 -2976 -2836 -40 -2956
+cand 12345 -190 -163 -3040 -27 -2612 ocean
+piece 12345 -190 -163 0 minecraft:ancient_city/city_center/city_center_3 CLOCKWISE_90 -3060 -52 -2621 -3020 -22 -2604
+piece 12345 -190 -163 1 minecraft:ancient_city/city_center/walls/right CLOCKWISE_90 -3074 -51 -2621 -3061 -28 -2604
+piece 12345 -190 -163 2 minecraft:ancient_city/city_center/walls/top CLOCKWISE_90 -3060 -51 -2603 -3020 -28 -2590
+piece 12345 -190 -163 3 minecraft:ancient_city/city_center/walls/left CLOCKWISE_90 -3019 -51 -2621 -3006 -28 -2604
+piece 12345 -190 -163 4 minecraft:ancient_city/city_center/walls/bottom_2 CLOCKWISE_90 -3060 -51 -2635 -3020 -28 -2622
+piece 12345 -190 -163 5 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 CLOCKWISE_180 -3092 -51 -2623 -3075 -37 -2603
+piece 12345 -190 -163 6 minecraft:ancient_city/city_center/walls/top_left_corner CLOCKWISE_90 -3019 -51 -2603 -3006 -28 -2590
+piece 12345 -190 -163 7 minecraft:ancient_city/city_center/walls/top_right_corner CLOCKWISE_90 -3074 -51 -2603 -3061 -28 -2590
+piece 12345 -190 -163 8 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 CLOCKWISE_90 -3049 -51 -2589 -3029 -37 -2572
+piece 12345 -190 -163 9 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_180 -3005 -51 -2622 -2988 -37 -2602
+piece 12345 -190 -163 10 minecraft:ancient_city/city_center/walls/bottom_left_corner CLOCKWISE_90 -3019 -51 -2635 -3006 -28 -2622
+piece 12345 -190 -163 11 minecraft:ancient_city/city_center/walls/bottom_right_corner_1 CLOCKWISE_90 -3074 -51 -2635 -3061 -28 -2622
+piece 12345 -190 -163 12 minecraft:ancient_city/city/entrance/entrance_connector CLOCKWISE_90 -3059 -51 -2665 -3021 -37 -2636
+piece 12345 -190 -163 13 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_90 -3089 -51 -2633 -3079 -46 -2624
+piece 12345 -190 -163 14 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_180 -3110 -51 -2623 -3093 -37 -2603
+piece 12345 -190 -163 15 minecraft:ancient_city/walls/ruined_corner_wall_1 CLOCKWISE_180 -3049 -51 -2571 -3029 -37 -2551
+piece 12345 -190 -163 16 list:minecraft:ancient_city/structures/camp_1 NONE -3028 -51 -2587 -3012 -47 -2571
+piece 12345 -190 -163 17 minecraft:ancient_city/structures/medium_ruin_2 CLOCKWISE_90 -3002 -51 -2601 -2992 -47 -2586
+piece 12345 -190 -163 18 minecraft:ancient_city/structures/medium_ruin_2 COUNTERCLOCKWISE_90 -3002 -51 -2638 -2992 -47 -2623
+piece 12345 -190 -163 19 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 CLOCKWISE_180 -2987 -51 -2622 -2970 -37 -2602
+piece 12345 -190 -163 20 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 CLOCKWISE_180 -3077 -51 -2656 -3060 -37 -2636
+piece 12345 -190 -163 21 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_180 -3020 -51 -2656 -3003 -37 -2636
+piece 12345 -190 -163 22 minecraft:ancient_city/city/entrance/entrance_path_3 CLOCKWISE_90 -3059 -51 -2700 -3021 -37 -2666
+piece 12345 -190 -163 23 feature CLOCKWISE_180 -3086 -50 -2629 -3086 -50 -2629
+piece 12345 -190 -163 24 list:minecraft:ancient_city/structures/camp_1 CLOCKWISE_90 -3111 -51 -2602 -3095 -47 -2586
+piece 12345 -190 -163 25 minecraft:ancient_city/walls/ruined_corner_wall_1 CLOCKWISE_90 -3131 -51 -2623 -3111 -37 -2603
+piece 12345 -190 -163 26 minecraft:ancient_city/structures/barracks COUNTERCLOCKWISE_90 -3110 -51 -2644 -3094 -40 -2624
+piece 12345 -190 -163 27 minecraft:ancient_city/walls/intact_horizontal_wall_1 NONE -3067 -51 -2571 -3050 -37 -2551
+piece 12345 -190 -163 28 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 COUNTERCLOCKWISE_90 -3049 -51 -2550 -3029 -37 -2533
+piece 12345 -190 -163 29 minecraft:ancient_city/structures/small_statue CLOCKWISE_90 -2981 -51 -2601 -2974 -44 -2592
+piece 12345 -190 -163 30 list:minecraft:ancient_city/structures/camp_1 COUNTERCLOCKWISE_90 -2983 -51 -2639 -2967 -47 -2623
+piece 12345 -190 -163 31 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 CLOCKWISE_180 -2969 -51 -2622 -2952 -37 -2602
+piece 12345 -190 -163 32 minecraft:ancient_city/structures/small_statue COUNTERCLOCKWISE_90 -3072 -51 -2666 -3065 -44 -2657
+piece 12345 -190 -163 33 minecraft:ancient_city/structures/barracks COUNTERCLOCKWISE_90 -3020 -51 -2677 -3004 -40 -2657
+piece 12345 -190 -163 34 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_180 -3077 -51 -2696 -3060 -37 -2676
+piece 12345 -190 -163 35 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 CLOCKWISE_180 -3149 -51 -2623 -3132 -37 -2603
+piece 12345 -190 -163 36 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 COUNTERCLOCKWISE_90 -3131 -51 -2641 -3111 -37 -2624
+piece 12345 -190 -163 37 feature CLOCKWISE_90 -3100 -47 -2634 -3100 -47 -2634
+piece 12345 -190 -163 38 feature CLOCKWISE_90 -3108 -47 -2635 -3108 -47 -2635
+piece 12345 -190 -163 39 minecraft:ancient_city/structures/chamber_2 CLOCKWISE_90 -3062 -51 -2583 -3052 -46 -2572
+piece 12345 -190 -163 40 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 NONE -3085 -51 -2571 -3068 -37 -2551
+piece 12345 -190 -163 41 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 COUNTERCLOCKWISE_90 -3049 -51 -2532 -3029 -37 -2515
+piece 12345 -190 -163 42 minecraft:ancient_city/structures/small_statue CLOCKWISE_180 -3059 -51 -2546 -3050 -44 -2539
+piece 12345 -190 -163 43 minecraft:ancient_city/structures/barracks NONE -3028 -51 -2550 -3008 -40 -2534
+piece 12345 -190 -163 44 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 NONE -2951 -51 -2622 -2934 -37 -2602
+piece 12345 -190 -163 45 minecraft:ancient_city/structures/small_statue CLOCKWISE_90 -2963 -51 -2601 -2956 -44 -2592
+piece 12345 -190 -163 46 minecraft:ancient_city/structures/small_ruin_2 COUNTERCLOCKWISE_90 -2963 -51 -2630 -2960 -47 -2623
+piece 12345 -190 -163 47 feature NONE -3010 -47 -2667 -3010 -47 -2667
+piece 12345 -190 -163 48 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 CLOCKWISE_180 -3095 -51 -2696 -3078 -37 -2676
+piece 12345 -190 -163 49 minecraft:ancient_city/structures/tall_ruin_4 NONE -3150 -51 -2602 -3134 -29 -2586
+piece 12345 -190 -163 50 minecraft:ancient_city/structures/chamber_1 CLOCKWISE_90 -3148 -51 -2642 -3134 -42 -2624
+piece 12345 -190 -163 51 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 COUNTERCLOCKWISE_90 -3131 -51 -2659 -3111 -37 -2642
+piece 12345 -190 -163 52 feature COUNTERCLOCKWISE_90 -3057 -49 -2575 -3057 -49 -2575
+piece 12345 -190 -163 53 minecraft:ancient_city/structures/small_statue COUNTERCLOCKWISE_90 -3081 -51 -2581 -3074 -44 -2572
+piece 12345 -190 -163 54 minecraft:ancient_city/structures/tall_ruin_1 CLOCKWISE_180 -3084 -51 -2550 -3068 -29 -2534
+piece 12345 -190 -163 55 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 NONE -3103 -51 -2571 -3086 -37 -2551
+piece 12345 -190 -163 56 minecraft:ancient_city/structures/tall_ruin_4 CLOCKWISE_90 -3066 -51 -2533 -3050 -29 -2517
+piece 12345 -190 -163 57 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_90 -3049 -51 -2514 -3029 -37 -2497
+piece 12345 -190 -163 58 minecraft:ancient_city/structures/tall_ruin_4 COUNTERCLOCKWISE_90 -3028 -51 -2531 -3012 -29 -2515
+piece 12345 -190 -163 59 feature CLOCKWISE_180 -3018 -47 -2540 -3018 -47 -2540
+piece 12345 -190 -163 60 feature NONE -3017 -47 -2548 -3017 -47 -2548
+piece 12345 -190 -163 61 minecraft:ancient_city/structures/tall_ruin_2 CLOCKWISE_180 -2949 -51 -2639 -2933 -29 -2623
+piece 12345 -190 -163 62 minecraft:ancient_city/structures/chamber_2 COUNTERCLOCKWISE_90 -2948 -51 -2601 -2938 -46 -2590
+piece 12345 -190 -163 63 minecraft:ancient_city/structures/chamber_2 CLOCKWISE_90 -3088 -51 -2708 -3078 -46 -2697
+piece 12345 -190 -163 64 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 CLOCKWISE_180 -3113 -51 -2696 -3096 -37 -2676
+piece 12345 -190 -163 65 list:minecraft:ancient_city/structures/ice_box_1 COUNTERCLOCKWISE_90 -3094 -51 -2675 -3080 -42 -2657
+piece 12345 -190 -163 66 feature COUNTERCLOCKWISE_90 -3135 -47 -2637 -3135 -47 -2637
+piece 12345 -190 -163 67 feature NONE -3140 -50 -2630 -3140 -50 -2630
+piece 12345 -190 -163 68 minecraft:ancient_city/structures/chamber_2 NONE -3143 -51 -2657 -3132 -46 -2647
+piece 12345 -190 -163 69 minecraft:ancient_city/structures/chamber_2 CLOCKWISE_180 -3110 -51 -2655 -3099 -46 -2645
+piece 12345 -190 -163 70 minecraft:ancient_city/structures/chamber_3 COUNTERCLOCKWISE_90 -3099 -51 -2550 -3089 -46 -2541
+piece 12345 -190 -163 71 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 CLOCKWISE_180 -3121 -51 -2571 -3104 -37 -2551
+piece 12345 -190 -163 72 minecraft:ancient_city/structures/chamber_1 CLOCKWISE_180 -3028 -51 -2512 -3010 -42 -2498
+piece 12345 -190 -163 73 minecraft:ancient_city/structures/barracks CLOCKWISE_180 -3070 -51 -2513 -3050 -40 -2497
+piece 12345 -190 -163 74 feature CLOCKWISE_90 -2943 -49 -2598 -2943 -49 -2598
+piece 12345 -190 -163 75 minecraft:ancient_city/structures/barracks COUNTERCLOCKWISE_90 -3110 -51 -2717 -3094 -40 -2697
+piece 12345 -190 -163 76 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_180 -3131 -51 -2696 -3114 -37 -2676
+piece 12345 -190 -163 77 feature CLOCKWISE_180 -3093 -47 -2662 -3093 -47 -2662
+piece 12345 -190 -163 78 feature NONE -3088 -50 -2669 -3088 -50 -2669
+cand 12345 -187 -143 -2996 -27 -2288 flower_forest
+piece 12345 -187 -143 0 minecraft:ancient_city/city_center/city_center_2 NONE -3005 -52 -2308 -2988 -22 -2268
+piece 12345 -187 -143 1 minecraft:ancient_city/city_center/walls/bottom_1 NONE -3019 -51 -2308 -3006 -28 -2268
+piece 12345 -187 -143 2 minecraft:ancient_city/city_center/walls/right NONE -3005 -51 -2267 -2988 -28 -2254
+piece 12345 -187 -143 3 minecraft:ancient_city/city_center/walls/top NONE -2987 -51 -2308 -2974 -28 -2268
+piece 12345 -187 -143 4 minecraft:ancient_city/city_center/walls/left NONE -3005 -51 -2322 -2988 -28 -2309
+piece 12345 -187 -143 5 minecraft:ancient_city/city_center/walls/bottom_right_corner_2 NONE -3019 -51 -2267 -3006 -28 -2254
+piece 12345 -187 -143 6 minecraft:ancient_city/city/entrance/entrance_connector NONE -3049 -51 -2307 -3020 -37 -2269
+piece 12345 -187 -143 7 minecraft:ancient_city/city_center/walls/bottom_left_corner NONE -3019 -51 -2322 -3006 -28 -2309
+piece 12345 -187 -143 8 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 COUNTERCLOCKWISE_90 -3007 -51 -2253 -2987 -37 -2236
+piece 12345 -187 -143 9 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 NONE -2973 -51 -2299 -2956 -37 -2279
+piece 12345 -187 -143 10 minecraft:ancient_city/city_center/walls/top_left_corner NONE -2987 -51 -2322 -2974 -28 -2309
+piece 12345 -187 -143 11 minecraft:ancient_city/city_center/walls/top_right_corner NONE -2987 -51 -2267 -2974 -28 -2254
+piece 12345 -187 -143 12 minecraft:ancient_city/walls/ruined_corner_wall_1 CLOCKWISE_90 -3006 -51 -2343 -2986 -37 -2323
+piece 12345 -187 -143 13 minecraft:ancient_city/city/entrance/entrance_path_2 NONE -3084 -51 -2307 -3050 -37 -2269
+piece 12345 -187 -143 14 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 COUNTERCLOCKWISE_90 -3040 -51 -2325 -3020 -37 -2308
+piece 12345 -187 -143 15 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 COUNTERCLOCKWISE_90 -3040 -51 -2268 -3020 -37 -2251
+piece 12345 -187 -143 16 minecraft:ancient_city/structures/small_ruin_1 CLOCKWISE_180 -3014 -51 -2249 -3008 -47 -2242
+piece 12345 -187 -143 17 minecraft:ancient_city/structures/chamber_2 CLOCKWISE_180 -2986 -51 -2249 -2975 -46 -2239
+piece 12345 -187 -143 18 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 CLOCKWISE_90 -3007 -51 -2235 -2987 -37 -2218
+piece 12345 -187 -143 19 minecraft:ancient_city/walls/intact_lshape_wall_1 CLOCKWISE_180 -2955 -51 -2299 -2935 -37 -2279
+piece 12345 -187 -143 20 minecraft:ancient_city/structures/chamber_1 COUNTERCLOCKWISE_90 -2971 -51 -2278 -2957 -42 -2260
+piece 12345 -187 -143 21 minecraft:ancient_city/structures/medium_ruin_1 COUNTERCLOCKWISE_90 -2970 -51 -2307 -2958 -47 -2300
+piece 12345 -187 -143 22 minecraft:ancient_city/walls/intact_horizontal_wall_2 CLOCKWISE_90 -3006 -51 -2361 -2986 -37 -2344
+piece 12345 -187 -143 23 minecraft:ancient_city/walls/intact_horizontal_wall_1 NONE -2985 -51 -2343 -2968 -37 -2323
+piece 12345 -187 -143 24 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 COUNTERCLOCKWISE_90 -3080 -51 -2268 -3060 -37 -2251
+piece 12345 -187 -143 25 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 COUNTERCLOCKWISE_90 -3080 -51 -2325 -3060 -37 -2308
+piece 12345 -187 -143 26 minecraft:ancient_city/walls/intact_horizontal_wall_2 CLOCKWISE_90 -3040 -51 -2343 -3020 -37 -2326
+piece 12345 -187 -143 27 minecraft:ancient_city/structures/small_statue CLOCKWISE_180 -3050 -51 -2262 -3041 -44 -2255
+piece 12345 -187 -143 28 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 COUNTERCLOCKWISE_90 -3040 -51 -2250 -3020 -37 -2233
+piece 12345 -187 -143 29 feature CLOCKWISE_180 -2983 -49 -2244 -2983 -49 -2244
+piece 12345 -187 -143 30 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 COUNTERCLOCKWISE_90 -3007 -51 -2217 -2987 -37 -2200
+piece 12345 -187 -143 31 minecraft:ancient_city/structures/tall_ruin_3 CLOCKWISE_90 -2986 -51 -2234 -2970 -29 -2218
+piece 12345 -187 -143 32 minecraft:ancient_city/structures/chamber_2 NONE -3019 -51 -2235 -3008 -46 -2225
+piece 12345 -187 -143 33 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 COUNTERCLOCKWISE_90 -2955 -51 -2317 -2935 -37 -2300
+piece 12345 -187 -143 34 feature CLOCKWISE_90 -2970 -47 -2265 -2970 -47 -2265
+piece 12345 -187 -143 35 feature NONE -2965 -50 -2272 -2965 -50 -2272
+piece 12345 -187 -143 36 minecraft:ancient_city/structures/tall_ruin_3 CLOCKWISE_90 -2985 -51 -2360 -2969 -29 -2344
+piece 12345 -187 -143 37 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 COUNTERCLOCKWISE_90 -3006 -51 -2379 -2986 -37 -2362
+piece 12345 -187 -143 38 list:minecraft:ancient_city/structures/camp_1 CLOCKWISE_180 -3023 -51 -2362 -3007 -47 -2346
+piece 12345 -187 -143 39 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 NONE -2967 -51 -2343 -2950 -37 -2323
+piece 12345 -187 -143 40 minecraft:ancient_city/structures/large_pillar_1 CLOCKWISE_180 -3059 -51 -2263 -3054 -37 -2258
+piece 12345 -187 -143 41 minecraft:ancient_city/structures/medium_pillar_1 NONE -3087 -51 -2263 -3081 -41 -2256
+piece 12345 -187 -143 42 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 CLOCKWISE_90 -3080 -51 -2250 -3060 -37 -2233
+piece 12345 -187 -143 43 minecraft:ancient_city/structures/tall_ruin_1 COUNTERCLOCKWISE_90 -3097 -51 -2325 -3081 -29 -2309
+piece 12345 -187 -143 44 minecraft:ancient_city/structures/chamber_1 CLOCKWISE_180 -3059 -51 -2324 -3041 -42 -2310
+piece 12345 -187 -143 45 minecraft:ancient_city/walls/intact_lshape_wall_1 CLOCKWISE_90 -3080 -51 -2346 -3060 -37 -2326
+piece 12345 -187 -143 46 minecraft:ancient_city/structures/chamber_1 NONE -3059 -51 -2342 -3041 -42 -2328
+piece 12345 -187 -143 47 minecraft:ancient_city/structures/small_ruin_2 NONE -3019 -51 -2336 -3012 -47 -2333
+piece 12345 -187 -143 48 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 COUNTERCLOCKWISE_90 -3040 -51 -2232 -3020 -37 -2215
+piece 12345 -187 -143 49 minecraft:ancient_city/structures/small_ruin_1 CLOCKWISE_180 -3047 -51 -2246 -3041 -47 -2239
+piece 12345 -187 -143 50 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 COUNTERCLOCKWISE_90 -3007 -51 -2199 -2987 -37 -2182
+piece 12345 -187 -143 51 feature CLOCKWISE_180 -3011 -49 -2230 -3011 -49 -2230
+piece 12345 -187 -143 52 minecraft:ancient_city/structures/chamber_2 CLOCKWISE_180 -2934 -51 -2313 -2923 -46 -2303
+piece 12345 -187 -143 53 minecraft:ancient_city/structures/large_ruin_1 NONE -2985 -51 -2378 -2969 -47 -2362
+piece 12345 -187 -143 54 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 CLOCKWISE_90 -3006 -51 -2397 -2986 -37 -2380
+piece 12345 -187 -143 55 minecraft:ancient_city/structures/tall_ruin_1 COUNTERCLOCKWISE_90 -3023 -51 -2379 -3007 -29 -2363
+piece 12345 -187 -143 56 minecraft:ancient_city/structures/tall_ruin_4 CLOCKWISE_180 -2965 -51 -2360 -2949 -29 -2344
+piece 12345 -187 -143 57 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 NONE -2949 -51 -2343 -2932 -37 -2323
+piece 12345 -187 -143 58 minecraft:ancient_city/structures/chamber_3 COUNTERCLOCKWISE_90 -2966 -51 -2322 -2956 -46 -2313
+piece 12345 -187 -143 59 minecraft:ancient_city/walls/intact_horizontal_wall_2 CLOCKWISE_90 -3080 -51 -2232 -3060 -37 -2215
+piece 12345 -187 -143 60 minecraft:ancient_city/structures/medium_ruin_1 NONE -3059 -51 -2247 -3052 -47 -2235
+piece 12345 -187 -143 61 feature COUNTERCLOCKWISE_90 -3053 -50 -2316 -3053 -50 -2316
+piece 12345 -187 -143 62 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 NONE -3098 -51 -2346 -3081 -37 -2326
+piece 12345 -187 -143 63 minecraft:ancient_city/structures/medium_ruin_1 CLOCKWISE_180 -3048 -51 -2230 -3041 -47 -2218
+piece 12345 -187 -143 64 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 CLOCKWISE_90 -3040 -51 -2214 -3020 -37 -2197
+piece 12345 -187 -143 65 minecraft:ancient_city/structures/tall_ruin_4 COUNTERCLOCKWISE_90 -2986 -51 -2198 -2970 -29 -2182
+piece 12345 -187 -143 66 minecraft:ancient_city/structures/chamber_2 NONE -3019 -51 -2197 -3008 -46 -2187
+piece 12345 -187 -143 67 feature NONE -2931 -49 -2308 -2931 -49 -2308
+piece 12345 -187 -143 68 minecraft:ancient_city/structures/barracks CLOCKWISE_180 -3027 -51 -2396 -3007 -40 -2380
+piece 12345 -187 -143 69 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 CLOCKWISE_180 -2931 -51 -2343 -2914 -37 -2323
+piece 12345 -187 -143 70 minecraft:ancient_city/structures/chamber_1 CLOCKWISE_90 -2947 -51 -2362 -2933 -42 -2344
+piece 12345 -187 -143 71 feature CLOCKWISE_90 -2959 -50 -2317 -2959 -50 -2317
+piece 12345 -187 -143 72 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_180 -3059 -51 -2228 -3050 -46 -2218
+piece 12345 -187 -143 73 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 CLOCKWISE_90 -3080 -51 -2214 -3060 -37 -2197
+piece 12345 -187 -143 74 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_90 -3094 -51 -2356 -3084 -46 -2347
+piece 12345 -187 -143 75 minecraft:ancient_city/structures/chamber_1 NONE -3059 -51 -2212 -3041 -42 -2198
+piece 12345 -187 -143 76 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 COUNTERCLOCKWISE_90 -3040 -51 -2196 -3020 -37 -2179
+piece 12345 -187 -143 77 minecraft:ancient_city/structures/chamber_2 CLOCKWISE_180 -3019 -51 -2209 -3008 -46 -2199
+piece 12345 -187 -143 78 feature CLOCKWISE_90 -3011 -49 -2192 -3011 -49 -2192
+piece 12345 -187 -143 79 feature COUNTERCLOCKWISE_90 -3018 -47 -2382 -3018 -47 -2382
+piece 12345 -187 -143 80 feature COUNTERCLOCKWISE_90 -3017 -47 -2390 -3017 -47 -2390
+piece 12345 -187 -143 81 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_180 -2913 -51 -2343 -2896 -37 -2323
+piece 12345 -187 -143 82 minecraft:ancient_city/structures/small_statue COUNTERCLOCKWISE_90 -2926 -51 -2353 -2919 -44 -2344
+piece 12345 -187 -143 83 feature CLOCKWISE_90 -2939 -50 -2350 -2939 -50 -2350
+piece 12345 -187 -143 84 feature NONE -2934 -47 -2357 -2934 -47 -2357
+cand 12345 -178 -112 -2848 -27 -1796 dripstone_caves
+cand 12345 -183 -91 -2932 -27 -1456 dripstone_caves
+cand 12345 -192 -60 -3076 -27 -960 old_growth_birch_forest
+cand 12345 -190 -33 -3040 -27 -532 forest
+cand 12345 -184 -11 -2948 -27 -176 savanna
+cand 12345 -188 0 -3003 -27 0 savanna
+cand 12345 -179 29 -2859 -27 464 savanna
+cand 12345 -189 56 -3024 -27 891 plains
+cand 12345 -184 77 -2948 -27 1232 desert
+cand 12345 -192 101 -3076 -27 1616 dripstone_caves
+cand 12345 -190 135 -3040 -27 2155 savanna
+cand 12345 -180 146 -2880 -27 2340 savanna_plateau
+cand 12345 -184 179 -2948 -27 2864 lush_caves
+cand 12345 -162 -180 -2587 -27 -2880 ocean
+cand 12345 -162 -160 -2587 -27 -2560 ocean
+cand 12345 -155 -144 -2480 -27 -2308 plains
+cand 12345 -166 -109 -2660 -27 -1744 dripstone_caves
+cand 12345 -160 -83 -2564 -27 -1328 dripstone_caves
+cand 12345 -164 -63 -2619 -27 -1008 dripstone_caves
+cand 12345 -159 -45 -2548 -27 -720 dripstone_caves
+cand 12345 -165 -18 -2640 -27 -283 river
+cand 12345 -153 6 -2452 -27 96 dripstone_caves
+cand 12345 -153 31 -2448 -27 500 river
+cand 12345 -167 59 -2667 -27 944 mangrove_swamp
+cand 12345 -164 74 -2624 -27 1179 desert
+cand 12345 -154 107 -2468 -27 1712 savanna
+cand 12345 -160 132 -2555 -27 2112 forest
+cand 12345 -162 154 -2587 -27 2464 bamboo_jungle
+cand 12345 -154 181 -2468 -27 2896 lush_caves
+cand 12345 -139 -185 -2228 -27 -2960 lush_caves
+cand 12345 -132 -166 -2112 -27 -2651 lush_caves
+cand 12345 -131 -130 -2096 -27 -2075 forest
+cand 12345 -141 -117 -2251 -27 -1872 dripstone_caves
+cand 12345 -129 -89 -2064 -27 -1419 dripstone_caves
+cand 12345 -143 -65 -2283 -27 -1040 dripstone_caves
+cand 12345 -134 -36 -2144 -27 -580 lush_caves
+cand 12345 -133 -16 -2128 -27 -251 plains
+cand 12345 -142 3 -2272 -27 43 dripstone_caves
+cand 12345 -137 24 -2192 -27 379 forest
+cand 12345 -133 49 -2132 -27 784 sparse_jungle
+cand 12345 -135 85 -2164 -27 1360 lukewarm_ocean
+cand 12345 -138 107 -2208 -27 1716 river
+cand 12345 -132 120 -2107 -27 1920 beach
+cand 12345 -142 152 -2267 -27 2432 lukewarm_ocean
+cand 12345 -138 182 -2212 -27 2912 river
+cand 12345 -113 -190 -1808 -27 -3044 ocean
+cand 12345 -118 -160 -1883 -27 -2560 dark_forest
+cand 12345 -118 -131 -1892 -27 -2096 birch_forest
+cand 12345 -105 -106 -1684 -27 -1696 dark_forest
+cand 12345 -120 -83 -1924 -27 -1328 bamboo_jungle
+cand 12345 -115 -68 -1844 -27 -1088 bamboo_jungle
+cand 12345 -115 -36 -1840 -27 -571 jungle
+cand 12345 -112 -16 -1787 -27 -256 jungle
+cand 12345 -110 12 -1764 -27 192 jungle
+cand 12345 -120 25 -1920 -27 404 sparse_jungle
+cand 12345 -120 54 -1915 -27 864 lush_caves
+cand 12345 -112 76 -1792 -27 1220 jungle
+cand 12345 -120 97 -1920 -27 1556 lukewarm_ocean
+cand 12345 -107 123 -1716 -27 1968 deep_lukewarm_ocean
+cand 12345 -119 157 -1908 -27 2512 lukewarm_ocean
+cand 12345 -115 183 -1840 -27 2932 sparse_jungle
+cand 12345 -82 -179 -1312 -27 -2868 lukewarm_ocean
+cand 12345 -89 -161 -1419 -27 -2576 lush_caves
+cand 12345 -87 -136 -1387 -27 -2176 birch_forest
+cand 12345 -94 -117 -1499 -27 -1872 old_growth_birch_forest
+cand 12345 -86 -94 -1376 -27 -1508 savanna
+cand 12345 -83 -60 -1328 -27 -955 savanna_plateau
+cand 12345 -83 -41 -1332 -27 -656 forest
+cand 12345 -95 -10 -1520 -27 -155 jungle
+cand 12345 -95 6 -1515 -27 96 lush_caves
+cand 12345 -83 28 -1328 -27 443 jungle
+cand 12345 -96 61 -1531 -27 976 sparse_jungle
+cand 12345 -92 87 -1472 -27 1387 forest
+cand 12345 -89 111 -1428 -27 1776 old_growth_birch_forest
+cand 12345 -92 126 -1472 -27 2011 ocean
+cand 12345 -86 146 -1380 -27 2336 forest
+cand 12345 -86 173 -1371 -27 2768 ocean
+cand 12345 -58 -186 -928 -27 -2971 ocean
+cand 12345 -63 -154 -1008 -27 -2468 lukewarm_ocean
+cand 12345 -61 -133 -976 -27 -2123 river
+cand 12345 -70 -109 -1120 -27 -1739 forest
+cand 12345 -69 -93 -1104 -27 -1492 savanna_plateau
+cand 12345 -59 -71 -939 -27 -1136 dripstone_caves
+cand 12345 -71 -47 -1131 -27 -752 deep_dark
+cand 12345 -58 -10 -928 -27 -155 savanna
+cand 12345 -65 11 -1035 -27 176 forest
+cand 12345 -66 28 -1051 -27 448 deep_dark
+cand 12345 -65 55 -1035 -27 880 bamboo_jungle
+cand 12345 -70 81 -1120 -27 1291 dripstone_caves
+cand 12345 -62 100 -996 -27 1600 old_growth_birch_forest
+cand 12345 -57 120 -912 -27 1924 forest
+cand 12345 -60 151 -960 -27 2411 plains
+cand 12345 -60 171 -964 -27 2736 plains
+cand 12345 -41 -188 -660 -27 -3008 forest
+cand 12345 -48 -155 -763 -27 -2480 birch_forest
+cand 12345 -43 -129 -683 -27 -2064 ocean
+cand 12345 -33 -115 -528 -27 -1835 plains
+cand 12345 -48 -83 -768 -27 -1323 meadow
+cand 12345 -39 -70 -624 -27 -1124 forest
+cand 12345 -42 -46 -672 -27 -731 sparse_jungle
+cand 12345 -36 -16 -576 -27 -251 deep_dark
+cand 12345 -35 12 -564 -27 192 forest
+cand 12345 -40 27 -640 -27 436 plains
+cand 12345 -40 58 -640 -27 932 dripstone_caves
+cand 12345 -46 82 -740 -27 1312 forest
+cand 12345 -44 98 -708 -27 1568 forest
+cand 12345 -34 123 -544 -27 1972 forest
+cand 12345 -40 151 -644 -27 2416 forest
+cand 12345 -39 177 -619 -27 2832 old_growth_birch_forest
+cand 12345 -22 -185 -347 -27 -2960 windswept_hills
+cand 12345 -22 -159 -352 -27 -2539 old_growth_birch_forest
+cand 12345 -9 -142 -139 -27 -2272 ocean
+cand 12345 -15 -114 -235 -27 -1824 forest
+cand 12345 -15 -91 -244 -27 -1456 old_growth_birch_forest
+cand 12345 -9 -66 -148 -27 -1056 forest
+cand 12345 -12 -43 -196 -27 -688 forest
+cand 12345 -18 -18 -288 -27 -283 deep_dark
+cand 12345 -11 14 -180 -27 224 ocean
+cand 12345 -12 34 -192 -27 539 ocean
+cand 12345 -15 53 -235 -27 848 deep_dark
+cand 12345 -24 79 -388 -27 1264 snowy_slopes
+cand 12345 -9 109 -144 -27 1739 plains
+cand 12345 -13 121 -212 -27 1936 plains
+cand 12345 -22 157 -347 -27 2512 taiga
+cand 12345 -18 174 -288 -27 2788 taiga
+cand 12345 9 -188 148 -27 -3008 cold_ocean
+cand 12345 9 -155 148 -27 -2480 deep_cold_ocean
+cand 12345 9 -132 139 -27 -2112 flower_forest
+cand 12345 13 -108 208 -27 -1723 forest
+cand 12345 10 -91 155 -27 -1456 deep_dark
+cand 12345 1 -57 11 -27 -912 river
+cand 12345 1 -48 11 -27 -768 forest
+cand 12345 11 -11 176 -27 -171 deep_dark
+cand 12345 11 15 171 -27 240 lush_caves
+cand 12345 10 25 164 -27 400 lush_caves
+cand 12345 9 56 144 -27 900 plains
+cand 12345 2 80 32 -27 1275 snowy_taiga
+cand 12345 14 106 224 -27 1700 frozen_ocean
+cand 12345 10 122 164 -27 1952 swamp
+cand 12345 0 145 -4 -27 2320 swamp
+cand 12345 8 178 128 -27 2843 forest
+cand 12345 38 -182 608 -27 -2907 cold_ocean
+cand 12345 32 -164 512 -27 -2628 deep_cold_ocean
+cand 12345 32 -135 512 -27 -2164 deep_cold_ocean
+cand 12345 39 -112 624 -27 -1796 cold_ocean
+cand 12345 26 -87 416 -27 -1387 river
+cand 12345 28 -60 452 -27 -960 plains
+cand 12345 36 -43 576 -27 -683 plains
+cand 12345 33 -14 532 -27 -224 deep_dark
+cand 12345 33 14 528 -27 219 lush_caves
+cand 12345 32 37 516 -27 592 deep_dark
+cand 12345 31 55 491 -27 880 snowy_plains
+cand 12345 37 87 592 -27 1387 frozen_ocean
+cand 12345 32 109 512 -27 1739 deep_frozen_ocean
+cand 12345 31 122 496 -27 1947 frozen_ocean
+cand 12345 27 152 436 -27 2432 swamp
+cand 12345 28 175 448 -27 2804 taiga
+cand 12345 53 -183 848 -27 -2932 forest
+cand 12345 49 -153 788 -27 -2448 deep_cold_ocean
+cand 12345 48 -140 763 -27 -2240 deep_cold_ocean
+cand 12345 53 -120 848 -27 -1915 deep_cold_ocean
+cand 12345 48 -84 772 -27 -1344 plains
+cand 12345 59 -60 948 -27 -960 snowy_plains
+cand 12345 61 -48 976 -27 -772 snowy_plains
+cand 12345 59 -13 944 -27 -203 deep_dark
+cand 12345 60 12 964 -27 192 taiga
+cand 12345 62 26 987 -27 416 taiga
+cand 12345 56 51 896 -27 820 frozen_ocean
+cand 12345 60 85 960 -27 1355 snowy_plains
+cand 12345 59 96 948 -27 1536 frozen_ocean
+cand 12345 57 126 907 -27 2016 frozen_river
+cand 12345 55 149 880 -27 2379 snowy_plains
+cand 12345 49 176 784 -27 2820 snowy_plains
+cand 12345 78 -184 1248 -27 -2939 deep_cold_ocean
+cand 12345 82 -159 1312 -27 -2539 cold_ocean
+cand 12345 86 -133 1380 -27 -2128 deep_frozen_ocean
+cand 12345 78 -111 1243 -27 -1776 lush_caves
+cand 12345 84 -86 1348 -27 -1376 frozen_river
+cand 12345 76 -60 1216 -27 -955 snowy_plains
+cand 12345 77 -44 1236 -27 -704 snowy_taiga
+cand 12345 84 -24 1339 -27 -384 snowy_taiga
+cand 12345 87 6 1392 -27 100 snowy_taiga
+cand 12345 82 29 1312 -27 459 snowy_plains
+cand 12345 79 56 1264 -27 891 frozen_ocean
+cand 12345 86 83 1376 -27 1332 ice_spikes
+cand 12345 82 98 1316 -27 1568 ice_spikes
+cand 12345 78 130 1248 -27 2075 snowy_taiga
+cand 12345 87 155 1387 -27 2480 snowy_taiga
+cand 12345 80 174 1275 -27 2784 snowy_taiga
+cand 12345 105 -186 1680 -27 -2971 cold_ocean
+cand 12345 97 -156 1547 -27 -2496 plains
+cand 12345 108 -134 1728 -27 -2139 frozen_ocean
+cand 12345 103 -105 1648 -27 -1675 deep_frozen_ocean
+cand 12345 97 -89 1552 -27 -1419 frozen_ocean
+cand 12345 98 -58 1563 -27 -928 snowy_taiga
+cand 12345 101 -48 1620 -27 -768 snowy_taiga
+cand 12345 108 -16 1728 -27 -251 snowy_plains
+cand 12345 101 2 1616 -27 27 snowy_plains
+cand 12345 103 32 1648 -27 516 snowy_taiga
+cand 12345 98 55 1572 -27 880 snowy_plains
+cand 12345 96 76 1536 -27 1220 snowy_plains
+cand 12345 105 103 1680 -27 1643 frozen_river
+cand 12345 110 128 1755 -27 2048 snowy_plains
+cand 12345 97 146 1552 -27 2331 snowy_plains
+cand 12345 100 177 1604 -27 2832 frozen_river
+cand 12345 122 -190 1956 -27 -3040 cold_ocean
+cand 12345 125 -158 2004 -27 -2528 plains
+cand 12345 131 -133 2096 -27 -2123 snowy_taiga
+cand 12345 128 -109 2048 -27 -1748 lush_caves
+cand 12345 130 -87 2080 -27 -1387 deep_cold_ocean
+cand 12345 134 -72 2144 -27 -1156 deep_frozen_ocean
+cand 12345 131 -44 2091 -27 -704 frozen_ocean
+cand 12345 122 -18 1952 -27 -283 frozen_ocean
+cand 12345 133 7 2132 -27 112 lush_caves
+cand 12345 133 27 2123 -27 432 lush_caves
+cand 12345 124 57 1988 -27 912 frozen_river
+cand 12345 135 87 2160 -27 1396 dripstone_caves
+cand 12345 131 96 2091 -27 1536 ice_spikes
+cand 12345 126 122 2016 -27 1956 frozen_river
+cand 12345 126 145 2020 -27 2320 snowy_plains
+cand 12345 120 177 1915 -27 2832 snowy_taiga
+cand 12345 157 -182 2512 -27 -2916 deep_ocean
+cand 12345 154 -166 2464 -27 -2660 cold_ocean
+cand 12345 150 -140 2395 -27 -2240 cold_ocean
+cand 12345 156 -115 2500 -27 -1840 cold_ocean
+cand 12345 145 -84 2315 -27 -1344 frozen_ocean
+cand 12345 157 -68 2507 -27 -1088 frozen_ocean
+cand 12345 146 -48 2336 -27 -763 deep_frozen_ocean
+cand 12345 152 -20 2427 -27 -320 frozen_ocean
+cand 12345 144 4 2304 -27 68 lush_caves
+cand 12345 145 33 2315 -27 528 taiga
+cand 12345 153 57 2452 -27 912 frozen_river
+cand 12345 151 83 2420 -27 1328 snowy_taiga
+cand 12345 150 101 2400 -27 1620 snowy_plains
+cand 12345 146 127 2336 -27 2027 snowy_taiga
+cand 12345 147 144 2352 -27 2299 snowy_taiga
+cand 12345 151 175 2416 -27 2795 dripstone_caves
+cand 12345 179 -191 2868 -27 -3056 beach
+cand 12345 182 -153 2912 -27 -2452 deep_ocean
+cand 12345 181 -137 2891 -27 -2192 deep_ocean
+cand 12345 183 -107 2928 -27 -1716 beach
+cand 12345 173 -87 2772 -27 -1392 plains
+cand 12345 181 -58 2891 -27 -928 taiga
+cand 12345 170 -33 2715 -27 -528 snowy_taiga
+cand 12345 174 -10 2784 -27 -155 snowy_taiga
+cand 12345 176 8 2816 -27 123 snowy_taiga
+cand 12345 174 29 2784 -27 459 snowy_taiga
+cand 12345 174 60 2779 -27 960 snowy_taiga
+cand 12345 175 86 2800 -27 1380 grove
+cand 12345 181 102 2891 -27 1632 deep_dark
+cand 12345 182 131 2912 -27 2100 snowy_taiga
+cand 12345 180 152 2875 -27 2432 dripstone_caves
+cand 12345 172 176 2747 -27 2816 snowy_plains
+cand -7346534567 -190 -184 -3035 -27 -2944 savanna_plateau
+piece -7346534567 -190 -184 0 minecraft:ancient_city/city_center/city_center_3 CLOCKWISE_180 -3044 -52 -2964 -3027 -22 -2924
+piece -7346534567 -190 -184 1 minecraft:ancient_city/city_center/walls/bottom_1 CLOCKWISE_180 -3026 -51 -2964 -3013 -28 -2924
+piece -7346534567 -190 -184 2 minecraft:ancient_city/city_center/walls/right CLOCKWISE_180 -3044 -51 -2978 -3027 -28 -2965
+piece -7346534567 -190 -184 3 minecraft:ancient_city/city_center/walls/left CLOCKWISE_180 -3044 -51 -2923 -3027 -28 -2910
+piece -7346534567 -190 -184 4 minecraft:ancient_city/city_center/walls/top CLOCKWISE_180 -3058 -51 -2964 -3045 -28 -2924
+piece -7346534567 -190 -184 5 minecraft:ancient_city/city_center/walls/bottom_left_corner CLOCKWISE_180 -3026 -51 -2923 -3013 -28 -2910
+piece -7346534567 -190 -184 6 minecraft:ancient_city/city/entrance/entrance_connector CLOCKWISE_180 -3012 -51 -2963 -2983 -37 -2925
+piece -7346534567 -190 -184 7 minecraft:ancient_city/city_center/walls/bottom_right_corner_1 CLOCKWISE_180 -3026 -51 -2978 -3013 -28 -2965
+piece -7346534567 -190 -184 8 minecraft:ancient_city/walls/intact_horizontal_wall_2 CLOCKWISE_90 -3045 -51 -2996 -3025 -37 -2979
+piece -7346534567 -190 -184 9 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 COUNTERCLOCKWISE_90 -3046 -51 -2909 -3026 -37 -2892
+piece -7346534567 -190 -184 10 minecraft:ancient_city/city_center/walls/top_left_corner CLOCKWISE_180 -3058 -51 -2923 -3045 -28 -2910
+piece -7346534567 -190 -184 11 minecraft:ancient_city/city_center/walls/top_right_corner CLOCKWISE_180 -3058 -51 -2978 -3045 -28 -2965
+piece -7346534567 -190 -184 12 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_180 -3076 -51 -2953 -3059 -37 -2933
+piece -7346534567 -190 -184 13 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_90 -3012 -51 -2981 -2992 -37 -2964
+piece -7346534567 -190 -184 14 minecraft:ancient_city/city/entrance/entrance_path_5 CLOCKWISE_180 -2982 -51 -2963 -2948 -37 -2925
+piece -7346534567 -190 -184 15 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_90 -3012 -51 -2924 -2992 -37 -2907
+piece -7346534567 -190 -184 16 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 CLOCKWISE_90 -3045 -51 -3014 -3025 -37 -2997
+piece -7346534567 -190 -184 17 minecraft:ancient_city/structures/barracks CLOCKWISE_180 -3066 -51 -2996 -3046 -40 -2980
+piece -7346534567 -190 -184 18 minecraft:ancient_city/structures/chamber_2 CLOCKWISE_180 -3024 -51 -2991 -3013 -46 -2981
+piece -7346534567 -190 -184 19 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_180 -3025 -51 -2906 -3016 -46 -2896
+piece -7346534567 -190 -184 20 minecraft:ancient_city/structures/tall_ruin_3 COUNTERCLOCKWISE_90 -3063 -51 -2909 -3047 -29 -2893
+piece -7346534567 -190 -184 21 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_90 -3046 -51 -2891 -3026 -37 -2874
+piece -7346534567 -190 -184 22 minecraft:ancient_city/structures/chamber_2 COUNTERCLOCKWISE_90 -3074 -51 -2932 -3064 -46 -2921
+piece -7346534567 -190 -184 23 minecraft:ancient_city/structures/chamber_1 CLOCKWISE_90 -3075 -51 -2972 -3061 -42 -2954
+piece -7346534567 -190 -184 24 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_180 -3094 -51 -2953 -3077 -37 -2933
+piece -7346534567 -190 -184 25 minecraft:ancient_city/structures/small_statue NONE -2991 -51 -2975 -2982 -44 -2968
+piece -7346534567 -190 -184 26 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 COUNTERCLOCKWISE_90 -3012 -51 -2999 -2992 -37 -2982
+piece -7346534567 -190 -184 27 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 COUNTERCLOCKWISE_90 -2972 -51 -2924 -2952 -37 -2907
+piece -7346534567 -190 -184 28 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 CLOCKWISE_90 -2972 -51 -2981 -2952 -37 -2964
+piece -7346534567 -190 -184 29 minecraft:ancient_city/structures/medium_ruin_1 NONE -2991 -51 -2921 -2984 -47 -2909
+piece -7346534567 -190 -184 30 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 COUNTERCLOCKWISE_90 -3012 -51 -2906 -2992 -37 -2889
+piece -7346534567 -190 -184 31 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 CLOCKWISE_90 -3045 -51 -3032 -3025 -37 -3015
+piece -7346534567 -190 -184 32 minecraft:ancient_city/structures/small_ruin_2 CLOCKWISE_180 -3053 -51 -3006 -3046 -47 -3003
+piece -7346534567 -190 -184 33 minecraft:ancient_city/structures/medium_pillar_1 CLOCKWISE_180 -3024 -51 -3008 -3018 -41 -3001
+piece -7346534567 -190 -184 34 feature CLOCKWISE_180 -3056 -47 -2990 -3056 -47 -2990
+piece -7346534567 -190 -184 35 feature CLOCKWISE_90 -3057 -47 -2982 -3057 -47 -2982
+piece -7346534567 -190 -184 36 feature NONE -3021 -49 -2986 -3021 -49 -2986
+piece -7346534567 -190 -184 37 feature COUNTERCLOCKWISE_90 -3020 -50 -2903 -3020 -50 -2903
+piece -7346534567 -190 -184 38 minecraft:ancient_city/structures/large_pillar_1 CLOCKWISE_180 -3025 -51 -2885 -3020 -37 -2880
+piece -7346534567 -190 -184 39 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 COUNTERCLOCKWISE_90 -3046 -51 -2873 -3026 -37 -2856
+piece -7346534567 -190 -184 40 minecraft:ancient_city/structures/chamber_2 NONE -3058 -51 -2888 -3047 -46 -2878
+piece -7346534567 -190 -184 41 feature CLOCKWISE_90 -3069 -49 -2929 -3069 -49 -2929
+piece -7346534567 -190 -184 42 feature CLOCKWISE_180 -3062 -47 -2967 -3062 -47 -2967
+piece -7346534567 -190 -184 43 feature CLOCKWISE_90 -3067 -50 -2960 -3067 -50 -2960
+piece -7346534567 -190 -184 44 minecraft:ancient_city/structures/chamber_3 COUNTERCLOCKWISE_90 -3091 -51 -2932 -3081 -46 -2923
+piece -7346534567 -190 -184 45 minecraft:ancient_city/structures/chamber_2 CLOCKWISE_90 -3090 -51 -2965 -3080 -46 -2954
+piece -7346534567 -190 -184 46 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 NONE -3112 -51 -2953 -3095 -37 -2933
+piece -7346534567 -190 -184 47 list:minecraft:ancient_city/structures/ice_box_1 CLOCKWISE_180 -2991 -51 -2998 -2973 -42 -2984
+piece -7346534567 -190 -184 48 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 CLOCKWISE_90 -3012 -51 -3017 -2992 -37 -3000
+piece -7346534567 -190 -184 49 minecraft:ancient_city/structures/chamber_3 NONE -2982 -51 -2921 -2973 -46 -2911
+piece -7346534567 -190 -184 50 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 COUNTERCLOCKWISE_90 -2972 -51 -2906 -2952 -37 -2889
+piece -7346534567 -190 -184 51 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_180 -2951 -51 -2921 -2942 -46 -2911
+piece -7346534567 -190 -184 52 minecraft:ancient_city/structures/medium_ruin_1 CLOCKWISE_180 -2980 -51 -2981 -2973 -47 -2969
+piece -7346534567 -190 -184 53 minecraft:ancient_city/structures/barracks NONE -2951 -51 -2980 -2931 -40 -2964
+piece -7346534567 -190 -184 54 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 COUNTERCLOCKWISE_90 -2972 -51 -2999 -2952 -37 -2982
+piece -7346534567 -190 -184 55 minecraft:ancient_city/walls/ruined_corner_wall_1 CLOCKWISE_180 -3012 -51 -2888 -2992 -37 -2868
+piece -7346534567 -190 -184 56 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_90 -3045 -51 -3050 -3025 -37 -3033
+piece -7346534567 -190 -184 57 minecraft:ancient_city/structures/chamber_2 NONE -3057 -51 -3029 -3046 -46 -3019
+piece -7346534567 -190 -184 58 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 COUNTERCLOCKWISE_90 -3046 -51 -2855 -3026 -37 -2838
+piece -7346534567 -190 -184 59 feature COUNTERCLOCKWISE_90 -3050 -49 -2883 -3050 -49 -2883
+piece -7346534567 -190 -184 60 feature CLOCKWISE_180 -3084 -50 -2927 -3084 -50 -2927
+piece -7346534567 -190 -184 61 feature CLOCKWISE_180 -3085 -49 -2957 -3085 -49 -2957
+piece -7346534567 -190 -184 62 minecraft:ancient_city/structures/barracks COUNTERCLOCKWISE_90 -3111 -51 -2974 -3095 -40 -2954
+piece -7346534567 -190 -184 63 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 CLOCKWISE_180 -3130 -51 -2953 -3113 -37 -2933
+piece -7346534567 -190 -184 64 minecraft:ancient_city/structures/tall_ruin_3 CLOCKWISE_180 -3114 -51 -2932 -3098 -29 -2916
+piece -7346534567 -190 -184 65 feature CLOCKWISE_90 -2978 -47 -2985 -2978 -47 -2985
+piece -7346534567 -190 -184 66 minecraft:ancient_city/structures/chamber_2 CLOCKWISE_180 -2991 -51 -3012 -2980 -46 -3002
+piece -7346534567 -190 -184 67 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 CLOCKWISE_90 -3012 -51 -3035 -2992 -37 -3018
+piece -7346534567 -190 -184 68 feature CLOCKWISE_90 -2978 -50 -2914 -2978 -50 -2914
+piece -7346534567 -190 -184 69 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 COUNTERCLOCKWISE_90 -2972 -51 -2888 -2952 -37 -2871
+piece -7346534567 -190 -184 70 minecraft:ancient_city/structures/tall_ruin_3 CLOCKWISE_90 -2951 -51 -2906 -2935 -29 -2890
+piece -7346534567 -190 -184 71 feature NONE -2946 -50 -2918 -2946 -50 -2918
+piece -7346534567 -190 -184 72 feature NONE -2941 -47 -2970 -2941 -47 -2970
+piece -7346534567 -190 -184 73 feature CLOCKWISE_90 -2940 -47 -2978 -2940 -47 -2978
+piece -7346534567 -190 -184 74 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_90 -2972 -51 -3017 -2952 -37 -3000
+piece -7346534567 -190 -184 75 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 COUNTERCLOCKWISE_90 -3012 -51 -2867 -2992 -37 -2850
+piece -7346534567 -190 -184 76 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 CLOCKWISE_180 -2991 -51 -2888 -2974 -37 -2868
+piece -7346534567 -190 -184 77 minecraft:ancient_city/structures/large_pillar_1 CLOCKWISE_180 -3024 -51 -3044 -3019 -37 -3039
+piece -7346534567 -190 -184 78 feature COUNTERCLOCKWISE_90 -3049 -49 -3024 -3049 -49 -3024
+piece -7346534567 -190 -184 79 minecraft:ancient_city/structures/chamber_2 NONE -3058 -51 -2853 -3047 -46 -2843
+piece -7346534567 -190 -184 80 minecraft:ancient_city/structures/small_statue NONE -3025 -51 -2852 -3016 -44 -2845
+piece -7346534567 -190 -184 81 feature NONE -3109 -47 -2965 -3109 -47 -2965
+piece -7346534567 -190 -184 82 feature COUNTERCLOCKWISE_90 -3101 -47 -2964 -3101 -47 -2964
+piece -7346534567 -190 -184 83 minecraft:ancient_city/structures/medium_ruin_1 CLOCKWISE_90 -3128 -51 -2932 -3116 -47 -2925
+piece -7346534567 -190 -184 84 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 NONE -3148 -51 -2953 -3131 -37 -2933
+piece -7346534567 -190 -184 85 minecraft:ancient_city/structures/tall_ruin_3 NONE -3130 -51 -2970 -3114 -29 -2954
+piece -7346534567 -190 -184 86 minecraft:ancient_city/structures/medium_ruin_2 NONE -2991 -51 -3031 -2976 -47 -3021
+piece -7346534567 -190 -184 87 minecraft:ancient_city/structures/small_statue CLOCKWISE_180 -3022 -51 -3028 -3013 -44 -3021
+piece -7346534567 -190 -184 88 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_90 -3012 -51 -3053 -2992 -37 -3036
+piece -7346534567 -190 -184 89 minecraft:ancient_city/structures/large_ruin_1 NONE -2951 -51 -2887 -2935 -47 -2871
+piece -7346534567 -190 -184 90 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 COUNTERCLOCKWISE_90 -2972 -51 -2870 -2952 -37 -2853
+piece -7346534567 -190 -184 91 minecraft:ancient_city/structures/chamber_1 CLOCKWISE_180 -2951 -51 -3015 -2933 -42 -3001
+piece -7346534567 -190 -184 92 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_90 -2972 -51 -3035 -2952 -37 -3018
+piece -7346534567 -190 -184 93 minecraft:ancient_city/structures/small_ruin_1 NONE -2991 -51 -2862 -2985 -47 -2855
+piece -7346534567 -190 -184 94 minecraft:ancient_city/structures/large_pillar_1 NONE -3018 -51 -2861 -3013 -37 -2856
+piece -7346534567 -190 -184 95 minecraft:ancient_city/walls/ruined_corner_wall_2 NONE -3012 -51 -2849 -2992 -37 -2829
+piece -7346534567 -190 -184 96 minecraft:ancient_city/structures/small_statue COUNTERCLOCKWISE_90 -2988 -51 -2898 -2981 -44 -2889
+piece -7346534567 -190 -184 97 feature CLOCKWISE_180 -3050 -49 -2848 -3050 -49 -2848
+piece -7346534567 -190 -184 98 minecraft:ancient_city/structures/barracks COUNTERCLOCKWISE_90 -3147 -51 -2974 -3131 -40 -2954
+piece -7346534567 -190 -184 99 minecraft:ancient_city/structures/tall_ruin_4 NONE -3148 -51 -2932 -3132 -29 -2916
+cand -7346534567 -183 -166 -2932 -27 -2656 forest
+piece -7346534567 -183 -166 0 minecraft:ancient_city/city_center/city_center_1 NONE -2941 -52 -2676 -2924 -22 -2636
+piece -7346534567 -183 -166 1 minecraft:ancient_city/city_center/walls/top NONE -2923 -51 -2676 -2910 -28 -2636
+piece -7346534567 -183 -166 2 minecraft:ancient_city/city_center/walls/right NONE -2941 -51 -2635 -2924 -28 -2622
+piece -7346534567 -183 -166 3 minecraft:ancient_city/city_center/walls/left NONE -2941 -51 -2690 -2924 -28 -2677
+piece -7346534567 -183 -166 4 minecraft:ancient_city/city_center/walls/bottom_2 NONE -2955 -51 -2676 -2942 -28 -2636
+piece -7346534567 -183 -166 5 minecraft:ancient_city/city_center/walls/top_right_corner NONE -2923 -51 -2635 -2910 -28 -2622
+piece -7346534567 -183 -166 6 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 NONE -2909 -51 -2667 -2892 -37 -2647
+piece -7346534567 -183 -166 7 minecraft:ancient_city/city_center/walls/top_left_corner NONE -2923 -51 -2690 -2910 -28 -2677
+piece -7346534567 -183 -166 8 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 COUNTERCLOCKWISE_90 -2943 -51 -2621 -2923 -37 -2604
+piece -7346534567 -183 -166 9 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 COUNTERCLOCKWISE_90 -2942 -51 -2708 -2922 -37 -2691
+piece -7346534567 -183 -166 10 minecraft:ancient_city/city_center/walls/bottom_left_corner NONE -2955 -51 -2690 -2942 -28 -2677
+piece -7346534567 -183 -166 11 minecraft:ancient_city/city_center/walls/bottom_right_corner_1 NONE -2955 -51 -2635 -2942 -28 -2622
+piece -7346534567 -183 -166 12 minecraft:ancient_city/city/entrance/entrance_connector NONE -2985 -51 -2675 -2956 -37 -2637
+piece -7346534567 -183 -166 13 minecraft:ancient_city/structures/chamber_1 COUNTERCLOCKWISE_90 -2907 -51 -2646 -2893 -42 -2628
+piece -7346534567 -183 -166 14 list:minecraft:ancient_city/structures/camp_1 COUNTERCLOCKWISE_90 -2907 -51 -2684 -2891 -47 -2668
+piece -7346534567 -183 -166 15 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 CLOCKWISE_180 -2891 -51 -2667 -2874 -37 -2647
+piece -7346534567 -183 -166 16 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_180 -2922 -51 -2618 -2913 -46 -2608
+piece -7346534567 -183 -166 17 minecraft:ancient_city/structures/medium_ruin_1 CLOCKWISE_180 -2951 -51 -2619 -2944 -47 -2607
+piece -7346534567 -183 -166 18 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_90 -2943 -51 -2603 -2923 -37 -2586
+piece -7346534567 -183 -166 19 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_90 -2942 -51 -2726 -2922 -37 -2709
+piece -7346534567 -183 -166 20 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 COUNTERCLOCKWISE_90 -2976 -51 -2693 -2956 -37 -2676
+piece -7346534567 -183 -166 21 minecraft:ancient_city/city/entrance/entrance_path_3 NONE -3020 -51 -2675 -2986 -37 -2637
+piece -7346534567 -183 -166 22 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 COUNTERCLOCKWISE_90 -2976 -51 -2636 -2956 -37 -2619
+piece -7346534567 -183 -166 23 feature CLOCKWISE_180 -2906 -47 -2633 -2906 -47 -2633
+piece -7346534567 -183 -166 24 minecraft:ancient_city/walls/ruined_corner_wall_1 CLOCKWISE_180 -2873 -51 -2667 -2853 -37 -2647
+piece -7346534567 -183 -166 25 minecraft:ancient_city/structures/tall_ruin_3 CLOCKWISE_180 -2891 -51 -2646 -2875 -29 -2630
+piece -7346534567 -183 -166 26 list:minecraft:ancient_city/structures/camp_1 COUNTERCLOCKWISE_90 -2890 -51 -2684 -2874 -47 -2668
+piece -7346534567 -183 -166 27 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 COUNTERCLOCKWISE_90 -2943 -51 -2585 -2923 -37 -2568
+piece -7346534567 -183 -166 28 minecraft:ancient_city/structures/barracks NONE -2922 -51 -2602 -2902 -40 -2586
+piece -7346534567 -183 -166 29 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_180 -2921 -51 -2722 -2912 -46 -2712
+piece -7346534567 -183 -166 30 minecraft:ancient_city/structures/barracks CLOCKWISE_180 -2963 -51 -2725 -2943 -40 -2709
+piece -7346534567 -183 -166 31 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_90 -2942 -51 -2744 -2922 -37 -2727
+piece -7346534567 -183 -166 32 minecraft:ancient_city/structures/large_pillar_1 NONE -2982 -51 -2687 -2977 -37 -2682
+piece -7346534567 -183 -166 33 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 CLOCKWISE_90 -3016 -51 -2636 -2996 -37 -2619
+piece -7346534567 -183 -166 34 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 COUNTERCLOCKWISE_90 -3016 -51 -2693 -2996 -37 -2676
+piece -7346534567 -183 -166 35 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 COUNTERCLOCKWISE_90 -2976 -51 -2618 -2956 -37 -2601
+piece -7346534567 -183 -166 36 minecraft:ancient_city/structures/chamber_3 NONE -2986 -51 -2633 -2977 -46 -2623
+piece -7346534567 -183 -166 37 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 COUNTERCLOCKWISE_90 -2873 -51 -2685 -2853 -37 -2668
+piece -7346534567 -183 -166 38 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 NONE -2852 -51 -2667 -2835 -37 -2647
+piece -7346534567 -183 -166 39 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 CLOCKWISE_90 -2873 -51 -2646 -2853 -37 -2629
+piece -7346534567 -183 -166 40 minecraft:ancient_city/structures/chamber_3 NONE -2953 -51 -2582 -2944 -46 -2572
+piece -7346534567 -183 -166 41 minecraft:ancient_city/walls/intact_corner_wall_1 NONE -2943 -51 -2567 -2923 -37 -2547
+piece -7346534567 -183 -166 42 minecraft:ancient_city/structures/tall_ruin_3 CLOCKWISE_90 -2922 -51 -2585 -2906 -29 -2569
+piece -7346534567 -183 -166 43 feature CLOCKWISE_180 -2912 -47 -2592 -2912 -47 -2592
+piece -7346534567 -183 -166 44 feature COUNTERCLOCKWISE_90 -2911 -47 -2600 -2911 -47 -2600
+piece -7346534567 -183 -166 45 feature CLOCKWISE_90 -2954 -47 -2711 -2954 -47 -2711
+piece -7346534567 -183 -166 46 feature NONE -2953 -47 -2719 -2953 -47 -2719
+piece -7346534567 -183 -166 47 minecraft:ancient_city/walls/ruined_corner_wall_2 NONE -2942 -51 -2765 -2922 -37 -2745
+piece -7346534567 -183 -166 48 minecraft:ancient_city/structures/small_statue NONE -2921 -51 -2740 -2912 -44 -2733
+piece -7346534567 -183 -166 49 minecraft:ancient_city/structures/medium_ruin_2 CLOCKWISE_180 -3032 -51 -2632 -3017 -47 -2622
+piece -7346534567 -183 -166 50 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 CLOCKWISE_90 -3016 -51 -2618 -2996 -37 -2601
+piece -7346534567 -183 -166 51 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 CLOCKWISE_90 -3016 -51 -2711 -2996 -37 -2694
+piece -7346534567 -183 -166 52 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 COUNTERCLOCKWISE_90 -2976 -51 -2600 -2956 -37 -2583
+piece -7346534567 -183 -166 53 minecraft:ancient_city/structures/chamber_1 NONE -2995 -51 -2617 -2977 -42 -2603
+piece -7346534567 -183 -166 54 feature NONE -2982 -50 -2626 -2982 -50 -2626
+piece -7346534567 -183 -166 55 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 CLOCKWISE_90 -2873 -51 -2703 -2853 -37 -2686
+piece -7346534567 -183 -166 56 minecraft:ancient_city/structures/chamber_1 CLOCKWISE_180 -2852 -51 -2684 -2834 -42 -2670
+piece -7346534567 -183 -166 57 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 NONE -2834 -51 -2667 -2817 -37 -2647
+piece -7346534567 -183 -166 58 list:minecraft:ancient_city/structures/camp_1 CLOCKWISE_90 -2852 -51 -2646 -2836 -47 -2630
+piece -7346534567 -183 -166 59 minecraft:ancient_city/walls/intact_horizontal_wall_1 CLOCKWISE_90 -2873 -51 -2628 -2853 -37 -2611
+piece -7346534567 -183 -166 60 feature CLOCKWISE_90 -2949 -50 -2575 -2949 -50 -2575
+piece -7346534567 -183 -166 61 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 NONE -2922 -51 -2567 -2905 -37 -2547
+piece -7346534567 -183 -166 62 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 CLOCKWISE_180 -2961 -51 -2567 -2944 -37 -2547
+piece -7346534567 -183 -166 63 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 NONE -2921 -51 -2765 -2904 -37 -2745
+piece -7346534567 -183 -166 64 minecraft:ancient_city/walls/intact_horizontal_wall_1 CLOCKWISE_180 -2960 -51 -2765 -2943 -37 -2745
+piece -7346534567 -183 -166 65 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 CLOCKWISE_90 -3016 -51 -2600 -2996 -37 -2583
+piece -7346534567 -183 -166 66 minecraft:ancient_city/structures/tall_ruin_4 CLOCKWISE_90 -3033 -51 -2618 -3017 -29 -2602
+piece -7346534567 -183 -166 67 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 COUNTERCLOCKWISE_90 -3016 -51 -2729 -2996 -37 -2712
+piece -7346534567 -183 -166 68 minecraft:ancient_city/structures/chamber_3 NONE -2986 -51 -2597 -2977 -46 -2587
+piece -7346534567 -183 -166 69 minecraft:ancient_city/structures/small_statue NONE -2955 -51 -2595 -2946 -44 -2588
+piece -7346534567 -183 -166 70 feature COUNTERCLOCKWISE_90 -2990 -47 -2616 -2990 -47 -2616
+piece -7346534567 -183 -166 71 feature CLOCKWISE_90 -2983 -50 -2611 -2983 -50 -2611
+piece -7346534567 -183 -166 72 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 COUNTERCLOCKWISE_90 -2873 -51 -2721 -2853 -37 -2704
+piece -7346534567 -183 -166 73 minecraft:ancient_city/structures/chamber_3 NONE -2883 -51 -2699 -2874 -46 -2689
+piece -7346534567 -183 -166 74 feature COUNTERCLOCKWISE_90 -2846 -50 -2676 -2846 -50 -2676
+piece -7346534567 -183 -166 75 feature NONE -2839 -47 -2671 -2839 -47 -2671
+piece -7346534567 -183 -166 76 minecraft:ancient_city/structures/small_ruin_2 CLOCKWISE_90 -2826 -51 -2646 -2823 -47 -2639
+piece -7346534567 -183 -166 77 minecraft:ancient_city/structures/chamber_3 NONE -2883 -51 -2625 -2874 -46 -2615
+piece -7346534567 -183 -166 78 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_90 -2873 -51 -2610 -2853 -37 -2593
+piece -7346534567 -183 -166 79 minecraft:ancient_city/structures/large_pillar_1 CLOCKWISE_180 -2852 -51 -2622 -2847 -37 -2617
+piece -7346534567 -183 -166 80 minecraft:ancient_city/walls/ruined_corner_wall_1 CLOCKWISE_180 -2904 -51 -2567 -2884 -37 -2547
+piece -7346534567 -183 -166 81 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 CLOCKWISE_180 -2979 -51 -2567 -2962 -37 -2547
+piece -7346534567 -183 -166 82 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_180 -2903 -51 -2765 -2886 -37 -2745
+piece -7346534567 -183 -166 83 minecraft:ancient_city/structures/small_ruin_1 COUNTERCLOCKWISE_90 -2915 -51 -2772 -2908 -47 -2766
+piece -7346534567 -183 -166 84 minecraft:ancient_city/walls/intact_horizontal_wall_1 CLOCKWISE_180 -2978 -51 -2765 -2961 -37 -2745
+piece -7346534567 -183 -166 85 minecraft:ancient_city/structures/medium_pillar_1 COUNTERCLOCKWISE_90 -2955 -51 -2744 -2948 -41 -2738
+piece -7346534567 -183 -166 86 minecraft:ancient_city/structures/small_statue CLOCKWISE_180 -3026 -51 -2593 -3017 -44 -2586
+piece -7346534567 -183 -166 87 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 COUNTERCLOCKWISE_90 -3016 -51 -2582 -2996 -37 -2565
+piece -7346534567 -183 -166 88 list:minecraft:ancient_city/structures/ice_box_1 CLOCKWISE_180 -2995 -51 -2728 -2977 -42 -2714
+piece -7346534567 -183 -166 89 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 COUNTERCLOCKWISE_90 -3016 -51 -2747 -2996 -37 -2730
+piece -7346534567 -183 -166 90 minecraft:ancient_city/structures/sauna_1 NONE -3045 -51 -2742 -3017 -42 -2706
+cand -7346534567 -187 -135 -2992 -27 -2155 dripstone_caves
+piece -7346534567 -187 -135 0 minecraft:ancient_city/city_center/city_center_3 COUNTERCLOCKWISE_90 -3012 -52 -2164 -2972 -22 -2147
+piece -7346534567 -187 -135 1 minecraft:ancient_city/city_center/walls/left COUNTERCLOCKWISE_90 -3026 -51 -2164 -3013 -28 -2147
+piece -7346534567 -187 -135 2 minecraft:ancient_city/city_center/walls/right COUNTERCLOCKWISE_90 -2971 -51 -2164 -2958 -28 -2147
+piece -7346534567 -187 -135 3 minecraft:ancient_city/city_center/walls/bottom_2 COUNTERCLOCKWISE_90 -3012 -51 -2146 -2972 -28 -2133
+piece -7346534567 -187 -135 4 minecraft:ancient_city/city_center/walls/top COUNTERCLOCKWISE_90 -3012 -51 -2178 -2972 -28 -2165
+piece -7346534567 -187 -135 5 minecraft:ancient_city/walls/ruined_corner_wall_2 CLOCKWISE_180 -3047 -51 -2166 -3027 -37 -2146
+piece -7346534567 -187 -135 6 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 NONE -2957 -51 -2165 -2940 -37 -2145
+piece -7346534567 -187 -135 7 minecraft:ancient_city/city_center/walls/bottom_left_corner COUNTERCLOCKWISE_90 -3026 -51 -2146 -3013 -28 -2133
+piece -7346534567 -187 -135 8 minecraft:ancient_city/city_center/walls/bottom_right_corner_1 COUNTERCLOCKWISE_90 -2971 -51 -2146 -2958 -28 -2133
+piece -7346534567 -187 -135 9 minecraft:ancient_city/city/entrance/entrance_connector COUNTERCLOCKWISE_90 -3011 -51 -2132 -2973 -37 -2103
+piece -7346534567 -187 -135 10 minecraft:ancient_city/walls/intact_horizontal_wall_2 CLOCKWISE_90 -3003 -51 -2196 -2983 -37 -2179
+piece -7346534567 -187 -135 11 minecraft:ancient_city/city_center/walls/top_left_corner COUNTERCLOCKWISE_90 -3026 -51 -2178 -3013 -28 -2165
+piece -7346534567 -187 -135 12 minecraft:ancient_city/city_center/walls/top_right_corner COUNTERCLOCKWISE_90 -2971 -51 -2178 -2958 -28 -2165
+piece -7346534567 -187 -135 13 minecraft:ancient_city/walls/intact_horizontal_wall_bridge CLOCKWISE_90 -3047 -51 -2145 -3027 -37 -2128
+piece -7346534567 -187 -135 14 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 COUNTERCLOCKWISE_90 -3047 -51 -2184 -3027 -37 -2167
+piece -7346534567 -187 -135 15 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 NONE -3065 -51 -2166 -3048 -37 -2146
+piece -7346534567 -187 -135 16 minecraft:ancient_city/structures/chamber_1 CLOCKWISE_90 -2955 -51 -2184 -2941 -42 -2166
+piece -7346534567 -187 -135 17 minecraft:ancient_city/structures/small_statue CLOCKWISE_90 -2952 -51 -2144 -2945 -44 -2135
+piece -7346534567 -187 -135 18 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 NONE -2939 -51 -2165 -2922 -37 -2145
+piece -7346534567 -187 -135 19 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 NONE -2972 -51 -2132 -2955 -37 -2112
+piece -7346534567 -187 -135 20 minecraft:ancient_city/city/entrance/entrance_path_2 COUNTERCLOCKWISE_90 -3011 -51 -2102 -2973 -37 -2068
+piece -7346534567 -187 -135 21 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_180 -2982 -51 -2192 -2973 -46 -2182
+piece -7346534567 -187 -135 22 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 COUNTERCLOCKWISE_90 -3003 -51 -2214 -2983 -37 -2197
+piece -7346534567 -187 -135 23 minecraft:ancient_city/structures/chamber_2 NONE -3059 -51 -2142 -3048 -46 -2132
+piece -7346534567 -187 -135 24 minecraft:ancient_city/walls/intact_intersection_wall_1 CLOCKWISE_90 -3047 -51 -2205 -3027 -37 -2185
+piece -7346534567 -187 -135 25 list:minecraft:ancient_city/structures/ice_box_1 NONE -3066 -51 -2183 -3048 -42 -2169
+piece -7346534567 -187 -135 26 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 NONE -3083 -51 -2166 -3066 -37 -2146
+piece -7346534567 -187 -135 27 feature CLOCKWISE_180 -2947 -50 -2172 -2947 -50 -2172
+piece -7346534567 -187 -135 28 feature CLOCKWISE_90 -2942 -47 -2179 -2942 -47 -2179
+piece -7346534567 -187 -135 29 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 NONE -2921 -51 -2165 -2904 -37 -2145
+piece -7346534567 -187 -135 30 minecraft:ancient_city/structures/barracks CLOCKWISE_90 -2938 -51 -2144 -2922 -40 -2124
+piece -7346534567 -187 -135 31 minecraft:ancient_city/structures/large_ruin_1 COUNTERCLOCKWISE_90 -2937 -51 -2182 -2921 -47 -2166
+piece -7346534567 -187 -135 32 minecraft:ancient_city/structures/small_statue CLOCKWISE_90 -2967 -51 -2111 -2960 -44 -2102
+piece -7346534567 -187 -135 33 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_180 -3029 -51 -2092 -3012 -37 -2072
+piece -7346534567 -187 -135 34 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 NONE -2972 -51 -2092 -2955 -37 -2072
+piece -7346534567 -187 -135 35 feature NONE -2977 -50 -2189 -2977 -50 -2189
+piece -7346534567 -187 -135 36 minecraft:ancient_city/structures/tall_ruin_3 COUNTERCLOCKWISE_90 -3020 -51 -2214 -3004 -29 -2198
+piece -7346534567 -187 -135 37 minecraft:ancient_city/walls/intact_horizontal_wall_2 CLOCKWISE_90 -3003 -51 -2232 -2983 -37 -2215
+piece -7346534567 -187 -135 38 feature CLOCKWISE_90 -3051 -49 -2137 -3051 -49 -2137
+piece -7346534567 -187 -135 39 minecraft:ancient_city/walls/intact_horizontal_wall_2 NONE -3065 -51 -2205 -3048 -37 -2185
+piece -7346534567 -187 -135 40 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 COUNTERCLOCKWISE_90 -3047 -51 -2223 -3027 -37 -2206
+piece -7346534567 -187 -135 41 feature CLOCKWISE_180 -3054 -50 -2177 -3054 -50 -2177
+piece -7346534567 -187 -135 42 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 CLOCKWISE_180 -3101 -51 -2166 -3084 -37 -2146
+piece -7346534567 -187 -135 43 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_90 -3079 -51 -2176 -3069 -46 -2167
+piece -7346534567 -187 -135 44 minecraft:ancient_city/structures/chamber_1 COUNTERCLOCKWISE_90 -3081 -51 -2145 -3067 -42 -2127
+piece -7346534567 -187 -135 45 minecraft:ancient_city/structures/chamber_3 COUNTERCLOCKWISE_90 -2917 -51 -2144 -2907 -46 -2135
+piece -7346534567 -187 -135 46 minecraft:ancient_city/structures/tall_ruin_4 CLOCKWISE_180 -2919 -51 -2182 -2903 -29 -2166
+piece -7346534567 -187 -135 47 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 CLOCKWISE_180 -2903 -51 -2165 -2886 -37 -2145
+piece -7346534567 -187 -135 48 feature COUNTERCLOCKWISE_90 -2924 -47 -2133 -2924 -47 -2133
+piece -7346534567 -187 -135 49 feature NONE -2932 -47 -2134 -2932 -47 -2134
+piece -7346534567 -187 -135 50 minecraft:ancient_city/structures/tall_ruin_3 NONE -3029 -51 -2109 -3013 -29 -2093
+piece -7346534567 -187 -135 51 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 NONE -3047 -51 -2092 -3030 -37 -2072
+piece -7346534567 -187 -135 52 minecraft:ancient_city/structures/tall_ruin_1 CLOCKWISE_180 -3029 -51 -2071 -3013 -29 -2055
+piece -7346534567 -187 -135 53 minecraft:ancient_city/structures/chamber_1 COUNTERCLOCKWISE_90 -2970 -51 -2071 -2956 -42 -2053
+piece -7346534567 -187 -135 54 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 CLOCKWISE_180 -2954 -51 -2092 -2937 -37 -2072
+piece -7346534567 -187 -135 55 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_180 -2982 -51 -2228 -2973 -46 -2218
+piece -7346534567 -187 -135 56 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 CLOCKWISE_90 -3003 -51 -2250 -2983 -37 -2233
+piece -7346534567 -187 -135 57 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 CLOCKWISE_180 -3083 -51 -2205 -3066 -37 -2185
+piece -7346534567 -187 -135 58 minecraft:ancient_city/structures/small_statue COUNTERCLOCKWISE_90 -3059 -51 -2215 -3052 -44 -2206
+piece -7346534567 -187 -135 59 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 CLOCKWISE_90 -3047 -51 -2241 -3027 -37 -2224
+piece -7346534567 -187 -135 60 minecraft:ancient_city/structures/large_pillar_1 COUNTERCLOCKWISE_90 -3095 -51 -2145 -3090 -37 -2140
+piece -7346534567 -187 -135 61 feature CLOCKWISE_90 -3076 -50 -2172 -3076 -50 -2172
+piece -7346534567 -187 -135 62 feature CLOCKWISE_180 -3075 -50 -2139 -3075 -50 -2139
+piece -7346534567 -187 -135 63 feature NONE -3080 -47 -2132 -3080 -47 -2132
+piece -7346534567 -187 -135 64 feature CLOCKWISE_90 -2910 -50 -2139 -2910 -50 -2139
+piece -7346534567 -187 -135 65 minecraft:ancient_city/structures/medium_ruin_1 COUNTERCLOCKWISE_90 -2901 -51 -2173 -2889 -47 -2166
+piece -7346534567 -187 -135 66 minecraft:ancient_city/structures/medium_ruin_1 CLOCKWISE_90 -3044 -51 -2071 -3032 -47 -2064
+piece -7346534567 -187 -135 67 minecraft:ancient_city/walls/intact_corner_wall_1 COUNTERCLOCKWISE_90 -3068 -51 -2092 -3048 -37 -2072
+piece -7346534567 -187 -135 68 feature COUNTERCLOCKWISE_90 -2969 -47 -2058 -2969 -47 -2058
+piece -7346534567 -187 -135 69 feature COUNTERCLOCKWISE_90 -2964 -50 -2065 -2964 -50 -2065
+piece -7346534567 -187 -135 70 minecraft:ancient_city/walls/intact_intersection_wall_1 CLOCKWISE_180 -2936 -51 -2092 -2916 -37 -2072
+piece -7346534567 -187 -135 71 minecraft:ancient_city/structures/barracks CLOCKWISE_90 -2954 -51 -2071 -2938 -40 -2051
+piece -7346534567 -187 -135 72 feature CLOCKWISE_90 -2977 -50 -2225 -2977 -50 -2225
+piece -7346534567 -187 -135 73 minecraft:ancient_city/structures/chamber_3 NONE -3013 -51 -2246 -3004 -46 -2236
+piece -7346534567 -187 -135 74 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 COUNTERCLOCKWISE_90 -3003 -51 -2268 -2983 -37 -2251
+piece -7346534567 -187 -135 75 minecraft:ancient_city/structures/small_statue NONE -2982 -51 -2244 -2973 -44 -2237
+piece -7346534567 -187 -135 76 minecraft:ancient_city/structures/barracks COUNTERCLOCKWISE_90 -3083 -51 -2226 -3067 -40 -2206
+piece -7346534567 -187 -135 77 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_180 -3101 -51 -2205 -3084 -37 -2185
+piece -7346534567 -187 -135 78 minecraft:ancient_city/structures/chamber_1 NONE -3066 -51 -2239 -3048 -42 -2225
+piece -7346534567 -187 -135 79 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_90 -3047 -51 -2259 -3027 -37 -2242
+piece -7346534567 -187 -135 80 minecraft:ancient_city/structures/medium_ruin_1 NONE -3026 -51 -2238 -3019 -47 -2226
+piece -7346534567 -187 -135 81 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 CLOCKWISE_180 -3086 -51 -2092 -3069 -37 -2072
+piece -7346534567 -187 -135 82 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 CLOCKWISE_90 -3068 -51 -2110 -3048 -37 -2093
+piece -7346534567 -187 -135 83 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 CLOCKWISE_90 -3068 -51 -2071 -3048 -37 -2054
+piece -7346534567 -187 -135 84 minecraft:ancient_city/walls/intact_horizontal_wall_2 COUNTERCLOCKWISE_90 -2936 -51 -2110 -2916 -37 -2093
+piece -7346534567 -187 -135 85 minecraft:ancient_city/walls/intact_horizontal_wall_2 NONE -2915 -51 -2092 -2898 -37 -2072
+piece -7346534567 -187 -135 86 feature CLOCKWISE_90 -2940 -47 -2060 -2940 -47 -2060
+piece -7346534567 -187 -135 87 feature NONE -2948 -47 -2061 -2948 -47 -2061
+piece -7346534567 -187 -135 88 feature COUNTERCLOCKWISE_90 -3009 -50 -2239 -3009 -50 -2239
+piece -7346534567 -187 -135 89 minecraft:ancient_city/structures/large_pillar_1 CLOCKWISE_180 -2982 -51 -2263 -2977 -37 -2258
+cand -7346534567 -187 -117 -2992 -27 -1867 dripstone_caves
+cand -7346534567 -178 -85 -2843 -27 -1360 ice_spikes
+cand -7346534567 -179 -62 -2864 -27 -987 ice_spikes
+cand -7346534567 -186 -40 -2976 -27 -644 frozen_river
+cand -7346534567 -192 -16 -3076 -27 -256 snowy_taiga
+cand -7346534567 -189 15 -3024 -27 244 frozen_river
+cand -7346534567 -188 39 -3008 -27 619 frozen_ocean
+cand -7346534567 -185 54 -2960 -27 868 frozen_ocean
+cand -7346534567 -180 79 -2880 -27 1268 frozen_ocean
+cand -7346534567 -192 101 -3072 -27 1611 frozen_ocean
+cand -7346534567 -183 129 -2932 -27 2064 deep_frozen_ocean
+cand -7346534567 -191 146 -3060 -27 2336 lush_caves
+cand -7346534567 -186 171 -2980 -27 2736 lush_caves
+cand -7346534567 -156 -191 -2500 -27 -3056 dripstone_caves
+cand -7346534567 -163 -161 -2603 -27 -2576 forest
+cand -7346534567 -167 -141 -2667 -27 -2256 forest
+cand -7346534567 -164 -114 -2628 -27 -1824 forest
+cand -7346534567 -156 -96 -2500 -27 -1536 snowy_taiga
+cand -7346534567 -154 -62 -2459 -27 -992 snowy_plains
+cand -7346534567 -159 -35 -2544 -27 -564 ice_spikes
+cand -7346534567 -165 -18 -2644 -27 -288 frozen_ocean
+cand -7346534567 -166 3 -2656 -27 52 snowy_plains
+cand -7346534567 -163 38 -2608 -27 612 frozen_ocean
+cand -7346534567 -158 62 -2528 -27 996 deep_frozen_ocean
+cand -7346534567 -166 85 -2656 -27 1355 deep_frozen_ocean
+cand -7346534567 -155 97 -2480 -27 1547 deep_frozen_ocean
+cand -7346534567 -168 127 -2688 -27 2027 deep_frozen_ocean
+cand -7346534567 -156 152 -2496 -27 2427 lush_caves
+cand -7346534567 -165 169 -2635 -27 2704 lush_caves
+cand -7346534567 -137 -191 -2187 -27 -3056 forest
+cand -7346534567 -139 -153 -2228 -27 -2448 savanna
+cand -7346534567 -129 -130 -2064 -27 -2084 lush_caves
+cand -7346534567 -133 -110 -2123 -27 -1760 old_growth_birch_forest
+cand -7346534567 -140 -83 -2244 -27 -1328 snowy_plains
+cand -7346534567 -141 -65 -2256 -27 -1035 snowy_plains
+cand -7346534567 -138 -45 -2208 -27 -715 snowy_taiga
+cand -7346534567 -132 -16 -2107 -27 -256 frozen_river
+cand -7346534567 -130 12 -2075 -27 192 snowy_plains
+cand -7346534567 -129 28 -2068 -27 448 snowy_plains
+cand -7346534567 -133 48 -2128 -27 772 snowy_plains
+cand -7346534567 -136 82 -2176 -27 1316 snowy_beach
+cand -7346534567 -144 108 -2304 -27 1732 deep_frozen_ocean
+cand -7346534567 -141 123 -2260 -27 1968 deep_frozen_ocean
+cand -7346534567 -132 149 -2112 -27 2388 deep_frozen_ocean
+cand -7346534567 -136 169 -2180 -27 2704 deep_frozen_ocean
+cand -7346534567 -112 -184 -1787 -27 -2944 dripstone_caves
+cand -7346534567 -112 -166 -1796 -27 -2656 forest
+cand -7346534567 -113 -130 -1808 -27 -2084 jungle
+cand -7346534567 -114 -114 -1828 -27 -1824 forest
+cand -7346534567 -120 -96 -1915 -27 -1536 deep_dark
+cand -7346534567 -117 -63 -1867 -27 -1008 forest
+cand -7346534567 -113 -37 -1812 -27 -592 snowy_plains
+cand -7346534567 -108 -18 -1728 -27 -292 snowy_plains
+cand -7346534567 -120 1 -1915 -27 16 snowy_plains
+cand -7346534567 -116 27 -1856 -27 427 snowy_plains
+cand -7346534567 -112 62 -1792 -27 987 snowy_taiga
+cand -7346534567 -120 72 -1915 -27 1152 frozen_river
+cand -7346534567 -116 101 -1860 -27 1616 snowy_plains
+cand -7346534567 -114 130 -1819 -27 2080 deep_frozen_ocean
+cand -7346534567 -108 158 -1728 -27 2523 deep_frozen_ocean
+cand -7346534567 -118 183 -1883 -27 2928 frozen_ocean
+cand -7346534567 -94 -191 -1504 -27 -3060 dripstone_caves
+cand -7346534567 -87 -161 -1392 -27 -2580 desert
+cand -7346534567 -82 -132 -1316 -27 -2112 forest
+cand -7346534567 -95 -107 -1520 -27 -1707 plains
+cand -7346534567 -82 -95 -1307 -27 -1520 ocean
+cand -7346534567 -90 -59 -1440 -27 -939 lush_caves
+cand -7346534567 -84 -39 -1339 -27 -624 cold_ocean
+cand -7346534567 -92 -22 -1476 -27 -352 snowy_plains
+cand -7346534567 -89 6 -1428 -27 96 snowy_plains
+cand -7346534567 -96 31 -1536 -27 491 snowy_plains
+cand -7346534567 -90 49 -1440 -27 779 dripstone_caves
+cand -7346534567 -81 72 -1291 -27 1152 taiga
+cand -7346534567 -94 107 -1504 -27 1707 snowy_taiga
+cand -7346534567 -87 127 -1392 -27 2027 frozen_ocean
+cand -7346534567 -81 151 -1291 -27 2416 taiga
+cand -7346534567 -94 180 -1499 -27 2880 old_growth_spruce_taiga
+cand -7346534567 -63 -191 -1008 -27 -3060 dripstone_caves
+cand -7346534567 -67 -155 -1072 -27 -2475 desert
+cand -7346534567 -57 -143 -916 -27 -2288 river
+cand -7346534567 -58 -120 -928 -27 -1924 lukewarm_ocean
+cand -7346534567 -58 -95 -932 -27 -1520 deep_ocean
+cand -7346534567 -71 -60 -1136 -27 -955 lush_caves
+cand -7346534567 -64 -40 -1024 -27 -635 cold_ocean
+cand -7346534567 -59 -14 -944 -27 -219 plains
+cand -7346534567 -58 7 -928 -27 116 snowy_plains
+cand -7346534567 -62 30 -992 -27 484 snowy_plains
+cand -7346534567 -72 62 -1156 -27 992 snowy_taiga
+cand -7346534567 -65 77 -1040 -27 1227 snowy_plains
+cand -7346534567 -70 104 -1120 -27 1659 frozen_river
+cand -7346534567 -59 130 -944 -27 2084 taiga
+cand -7346534567 -68 157 -1088 -27 2516 taiga
+cand -7346534567 -68 169 -1088 -27 2699 lush_caves
+cand -7346534567 -40 -190 -644 -27 -3040 desert
+cand -7346534567 -46 -159 -731 -27 -2544 desert
+cand -7346534567 -40 -131 -640 -27 -2100 lukewarm_ocean
+cand -7346534567 -42 -118 -672 -27 -1883 deep_lukewarm_ocean
+cand -7346534567 -37 -85 -592 -27 -1364 deep_ocean
+cand -7346534567 -37 -69 -596 -27 -1104 deep_ocean
+cand -7346534567 -45 -37 -724 -27 -592 cold_ocean
+cand -7346534567 -46 -12 -731 -27 -192 snowy_plains
+cand -7346534567 -39 12 -624 -27 187 snowy_plains
+cand -7346534567 -37 29 -587 -27 464 river
+cand -7346534567 -36 63 -580 -27 1008 snowy_plains
+cand -7346534567 -41 78 -656 -27 1252 snowy_plains
+cand -7346534567 -42 98 -672 -27 1572 frozen_river
+cand -7346534567 -38 126 -608 -27 2020 taiga
+cand -7346534567 -41 148 -656 -27 2363 snowy_taiga
+cand -7346534567 -35 179 -560 -27 2868 snowy_plains
+cand -7346534567 -17 -185 -272 -27 -2955 dripstone_caves
+cand -7346534567 -19 -155 -304 -27 -2475 mangrove_swamp
+cand -7346534567 -12 -138 -187 -27 -2208 lukewarm_ocean
+cand -7346534567 -15 -116 -235 -27 -1856 deep_lukewarm_ocean
+cand -7346534567 -20 -92 -315 -27 -1472 deep_ocean
+cand -7346534567 -20 -64 -315 -27 -1024 plains
+cand -7346534567 -24 -40 -384 -27 -635 cold_ocean
+cand -7346534567 -20 -22 -320 -27 -347 snowy_beach
+cand -7346534567 -9 10 -144 -27 155 cold_ocean
+cand -7346534567 -18 25 -292 -27 400 plains
+cand -7346534567 -15 49 -240 -27 779 forest
+cand -7346534567 -15 86 -235 -27 1376 frozen_river
+cand -7346534567 -11 105 -171 -27 1680 snowy_taiga
+cand -7346534567 -10 129 -155 -27 2064 lush_caves
+cand -7346534567 -15 151 -235 -27 2416 snowy_taiga
+cand -7346534567 -19 183 -304 -27 2923 snowy_plains
+cand -7346534567 14 -187 224 -27 -2987 desert
+cand -7346534567 1 -164 16 -27 -2619 warm_ocean
+cand -7346534567 0 -134 -4 -27 -2144 savanna
+cand -7346534567 2 -113 27 -27 -1808 flower_forest
+cand -7346534567 1 -95 20 -27 -1520 beach
+cand -7346534567 6 -62 91 -27 -992 plains
+cand -7346534567 9 -42 139 -27 -672 plains
+cand -7346534567 8 -14 128 -27 -219 cold_ocean
+cand -7346534567 7 10 116 -27 160 cold_ocean
+cand -7346534567 15 31 235 -27 496 cold_ocean
+cand -7346534567 11 58 171 -27 928 cold_ocean
+cand -7346534567 9 83 148 -27 1328 taiga
+cand -7346534567 15 100 240 -27 1604 snowy_taiga
+cand -7346534567 8 129 128 -27 2068 taiga
+cand -7346534567 0 153 4 -27 2448 frozen_river
+cand -7346534567 7 183 112 -27 2932 cold_ocean
+cand -7346534567 33 -182 532 -27 -2912 desert
+cand -7346534567 27 -157 432 -27 -2516 desert
+cand -7346534567 25 -141 400 -27 -2260 forest
+cand -7346534567 31 -117 496 -27 -1867 lukewarm_ocean
+cand -7346534567 32 -92 507 -27 -1472 ocean
+cand -7346534567 39 -57 628 -27 -912 deep_cold_ocean
+cand -7346534567 30 -37 480 -27 -596 cold_ocean
+cand -7346534567 37 -12 592 -27 -196 river
+cand -7346534567 24 14 384 -27 228 deep_cold_ocean
+cand -7346534567 33 28 528 -27 443 cold_ocean
+cand -7346534567 38 51 612 -27 816 deep_frozen_ocean
+cand -7346534567 28 82 448 -27 1307 frozen_ocean
+cand -7346534567 36 96 580 -27 1536 frozen_ocean
+cand -7346534567 32 125 512 -27 2004 snowy_plains
+cand -7346534567 30 144 475 -27 2304 snowy_plains
+cand -7346534567 33 169 528 -27 2699 frozen_ocean
+cand -7346534567 54 -183 859 -27 -2928 jungle
+cand -7346534567 60 -161 955 -27 -2576 sparse_jungle
+cand -7346534567 48 -130 772 -27 -2080 jungle
+cand -7346534567 61 -119 976 -27 -1899 beach
+cand -7346534567 55 -93 875 -27 -1488 deep_ocean
+cand -7346534567 51 -70 820 -27 -1120 deep_cold_ocean
+cand -7346534567 60 -35 960 -27 -564 deep_frozen_ocean
+cand -7346534567 61 -12 980 -27 -192 frozen_ocean
+cand -7346534567 49 4 779 -27 64 forest
+cand -7346534567 50 30 804 -27 480 frozen_ocean
+cand -7346534567 50 49 800 -27 788 deep_frozen_ocean
+cand -7346534567 51 74 816 -27 1179 deep_frozen_ocean
+cand -7346534567 57 96 916 -27 1536 frozen_ocean
+cand -7346534567 58 120 928 -27 1915 frozen_ocean
+cand -7346534567 59 144 948 -27 2304 stony_shore
+cand -7346534567 48 179 763 -27 2864 frozen_ocean
+cand -7346534567 74 -192 1188 -27 -3072 lukewarm_ocean
+cand -7346534567 87 -163 1387 -27 -2608 lush_caves
+cand -7346534567 82 -142 1312 -27 -2267 ocean
+cand -7346534567 76 -108 1216 -27 -1732 deep_cold_ocean
+cand -7346534567 77 -87 1227 -27 -1392 cold_ocean
+cand -7346534567 85 -58 1360 -27 -932 snowy_plains
+cand -7346534567 77 -46 1227 -27 -736 deep_frozen_ocean
+cand -7346534567 80 -11 1275 -27 -176 frozen_ocean
+cand -7346534567 80 1 1284 -27 16 lush_caves
+cand -7346534567 75 29 1200 -27 459 taiga
+cand -7346534567 74 53 1184 -27 843 snowy_taiga
+cand -7346534567 72 85 1152 -27 1355 deep_frozen_ocean
+cand -7346534567 81 103 1300 -27 1648 snowy_plains
+cand -7346534567 86 131 1380 -27 2096 plains
+cand -7346534567 72 155 1152 -27 2475 frozen_ocean
+cand -7346534567 80 177 1275 -27 2832 cold_ocean
+cand -7346534567 96 -182 1536 -27 -2916 lush_caves
+cand -7346534567 110 -155 1760 -27 -2484 deep_ocean
+cand -7346534567 99 -136 1584 -27 -2180 cold_ocean
+cand -7346534567 106 -107 1696 -27 -1716 cold_ocean
+cand -7346534567 109 -87 1744 -27 -1387 frozen_ocean
+cand -7346534567 110 -68 1755 -27 -1088 taiga
+cand -7346534567 103 -47 1643 -27 -752 deep_frozen_ocean
+cand -7346534567 101 -16 1616 -27 -251 deep_frozen_ocean
+cand -7346534567 106 10 1700 -27 160 deep_frozen_ocean
+cand -7346534567 100 34 1604 -27 544 snowy_plains
+cand -7346534567 110 60 1764 -27 960 snowy_beach
+cand -7346534567 96 75 1536 -27 1195 frozen_river
+cand -7346534567 100 109 1600 -27 1748 plains
+cand -7346534567 109 133 1744 -27 2123 plains
+cand -7346534567 111 150 1776 -27 2395 beach
+cand -7346534567 100 174 1604 -27 2784 lush_caves
+cand -7346534567 124 -192 1988 -27 -3072 lush_caves
+cand -7346534567 121 -167 1940 -27 -2672 deep_ocean
+cand -7346534567 122 -142 1952 -27 -2276 deep_cold_ocean
+cand -7346534567 134 -117 2144 -27 -1867 frozen_ocean
+cand -7346534567 133 -93 2128 -27 -1492 deep_frozen_ocean
+cand -7346534567 120 -72 1924 -27 -1152 lush_caves
+cand -7346534567 135 -45 2155 -27 -720 frozen_ocean
+cand -7346534567 131 -23 2100 -27 -368 lush_caves
+cand -7346534567 126 7 2016 -27 116 deep_frozen_ocean
+cand -7346534567 131 33 2100 -27 528 frozen_ocean
+cand -7346534567 130 63 2084 -27 1008 dripstone_caves
+cand -7346534567 122 75 1952 -27 1195 dripstone_caves
+cand -7346534567 129 104 2068 -27 1664 plains
+cand -7346534567 128 132 2052 -27 2112 forest
+cand -7346534567 131 153 2096 -27 2443 forest
+cand -7346534567 131 175 2096 -27 2795 deep_ocean
+cand -7346534567 153 -190 2452 -27 -3040 deep_ocean
+cand -7346534567 159 -156 2544 -27 -2491 cold_ocean
+cand -7346534567 151 -130 2416 -27 -2075 frozen_ocean
+cand -7346534567 144 -115 2304 -27 -1835 frozen_ocean
+cand -7346534567 158 -83 2523 -27 -1328 deep_frozen_ocean
+cand -7346534567 145 -66 2324 -27 -1056 deep_frozen_ocean
+cand -7346534567 151 -47 2420 -27 -752 snowy_taiga
+cand -7346534567 152 -18 2432 -27 -292 frozen_ocean
+cand -7346534567 146 11 2336 -27 180 snowy_plains
+cand -7346534567 155 32 2475 -27 512 old_growth_spruce_taiga
+cand -7346534567 152 55 2427 -27 880 taiga
+cand -7346534567 158 80 2528 -27 1275 forest
+cand -7346534567 157 104 2512 -27 1659 plains
+cand -7346534567 150 129 2404 -27 2064 forest
+cand -7346534567 158 144 2532 -27 2304 forest
+cand -7346534567 148 179 2368 -27 2859 ocean
+cand -7346534567 170 -186 2720 -27 -2980 ocean
+cand -7346534567 178 -168 2848 -27 -2692 forest
+cand -7346534567 171 -129 2736 -27 -2059 snowy_taiga
+cand -7346534567 169 -116 2704 -27 -1860 lush_caves
+cand -7346534567 182 -84 2916 -27 -1344 snowy_taiga
+cand -7346534567 182 -61 2907 -27 -976 snowy_plains
+cand -7346534567 174 -44 2784 -27 -708 snowy_taiga
+cand -7346534567 179 -21 2864 -27 -340 frozen_ocean
+cand -7346534567 170 5 2724 -27 80 snowy_taiga
+cand -7346534567 181 34 2896 -27 548 lush_caves
+cand -7346534567 182 51 2912 -27 820 lush_caves
+cand -7346534567 179 74 2864 -27 1188 plains
+cand -7346534567 183 108 2932 -27 1728 river
+cand -7346534567 170 135 2720 -27 2164 forest
+cand -7346534567 173 158 2763 -27 2528 forest
+cand -7346534567 181 170 2896 -27 2715 bamboo_jungle
+cand 8675309 -183 -189 -2928 -27 -3028 forest
+piece 8675309 -183 -189 0 minecraft:ancient_city/city_center/city_center_1 CLOCKWISE_90 -2948 -52 -3037 -2908 -22 -3020
+piece 8675309 -183 -189 1 minecraft:ancient_city/city_center/walls/top CLOCKWISE_90 -2948 -51 -3019 -2908 -28 -3006
+piece 8675309 -183 -189 2 minecraft:ancient_city/city_center/walls/bottom_2 CLOCKWISE_90 -2948 -51 -3051 -2908 -28 -3038
+piece 8675309 -183 -189 3 minecraft:ancient_city/city_center/walls/right CLOCKWISE_90 -2962 -51 -3037 -2949 -28 -3020
+piece 8675309 -183 -189 4 minecraft:ancient_city/city_center/walls/left CLOCKWISE_90 -2907 -51 -3037 -2894 -28 -3020
+piece 8675309 -183 -189 5 minecraft:ancient_city/city_center/walls/top_left_corner CLOCKWISE_90 -2907 -51 -3019 -2894 -28 -3006
+piece 8675309 -183 -189 6 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 COUNTERCLOCKWISE_90 -2937 -51 -3005 -2917 -37 -2988
+piece 8675309 -183 -189 7 minecraft:ancient_city/city_center/walls/top_right_corner CLOCKWISE_90 -2962 -51 -3019 -2949 -28 -3006
+piece 8675309 -183 -189 8 minecraft:ancient_city/city/entrance/entrance_connector CLOCKWISE_90 -2947 -51 -3081 -2909 -37 -3052
+piece 8675309 -183 -189 9 minecraft:ancient_city/city_center/walls/bottom_right_corner_1 CLOCKWISE_90 -2962 -51 -3051 -2949 -28 -3038
+piece 8675309 -183 -189 10 minecraft:ancient_city/city_center/walls/bottom_left_corner CLOCKWISE_90 -2907 -51 -3051 -2894 -28 -3038
+piece 8675309 -183 -189 11 minecraft:ancient_city/walls/ruined_corner_wall_2 COUNTERCLOCKWISE_90 -2983 -51 -3039 -2963 -37 -3019
+piece 8675309 -183 -189 12 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 CLOCKWISE_180 -2893 -51 -3038 -2876 -37 -3018
+piece 8675309 -183 -189 13 minecraft:ancient_city/structures/small_ruin_1 NONE -2916 -51 -3000 -2910 -47 -2993
+piece 8675309 -183 -189 14 minecraft:ancient_city/structures/small_ruin_1 CLOCKWISE_180 -2944 -51 -3001 -2938 -47 -2994
+piece 8675309 -183 -189 15 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 CLOCKWISE_90 -2937 -51 -2987 -2917 -37 -2970
+piece 8675309 -183 -189 16 minecraft:ancient_city/city/entrance/entrance_path_3 CLOCKWISE_90 -2947 -51 -3116 -2909 -37 -3082
+piece 8675309 -183 -189 17 minecraft:ancient_city/walls/intact_corner_wall_1 CLOCKWISE_180 -2908 -51 -3072 -2888 -37 -3052
+piece 8675309 -183 -189 18 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 CLOCKWISE_180 -2965 -51 -3072 -2948 -37 -3052
+piece 8675309 -183 -189 19 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 CLOCKWISE_90 -2983 -51 -3018 -2963 -37 -3001
+piece 8675309 -183 -189 20 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 CLOCKWISE_180 -3001 -51 -3039 -2984 -37 -3019
+piece 8675309 -183 -189 21 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 NONE -2875 -51 -3038 -2858 -37 -3018
+piece 8675309 -183 -189 22 minecraft:ancient_city/structures/chamber_2 COUNTERCLOCKWISE_90 -2891 -51 -3017 -2881 -46 -3006
+piece 8675309 -183 -189 23 minecraft:ancient_city/structures/chamber_2 CLOCKWISE_90 -2889 -51 -3050 -2879 -46 -3039
+piece 8675309 -183 -189 24 minecraft:ancient_city/structures/chamber_1 NONE -2956 -51 -2985 -2938 -42 -2971
+piece 8675309 -183 -189 25 minecraft:ancient_city/structures/barracks NONE -2916 -51 -2986 -2896 -40 -2970
+piece 8675309 -183 -189 26 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 COUNTERCLOCKWISE_90 -2937 -51 -2969 -2917 -37 -2952
+piece 8675309 -183 -189 27 minecraft:ancient_city/walls/ruined_corner_wall_2 NONE -2908 -51 -3112 -2888 -37 -3092
+piece 8675309 -183 -189 28 minecraft:ancient_city/walls/intact_corner_wall_1 NONE -2968 -51 -3112 -2948 -37 -3092
+piece 8675309 -183 -189 29 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 CLOCKWISE_180 -2887 -51 -3072 -2870 -37 -3052
+piece 8675309 -183 -189 30 minecraft:ancient_city/walls/intact_horizontal_wall_bridge COUNTERCLOCKWISE_90 -2908 -51 -3090 -2888 -37 -3073
+piece 8675309 -183 -189 31 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 CLOCKWISE_180 -2983 -51 -3072 -2966 -37 -3052
+piece 8675309 -183 -189 32 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_90 -2962 -51 -3082 -2952 -46 -3073
+piece 8675309 -183 -189 33 minecraft:ancient_city/structures/chamber_3 NONE -2993 -51 -3017 -2984 -46 -3007
+piece 8675309 -183 -189 34 minecraft:ancient_city/walls/ruined_corner_wall_1 NONE -2983 -51 -3000 -2963 -37 -2980
+piece 8675309 -183 -189 35 minecraft:ancient_city/structures/small_statue COUNTERCLOCKWISE_90 -2993 -51 -3049 -2986 -44 -3040
+piece 8675309 -183 -189 36 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 NONE -3019 -51 -3039 -3002 -37 -3019
+piece 8675309 -183 -189 37 minecraft:ancient_city/structures/chamber_1 COUNTERCLOCKWISE_90 -2873 -51 -3017 -2859 -42 -2999
+piece 8675309 -183 -189 38 minecraft:ancient_city/structures/medium_ruin_1 COUNTERCLOCKWISE_90 -2872 -51 -3046 -2860 -47 -3039
+piece 8675309 -183 -189 39 minecraft:ancient_city/walls/intact_corner_wall_1 CLOCKWISE_180 -2857 -51 -3038 -2837 -37 -3018
+piece 8675309 -183 -189 40 feature NONE -2886 -49 -3014 -2886 -49 -3014
+piece 8675309 -183 -189 41 feature CLOCKWISE_90 -2884 -49 -3042 -2884 -49 -3042
+piece 8675309 -183 -189 42 feature COUNTERCLOCKWISE_90 -2905 -47 -2984 -2905 -47 -2984
+piece 8675309 -183 -189 43 feature NONE -2906 -47 -2976 -2906 -47 -2976
+piece 8675309 -183 -189 44 minecraft:ancient_city/walls/intact_lshape_wall_1 CLOCKWISE_180 -2937 -51 -2951 -2917 -37 -2931
+piece 8675309 -183 -189 45 minecraft:ancient_city/structures/tall_ruin_3 CLOCKWISE_90 -2916 -51 -2969 -2900 -29 -2953
+piece 8675309 -183 -189 46 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 NONE -2887 -51 -3112 -2870 -37 -3092
+piece 8675309 -183 -189 47 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 COUNTERCLOCKWISE_90 -2908 -51 -3130 -2888 -37 -3113
+piece 8675309 -183 -189 48 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 NONE -2986 -51 -3112 -2969 -37 -3092
+piece 8675309 -183 -189 49 minecraft:ancient_city/walls/intact_horizontal_wall_2 CLOCKWISE_90 -2968 -51 -3130 -2948 -37 -3113
+piece 8675309 -183 -189 50 minecraft:ancient_city/structures/small_statue COUNTERCLOCKWISE_90 -2884 -51 -3082 -2877 -44 -3073
+piece 8675309 -183 -189 51 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 CLOCKWISE_180 -2869 -51 -3072 -2852 -37 -3052
+piece 8675309 -183 -189 52 minecraft:ancient_city/structures/chamber_2 COUNTERCLOCKWISE_90 -2981 -51 -3051 -2971 -46 -3040
+piece 8675309 -183 -189 53 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 CLOCKWISE_180 -3001 -51 -3072 -2984 -37 -3052
+piece 8675309 -183 -189 54 feature CLOCKWISE_180 -2959 -50 -3078 -2959 -50 -3078
+piece 8675309 -183 -189 55 feature NONE -2989 -50 -3010 -2989 -50 -3010
+piece 8675309 -183 -189 56 minecraft:ancient_city/walls/intact_horizontal_wall_2 COUNTERCLOCKWISE_90 -2983 -51 -2979 -2963 -37 -2962
+piece 8675309 -183 -189 57 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 NONE -3001 -51 -3000 -2984 -37 -2980
+piece 8675309 -183 -189 58 minecraft:ancient_city/structures/tall_ruin_1 CLOCKWISE_180 -3018 -51 -3018 -3002 -29 -3002
+piece 8675309 -183 -189 59 minecraft:ancient_city/walls/intact_horizontal_wall_1 NONE -3037 -51 -3039 -3020 -37 -3019
+piece 8675309 -183 -189 60 minecraft:ancient_city/structures/medium_pillar_1 CLOCKWISE_90 -3014 -51 -3046 -3007 -41 -3040
+piece 8675309 -183 -189 61 feature NONE -2872 -47 -3004 -2872 -47 -3004
+piece 8675309 -183 -189 62 minecraft:ancient_city/walls/intact_horizontal_wall_bridge CLOCKWISE_90 -2857 -51 -3017 -2837 -37 -3000
+piece 8675309 -183 -189 63 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 NONE -2836 -51 -3038 -2819 -37 -3018
+piece 8675309 -183 -189 64 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 CLOCKWISE_180 -2955 -51 -2951 -2938 -37 -2931
+piece 8675309 -183 -189 65 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 NONE -2869 -51 -3112 -2852 -37 -3092
+piece 8675309 -183 -189 66 minecraft:ancient_city/structures/medium_ruin_2 COUNTERCLOCKWISE_90 -2883 -51 -3128 -2873 -47 -3113
+piece 8675309 -183 -189 67 minecraft:ancient_city/structures/small_ruin_1 CLOCKWISE_90 -2882 -51 -3091 -2875 -47 -3085
+piece 8675309 -183 -189 68 minecraft:ancient_city/structures/chamber_2 NONE -2920 -51 -3128 -2909 -46 -3118
+piece 8675309 -183 -189 69 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 CLOCKWISE_180 -3004 -51 -3112 -2987 -37 -3092
+piece 8675309 -183 -189 70 minecraft:ancient_city/structures/chamber_2 CLOCKWISE_90 -2981 -51 -3124 -2971 -46 -3113
+piece 8675309 -183 -189 71 minecraft:ancient_city/structures/chamber_2 COUNTERCLOCKWISE_90 -2983 -51 -3091 -2973 -46 -3080
+piece 8675309 -183 -189 72 minecraft:ancient_city/structures/small_statue NONE -2947 -51 -3126 -2938 -44 -3119
+piece 8675309 -183 -189 73 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_180 -2851 -51 -3072 -2834 -37 -3052
+piece 8675309 -183 -189 74 minecraft:ancient_city/structures/small_statue COUNTERCLOCKWISE_90 -2864 -51 -3082 -2857 -44 -3073
+piece 8675309 -183 -189 75 feature CLOCKWISE_90 -2976 -49 -3048 -2976 -49 -3048
+piece 8675309 -183 -189 76 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 CLOCKWISE_180 -3019 -51 -3072 -3002 -37 -3052
+piece 8675309 -183 -189 77 minecraft:ancient_city/structures/small_statue COUNTERCLOCKWISE_90 -2996 -51 -3082 -2989 -44 -3073
+piece 8675309 -183 -189 78 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 CLOCKWISE_90 -2983 -51 -2961 -2963 -37 -2944
+piece 8675309 -183 -189 79 minecraft:ancient_city/structures/chamber_3 NONE -2993 -51 -2976 -2984 -46 -2966
+piece 8675309 -183 -189 80 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_180 -3019 -51 -3000 -3002 -37 -2980
+piece 8675309 -183 -189 81 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_90 -3033 -51 -3049 -3023 -46 -3040
+piece 8675309 -183 -189 82 minecraft:ancient_city/structures/tall_ruin_1 CLOCKWISE_90 -2836 -51 -3016 -2820 -29 -3000
+piece 8675309 -183 -189 83 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_90 -2832 -51 -3048 -2822 -46 -3039
+piece 8675309 -183 -189 84 minecraft:ancient_city/structures/small_statue COUNTERCLOCKWISE_90 -2950 -51 -2961 -2943 -44 -2952
+piece 8675309 -183 -189 85 minecraft:ancient_city/structures/small_statue CLOCKWISE_90 -2949 -51 -2930 -2942 -44 -2921
+piece 8675309 -183 -189 86 minecraft:ancient_city/structures/large_pillar_1 COUNTERCLOCKWISE_90 -2862 -51 -3091 -2857 -37 -3086
+piece 8675309 -183 -189 87 minecraft:ancient_city/structures/barracks COUNTERCLOCKWISE_90 -2868 -51 -3133 -2852 -40 -3113
+piece 8675309 -183 -189 88 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 NONE -2851 -51 -3112 -2834 -37 -3092
+piece 8675309 -183 -189 89 feature CLOCKWISE_180 -2912 -49 -3123 -2912 -49 -3123
+piece 8675309 -183 -189 90 minecraft:ancient_city/structures/medium_pillar_1 COUNTERCLOCKWISE_90 -2999 -51 -3091 -2992 -41 -3085
+piece 8675309 -183 -189 91 minecraft:ancient_city/walls/ruined_corner_wall_1 CLOCKWISE_180 -3025 -51 -3112 -3005 -37 -3092
+piece 8675309 -183 -189 92 minecraft:ancient_city/structures/small_statue COUNTERCLOCKWISE_90 -3001 -51 -3122 -2994 -44 -3113
+piece 8675309 -183 -189 93 feature CLOCKWISE_90 -2976 -49 -3116 -2976 -49 -3116
+piece 8675309 -183 -189 94 feature COUNTERCLOCKWISE_90 -2978 -49 -3088 -2978 -49 -3088
+piece 8675309 -183 -189 95 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 CLOCKWISE_180 -2833 -51 -3072 -2816 -37 -3052
+piece 8675309 -183 -189 96 minecraft:ancient_city/structures/small_statue COUNTERCLOCKWISE_90 -2846 -51 -3082 -2839 -44 -3073
+piece 8675309 -183 -189 97 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 CLOCKWISE_180 -3037 -51 -3072 -3020 -37 -3052
+piece 8675309 -183 -189 98 minecraft:ancient_city/walls/intact_lshape_wall_1 CLOCKWISE_180 -2983 -51 -2943 -2963 -37 -2923
+piece 8675309 -183 -189 99 minecraft:ancient_city/structures/chamber_3 NONE -2993 -51 -2957 -2984 -46 -2947
+piece 8675309 -183 -189 100 feature CLOCKWISE_180 -2989 -50 -2969 -2989 -50 -2969
+piece 8675309 -183 -189 101 minecraft:ancient_city/walls/intact_horizontal_wall_2 CLOCKWISE_180 -3037 -51 -3000 -3020 -37 -2980
+piece 8675309 -183 -189 102 minecraft:ancient_city/structures/tall_ruin_1 CLOCKWISE_180 -3019 -51 -2979 -3003 -29 -2963
+piece 8675309 -183 -189 103 feature CLOCKWISE_90 -3030 -50 -3045 -3030 -50 -3045
+piece 8675309 -183 -189 104 feature CLOCKWISE_180 -2829 -50 -3044 -2829 -50 -3044
+cand 8675309 -187 -154 -2996 -27 -2464 ocean
+piece 8675309 -187 -154 0 minecraft:ancient_city/city_center/city_center_3 NONE -3005 -52 -2484 -2988 -22 -2444
+piece 8675309 -187 -154 1 minecraft:ancient_city/city_center/walls/top NONE -2987 -51 -2484 -2974 -28 -2444
+piece 8675309 -187 -154 2 minecraft:ancient_city/city_center/walls/right NONE -3005 -51 -2443 -2988 -28 -2430
+piece 8675309 -187 -154 3 minecraft:ancient_city/city_center/walls/left NONE -3005 -51 -2498 -2988 -28 -2485
+piece 8675309 -187 -154 4 minecraft:ancient_city/city_center/walls/bottom_2 NONE -3019 -51 -2484 -3006 -28 -2444
+piece 8675309 -187 -154 5 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 CLOCKWISE_180 -2973 -51 -2475 -2956 -37 -2455
+piece 8675309 -187 -154 6 minecraft:ancient_city/city_center/walls/top_right_corner NONE -2987 -51 -2443 -2974 -28 -2430
+piece 8675309 -187 -154 7 minecraft:ancient_city/city_center/walls/top_left_corner NONE -2987 -51 -2498 -2974 -28 -2485
+piece 8675309 -187 -154 8 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 COUNTERCLOCKWISE_90 -3007 -51 -2429 -2987 -37 -2412
+piece 8675309 -187 -154 9 minecraft:ancient_city/walls/intact_horizontal_wall_1 COUNTERCLOCKWISE_90 -3006 -51 -2516 -2986 -37 -2499
+piece 8675309 -187 -154 10 minecraft:ancient_city/city_center/walls/bottom_left_corner NONE -3019 -51 -2498 -3006 -28 -2485
+piece 8675309 -187 -154 11 minecraft:ancient_city/city_center/walls/bottom_right_corner_1 NONE -3019 -51 -2443 -3006 -28 -2430
+piece 8675309 -187 -154 12 minecraft:ancient_city/city/entrance/entrance_connector NONE -3049 -51 -2483 -3020 -37 -2445
+piece 8675309 -187 -154 13 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 NONE -2955 -51 -2475 -2938 -37 -2455
+piece 8675309 -187 -154 14 minecraft:ancient_city/structures/barracks COUNTERCLOCKWISE_90 -2973 -51 -2496 -2957 -40 -2476
+piece 8675309 -187 -154 15 minecraft:ancient_city/structures/chamber_1 COUNTERCLOCKWISE_90 -2972 -51 -2454 -2958 -42 -2436
+piece 8675309 -187 -154 16 list:minecraft:ancient_city/structures/ice_box_1 CLOCKWISE_180 -2986 -51 -2428 -2968 -42 -2414
+piece 8675309 -187 -154 17 minecraft:ancient_city/structures/chamber_1 NONE -3026 -51 -2428 -3008 -42 -2414
+piece 8675309 -187 -154 18 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 COUNTERCLOCKWISE_90 -3007 -51 -2411 -2987 -37 -2394
+piece 8675309 -187 -154 19 minecraft:ancient_city/structures/barracks CLOCKWISE_180 -3027 -51 -2516 -3007 -40 -2500
+piece 8675309 -187 -154 20 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 COUNTERCLOCKWISE_90 -3006 -51 -2534 -2986 -37 -2517
+piece 8675309 -187 -154 21 minecraft:ancient_city/structures/chamber_2 CLOCKWISE_180 -2985 -51 -2511 -2974 -46 -2501
+piece 8675309 -187 -154 22 minecraft:ancient_city/city/entrance/entrance_path_1 NONE -3084 -51 -2483 -3050 -37 -2445
+piece 8675309 -187 -154 23 minecraft:ancient_city/structures/small_statue COUNTERCLOCKWISE_90 -2951 -51 -2485 -2944 -44 -2476
+piece 8675309 -187 -154 24 minecraft:ancient_city/structures/small_ruin_2 CLOCKWISE_90 -2950 -51 -2454 -2947 -47 -2447
+piece 8675309 -187 -154 25 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 CLOCKWISE_180 -2937 -51 -2475 -2920 -37 -2455
+piece 8675309 -187 -154 26 feature CLOCKWISE_180 -2963 -47 -2486 -2963 -47 -2486
+piece 8675309 -187 -154 27 feature CLOCKWISE_180 -2971 -47 -2487 -2971 -47 -2487
+piece 8675309 -187 -154 28 feature COUNTERCLOCKWISE_90 -2966 -50 -2448 -2966 -50 -2448
+piece 8675309 -187 -154 29 feature NONE -2971 -47 -2441 -2971 -47 -2441
+piece 8675309 -187 -154 30 feature CLOCKWISE_180 -2980 -50 -2420 -2980 -50 -2420
+piece 8675309 -187 -154 31 feature COUNTERCLOCKWISE_90 -2973 -47 -2415 -2973 -47 -2415
+piece 8675309 -187 -154 32 feature COUNTERCLOCKWISE_90 -3021 -47 -2427 -3021 -47 -2427
+piece 8675309 -187 -154 33 feature CLOCKWISE_90 -3014 -50 -2422 -3014 -50 -2422
+piece 8675309 -187 -154 34 minecraft:ancient_city/walls/ruined_corner_wall_1 CLOCKWISE_90 -3007 -51 -2393 -2987 -37 -2373
+piece 8675309 -187 -154 35 minecraft:ancient_city/structures/small_ruin_2 NONE -2986 -51 -2405 -2979 -47 -2402
+piece 8675309 -187 -154 36 minecraft:ancient_city/structures/chamber_2 NONE -3019 -51 -2409 -3008 -46 -2399
+piece 8675309 -187 -154 37 feature COUNTERCLOCKWISE_90 -3017 -47 -2510 -3017 -47 -2510
+piece 8675309 -187 -154 38 minecraft:ancient_city/walls/ruined_corner_wall_1 CLOCKWISE_180 -3006 -51 -2555 -2986 -37 -2535
+piece 8675309 -187 -154 39 feature CLOCKWISE_180 -2982 -49 -2506 -2982 -49 -2506
+piece 8675309 -187 -154 40 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_90 -3080 -51 -2501 -3060 -37 -2484
+piece 8675309 -187 -154 41 minecraft:ancient_city/walls/intact_intersection_wall_1 COUNTERCLOCKWISE_90 -3080 -51 -2444 -3060 -37 -2424
+piece 8675309 -187 -154 42 minecraft:ancient_city/structures/large_ruin_1 COUNTERCLOCKWISE_90 -2936 -51 -2492 -2920 -47 -2476
+piece 8675309 -187 -154 43 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 CLOCKWISE_180 -2919 -51 -2475 -2902 -37 -2455
+piece 8675309 -187 -154 44 list:minecraft:ancient_city/structures/ice_box_1 COUNTERCLOCKWISE_90 -2936 -51 -2454 -2922 -42 -2436
+piece 8675309 -187 -154 45 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 COUNTERCLOCKWISE_90 -3007 -51 -2372 -2987 -37 -2355
+piece 8675309 -187 -154 46 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 CLOCKWISE_180 -3025 -51 -2393 -3008 -37 -2373
+piece 8675309 -187 -154 47 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 NONE -2986 -51 -2393 -2969 -37 -2373
+piece 8675309 -187 -154 48 feature NONE -3011 -49 -2404 -3011 -49 -2404
+piece 8675309 -187 -154 49 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 NONE -3024 -51 -2555 -3007 -37 -2535
+piece 8675309 -187 -154 50 minecraft:ancient_city/walls/intact_horizontal_wall_1 COUNTERCLOCKWISE_90 -3006 -51 -2573 -2986 -37 -2556
+piece 8675309 -187 -154 51 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_180 -2985 -51 -2555 -2968 -37 -2535
+piece 8675309 -187 -154 52 minecraft:ancient_city/structures/chamber_1 NONE -3099 -51 -2499 -3081 -42 -2485
+piece 8675309 -187 -154 53 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_180 -3059 -51 -2497 -3050 -46 -2487
+piece 8675309 -187 -154 54 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 COUNTERCLOCKWISE_90 -3080 -51 -2519 -3060 -37 -2502
+piece 8675309 -187 -154 55 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 NONE -3059 -51 -2444 -3042 -37 -2424
+piece 8675309 -187 -154 56 minecraft:ancient_city/walls/intact_horizontal_wall_1 COUNTERCLOCKWISE_90 -3080 -51 -2423 -3060 -37 -2406
+piece 8675309 -187 -154 57 minecraft:ancient_city/structures/chamber_3 COUNTERCLOCKWISE_90 -2916 -51 -2454 -2906 -46 -2445
+piece 8675309 -187 -154 58 minecraft:ancient_city/structures/small_statue COUNTERCLOCKWISE_90 -2911 -51 -2485 -2904 -44 -2476
+piece 8675309 -187 -154 59 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 NONE -2901 -51 -2475 -2884 -37 -2455
+piece 8675309 -187 -154 60 feature NONE -2930 -50 -2448 -2930 -50 -2448
+piece 8675309 -187 -154 61 feature CLOCKWISE_90 -2935 -47 -2441 -2935 -47 -2441
+piece 8675309 -187 -154 62 minecraft:ancient_city/structures/chamber_2 NONE -3019 -51 -2370 -3008 -46 -2360
+piece 8675309 -187 -154 63 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_180 -2986 -51 -2369 -2977 -46 -2359
+piece 8675309 -187 -154 64 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_180 -3043 -51 -2393 -3026 -37 -2373
+piece 8675309 -187 -154 65 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 NONE -2968 -51 -2393 -2951 -37 -2373
+piece 8675309 -187 -154 66 minecraft:ancient_city/structures/chamber_2 CLOCKWISE_90 -3019 -51 -2567 -3009 -46 -2556
+piece 8675309 -187 -154 67 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 NONE -3042 -51 -2555 -3025 -37 -2535
+piece 8675309 -187 -154 68 minecraft:ancient_city/structures/chamber_1 CLOCKWISE_180 -2985 -51 -2571 -2967 -42 -2557
+piece 8675309 -187 -154 69 minecraft:ancient_city/structures/medium_pillar_1 COUNTERCLOCKWISE_90 -2980 -51 -2534 -2973 -41 -2528
+piece 8675309 -187 -154 70 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 CLOCKWISE_180 -2967 -51 -2555 -2950 -37 -2535
+piece 8675309 -187 -154 71 feature NONE -3087 -50 -2493 -3087 -50 -2493
+piece 8675309 -187 -154 72 feature COUNTERCLOCKWISE_90 -3094 -47 -2498 -3094 -47 -2498
+piece 8675309 -187 -154 73 feature NONE -3054 -50 -2494 -3054 -50 -2494
+piece 8675309 -187 -154 74 minecraft:ancient_city/structures/tall_ruin_4 COUNTERCLOCKWISE_90 -3059 -51 -2518 -3043 -29 -2502
+piece 8675309 -187 -154 75 minecraft:ancient_city/walls/intact_horizontal_wall_1 CLOCKWISE_90 -3080 -51 -2537 -3060 -37 -2520
+piece 8675309 -187 -154 76 minecraft:ancient_city/structures/chamber_1 NONE -3099 -51 -2518 -3081 -42 -2504
+piece 8675309 -187 -154 77 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 COUNTERCLOCKWISE_90 -3080 -51 -2405 -3060 -37 -2388
+piece 8675309 -187 -154 78 minecraft:ancient_city/structures/barracks NONE -3059 -51 -2422 -3039 -40 -2406
+piece 8675309 -187 -154 79 minecraft:ancient_city/structures/chamber_1 NONE -3099 -51 -2422 -3081 -42 -2408
+piece 8675309 -187 -154 80 feature NONE -2909 -50 -2449 -2909 -50 -2449
+piece 8675309 -187 -154 81 minecraft:ancient_city/structures/chamber_3 COUNTERCLOCKWISE_90 -2897 -51 -2454 -2887 -46 -2445
+piece 8675309 -187 -154 82 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_90 -2897 -51 -2485 -2887 -46 -2476
+piece 8675309 -187 -154 83 feature CLOCKWISE_180 -3011 -49 -2365 -3011 -49 -2365
+piece 8675309 -187 -154 84 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_90 -3040 -51 -2403 -3030 -46 -2394
+piece 8675309 -187 -154 85 minecraft:ancient_city/structures/tall_ruin_3 NONE -2967 -51 -2410 -2951 -29 -2394
+piece 8675309 -187 -154 86 minecraft:ancient_city/walls/intact_corner_wall_1 COUNTERCLOCKWISE_90 -2950 -51 -2393 -2930 -37 -2373
+piece 8675309 -187 -154 87 feature CLOCKWISE_180 -3014 -49 -2559 -3014 -49 -2559
+piece 8675309 -187 -154 88 minecraft:ancient_city/structures/tall_ruin_1 NONE -3041 -51 -2572 -3025 -29 -2556
+piece 8675309 -187 -154 89 minecraft:ancient_city/structures/chamber_3 COUNTERCLOCKWISE_90 -3038 -51 -2534 -3028 -46 -2525
+piece 8675309 -187 -154 90 feature CLOCKWISE_180 -2979 -50 -2563 -2979 -50 -2563
+piece 8675309 -187 -154 91 feature CLOCKWISE_180 -2972 -47 -2558 -2972 -47 -2558
+piece 8675309 -187 -154 92 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 NONE -2949 -51 -2555 -2932 -37 -2535
+piece 8675309 -187 -154 93 minecraft:ancient_city/structures/medium_ruin_1 CLOCKWISE_90 -2965 -51 -2534 -2953 -47 -2527
+piece 8675309 -187 -154 94 minecraft:ancient_city/structures/chamber_3 NONE -3090 -51 -2534 -3081 -46 -2524
+piece 8675309 -187 -154 95 minecraft:ancient_city/structures/medium_ruin_1 NONE -3059 -51 -2534 -3052 -47 -2522
+piece 8675309 -187 -154 96 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_90 -3080 -51 -2555 -3060 -37 -2538
+piece 8675309 -187 -154 97 feature CLOCKWISE_180 -3094 -47 -2517 -3094 -47 -2517
+piece 8675309 -187 -154 98 feature COUNTERCLOCKWISE_90 -3087 -50 -2512 -3087 -50 -2512
+piece 8675309 -187 -154 99 minecraft:ancient_city/structures/small_ruin_2 CLOCKWISE_180 -3088 -51 -2398 -3081 -47 -2395
+piece 8675309 -187 -154 100 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 CLOCKWISE_90 -3080 -51 -2387 -3060 -37 -2370
+piece 8675309 -187 -154 101 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_180 -3059 -51 -2402 -3050 -46 -2392
+piece 8675309 -187 -154 102 feature COUNTERCLOCKWISE_90 -3049 -47 -2412 -3049 -47 -2412
+piece 8675309 -187 -154 103 feature COUNTERCLOCKWISE_90 -3048 -47 -2420 -3048 -47 -2420
+piece 8675309 -187 -154 104 feature CLOCKWISE_90 -3094 -47 -2421 -3094 -47 -2421
+piece 8675309 -187 -154 105 feature COUNTERCLOCKWISE_90 -3087 -50 -2416 -3087 -50 -2416
+cand 8675309 -185 -133 -2955 -27 -2128 ocean
+piece 8675309 -185 -133 0 minecraft:ancient_city/city_center/city_center_2 CLOCKWISE_180 -2964 -52 -2148 -2947 -22 -2108
+piece 8675309 -185 -133 1 minecraft:ancient_city/city_center/walls/bottom_1 CLOCKWISE_180 -2946 -51 -2148 -2933 -28 -2108
+piece 8675309 -185 -133 2 minecraft:ancient_city/city_center/walls/right CLOCKWISE_180 -2964 -51 -2162 -2947 -28 -2149
+piece 8675309 -185 -133 3 minecraft:ancient_city/city_center/walls/left CLOCKWISE_180 -2964 -51 -2107 -2947 -28 -2094
+piece 8675309 -185 -133 4 minecraft:ancient_city/city_center/walls/top CLOCKWISE_180 -2978 -51 -2148 -2965 -28 -2108
+piece 8675309 -185 -133 5 minecraft:ancient_city/city_center/walls/bottom_left_corner CLOCKWISE_180 -2946 -51 -2107 -2933 -28 -2094
+piece 8675309 -185 -133 6 minecraft:ancient_city/city/entrance/entrance_connector CLOCKWISE_180 -2932 -51 -2147 -2903 -37 -2109
+piece 8675309 -185 -133 7 minecraft:ancient_city/city_center/walls/bottom_right_corner_2 CLOCKWISE_180 -2946 -51 -2162 -2933 -28 -2149
+piece 8675309 -185 -133 8 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_2 COUNTERCLOCKWISE_90 -2965 -51 -2180 -2945 -37 -2163
+piece 8675309 -185 -133 9 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 COUNTERCLOCKWISE_90 -2966 -51 -2093 -2946 -37 -2076
+piece 8675309 -185 -133 10 minecraft:ancient_city/city_center/walls/top_right_corner CLOCKWISE_180 -2978 -51 -2162 -2965 -28 -2149
+piece 8675309 -185 -133 11 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_180 -2996 -51 -2137 -2979 -37 -2117
+piece 8675309 -185 -133 12 minecraft:ancient_city/city_center/walls/top_left_corner CLOCKWISE_180 -2978 -51 -2107 -2965 -28 -2094
+piece 8675309 -185 -133 13 minecraft:ancient_city/city/entrance/entrance_path_4 CLOCKWISE_180 -2902 -51 -2147 -2868 -37 -2109
+piece 8675309 -185 -133 14 minecraft:ancient_city/walls/ruined_corner_wall_2 NONE -2932 -51 -2168 -2912 -37 -2148
+piece 8675309 -185 -133 15 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 COUNTERCLOCKWISE_90 -2932 -51 -2108 -2912 -37 -2091
+piece 8675309 -185 -133 16 minecraft:ancient_city/structures/chamber_1 NONE -2984 -51 -2179 -2966 -42 -2165
+piece 8675309 -185 -133 17 minecraft:ancient_city/walls/ruined_corner_wall_2 CLOCKWISE_90 -2965 -51 -2201 -2945 -37 -2181
+piece 8675309 -185 -133 18 minecraft:ancient_city/structures/chamber_2 CLOCKWISE_180 -2944 -51 -2176 -2933 -46 -2166
+piece 8675309 -185 -133 19 minecraft:ancient_city/structures/tall_ruin_3 COUNTERCLOCKWISE_90 -2983 -51 -2093 -2967 -29 -2077
+piece 8675309 -185 -133 20 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 COUNTERCLOCKWISE_90 -2966 -51 -2075 -2946 -37 -2058
+piece 8675309 -185 -133 21 minecraft:ancient_city/walls/intact_corner_wall_1 CLOCKWISE_180 -3017 -51 -2137 -2997 -37 -2117
+piece 8675309 -185 -133 22 minecraft:ancient_city/structures/chamber_2 COUNTERCLOCKWISE_90 -2994 -51 -2116 -2984 -46 -2105
+piece 8675309 -185 -133 23 minecraft:ancient_city/structures/small_ruin_1 COUNTERCLOCKWISE_90 -2991 -51 -2144 -2984 -47 -2138
+piece 8675309 -185 -133 24 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_4 CLOCKWISE_90 -2892 -51 -2165 -2872 -37 -2148
+piece 8675309 -185 -133 25 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 COUNTERCLOCKWISE_90 -2892 -51 -2108 -2872 -37 -2091
+piece 8675309 -185 -133 26 minecraft:ancient_city/walls/intact_horizontal_wall_bridge COUNTERCLOCKWISE_90 -2932 -51 -2186 -2912 -37 -2169
+piece 8675309 -185 -133 27 minecraft:ancient_city/walls/intact_horizontal_wall_bridge NONE -2911 -51 -2168 -2894 -37 -2148
+piece 8675309 -185 -133 28 minecraft:ancient_city/walls/ruined_corner_wall_2 NONE -2932 -51 -2090 -2912 -37 -2070
+piece 8675309 -185 -133 29 minecraft:ancient_city/structures/small_statue NONE -2911 -51 -2103 -2902 -44 -2096
+piece 8675309 -185 -133 30 feature COUNTERCLOCKWISE_90 -2972 -50 -2173 -2972 -50 -2173
+piece 8675309 -185 -133 31 feature NONE -2979 -47 -2178 -2979 -47 -2178
+piece 8675309 -185 -133 32 minecraft:ancient_city/walls/intact_horizontal_wall_1 COUNTERCLOCKWISE_90 -2965 -51 -2219 -2945 -37 -2202
+piece 8675309 -185 -133 33 minecraft:ancient_city/walls/intact_horizontal_wall_2 NONE -2983 -51 -2201 -2966 -37 -2181
+piece 8675309 -185 -133 34 feature CLOCKWISE_180 -2941 -49 -2171 -2941 -49 -2171
+piece 8675309 -185 -133 35 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 COUNTERCLOCKWISE_90 -2966 -51 -2057 -2946 -37 -2040
+piece 8675309 -185 -133 36 minecraft:ancient_city/structures/chamber_2 CLOCKWISE_180 -2945 -51 -2071 -2934 -46 -2061
+piece 8675309 -185 -133 37 minecraft:ancient_city/structures/barracks CLOCKWISE_180 -2987 -51 -2075 -2967 -40 -2059
+piece 8675309 -185 -133 38 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 COUNTERCLOCKWISE_90 -3017 -51 -2116 -2997 -37 -2099
+piece 8675309 -185 -133 39 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 CLOCKWISE_90 -3017 -51 -2155 -2997 -37 -2138
+piece 8675309 -185 -133 40 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 NONE -3035 -51 -2137 -3018 -37 -2117
+piece 8675309 -185 -133 41 feature CLOCKWISE_180 -2989 -49 -2113 -2989 -49 -2113
+piece 8675309 -185 -133 42 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 CLOCKWISE_90 -2892 -51 -2183 -2872 -37 -2166
+piece 8675309 -185 -133 43 minecraft:ancient_city/structures/small_statue NONE -2871 -51 -2159 -2862 -44 -2152
+piece 8675309 -185 -133 44 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_90 -2892 -51 -2090 -2872 -37 -2073
+piece 8675309 -185 -133 45 minecraft:ancient_city/structures/medium_ruin_1 NONE -2871 -51 -2103 -2864 -47 -2091
+piece 8675309 -185 -133 46 minecraft:ancient_city/structures/small_statue NONE -2911 -51 -2183 -2902 -44 -2176
+piece 8675309 -185 -133 47 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 CLOCKWISE_90 -2932 -51 -2069 -2912 -37 -2052
+piece 8675309 -185 -133 48 minecraft:ancient_city/walls/intact_horizontal_wall_bridge NONE -2911 -51 -2090 -2894 -37 -2070
+piece 8675309 -185 -133 49 minecraft:ancient_city/structures/chamber_3 NONE -2975 -51 -2216 -2966 -46 -2206
+piece 8675309 -185 -133 50 minecraft:ancient_city/structures/chamber_1 CLOCKWISE_180 -2944 -51 -2217 -2926 -42 -2203
+piece 8675309 -185 -133 51 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 COUNTERCLOCKWISE_90 -2965 -51 -2237 -2945 -37 -2220
+piece 8675309 -185 -133 52 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_180 -3001 -51 -2201 -2984 -37 -2181
+piece 8675309 -185 -133 53 minecraft:ancient_city/walls/ruined_corner_wall_1 CLOCKWISE_90 -2966 -51 -2039 -2946 -37 -2019
+piece 8675309 -185 -133 54 minecraft:ancient_city/structures/small_statue NONE -2945 -51 -2052 -2936 -44 -2045
+piece 8675309 -185 -133 55 minecraft:ancient_city/structures/small_ruin_1 CLOCKWISE_180 -2973 -51 -2053 -2967 -47 -2046
+piece 8675309 -185 -133 56 feature NONE -2942 -49 -2066 -2942 -49 -2066
+piece 8675309 -185 -133 57 feature COUNTERCLOCKWISE_90 -2978 -47 -2061 -2978 -47 -2061
+piece 8675309 -185 -133 58 minecraft:ancient_city/structures/tall_ruin_3 COUNTERCLOCKWISE_90 -3034 -51 -2116 -3018 -29 -2100
+piece 8675309 -185 -133 59 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_90 -3017 -51 -2098 -2997 -37 -2081
+piece 8675309 -185 -133 60 minecraft:ancient_city/structures/tall_ruin_3 COUNTERCLOCKWISE_90 -3034 -51 -2154 -3018 -29 -2138
+piece 8675309 -185 -133 61 minecraft:ancient_city/structures/small_ruin_2 NONE -2996 -51 -2148 -2989 -47 -2145
+piece 8675309 -185 -133 62 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_2 CLOCKWISE_90 -3017 -51 -2173 -2997 -37 -2156
+piece 8675309 -185 -133 63 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 NONE -3053 -51 -2137 -3036 -37 -2117
+piece 8675309 -185 -133 64 minecraft:ancient_city/structures/large_pillar_1 NONE -2898 -51 -2176 -2893 -37 -2171
+piece 8675309 -185 -133 65 minecraft:ancient_city/structures/small_statue NONE -2871 -51 -2177 -2862 -44 -2170
+piece 8675309 -185 -133 66 minecraft:ancient_city/walls/ruined_corner_wall_1 NONE -2892 -51 -2204 -2872 -37 -2184
+piece 8675309 -185 -133 67 minecraft:ancient_city/walls/intact_horizontal_wall_1 CLOCKWISE_90 -2892 -51 -2072 -2872 -37 -2055
+piece 8675309 -185 -133 68 minecraft:ancient_city/structures/tall_ruin_4 COUNTERCLOCKWISE_90 -2911 -51 -2067 -2895 -29 -2051
+piece 8675309 -185 -133 69 minecraft:ancient_city/walls/intact_horizontal_wall_passage_1 CLOCKWISE_90 -2932 -51 -2051 -2912 -37 -2034
+piece 8675309 -185 -133 70 feature CLOCKWISE_90 -2971 -50 -2209 -2971 -50 -2209
+piece 8675309 -185 -133 71 feature NONE -2931 -47 -2204 -2931 -47 -2204
+piece 8675309 -185 -133 72 minecraft:ancient_city/structures/large_ruin_1 CLOCKWISE_180 -2982 -51 -2238 -2966 -47 -2222
+piece 8675309 -185 -133 73 minecraft:ancient_city/structures/small_statue CLOCKWISE_90 -2995 -51 -2180 -2988 -44 -2171
+piece 8675309 -185 -133 74 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 NONE -3019 -51 -2201 -3002 -37 -2181
+piece 8675309 -185 -133 75 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_3 NONE -2984 -51 -2039 -2967 -37 -2019
+piece 8675309 -185 -133 76 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_4 CLOCKWISE_90 -3017 -51 -2080 -2997 -37 -2063
+piece 8675309 -185 -133 77 minecraft:ancient_city/structures/tall_ruin_2 CLOCKWISE_90 -3034 -51 -2098 -3018 -29 -2082
+piece 8675309 -185 -133 78 minecraft:ancient_city/structures/chamber_1 NONE -3036 -51 -2171 -3018 -42 -2157
+piece 8675309 -185 -133 79 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_1 NONE -3071 -51 -2137 -3054 -37 -2117
+piece 8675309 -185 -133 80 minecraft:ancient_city/structures/small_ruin_1 COUNTERCLOCKWISE_90 -3047 -51 -2144 -3040 -47 -2138
+piece 8675309 -185 -133 81 minecraft:ancient_city/structures/small_statue CLOCKWISE_90 -3048 -51 -2116 -3041 -44 -2107
+piece 8675309 -185 -133 82 minecraft:ancient_city/walls/intact_horizontal_wall_2 COUNTERCLOCKWISE_90 -2892 -51 -2222 -2872 -37 -2205
+piece 8675309 -185 -133 83 minecraft:ancient_city/walls/intact_horizontal_wall_stairs_1 NONE -2910 -51 -2204 -2893 -37 -2184
+piece 8675309 -185 -133 84 minecraft:ancient_city/walls/intact_horizontal_wall_bridge NONE -2871 -51 -2204 -2854 -37 -2184
+piece 8675309 -185 -133 85 minecraft:ancient_city/walls/intact_corner_wall_1 NONE -2892 -51 -2054 -2872 -37 -2034
+piece 8675309 -185 -133 86 minecraft:ancient_city/structures/barracks NONE -2871 -51 -2071 -2851 -40 -2055
+piece 8675309 -185 -133 87 minecraft:ancient_city/walls/intact_lshape_wall_1 COUNTERCLOCKWISE_90 -2932 -51 -2033 -2912 -37 -2013
+piece 8675309 -185 -133 88 minecraft:ancient_city/structures/small_statue NONE -2911 -51 -2045 -2902 -44 -2038
+piece 8675309 -185 -133 89 minecraft:ancient_city/structures/chamber_3 CLOCKWISE_90 -3015 -51 -2211 -3005 -46 -2202
+piece 8675309 -185 -133 90 minecraft:ancient_city/walls/ruined_horizontal_wall_stairs_3 CLOCKWISE_180 -3037 -51 -2201 -3020 -37 -2181
+piece 8675309 -185 -133 91 minecraft:ancient_city/walls/intact_horizontal_wall_1 NONE -3002 -51 -2039 -2985 -37 -2019
+piece 8675309 -185 -133 92 minecraft:ancient_city/walls/intact_horizontal_wall_2 COUNTERCLOCKWISE_90 -3017 -51 -2062 -2997 -37 -2045
+piece 8675309 -185 -133 93 minecraft:ancient_city/structures/barracks CLOCKWISE_180 -3038 -51 -2079 -3018 -40 -2063
+piece 8675309 -185 -133 94 minecraft:ancient_city/structures/large_pillar_1 CLOCKWISE_180 -2996 -51 -2074 -2991 -37 -2069
+piece 8675309 -185 -133 95 feature CLOCKWISE_90 -3031 -47 -2170 -3031 -47 -2170
+piece 8675309 -185 -133 96 feature NONE -3024 -50 -2165 -3024 -50 -2165
+piece 8675309 -185 -133 97 minecraft:ancient_city/structures/chamber_1 CLOCKWISE_90 -3069 -51 -2156 -3055 -42 -2138
+piece 8675309 -185 -133 98 minecraft:ancient_city/structures/chamber_1 COUNTERCLOCKWISE_90 -3069 -51 -2116 -3055 -42 -2098
+cand 8675309 -185 -115 -2960 -27 -1835 lukewarm_ocean
+cand 8675309 -188 -95 -3012 -27 -1520 river
+cand 8675309 -183 -57 -2928 -27 -916 sparse_jungle
+cand 8675309 -181 -45 -2896 -27 -715 lush_caves
+cand 8675309 -182 -16 -2907 -27 -256 lush_caves
+cand 8675309 -188 12 -3008 -27 196 sparse_jungle
+cand 8675309 -178 31 -2848 -27 500 jungle
+cand 8675309 -188 58 -3008 -27 923 lukewarm_ocean
+cand 8675309 -189 77 -3024 -27 1236 lush_caves
+cand 8675309 -181 97 -2896 -27 1556 forest
+cand 8675309 -179 131 -2864 -27 2100 savanna
+cand 8675309 -185 146 -2960 -27 2331 forest
+cand 8675309 -181 171 -2891 -27 2736 forest
+cand 8675309 -156 -177 -2491 -27 -2832 ocean
+cand 8675309 -167 -168 -2676 -27 -2688 ocean
+cand 8675309 -167 -144 -2676 -27 -2304 river
+cand 8675309 -154 -111 -2468 -27 -1776 savanna
+cand 8675309 -156 -94 -2496 -27 -1499 mangrove_swamp
+cand 8675309 -167 -67 -2676 -27 -1072 jungle
+cand 8675309 -153 -42 -2443 -27 -672 river
+cand 8675309 -162 -13 -2596 -27 -208 desert
+cand 8675309 -163 12 -2603 -27 192 lukewarm_ocean
+cand 8675309 -155 36 -2484 -27 576 plains
+cand 8675309 -156 55 -2500 -27 880 savanna_plateau
+cand 8675309 -156 83 -2491 -27 1328 plains
+cand 8675309 -164 110 -2624 -27 1755 savanna
+cand 8675309 -157 127 -2507 -27 2032 river
+cand 8675309 -160 146 -2555 -27 2336 lukewarm_ocean
+cand 8675309 -165 168 -2635 -27 2688 forest
+cand 8675309 -144 -189 -2308 -27 -3024 river
+cand 8675309 -137 -164 -2192 -27 -2628 lush_caves
+cand 8675309 -141 -133 -2260 -27 -2128 jungle
+cand 8675309 -137 -107 -2192 -27 -1716 lukewarm_ocean
+cand 8675309 -142 -87 -2267 -27 -1392 lukewarm_ocean
+cand 8675309 -141 -71 -2256 -27 -1131 desert
+cand 8675309 -139 -44 -2219 -27 -704 desert
+cand 8675309 -140 -18 -2240 -27 -283 desert
+cand 8675309 -131 2 -2096 -27 27 savanna
+cand 8675309 -135 38 -2160 -27 603 savanna
+cand 8675309 -132 60 -2112 -27 964 savanna
+cand 8675309 -134 73 -2148 -27 1168 savanna
+cand 8675309 -134 96 -2144 -27 1531 savanna
+cand 8675309 -139 134 -2224 -27 2148 lukewarm_ocean
+cand 8675309 -143 144 -2288 -27 2308 lukewarm_ocean
+cand 8675309 -143 174 -2283 -27 2784 dripstone_caves
+cand 8675309 -112 -183 -1787 -27 -2928 old_growth_birch_forest
+cand 8675309 -112 -167 -1787 -27 -2672 forest
+cand 8675309 -114 -142 -1819 -27 -2272 lukewarm_ocean
+cand 8675309 -109 -118 -1744 -27 -1883 lukewarm_ocean
+cand 8675309 -106 -87 -1696 -27 -1387 desert
+cand 8675309 -107 -60 -1707 -27 -960 desert
+cand 8675309 -105 -40 -1680 -27 -644 jungle
+cand 8675309 -106 -22 -1691 -27 -352 savanna
+cand 8675309 -111 0 -1780 -27 0 lukewarm_ocean
+cand 8675309 -117 35 -1872 -27 555 savanna
+cand 8675309 -112 48 -1792 -27 772 savanna
+cand 8675309 -105 72 -1675 -27 1152 sparse_jungle
+cand 8675309 -109 109 -1744 -27 1748 lukewarm_ocean
+cand 8675309 -110 129 -1760 -27 2068 lukewarm_ocean
+cand 8675309 -113 154 -1808 -27 2468 savanna
+cand 8675309 -112 177 -1796 -27 2832 mangrove_swamp
+cand 8675309 -88 -179 -1408 -27 -2868 old_growth_birch_forest
+cand 8675309 -83 -158 -1328 -27 -2532 savanna
+cand 8675309 -92 -136 -1472 -27 -2180 forest
+cand 8675309 -81 -113 -1296 -27 -1812 beach
+cand 8675309 -85 -87 -1360 -27 -1396 warm_ocean
+cand 8675309 -96 -63 -1536 -27 -1012 desert
+cand 8675309 -91 -43 -1456 -27 -692 warm_ocean
+cand 8675309 -94 -19 -1508 -27 -304 savanna
+cand 8675309 -82 14 -1312 -27 228 river
+cand 8675309 -85 31 -1355 -27 496 savanna
+cand 8675309 -87 55 -1396 -27 880 forest
+cand 8675309 -88 86 -1408 -27 1380 forest
+cand 8675309 -83 102 -1328 -27 1636 forest
+cand 8675309 -90 134 -1444 -27 2144 savanna
+cand 8675309 -87 150 -1392 -27 2404 mangrove_swamp
+cand 8675309 -96 180 -1540 -27 2880 forest
+cand 8675309 -70 -183 -1120 -27 -2932 dripstone_caves
+cand 8675309 -68 -162 -1083 -27 -2592 savanna
+cand 8675309 -68 -136 -1088 -27 -2180 forest
+cand 8675309 -61 -118 -971 -27 -1888 jungle
+cand 8675309 -65 -88 -1044 -27 -1408 desert
+cand 8675309 -62 -71 -992 -27 -1140 warm_ocean
+cand 8675309 -63 -36 -1012 -27 -576 lukewarm_ocean
+cand 8675309 -66 -9 -1056 -27 -139 savanna
+cand 8675309 -68 11 -1088 -27 180 plains
+cand 8675309 -65 37 -1035 -27 592 plains
+cand 8675309 -62 51 -992 -27 820 jungle
+cand 8675309 -68 75 -1088 -27 1195 plains
+cand 8675309 -60 100 -964 -27 1600 savanna
+cand 8675309 -62 134 -996 -27 2144 jungle
+cand 8675309 -66 144 -1051 -27 2304 jungle
+cand 8675309 -66 175 -1060 -27 2800 sparse_jungle
+cand 8675309 -43 -190 -688 -27 -3044 bamboo_jungle
+cand 8675309 -45 -156 -720 -27 -2500 forest
+cand 8675309 -42 -139 -672 -27 -2228 dripstone_caves
+cand 8675309 -45 -120 -724 -27 -1920 dripstone_caves
+cand 8675309 -37 -82 -587 -27 -1312 warm_ocean
+cand 8675309 -47 -62 -752 -27 -996 desert
+cand 8675309 -47 -40 -752 -27 -635 savanna
+cand 8675309 -33 -17 -528 -27 -276 savanna
+cand 8675309 -36 0 -580 -27 0 savanna
+cand 8675309 -35 39 -564 -27 624 forest
+cand 8675309 -45 60 -724 -27 960 plains
+cand 8675309 -37 74 -592 -27 1188 savanna
+cand 8675309 -33 104 -532 -27 1664 deep_dark
+cand 8675309 -41 134 -660 -27 2144 jungle
+cand 8675309 -44 147 -708 -27 2352 mangrove_swamp
+cand 8675309 -36 180 -580 -27 2880 dripstone_caves
+cand 8675309 -11 -189 -176 -27 -3028 river
+cand 8675309 -11 -164 -171 -27 -2624 plains
+cand 8675309 -15 -136 -235 -27 -2176 dripstone_caves
+cand 8675309 -23 -119 -368 -27 -1899 forest
+cand 8675309 -11 -82 -176 -27 -1316 lukewarm_ocean
+cand 8675309 -20 -63 -315 -27 -1008 stony_shore
+cand 8675309 -15 -45 -240 -27 -715 savanna
+cand 8675309 -17 -17 -267 -27 -272 river
+cand 8675309 -14 3 -224 -27 43 plains
+cand 8675309 -20 39 -320 -27 619 forest
+cand 8675309 -22 51 -352 -27 811 forest
+cand 8675309 -11 85 -176 -27 1355 savanna
+cand 8675309 -22 102 -352 -27 1636 savanna_plateau
+cand 8675309 -12 132 -192 -27 2107 plains
+cand 8675309 -18 148 -288 -27 2363 mangrove_swamp
+cand 8675309 -12 178 -196 -27 2848 dripstone_caves
+cand 8675309 4 -185 64 -27 -2955 lukewarm_ocean
+cand 8675309 15 -158 240 -27 -2532 savanna
+cand 8675309 11 -140 180 -27 -2240 forest
+cand 8675309 10 -109 155 -27 -1744 savanna
+cand 8675309 0 -94 0 -27 -1499 savanna
+cand 8675309 10 -63 160 -27 -1012 stony_shore
+cand 8675309 5 -39 80 -27 -628 lukewarm_ocean
+cand 8675309 10 -19 164 -27 -304 ocean
+cand 8675309 6 1 96 -27 20 river
+cand 8675309 8 39 132 -27 624 forest
+cand 8675309 2 53 36 -27 848 plains
+cand 8675309 6 79 96 -27 1268 savanna
+cand 8675309 13 98 203 -27 1568 savanna
+cand 8675309 8 123 132 -27 1968 dripstone_caves
+cand 8675309 11 146 176 -27 2331 dripstone_caves
+cand 8675309 14 173 219 -27 2768 jungle
+cand 8675309 27 -181 436 -27 -2896 deep_ocean
+cand 8675309 36 -161 576 -27 -2580 lukewarm_ocean
+cand 8675309 35 -140 555 -27 -2240 jungle
+cand 8675309 24 -109 379 -27 -1744 dripstone_caves
+cand 8675309 32 -90 512 -27 -1444 savanna
+cand 8675309 39 -62 624 -27 -987 sparse_jungle
+cand 8675309 24 -39 384 -27 -619 jungle
+cand 8675309 37 -11 592 -27 -180 lush_caves
+cand 8675309 34 2 544 -27 27 lush_caves
+cand 8675309 33 29 528 -27 459 deep_ocean
+cand 8675309 26 51 416 -27 811 ocean
+cand 8675309 30 78 480 -27 1243 beach
+cand 8675309 33 97 523 -27 1552 plains
+cand 8675309 28 126 443 -27 2016 savanna
+cand 8675309 30 157 475 -27 2512 savanna
+cand 8675309 35 168 555 -27 2688 plains
+cand 8675309 61 -191 976 -27 -3060 deep_ocean
+cand 8675309 59 -153 948 -27 -2448 lush_caves
+cand 8675309 62 -138 987 -27 -2208 lush_caves
+cand 8675309 62 -112 987 -27 -1792 sparse_jungle
+cand 8675309 49 -94 788 -27 -1504 deep_dark
+cand 8675309 53 -60 848 -27 -955 forest
+cand 8675309 58 -42 932 -27 -672 forest
+cand 8675309 62 -16 992 -27 -260 cold_ocean
+cand 8675309 58 14 928 -27 219 deep_cold_ocean
+cand 8675309 48 33 772 -27 528 deep_ocean
+cand 8675309 52 58 827 -27 928 deep_cold_ocean
+cand 8675309 50 84 804 -27 1344 deep_ocean
+cand 8675309 58 99 932 -27 1584 deep_ocean
+cand 8675309 60 123 964 -27 1968 savanna
+cand 8675309 59 157 939 -27 2512 sparse_jungle
+cand 8675309 60 182 955 -27 2912 birch_forest
+cand 8675309 87 -179 1387 -27 -2864 lush_caves
+cand 8675309 84 -156 1344 -27 -2491 bamboo_jungle
+cand 8675309 87 -138 1392 -27 -2203 jungle
+cand 8675309 83 -109 1328 -27 -1748 forest
+cand 8675309 75 -87 1200 -27 -1387 forest
+cand 8675309 86 -71 1380 -27 -1136 plains
+cand 8675309 87 -48 1392 -27 -763 stony_shore
+cand 8675309 81 -14 1296 -27 -228 deep_cold_ocean
+cand 8675309 80 4 1280 -27 68 deep_cold_ocean
+cand 8675309 81 29 1291 -27 464 lush_caves
+cand 8675309 83 50 1332 -27 800 deep_cold_ocean
+cand 8675309 87 78 1392 -27 1243 cold_ocean
+cand 8675309 81 98 1300 -27 1568 ocean
+cand 8675309 75 133 1200 -27 2132 lukewarm_ocean
+cand 8675309 80 159 1275 -27 2544 lukewarm_ocean
+cand 8675309 78 170 1248 -27 2724 stony_shore
+cand 8675309 108 -187 1723 -27 -2992 ocean
+cand 8675309 96 -168 1536 -27 -2692 dark_forest
+cand 8675309 103 -132 1648 -27 -2116 lukewarm_ocean
+cand 8675309 98 -119 1568 -27 -1908 forest
+cand 8675309 105 -81 1675 -27 -1296 ocean
+cand 8675309 109 -57 1739 -27 -912 ocean
+cand 8675309 103 -34 1643 -27 -544 deep_cold_ocean
+cand 8675309 109 -10 1744 -27 -164 deep_cold_ocean
+cand 8675309 104 1 1664 -27 20 deep_cold_ocean
+cand 8675309 102 28 1627 -27 448 lush_caves
+cand 8675309 108 55 1728 -27 875 lush_caves
+cand 8675309 110 85 1764 -27 1360 taiga
+cand 8675309 97 107 1556 -27 1712 forest
+cand 8675309 102 121 1636 -27 1936 plains
+cand 8675309 101 145 1616 -27 2315 savanna
+cand 8675309 100 172 1595 -27 2752 forest
+cand 8675309 130 -177 2075 -27 -2832 ocean
+cand 8675309 134 -168 2148 -27 -2688 river
+cand 8675309 123 -144 1963 -27 -2304 ocean
+cand 8675309 121 -112 1936 -27 -1787 deep_ocean
+cand 8675309 133 -81 2128 -27 -1291 plains
+cand 8675309 133 -71 2128 -27 -1140 stony_shore
+cand 8675309 132 -33 2116 -27 -528 deep_cold_ocean
+cand 8675309 121 -17 1936 -27 -267 deep_cold_ocean
+cand 8675309 128 4 2043 -27 64 deep_cold_ocean
+cand 8675309 125 25 2000 -27 404 lush_caves
+cand 8675309 135 54 2160 -27 868 taiga
+cand 8675309 122 81 1952 -27 1300 meadow
+cand 8675309 126 106 2020 -27 1696 river
+cand 8675309 129 132 2059 -27 2112 savanna_plateau
+cand 8675309 129 151 2064 -27 2420 plains
+cand 8675309 125 182 2000 -27 2916 plains
+cand 8675309 155 -180 2480 -27 -2875 ocean
+cand 8675309 154 -162 2464 -27 -2587 ocean
+cand 8675309 151 -134 2420 -27 -2144 stony_shore
+cand 8675309 149 -108 2384 -27 -1723 stony_shore
+cand 8675309 144 -96 2308 -27 -1536 plains
+cand 8675309 149 -60 2384 -27 -964 cold_ocean
+cand 8675309 144 -36 2304 -27 -580 stony_shore
+cand 8675309 147 -20 2352 -27 -324 plains
+cand 8675309 151 5 2416 -27 75 cold_ocean
+cand 8675309 151 26 2416 -27 420 forest
+cand 8675309 152 61 2427 -27 976 taiga
+cand 8675309 154 81 2468 -27 1296 old_growth_pine_taiga
+cand 8675309 148 97 2372 -27 1552 dripstone_caves
+cand 8675309 159 134 2548 -27 2144 savanna
+cand 8675309 155 152 2480 -27 2427 savanna
+cand 8675309 145 177 2315 -27 2832 river
+cand 8675309 183 -180 2928 -27 -2875 lush_caves
+cand 8675309 179 -161 2864 -27 -2580 deep_lukewarm_ocean
+cand 8675309 178 -133 2852 -27 -2128 savanna
+cand 8675309 178 -109 2848 -27 -1739 deep_dark
+cand 8675309 179 -90 2859 -27 -1440 plains
+cand 8675309 180 -62 2884 -27 -992 deep_dark
+cand 8675309 174 -38 2784 -27 -612 forest
+cand 8675309 173 -16 2768 -27 -260 plains
+cand 8675309 181 9 2896 -27 139 cold_ocean
+cand 8675309 180 32 2884 -27 512 deep_cold_ocean
+cand 8675309 169 59 2699 -27 944 forest
+cand 8675309 172 74 2752 -27 1179 dripstone_caves
+cand 8675309 176 101 2816 -27 1611 forest
+cand 8675309 176 130 2816 -27 2075 river
+cand 8675309 168 152 2683 -27 2432 lukewarm_ocean
+cand 8675309 172 178 2752 -27 2852 lukewarm_ocean

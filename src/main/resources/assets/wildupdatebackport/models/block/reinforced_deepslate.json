@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "bottom": "wildupdatebackport:block/reinforced_deepslate_bottom",
+    "side": "wildupdatebackport:block/reinforced_deepslate_side",
+    "top": "wildupdatebackport:block/reinforced_deepslate_top"
+  }
+}
