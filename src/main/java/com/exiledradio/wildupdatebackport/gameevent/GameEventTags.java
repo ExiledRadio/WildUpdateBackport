@@ -60,14 +60,19 @@ public final class GameEventTags {
         return state.getBlock() == Blocks.WOOL;
     }
 
+    private static final net.minecraft.util.ResourceLocation WARDEN = new net.minecraft.util.ResourceLocation("wildupdatebackport", "warden");
+
     /** {@code #dampens_vibrations}: wool and wool carpets. */
     public static boolean dampens(IBlockState state) {
         Block b = state.getBlock();
         return b == Blocks.WOOL || b == Blocks.CARPET;
     }
 
-    /** 1.19's {@code Entity.dampensVibrations}: a dropped wool or carpet item. */
+    /** 1.19's {@code Entity.dampensVibrations}: a dropped wool or carpet item, and the warden. */
     public static boolean dampens(Entity entity) {
+        if (WARDEN.equals(net.minecraft.entity.EntityList.getKey(entity))) {
+            return true;
+        }
         if (entity instanceof EntityItem) {
             Block b = Block.getBlockFromItem(((EntityItem) entity).getItem().getItem());
             return b == Blocks.WOOL || b == Blocks.CARPET;

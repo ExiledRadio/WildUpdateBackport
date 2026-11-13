@@ -64,6 +64,7 @@ public final class WildUpdateBackport {
         com.exiledradio.wildupdatebackport.common.Compat.init();
         com.exiledradio.wildupdatebackport.mangrove.MangroveContent.init();
         com.exiledradio.wildupdatebackport.mud.MudContent.init();
+        com.exiledradio.wildupdatebackport.warden.WardenContent.init();
     }
 
     @Mod.EventHandler

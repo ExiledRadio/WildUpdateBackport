@@ -130,6 +130,12 @@ public final class ModConfig {
         @Config.Comment("The warden, Darkness and the warden's spawn egg. Off, nothing is registered and shriekers summon nothing.")
         @Config.LangKey("config.wildupdatebackport.warden.enabled")
         public boolean enabled = true;
+
+        @Setting.Client
+        @Config.Comment("How much the Darkness effect pulses, from 0 (not at all) to 1 (fully, as vanilla's default). 1.19's Darkness Pulsing accessibility option.")
+        @Config.LangKey("config.wildupdatebackport.warden.darknessEffectScale")
+        @Config.RangeDouble(min = 0.0D, max = 1.0D)
+        public double darknessEffectScale = 1.0D;
     }
 
     public static final class Items {

@@ -208,7 +208,7 @@ Core (`CORE_REQUESTS.md`, request 1), so moving it is a package rename.
   our own code before vanilla's frame (vanilla's update is skipped via its update flag) with 1.19's
   darkness factor, plus fog distance through Forge's fog events; an option to tone the pulse down
   (1.19's *Darkness Pulsing*, a client config entry).
-- **Warden**: 500 health, 30 attack (melee, 1.19's per-difficulty), knockback resistance 1, follow range 24,
+- **Warden**: 500 health, 30 attack (melee, 1.19's per-difficulty), knockback resistance 1, follow range 16 (its sensor reaches 24),
   speed 0.3; blind (no line of sight targeting), hears vibrations (G), sniffs for players and mobs, anger
   per entity (0-150: 80 "agitated", 1.19's `AngerManagement` increase/decay), attacks at max anger;
   **emerging** (134 ticks, invulnerable), **digging** back (100 ticks after 1200 ticks without a

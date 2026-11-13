@@ -35,5 +35,7 @@ public final class NetworkHandler {
         // Streams register their packets below, in id order.
         channel.registerMessage(com.exiledradio.wildupdatebackport.gameevent.VibrationPacket.Handler.class,
                 com.exiledradio.wildupdatebackport.gameevent.VibrationPacket.class, 5, net.minecraftforge.fml.relauncher.Side.CLIENT);
+        channel.registerMessage(com.exiledradio.wildupdatebackport.warden.SonicBoomPacket.Handler.class,
+                com.exiledradio.wildupdatebackport.warden.SonicBoomPacket.class, 40, net.minecraftforge.fml.relauncher.Side.CLIENT);
     }
 }
