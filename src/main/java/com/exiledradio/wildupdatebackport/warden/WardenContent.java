@@ -5,7 +5,6 @@ import com.exiledradio.wildupdatebackport.WildUpdateBackport;
 import com.exiledradio.wildupdatebackport.common.Content;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityList;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.passive.EntityParrot;
@@ -20,7 +19,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityEntry;
@@ -29,7 +27,6 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import javax.annotation.Nullable;
-import java.util.Map;
 
 /**
  * The warden and Darkness: registration and what other streams call.
@@ -142,20 +139,12 @@ public final class WardenContent {
                 .name(WildUpdateBackport.MOD_ID + ".warden").tracker(256, 3, true).egg(EGG_PRIMARY, EGG_SECONDARY).build());
     }
 
-    /** From the mod's init: parrots imitate wardens (1.12.2's imitation table, keyed by entity id). */
+    /** From the mod's init: parrots imitate wardens, through Forge's table (Forge replaces vanilla's id-keyed one). */
     public static void init() {
         if (!enabled()) {
             return;
         }
-        try {
-            Map<Integer, SoundEvent> imitations = ObfuscationReflectionHelper.getPrivateValue(EntityParrot.class, null, "field_192017_bK");
-            int id = EntityList.getID(EntityWarden.class);
-            if (id >= 0) {
-                imitations.put(id, PARROT_IMITATE);
-            }
-        } catch (RuntimeException e) {
-            WildUpdateBackport.LOGGER.warn("Parrots will not imitate wardens: {}", e.toString());
-        }
+        EntityParrot.registerMimicSound(EntityWarden.class, PARROT_IMITATE);
     }
 
     /** The sculk catalyst the warden drops: the sculk stream's, by name; null when that is off. */

@@ -129,6 +129,9 @@ public final class WardenSelfTest implements SelfTest {
         Entity e = EntityList.createEntityByIDFromName(new ResourceLocation("wildupdatebackport", "warden"), this.world);
         c.ok(e instanceof EntityWarden, "the shrieker's name finds the warden");
         c.ok(EntityList.ENTITY_EGGS.containsKey(WardenContent.WARDEN), "the warden has a spawn egg");
+        c.ok(((java.util.Map<?, ?>) net.minecraftforge.fml.relauncher.ReflectionHelper.getPrivateValue(
+                net.minecraft.entity.passive.EntityParrot.class, null, "MIMIC_SOUNDS")).get(EntityWarden.class) == WardenContent.PARROT_IMITATE,
+                "parrots imitate the warden (Forge's mimic table)");
         Potion darkness = ForgeRegistries.POTIONS.getValue(new ResourceLocation("wildupdatebackport", "darkness"));
         c.ok(darkness != null && darkness == WardenContent.darkness, "the shrieker's name finds Darkness");
         if (darkness != null) {
