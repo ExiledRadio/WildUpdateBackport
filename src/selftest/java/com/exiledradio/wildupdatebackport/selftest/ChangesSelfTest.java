@@ -137,8 +137,8 @@ public final class ChangesSelfTest implements SelfTest {
         want.put("net.minecraft.entity.item.EntityMinecartFurnace", new Object[] {"cartBlock", 1});
         want.put("net.minecraft.entity.item.EntityMinecartTNT", new Object[] {"cartBlock", 1});
         want.put("net.minecraft.block.BlockJukebox", new Object[] {"jukebox", 3});
-        want.put("net.minecraft.item.ItemPotion", new Object[] {"potionGlint", -1});
-        want.put("net.minecraft.block.BlockShulkerBox", new Object[] {"shulkerFace", -1});
+        want.put("net.minecraft.item.ItemPotion", new Object[] {"potionGlint", -1, "potionBegin"});
+        want.put("net.minecraft.block.BlockShulkerBox", new Object[] {"shulkerFace", -1, "shulkerBegin"});
         for (String t : ChangesTransformer.TARGETS) {
             byte[] dev = classBytes(t);
             check(c, "dev " + t, dev == null ? null : ChangesTransformer.patchForTest(t, dev), want.get(t));
@@ -182,7 +182,8 @@ public final class ChangesSelfTest implements SelfTest {
             for (AbstractInsnNode i = m.instructions.getFirst(); i != null; i = i.getNext()) {
                 if (i instanceof MethodInsnNode && ((MethodInsnNode) i).owner.endsWith("changes/ChangesHooks")) {
                     String name = ((MethodInsnNode) i).name;
-                    c.ok(name.startsWith((String) want[0]), what + ": calls ChangesHooks." + name);
+                    // A third entry is the hook that takes the parameters at the first line (ProGuard frames).
+                    c.ok(name.startsWith((String) want[0]) || want.length > 2 && name.equals(want[2]), what + ": calls ChangesHooks." + name);
                     calls++;
                 }
             }
