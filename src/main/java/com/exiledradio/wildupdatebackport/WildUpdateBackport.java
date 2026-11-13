@@ -29,7 +29,9 @@ import org.apache.logging.log4j.Logger;
         name = WildUpdateBackport.MOD_NAME,
         version = WildUpdateBackport.VERSION,
         acceptedMinecraftVersions = "[1.12.2]",
-        dependencies = "required-after:backportcore@[1.1.0,)"
+        // Loaded before quark, so recipes are listed first: its trapdoor recipe takes any planks, and listed
+        // ahead of this mod's it turned this mod's planks into oak trapdoors instead of their own.
+        dependencies = "required-after:backportcore@[1.1.0,);before:quark"
 )
 public final class WildUpdateBackport {
 
