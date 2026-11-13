@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom": {
+      "model": "wildupdatebackport:polished_deepslate_slab"
+    },
+    "half=top": {
+      "model": "wildupdatebackport:polished_deepslate_slab_top"
+    }
+  }
+}

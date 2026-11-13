@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "normal": {
+      "model": "wildupdatebackport:reinforced_deepslate"
+    }
+  }
+}

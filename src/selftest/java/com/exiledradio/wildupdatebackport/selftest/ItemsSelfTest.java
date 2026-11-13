@@ -308,38 +308,10 @@ public final class ItemsSelfTest implements SelfTest {
         c.ok(horns > 900 && horns < 1100, "an outpost chest has a goat horn half the time (" + horns + "/2000)");
         c.ok(regular, "always a regular one");
 
-        // The ancient-city fallback, in strongholds and dungeons.
-        Enchantment e = ItemsContent.swiftSneak();
-        for (ResourceLocation name : ItemsLoot.FALLBACK) {
+        // The ancient-city fallback is gone with the cities (stream DD tests their chests).
+        for (ResourceLocation name : new ResourceLocation[] {LootTableList.CHESTS_STRONGHOLD_CORRIDOR, LootTableList.CHESTS_SIMPLE_DUNGEON}) {
             LootTable table = c.world.getLootTableManager().getLootTableFromLocation(name);
-            c.ok(table.getPool("wildupdatebackport:ancient_city_fallback") != null, name + " has the ancient-city fallback");
+            c.ok(table.getPool("wildupdatebackport:ancient_city_fallback") == null, name + " has no ancient-city fallback");
         }
-        LootTable dungeon = c.world.getLootTableManager().getLootTableFromLocation(LootTableList.CHESTS_SIMPLE_DUNGEON);
-        LootTable only = new LootTable(new LootPool[] {dungeon.getPool("wildupdatebackport:ancient_city_fallback")});
-        int shards = 0, fragments = 0, books = 0;
-        int chests = 4000;
-        boolean levels = true;
-        for (int i = 0; i < chests; i++) {
-            for (ItemStack stack : only.generateLootForPools(random, new LootContext.Builder(c.world).build())) {
-                if (stack.getItem() == ItemsContent.echoShard()) {
-                    shards += stack.getCount();
-                } else if (stack.getItem() == ItemsContent.discFragment()) {
-                    fragments += stack.getCount();
-                } else if (stack.getItem() == Items.ENCHANTED_BOOK && names(stack, e)) {
-                    books++;
-                    int lvl = ItemEnchantedBook.getEnchantments(stack).getCompoundTagAt(0).getShort("lvl");
-                    levels &= lvl >= 1 && lvl <= 3;
-                }
-            }
-        }
-        // The city chest: 7.5 rolls on average over a weight of 88; shards and fragments 4 each (2 per draw), books 3.
-        double wantShards = 7.5D * 4 / 88 * 2, wantBooks = 7.5D * 3 / 88;
-        double gotShards = shards / (double) chests, gotFragments = fragments / (double) chests, gotBooks = books / (double) chests;
-        c.ok(Math.abs(gotShards - wantShards) < 0.06, "echo shards per chest " + gotShards + " (ancient city: " + wantShards + ")");
-        c.ok(Math.abs(gotFragments - wantShards) < 0.06, "disc fragments per chest " + gotFragments);
-        c.ok(Math.abs(gotBooks - wantBooks) < 0.03, "Swift Sneak books per chest " + gotBooks + " (ancient city: " + wantBooks + ")");
-        c.ok(levels, "Swift Sneak books are level I-III");
-        List<ItemStack> sample = only.generateLootForPools(new Random(3), new LootContext.Builder(c.world).build());
-        c.ok(sample.size() <= 10, "at most 10 rolls");
     }
 }

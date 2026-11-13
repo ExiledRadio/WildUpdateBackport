@@ -2365,5 +2365,355 @@
       }
     ],
     "subtitle": "subtitles.wildupdatebackport.entity.parrot.imitate.warden"
+  },
+  "block.deepslate.break": {
+    "sounds": [
+      "wildupdatebackport:block/deepslate/break1",
+      "wildupdatebackport:block/deepslate/break2",
+      "wildupdatebackport:block/deepslate/break3",
+      "wildupdatebackport:block/deepslate/break4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.deepslate.step": {
+    "sounds": [
+      "wildupdatebackport:block/deepslate/step1",
+      "wildupdatebackport:block/deepslate/step2",
+      "wildupdatebackport:block/deepslate/step3",
+      "wildupdatebackport:block/deepslate/step4",
+      "wildupdatebackport:block/deepslate/step5",
+      "wildupdatebackport:block/deepslate/step6"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.deepslate.place": {
+    "sounds": [
+      "wildupdatebackport:block/deepslate/place1",
+      "wildupdatebackport:block/deepslate/place2",
+      "wildupdatebackport:block/deepslate/place3",
+      "wildupdatebackport:block/deepslate/place4",
+      "wildupdatebackport:block/deepslate/place5",
+      "wildupdatebackport:block/deepslate/place6"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.deepslate.hit": {
+    "sounds": [
+      "wildupdatebackport:block/deepslate/step1",
+      "wildupdatebackport:block/deepslate/step2",
+      "wildupdatebackport:block/deepslate/step3",
+      "wildupdatebackport:block/deepslate/step4",
+      "wildupdatebackport:block/deepslate/step5",
+      "wildupdatebackport:block/deepslate/step6"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.deepslate.fall": {
+    "sounds": [
+      "wildupdatebackport:block/deepslate/step1",
+      "wildupdatebackport:block/deepslate/step2",
+      "wildupdatebackport:block/deepslate/step3",
+      "wildupdatebackport:block/deepslate/step4",
+      "wildupdatebackport:block/deepslate/step5",
+      "wildupdatebackport:block/deepslate/step6"
+    ]
+  },
+  "block.polished_deepslate.break": {
+    "sounds": [
+      "wildupdatebackport:block/deepslate/break1",
+      "wildupdatebackport:block/deepslate/break2",
+      "wildupdatebackport:block/deepslate/break3",
+      "wildupdatebackport:block/deepslate/break4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.polished_deepslate.step": {
+    "sounds": [
+      "wildupdatebackport:block/deepslate/step1",
+      "wildupdatebackport:block/deepslate/step2",
+      "wildupdatebackport:block/deepslate/step3",
+      "wildupdatebackport:block/deepslate/step4",
+      "wildupdatebackport:block/deepslate/step5",
+      "wildupdatebackport:block/deepslate/step6"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.polished_deepslate.place": {
+    "sounds": [
+      "wildupdatebackport:block/deepslate/place1",
+      "wildupdatebackport:block/deepslate/place2",
+      "wildupdatebackport:block/deepslate/place3",
+      "wildupdatebackport:block/deepslate/place4",
+      "wildupdatebackport:block/deepslate/place5",
+      "wildupdatebackport:block/deepslate/place6"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.polished_deepslate.hit": {
+    "sounds": [
+      "wildupdatebackport:block/deepslate/step1",
+      "wildupdatebackport:block/deepslate/step2",
+      "wildupdatebackport:block/deepslate/step3",
+      "wildupdatebackport:block/deepslate/step4",
+      "wildupdatebackport:block/deepslate/step5",
+      "wildupdatebackport:block/deepslate/step6"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.polished_deepslate.fall": {
+    "sounds": [
+      "wildupdatebackport:block/deepslate/step1",
+      "wildupdatebackport:block/deepslate/step2",
+      "wildupdatebackport:block/deepslate/step3",
+      "wildupdatebackport:block/deepslate/step4",
+      "wildupdatebackport:block/deepslate/step5",
+      "wildupdatebackport:block/deepslate/step6"
+    ]
+  },
+  "block.deepslate_bricks.break": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/place1",
+        "volume": 0.85
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/place2",
+        "volume": 0.85
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/place3",
+        "volume": 0.85
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/place4",
+        "volume": 0.85
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/place5",
+        "volume": 0.85
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/place6",
+        "volume": 0.85
+      }
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.deepslate_bricks.step": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/step1",
+        "pitch": 0.9
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/step2",
+        "pitch": 0.9
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/step3",
+        "pitch": 0.9
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/step4",
+        "pitch": 0.9
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/step5",
+        "pitch": 0.9
+      }
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.deepslate_bricks.place": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/place1",
+        "volume": 0.85
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/place2",
+        "volume": 0.85
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/place3",
+        "volume": 0.85
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/place4",
+        "volume": 0.85
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/place5",
+        "volume": 0.85
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/place6",
+        "volume": 0.85
+      }
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.deepslate_bricks.hit": {
+    "sounds": [
+      "wildupdatebackport:block/deepslate_bricks/step1",
+      "wildupdatebackport:block/deepslate_bricks/step2",
+      "wildupdatebackport:block/deepslate_bricks/step3",
+      "wildupdatebackport:block/deepslate_bricks/step4",
+      "wildupdatebackport:block/deepslate_bricks/step5"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.deepslate_bricks.fall": {
+    "sounds": [
+      "wildupdatebackport:block/deepslate_bricks/step1",
+      "wildupdatebackport:block/deepslate_bricks/step2",
+      "wildupdatebackport:block/deepslate_bricks/step3",
+      "wildupdatebackport:block/deepslate_bricks/step4",
+      "wildupdatebackport:block/deepslate_bricks/step5"
+    ]
+  },
+  "block.deepslate_tiles.break": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/place1",
+        "pitch": 1.3,
+        "volume": 0.92
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/place2",
+        "pitch": 1.3,
+        "volume": 0.92
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/place3",
+        "pitch": 1.3,
+        "volume": 0.92
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/place4",
+        "pitch": 1.3,
+        "volume": 0.92
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/place5",
+        "pitch": 1.3,
+        "volume": 0.92
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/place6",
+        "pitch": 1.3,
+        "volume": 0.92
+      }
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.deepslate_tiles.step": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/step1",
+        "pitch": 1.2
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/step2",
+        "pitch": 1.2
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/step3",
+        "pitch": 1.2
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/step4",
+        "pitch": 1.2
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/step5",
+        "pitch": 1.2
+      }
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.deepslate_tiles.place": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/place1",
+        "pitch": 1.2,
+        "volume": 0.85
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/place2",
+        "pitch": 1.2,
+        "volume": 0.85
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/place3",
+        "pitch": 1.2,
+        "volume": 0.85
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/place4",
+        "pitch": 1.2,
+        "volume": 0.85
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/place5",
+        "pitch": 1.2,
+        "volume": 0.85
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/place6",
+        "pitch": 1.2,
+        "volume": 0.85
+      }
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.deepslate_tiles.hit": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/step1",
+        "pitch": 1.3
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/step2",
+        "pitch": 1.3
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/step3",
+        "pitch": 1.3
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/step4",
+        "pitch": 1.3
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/step5",
+        "pitch": 1.3
+      }
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.deepslate_tiles.fall": {
+    "sounds": [
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/step1",
+        "pitch": 1.3
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/step2",
+        "pitch": 1.3
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/step3",
+        "pitch": 1.3
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/step4",
+        "pitch": 1.3
+      },
+      {
+        "name": "wildupdatebackport:block/deepslate_bricks/step5",
+        "pitch": 1.3
+      }
+    ]
   }
 }

@@ -90,6 +90,26 @@ public final class VeinSpreader {
         return placed;
     }
 
+    /**
+     * 1.19's {@code spreadFromFaceTowardRandomDirection}: from one face of the vein at {@code pos}, toward the first
+     * direction (in shuffled order) it can spread to. Used by the deep dark's {@code sculk_vein} feature (stream DD).
+     *
+     * @return true if a face was placed
+     */
+    public boolean spreadFromFaceTowardRandomDirection(World world, BlockPos pos, EnumFacing face, java.util.Random random) {
+        IBlockState source = world.getBlockState(pos);
+        boolean other = !BlockSculkVein.isVein(source);
+        int mask = other ? 0 : BlockSculkVein.faces(world, pos);
+        java.util.List<EnumFacing> dirs = new java.util.ArrayList<EnumFacing>(java.util.Arrays.asList(EnumFacing.VALUES));
+        java.util.Collections.shuffle(dirs, random);
+        for (EnumFacing dir : dirs) {
+            if (spreadFromFaceTowardDirection(world, pos, other, mask, face, dir)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private boolean spreadFromFaceTowardDirection(World world, BlockPos pos, boolean other, int mask, EnumFacing face, EnumFacing dir) {
         if (dir.getAxis() == face.getAxis()) {
             return false;

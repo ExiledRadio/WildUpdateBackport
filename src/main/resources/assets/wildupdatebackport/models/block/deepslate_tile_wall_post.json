@@ -1,0 +1,6 @@
+{
+  "parent": "wildupdatebackport:block/template_wall_post",
+  "textures": {
+    "wall": "wildupdatebackport:block/deepslate_tiles"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "wildupdatebackport:block/template_wall_side",
+  "textures": {
+    "wall": "wildupdatebackport:block/cobbled_deepslate"
+  }
+}

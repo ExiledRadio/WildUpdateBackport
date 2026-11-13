@@ -24,6 +24,11 @@ SPECIAL = {
     # 1.12.2's double slabs are blocks of their own; their name is the slab's.
     "tile.%s.mangrove_double_slab.name" % M: "block.minecraft.mangrove_slab",
     "tile.%s.mud_brick_double_slab.name" % M: "block.minecraft.mud_brick_slab",
+    # The deepslate copies' double slabs (stream DD).
+    "tile.%s.cobbled_deepslate_double_slab.name" % M: "block.minecraft.cobbled_deepslate_slab",
+    "tile.%s.polished_deepslate_double_slab.name" % M: "block.minecraft.polished_deepslate_slab",
+    "tile.%s.deepslate_brick_double_slab.name" % M: "block.minecraft.deepslate_brick_slab",
+    "tile.%s.deepslate_tile_double_slab.name" % M: "block.minecraft.deepslate_tile_slab",
     # Items named after their block in 1.19 (door and sign items are blocks there).
     "item.%s.mangrove_door.name" % M: "block.minecraft.mangrove_door",
     "item.%s.mangrove_sign.name" % M: "block.minecraft.mangrove_sign",

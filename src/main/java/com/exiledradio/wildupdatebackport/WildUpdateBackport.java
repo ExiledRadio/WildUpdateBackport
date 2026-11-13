@@ -56,6 +56,7 @@ public final class WildUpdateBackport {
         com.exiledradio.wildupdatebackport.allay.AllayContent.preInit();
         com.exiledradio.wildupdatebackport.lookfeel.LookAndFeel.preInit();
         com.exiledradio.wildupdatebackport.changes.ChangesContent.preInit();
+        com.exiledradio.wildupdatebackport.deepdark.DeepDarkContent.preInit();
 
         // Client-only setup lives in a class a dedicated server never loads. The call names no client
         // type, so this class verifies on a server - a guarded method here would not.
@@ -74,6 +75,7 @@ public final class WildUpdateBackport {
         com.exiledradio.wildupdatebackport.items.ItemsContent.init();
         com.exiledradio.wildupdatebackport.warden.WardenContent.init();
         com.exiledradio.wildupdatebackport.changes.ChangesContent.init();
+        com.exiledradio.wildupdatebackport.deepdark.DeepDarkContent.init();
     }
 
     @Mod.EventHandler

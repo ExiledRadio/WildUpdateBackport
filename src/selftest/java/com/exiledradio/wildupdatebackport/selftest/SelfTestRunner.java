@@ -56,6 +56,7 @@ public final class SelfTestRunner {
             new LookFeelSelfTest(),
             new ChangesSelfTest(),
             new SwampSelfTest(),
+            new DeepDarkSelfTest(),
     };
 
     private final List<String> wanted;

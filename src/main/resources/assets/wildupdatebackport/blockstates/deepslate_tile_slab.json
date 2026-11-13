@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom": {
+      "model": "wildupdatebackport:deepslate_tile_slab"
+    },
+    "half=top": {
+      "model": "wildupdatebackport:deepslate_tile_slab_top"
+    }
+  }
+}

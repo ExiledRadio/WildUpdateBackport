@@ -279,6 +279,10 @@ a local package written to Core's requested API (`CORE_REQUESTS.md` request 2), 
 DD does not wait for Core. The deepslate set the cities are built of is Caves & Cliffs'; copied when it is
 absent (Rule 1).
 
+**Built** (stream DD, `docs/streams/deepdark.md`): 1.19.2's layouts piece for piece, its grid, and in 1.18 terrain its
+biome check, all against vanilla 1.19.2's own code; Core's template loader with a local 1.19 jigsaw assembler
+(`CORE_REQUESTS.md` DD-1 to DD-4).
+
 ### Lf. Look and feel
 
 1.19.x's changes beyond its content, handed to Backport Core's `presentation` module, which shows the newest

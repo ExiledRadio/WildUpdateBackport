@@ -97,7 +97,9 @@ public final class JigsawAssembler {   // 1.16+'s pools and jigsaw expansion, de
 }
 ```
 
-Until then, stream DD does not start.
+**Status (stream DD, 2026-11-13):** Core 1.1.0 has `ModernTemplate`, `ModernPalette`, `JigsawPools` and a 1.16.5
+`Jigsaw`. DD builds on them and adds what ancient cities still need locally (`deepdark/city/`). Those additions are
+DD-2 below.
 
 ## 3. Multiface blocks (sculk vein, glow lichen, resin clump)
 
@@ -321,3 +323,57 @@ inside 1.12.2's tabs only; this needs Core to own the tab list. The tab names 1.
   next to the cursor.
 - *F3* (1.19): GPU utilization in the left column (needs GL timer queries).
 - *Default skins* (1.19.3): the seven new default skins for players without one.
+
+## DD. Deep dark and ancient cities (stream DD, 2026-11-13)
+
+**DD-1. The noise biome at a quart, for structure biome checks.** 1.19's `Structure.isValidBiome` reads
+`biomeSource.getNoiseBiome(quart)`. `ModernGeneration.biomeId(x, y, z)` gives the zoomed (fuzzed) biome a block
+reports, which near a biome's edge is a neighbor's. Every 1.18+ structure that checks the biome at its start needs the
+noise biome: trail ruins and trial chambers too.
+
+```java
+public interface ModernGeneration {
+    /** The 1.18+ noise biome at a quart position (BiomeSource.getNoiseBiome), today's id. */
+    String noiseBiomeId(int quartX, int quartY, int quartZ);
+}
+```
+
+Local shim: `deepdark.DeepDark.noiseBiome` reaches Caves & Cliffs' `ModernGenerator.biomes3d.source.biome(qx, qy, qz)`
+by reflection, and falls back to `biomeId` with a warning.
+
+**DD-2. 1.18+ jigsaw assembly in `Jigsaw`.** Ancient cities (and trail ruins, trial chambers) need these from 1.19:
+
+- `startJigsawName(String)`: the start piece moved so that jigsaw lands on the origin.
+- `maxDistanceFromCenter(int)`: in place of the fixed 80.
+- The generation stub: the start box's middle at the anchor's height, where the biome is checked, without assembling
+  the rest.
+- 1.19's `Util.shuffle` for pools (n - 1 draws, like `Collections.shuffle`). `Pool.shuffled` is fastutil's n draws,
+  which is right for 1.16-1.18 only, so the shuffle has to be chosen by version.
+
+Processors:
+
+- `block_rot`'s `rottable_blocks` tag (1.19), with a way to register block tags (`ModernProcessors.tag` exists);
+  without it, 1.1.0 rots every block, chests included;
+- `protected_blocks` (`ProtectedBlockProcessor`, with `#features_cannot_replace`).
+
+`JigsawPiece.setPivot` is package-private, and `JigsawElement.place` is not public.
+
+Local shim: `deepdark/city/CityLayout` (the assembler), `CityPiece` and `CityProcessors`. They are tested piece for
+piece against vanilla 1.19.2 (`tools/deepdark/oracle.sh`).
+
+**DD-3. Terrain adaptation and decoration in 1.18 terrain (Caves & Cliffs, through Core).**
+
+- `beard_box`: `TerrainAdaptation.Kind.BEARD_BOX` exists, but Caves & Cliffs' `StructureBeards` maps it to none.
+  1.19's Beardifier `BEARD_BOX` case: the vertical distance is measured to the box (`max(0, max(floor - y,
+  y - maxY))`), not to the floor. Until then DD clears each rigid piece's box and fills under its floor in the chunk.
+- The deep dark's `sculk_vein` and `sculk_patch_deep_dark` at their place in 1.19's feature order, with their
+  per-feature seed. Caves & Cliffs' decorator lists them and skips them. Wanted: a way for a backport to supply a
+  placed feature's placer to the generator's decorator by name (with the world and the feature's random). Until then
+  DD places them from an `IWorldGenerator` after the generator's decoration.
+- `MapGenStructure.generateStructure` clips each chunk to y 1-255. `ScatteredStructure`'s driver could pass the world's
+  full height (DD widens it in its own `StructureStart`).
+
+**DD-4. Biome music: Ancestry.** 1.19's deep dark plays `music.overworld.deep_dark` (*Ancestry*). This belongs with
+the shared biome music player stream Sw asks for (request 9). It would need to work for 1.18 terrain's 3D biome, and for a
+1.12.2 world's stand-in region, which only the server knows.
+
