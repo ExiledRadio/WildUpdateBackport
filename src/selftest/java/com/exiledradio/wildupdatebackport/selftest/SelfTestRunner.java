@@ -48,6 +48,7 @@ public final class SelfTestRunner {
             new MudSelfTest(),
             new BoatSelfTest(),
             new VibrationSelfTest(),
+            new LookFeelSelfTest(),
     };
 
     private final List<String> wanted;

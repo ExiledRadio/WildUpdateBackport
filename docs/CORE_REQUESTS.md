@@ -166,3 +166,55 @@ public final class GoatHorns {
 
 Until it exists: Caves & Cliffs can call `wildupdatebackport:goat_horn` by name with an `instrument` NBT
 string (`ponder_goat_horn` ... `dream_goat_horn`), which is the stack format stream I uses.
+
+## Lf. Look and feel (stream Lf): 1.19.x pieces only Core can build
+
+Stream Lf registers 1.19, 1.19.1, 1.19.3 and 1.19.4 with Core's `presentation` module (panorama, splashes, menu music,
+F3 + F's removal, four options, Auto-Jump's default, vanilla text; `docs/streams/lookfeel.md`). These are the 1.19.x
+changes left, each a single slot or a shared screen that one owner must build, so they are asked of Core rather than
+built here. Version is the one to register them under; Core applies them once that version is the newest installed.
+
+**Lf-1. Menu track volume.** 1.19.3 plays *Aerie*, *Firebugs* and *Labyrinthine* at volume 0.4 on the title screen
+(1.19.3's `sounds.json`, `music.menu`; 1.19 played them at 1.0). `MenuMusicPlayer` plays every added track at 1.0:
+
+```java
+public Contribution addMenuMusic(String soundName, int weight, float volume);   // the Sound's volume, as sounds.json's
+public Contribution menuMusicVolume(String soundName, float volume);            // a later version changing an earlier track
+```
+
+Wanted as `version("1.19.3").menuMusicVolume("wildupdatebackport:music/game/swamp/aerie", 0.4F)` and so on. Until
+then the three play at 1.0, as in 1.19 to 1.19.2.
+
+**Lf-2. Options Core's screens own.**
+- *Notification Time* (1.19.4, Accessibility, 0.5x to 10x, default 1.0x): how long toasts stay (every `IToast`'s
+  5000 ms and the advancement/recipe toasts' times) and how long subtitles stay (`GuiSubtitleOverlay`'s 3000 ms).
+  A Core slider plus one patch of `GuiToast`'s time base would serve every version's toasts.
+- *High Contrast* (1.19.4, Accessibility, default OFF) and its built-in resource pack (menus' widgets with stronger
+  outlines): Core's texture packs already own the GUI sprites.
+- *Smooth Lighting* (1.19.3-rc1): Minimum removed, Maximum shown as ON. 1.12.2's `GameSettings.Options.AMBIENT_OCCLUSION`
+  cycles 0/1/2; from 1.19.3 it should cycle OFF/ON (stored as 0/2), and an instance at 1 move to 2 once.
+- *Directional Audio* (1.19, Sounds, default OFF): HRTF through OpenAL Soft's `ALC_SOFT_HRTF`. Needs the sound system's
+  context re-created with attributes, which only one owner may do; may be out of reach on LWJGL 2.
+- *Operator Items Tab* (1.19.3, Controls, default OFF) with the 1.19.3 creative tab overhaul: see Lf-3.
+- *Key Binds* (1.19.4): a tooltip on a conflicting bind naming the binds it conflicts with.
+- *Credits and Attribution* (1.19.4-pre4): a button on the Options screen; *Realms News & Invites* keeps its place.
+- Option buttons whose text is too long scroll it (23w06a).
+
+**Lf-3. Creative inventory, 1.19.3.** The overhaul: tabs and order as 1.19.3 (blocks by material, items in more than
+one tab, recolored and narrower tab icons, the "Operator Utilities" tab for command blocks, barrier, structure block,
+jigsaw, debug stick when the option is on and the player may use them), search grouped by tab. `creativeOrder` sorts
+inside 1.12.2's tabs only; this needs Core to own the tab list. The tab names 1.19.3 gave ("Redstone Blocks",
+"Tools & Utilities") are left out of our vanilla text until the tabs hold what those names say.
+
+**Lf-4. Screens, 1.19.x.**
+- *Create New World* (1.19.4, 23w05a): three tabs, Game / World / More, Ctrl+Tab and Ctrl+number switching, the save
+  folder tooltip; "Import Settings" and "Export Settings" gone.
+- *Welcome to Minecraft* onboarding screen on first launch (1.19.4, 23w03a): narrator, accessibility settings,
+  language; arrow-key navigation of every menu.
+- *Pause menu* (1.19.3): the "Game Menu" heading moved to the top.
+- *Open to LAN* (1.19.3): a port field; game mode and cheats start from the world's.
+- *Subtitles* (1.19.3-rc1): drawn with a shadow.
+- *Tooltips* (1.19.3): a focused button's tooltip above or below it, winning over a hover tooltip; hover tooltips
+  next to the cursor.
+- *F3* (1.19): GPU utilization in the left column (needs GL timer queries).
+- *Default skins* (1.19.3): the seven new default skins for players without one.

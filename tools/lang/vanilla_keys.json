@@ -47,7 +47,15 @@
     "config.wildupdatebackport.deepDark",
     "config.wildupdatebackport.deepDark.tooltip",
     "config.wildupdatebackport.deepDark.enabled",
-    "config.wildupdatebackport.deepDark.enabled.tooltip"
+    "config.wildupdatebackport.deepDark.enabled.tooltip",
+    "options.darknessEffectScale",
+    "options.darknessEffectScale.tooltip",
+    "options.damageTiltStrength",
+    "options.damageTiltStrength.tooltip",
+    "options.glintSpeed",
+    "options.glintSpeed.tooltip",
+    "options.glintStrength",
+    "options.glintStrength.tooltip"
   ],
   "vanilla": {
     "entity.wildupdatebackport.boat.name": "entity.minecraft.boat",

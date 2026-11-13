@@ -94,3 +94,13 @@ item.wildupdatebackport.dark_oak_chest_boat.name=Dark Oak Boat with Chest
 item.wildupdatebackport.mangrove_chest_boat.name=Mangrove Boat with Chest
 entity.wildupdatebackport.boat.name=Boat
 entity.wildupdatebackport.chest_boat.name=Boat with Chest
+
+# --- lookfeel ---
+options.darknessEffectScale=Darkness Pulsing
+options.darknessEffectScale.tooltip=Controls how much the Darkness effect pulses when a Warden or Sculk Shrieker gives it to you.
+options.damageTiltStrength=Damage Tilt
+options.damageTiltStrength.tooltip=The amount of camera shake caused by being hurt.
+options.glintSpeed=Glint Speed
+options.glintSpeed.tooltip=Controls how fast the visual glint shimmers across enchanted items.
+options.glintStrength=Glint Strength
+options.glintStrength.tooltip=Controls how transparent the visual glint is on enchanted items.
