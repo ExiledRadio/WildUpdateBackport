@@ -6,6 +6,7 @@ import com.exiledradio.backportcore.structure.ModernPalette;
 import com.exiledradio.backportcore.structure.ScatteredStructure;
 import com.exiledradio.backportcore.structure.Structures;
 import com.exiledradio.backportcore.structure.TerrainAdaptation;
+import com.exiledradio.backportcore.worldgen.FlatWorlds;
 import com.exiledradio.wildupdatebackport.ModConfig;
 import com.exiledradio.wildupdatebackport.WildUpdateBackport;
 import com.exiledradio.wildupdatebackport.common.Content;
@@ -128,7 +129,9 @@ public final class DeepDarkContent {
         MapGenStructureIO.registerStructure(AncientCityStructure.Start.class, AncientCityStructure.SAVE_NAME);
         MapGenStructureIO.registerStructureComponent(CityPiece.class, "WUB_AncientCityPiece");
         ScatteredStructure.register(Structures.ANCIENT_CITY,
-                world -> cities() && world.provider.getDimension() == 0 ? new AncientCityStructure() : null);
+                // No ancient cities in superflat (Core asks too): no preset can list them.
+                world -> cities() && world.provider.getDimension() == 0 && FlatWorlds.structure(world, Structures.ANCIENT_CITY)
+                        ? new AncientCityStructure() : null);
         StructureLocate.scattered("minecraft:ancient_cities", Structures.ANCIENT_CITY, null, "minecraft:ancient_city");
         MinecraftForge.TERRAIN_GEN_BUS.register(new AncientCityStructure.PrimerBeard());
         // 1.19's terrain_adaptation beard_box: a terrain that adapts to structures carves the city's cavern.

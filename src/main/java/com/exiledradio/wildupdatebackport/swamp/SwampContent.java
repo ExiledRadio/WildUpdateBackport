@@ -77,8 +77,11 @@ public final class SwampContent {
         return biome;
     }
 
-    /** Always registered, so a world that has mangrove swamps loads them whatever the setting. */
-    @SubscribeEvent
+    /**
+     * Always registered, so a world that has mangrove swamps loads them whatever the setting. Before the deep dark
+     * (high priority), so the two get the same ids at every launch (a superflat preset names its biome by id).
+     */
+    @SubscribeEvent(priority = EventPriority.HIGH)
     public static void registerBiomes(RegistryEvent.Register<Biome> event) {
         biome = new BiomeMangroveSwamp();
         biome.setRegistryName(Content.id(NAME));

@@ -1,6 +1,7 @@
 package com.exiledradio.wildupdatebackport.deepdark;
 
 import com.exiledradio.backportcore.terrain.WorldHeights;
+import com.exiledradio.backportcore.worldgen.FlatWorlds;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
@@ -20,6 +21,8 @@ import java.lang.reflect.Method;
  *       so the high ground stands in: a column whose 1.12 biome is a hills, mountain or plateau biome (Forge's
  *       {@code HILLS} or {@code MOUNTAIN}, or a base height of 0.45 and up), never an ocean, river or
  *       beach. Heights are 1.19's moved up by {@link #shift} (59 in a 0-255 world): y 1 to 40, 1.19's -58 to -19.</li>
+ *   <li><b>Superflat</b>: as today's, the preset's one biome everywhere, so the deep dark only where that biome is
+ *       the deep dark ({@link #flat}), at any height.</li>
  * </ul>
  */
 public final class DeepDark {
@@ -169,8 +172,16 @@ public final class DeepDark {
         if (modern != null) {
             return BIOME.equals(modern);
         }
+        if (FlatWorlds.isFlat(world)) {
+            return flat(world.getBiomeProvider().getBiome(pos, null));
+        }
         int y119 = pos.getY() - shift(world);
         return y119 >= MIN_Y_119 && y119 <= MAX_Y_119 && highGround(world.getBiomeProvider().getBiome(pos, null));
+    }
+
+    /** @return whether a superflat world's biome is the deep dark: only the deep dark biome itself */
+    static boolean flat(@Nullable Biome biome) {
+        return biome != null && biome == DeepDarkContent.biome();
     }
 
     /** The stand-in for 1.19's low erosion in a 1.12 biome map. */

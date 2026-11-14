@@ -1,6 +1,7 @@
 package com.exiledradio.wildupdatebackport.deepdark;
 
 import com.exiledradio.backportcore.terrain.WorldHeights;
+import com.exiledradio.backportcore.worldgen.FlatWorlds;
 import com.exiledradio.wildupdatebackport.common.Owners;
 import com.exiledradio.wildupdatebackport.sculk.BlockSculkVein;
 import com.exiledradio.wildupdatebackport.sculk.SculkContent;
@@ -52,13 +53,20 @@ public final class DeepDarkFeatures implements IWorldGenerator {
 
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator generator, IChunkProvider provider) {
-        if (world.provider.getDimension() != 0 || !DeepDarkContent.enabled() || !SculkContent.enabled() || SculkContent.veinBlock() == null) {
+        // A superflat world without decoration gets no features (1.12's flat generator decorates only with it).
+        if (world.provider.getDimension() != 0 || !DeepDarkContent.enabled() || !SculkContent.enabled() || SculkContent.veinBlock() == null
+                || !FlatWorlds.decoration(world)) {
             return;
         }
         DeepDarkPending pending = DeepDarkPending.of(world);
         int x0 = (chunkX << 4) + 8;
         int z0 = (chunkZ << 4) + 8;
-        if (DeepDark.modern(world) || DeepDark.highGround(world.getBiomeProvider().getBiome(new BlockPos(x0 + 8, 0, z0 + 8), null))
+        if (FlatWorlds.isFlat(world)) {
+            // Superflat: one biome, the preset's; only a deep dark preset has the deep dark's features.
+            if (DeepDark.flat(world.getBiomeProvider().getBiome(new BlockPos(x0 + 8, 0, z0 + 8), null))) {
+                pending.features(chunkX, chunkZ);
+            }
+        } else if (DeepDark.modern(world) || DeepDark.highGround(world.getBiomeProvider().getBiome(new BlockPos(x0 + 8, 0, z0 + 8), null))
                 || DeepDark.highGround(world.getBiomeProvider().getBiome(new BlockPos(x0, 0, z0), null))
                 || DeepDark.highGround(world.getBiomeProvider().getBiome(new BlockPos(x0 + 15, 0, z0 + 15), null))) {
             pending.features(chunkX, chunkZ);

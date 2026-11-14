@@ -1,5 +1,6 @@
 package com.exiledradio.wildupdatebackport.allay;
 
+import com.exiledradio.backportcore.worldgen.FlatWorlds;
 import com.exiledradio.wildupdatebackport.WildUpdateBackport;
 import com.exiledradio.wildupdatebackport.common.Owners;
 
@@ -105,7 +106,8 @@ public final class AllayStructures {
         @SubscribeEvent
         public void populated(PopulateChunkEvent.Post event) {
             World world = event.getWorld();
-            if (world.isRemote || !world.getWorldInfo().isMapFeaturesEnabled()) {
+            // Superflat spawns no mobs at generation (and has no mansions).
+            if (world.isRemote || !world.getWorldInfo().isMapFeaturesEnabled() || FlatWorlds.isFlat(world)) {
                 return;
             }
             StructureBoundingBox box = populationBox(event.getChunkX(), event.getChunkZ());
@@ -236,7 +238,8 @@ public final class AllayStructures {
 
         @Override
         public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator generator, IChunkProvider provider) {
-            if (cageIndex < 0 || world.isRemote) {
+            // Superflat has no outposts and spawns no mobs at generation.
+            if (cageIndex < 0 || world.isRemote || FlatWorlds.isFlat(world)) {
                 return;
             }
             MapGenStructure outposts = this.outposts(world);

@@ -60,6 +60,7 @@ public final class SelfTestRunner {
             new GoatSelfTest(),
             new WaterlogSelfTest(),
             new GoatCarrySelfTest(),
+            new FlatSelfTest(),
     };
 
     private final List<String> wanted;

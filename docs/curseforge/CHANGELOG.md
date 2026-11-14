@@ -4,6 +4,8 @@ First beta. Everything from 1.19 is in: the deep dark, ancient cities, the warde
 
 Needs Backport Core 1.3.0 or newer.
 
+Superflat worlds generate only what their preset asks for, as in vanilla: no ancient cities, no allays at generation, and sculk or mangroves only with decoration in a deep dark or mangrove swamp preset.
+
 Known limits in this beta:
 
 *   English only for now.
