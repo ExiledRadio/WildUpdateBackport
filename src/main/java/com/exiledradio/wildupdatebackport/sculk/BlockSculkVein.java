@@ -1,5 +1,8 @@
 package com.exiledradio.wildupdatebackport.sculk;
 
+import com.exiledradio.backportcore.waterlog.Waterloggable;
+import com.exiledradio.backportcore.waterlog.Waterlogging;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.EnumPushReaction;
 import net.minecraft.block.properties.IProperty;
@@ -44,11 +47,15 @@ import java.util.Set;
  * and come back through {@link #getActualState}. Everything that reads or writes faces goes through
  * {@link #faces} and {@link #set}.
  *
+ * <p>Water (with Fluidlogged API): a vein holds a water source ({@link Waterloggable}), spreads and regrows into
+ * water sources as 1.19's does ({@link #waterSource}), and a vein that loses its last face leaves its water behind.
+ * Without Fluidlogged API veins never enter water, since they could not keep it.
+ *
  * <p>No collision; hardness 0.2; destroyed by pistons; with Silk Touch drops one vein per face, otherwise nothing.
  * Charges travelling through a vein turn the blocks it sits on into sculk (the vein then retreats from every face
  * that now touches sculk).
  */
-public class BlockSculkVein extends Block implements SculkBehaviour {
+public class BlockSculkVein extends Block implements SculkBehaviour, Waterloggable {
 
     /** By {@link EnumFacing#getIndex()}: down, up, north, south, west, east. */
     public static final PropertyBool[] FACES = {
@@ -144,11 +151,13 @@ public class BlockSculkVein extends Block implements SculkBehaviour {
     public static boolean set(World world, BlockPos pos, int mask, int flags) {
         BlockSculkVein vein = SculkContent.veinBlock();
         if (mask == 0) {
-            return world.setBlockState(pos, Blocks.AIR.getDefaultState(), flags);
+            // 1.19's onDischarged: a vein with no face left becomes its water, or air.
+            boolean water = isVein(world.getBlockState(pos)) && Waterlogging.hasWater(world, pos);
+            return world.setBlockState(pos, (water ? Blocks.WATER : Blocks.AIR).getDefaultState(), flags);
         }
         IBlockState current = world.getBlockState(pos);
         boolean was = current.getBlock() == vein;
-        if (!was && !world.setBlockState(pos, vein.getDefaultState(), flags)) {
+        if (!was && !Waterlogging.placeKeepingWater(world, pos, vein.getDefaultState(), flags)) {
             return false;
         }
         TileEntity te = world.getTileEntity(pos);
@@ -170,6 +179,18 @@ public class BlockSculkVein extends Block implements SculkBehaviour {
     }
 
     /** 1.19's {@code SculkVeinBlock.regrow}: a vein on every listed face that can hold one. */
+    /**
+     * @return true for a water source block a vein or a growth may take, keeping the water: 1.19's {@code
+     * is(Blocks.WATER) && isSource()}. Always false without Fluidlogged API, where nothing could keep it.
+     */
+    public static boolean waterSource(World world, BlockPos pos) {
+        if (!Waterlogging.isAvailable()) {
+            return false;
+        }
+        IBlockState state = world.getBlockState(pos);
+        return (state.getBlock() == Blocks.WATER || state.getBlock() == Blocks.FLOWING_WATER) && Waterlogging.hasWaterSource(world, pos);
+    }
+
     public static boolean regrow(World world, BlockPos pos, Collection<EnumFacing> faces) {
         int mask = 0;
         for (EnumFacing f : faces) {

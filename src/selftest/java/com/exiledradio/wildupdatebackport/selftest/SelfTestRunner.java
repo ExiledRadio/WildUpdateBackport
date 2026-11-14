@@ -58,6 +58,7 @@ public final class SelfTestRunner {
             new SwampSelfTest(),
             new DeepDarkSelfTest(),
             new GoatSelfTest(),
+            new WaterlogSelfTest(),
             new GoatCarrySelfTest(),
     };
 

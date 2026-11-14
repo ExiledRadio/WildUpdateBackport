@@ -1,5 +1,7 @@
 package com.exiledradio.wildupdatebackport.mangrove;
 
+import com.exiledradio.backportcore.waterlog.Waterloggable;
+
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.BlockStandingSign;
 import net.minecraft.block.BlockWallSign;
@@ -44,7 +46,7 @@ public final class MangroveSign {
     }
 
     /** On top of a block, in any of sixteen directions. */
-    public static class Standing extends BlockStandingSign {
+    public static class Standing extends BlockStandingSign implements Waterloggable {
         public Standing() {
             this.setHardness(1.0F);
             this.setSoundType(SoundType.WOOD);
@@ -74,7 +76,7 @@ public final class MangroveSign {
     }
 
     /** On the side of a block. */
-    public static class Wall extends BlockWallSign {
+    public static class Wall extends BlockWallSign implements Waterloggable {
         public Wall() {
             this.setHardness(1.0F);
             this.setSoundType(SoundType.WOOD);

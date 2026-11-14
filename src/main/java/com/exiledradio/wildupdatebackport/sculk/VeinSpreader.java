@@ -154,8 +154,12 @@ public final class VeinSpreader {
             }
         }
         Material m = at.getMaterial();
-        // Lava and every other fluid: never. Water: 1.19 waterlogs the vein; that waits for the waterlogging pass (Wl).
-        if (m.isLiquid() || m == Material.FIRE) {
+        // Lava, flowing water and every other fluid: never. A water source: the vein takes it and keeps the water
+        // (1.19 waterlogs it), only with Fluidlogged API.
+        if (m.isLiquid()) {
+            return BlockSculkVein.waterSource(world, to);
+        }
+        if (m == Material.FIRE) {
             return false;
         }
         return m.isReplaceable() || at.getBlock().isAir(at, world, to) || BlockSculkVein.isVein(at);

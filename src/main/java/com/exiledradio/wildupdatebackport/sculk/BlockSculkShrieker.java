@@ -1,5 +1,7 @@
 package com.exiledradio.wildupdatebackport.sculk;
 
+import com.exiledradio.backportcore.waterlog.Waterloggable;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.properties.PropertyBool;
@@ -28,9 +30,10 @@ import java.util.Random;
  *
  * <p>{@code shrieking} for 90 ticks after a player steps on it or a nearby sculk sensor clicked because of one
  * ({@link TileSculkShrieker}); {@code can_summon} only for shriekers made by world generation (placed and
- * catalyst-grown ones never summon). Breaking a shrieking one still gives its response.
+ * catalyst-grown ones never summon). Breaking a shrieking one still gives its response. It holds a water source
+ * ({@link Waterloggable}, with Fluidlogged API).
  */
-public class BlockSculkShrieker extends Block {
+public class BlockSculkShrieker extends Block implements Waterloggable {
 
     public static final PropertyBool SHRIEKING = PropertyBool.create("shrieking");
     public static final PropertyBool CAN_SUMMON = PropertyBool.create("can_summon");

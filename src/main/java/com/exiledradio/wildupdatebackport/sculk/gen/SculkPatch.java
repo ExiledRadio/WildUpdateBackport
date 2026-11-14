@@ -1,6 +1,7 @@
 package com.exiledradio.wildupdatebackport.sculk.gen;
 
 import com.exiledradio.wildupdatebackport.sculk.BlockSculkShrieker;
+import com.exiledradio.wildupdatebackport.sculk.BlockSculkVein;
 import com.exiledradio.wildupdatebackport.sculk.SculkBehaviour;
 import com.exiledradio.wildupdatebackport.sculk.SculkContent;
 import com.exiledradio.wildupdatebackport.sculk.SculkSpreader;
@@ -88,7 +89,8 @@ public final class SculkPatch {
         if (state.getBlock() instanceof SculkBehaviour) {
             return true;
         }
-        if (!world.isAirBlock(pos)) {
+        // Air or a water source (1.19; water only with Fluidlogged API, which lets the veins keep it).
+        if (!world.isAirBlock(pos) && !BlockSculkVein.waterSource(world, pos)) {
             return false;
         }
         for (EnumFacing f : EnumFacing.VALUES) {

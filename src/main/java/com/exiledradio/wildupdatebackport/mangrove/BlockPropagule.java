@@ -1,5 +1,6 @@
 package com.exiledradio.wildupdatebackport.mangrove;
 
+import com.exiledradio.backportcore.waterlog.Waterloggable;
 import com.exiledradio.wildupdatebackport.common.Owners;
 
 import net.minecraft.block.Block;
@@ -39,9 +40,10 @@ import java.util.Random;
  * <h2>Where it stands</h2>
  * 1.19's {@code dirt} tag plus farmland and clay: grass, dirt, coarse dirt, podzol, mycelium, farmland, clay,
  * and by name our mud and muddy mangrove roots and Caves &amp; Cliffs' rooted dirt and moss. It can be placed
- * in water (1.19 waterlogs it; until the family's waterlogging pass, it takes the water's place).
+ * in water, and keeps a water source ({@link Waterloggable}, with Fluidlogged API), standing or hanging, as 1.19's.
+ * Grown into a tree, it leaves its water where it stood, as 1.19's sapling growth does.
  */
-public class BlockPropagule extends BlockBush implements IGrowable {
+public class BlockPropagule extends BlockBush implements IGrowable, Waterloggable {
 
     public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 4);
     public static final PropertyBool HANGING = PropertyBool.create("hanging");

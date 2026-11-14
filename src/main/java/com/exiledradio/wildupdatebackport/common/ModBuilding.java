@@ -1,5 +1,7 @@
 package com.exiledradio.wildupdatebackport.common;
 
+import com.exiledradio.backportcore.waterlog.Waterloggable;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.BlockStairs;
@@ -28,6 +30,8 @@ import java.util.Random;
  * <p>Each is vanilla's class with the least added to make a new one exist: protected constructors, a slab's
  * one-value variant, a wall's cobblestone variant pinned. The blockstate files leave the pinned properties
  * out ({@link Content#ignore}).
+ *
+ * <p>All three are {@link Waterloggable}, as 1.19 makes every stair, slab and wall (a double slab holds no water).
  */
 public final class ModBuilding {
 
@@ -35,7 +39,7 @@ public final class ModBuilding {
     }
 
     /** Stairs of a block; strength and sound come from the block's state, as vanilla's. */
-    public static class Stairs extends BlockStairs {
+    public static class Stairs extends BlockStairs implements Waterloggable {
         public Stairs(IBlockState base) {
             super(base);
             this.useNeighborBrightness = true;
@@ -47,7 +51,7 @@ public final class ModBuilding {
      * walls do. Vanilla's {@code variant} (cobblestone or mossy) cannot be removed, so it stays at its first
      * value and the blockstate file ignores it.
      */
-    public static class Wall extends BlockWall {
+    public static class Wall extends BlockWall implements Waterloggable {
         private final MapColor color;
 
         public Wall(Block base, MapColor color) {
@@ -94,7 +98,13 @@ public final class ModBuilding {
      * variant property; here it has one value. {@link #isDouble()} is answered by the subclass, because the
      * superclass constructor asks before any field is set.
      */
-    public abstract static class Slab extends BlockSlab {
+    public abstract static class Slab extends BlockSlab implements Waterloggable {
+
+        /** 1.19: a slab holds water, a double slab (a full block) does not. */
+        @Override
+        public boolean canHoldWater(IBlockState state, IBlockAccess world, BlockPos pos) {
+            return !isDouble();
+        }
 
         public static final PropertyEnum<Variant> VARIANT = PropertyEnum.create("variant", Variant.class);
 

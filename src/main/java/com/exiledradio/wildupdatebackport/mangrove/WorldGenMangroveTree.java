@@ -1,5 +1,6 @@
 package com.exiledradio.wildupdatebackport.mangrove;
 
+import com.exiledradio.backportcore.waterlog.Waterlogging;
 import com.exiledradio.wildupdatebackport.common.Owners;
 
 import net.minecraft.block.Block;
@@ -38,14 +39,22 @@ import java.util.Set;
  *
  * <p>Like 1.19's, a tree whose roots find no ground within reach is not placed at all; anything else
  * places what fits.
+ *
+ * <p>Water (with Fluidlogged API): roots placed where there is any water hold a source (1.19's {@code
+ * RootPlacer}: {@code FluidTags.WATER}), leaves keep a water source they are placed into (its {@code
+ * FoliagePlacer}: a source only), and logs replace water as 1.19's do. Without Fluidlogged API every one of them
+ * replaces the water.
  */
 public class WorldGenMangroveTree extends WorldGenAbstractTree {
 
     private final boolean tall;
+    /** Block flags: 3 for a grown tree, 2 for generation (as {@code setBlockAndNotifyAdequately}). */
+    private final int flags;
 
     public WorldGenMangroveTree(boolean notify, boolean tall) {
         super(notify);
         this.tall = tall;
+        this.flags = notify ? 3 : 2;
     }
 
     @Override
@@ -88,7 +97,7 @@ public class WorldGenMangroveTree extends WorldGenAbstractTree {
                 int dz = random.nextInt(3) - random.nextInt(3);
                 BlockPos p = at.add(dx, dy, dz);
                 if (validTreePos(world, p)) {
-                    this.setBlockAndNotifyAdequately(world, p, leaves);
+                    Waterlogging.placeKeepingWater(world, p, leaves, this.flags);
                     leafSet.add(p);
                 }
             }
@@ -262,7 +271,11 @@ public class WorldGenMangroveTree extends WorldGenAbstractTree {
         if (roots == null) {
             return;
         }
-        this.setBlockAndNotifyAdequately(world, pos, roots);
+        if (Waterlogging.hasWater(world, pos)) {
+            Waterlogging.placeWithWater(world, pos, roots, this.flags);
+        } else {
+            this.setBlockAndNotifyAdequately(world, pos, roots);
+        }
         placed.add(pos);
         if (random.nextFloat() < 0.5F && world.isAirBlock(pos.up())) {
             Block moss = Owners.present(Owners.CAVES_AND_CLIFFS) ? Owners.block(Owners.CAVES_AND_CLIFFS, "moss_carpet") : null;

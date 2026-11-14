@@ -1,5 +1,7 @@
 package com.exiledradio.wildupdatebackport.sculk;
 
+import com.exiledradio.backportcore.waterlog.Waterlogging;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -42,7 +44,8 @@ public class BlockSculk extends Block implements SculkBehaviour {
             if (random.nextInt(cost) < charge) {
                 BlockPos above = pos.up();
                 IBlockState growth = randomGrowthState(random, spreader.isWorldGeneration());
-                world.setBlockState(above, growth, 3);
+                // 1.19 waterlogs a growth that rises into water.
+                Waterlogging.placeKeepingWater(world, above, growth, 3);
                 world.playSound(null, pos, growth.getBlock().getSoundType(growth, world, above, null).getPlaceSound(),
                         SoundCategory.BLOCKS, 1.0F, 1.0F);
             }
@@ -70,9 +73,9 @@ public class BlockSculk extends Block implements SculkBehaviour {
         return SculkContent.sensorBlock().getDefaultState();
     }
 
-    /** Air above (1.19 also water; growths are not waterlogged before stream Wl), and at most two growths near. */
+    /** Air or a water source above (1.19; water only with Fluidlogged API), and at most two growths near. */
     private static boolean canPlaceGrowth(World world, BlockPos pos) {
-        if (!world.isAirBlock(pos.up())) {
+        if (!world.isAirBlock(pos.up()) && !BlockSculkVein.waterSource(world, pos.up())) {
             return false;
         }
         int count = 0;

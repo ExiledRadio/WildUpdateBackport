@@ -1,5 +1,7 @@
 package com.exiledradio.wildupdatebackport.mangrove;
 
+import com.exiledradio.backportcore.waterlog.Waterloggable;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRotatedPillar;
 import net.minecraft.block.SoundType;
@@ -21,7 +23,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  * 1.19: wood material (axe), hardness and resistance 0.7, podzol map color, see-through like leaves
  * (cutout), never suffocating or blocking sight, and two roots stacked hide the faces between them
  * (vertically only). They still conduct redstone and hold blocks as a full block, as 1.19's do.
- * 1.19 waterlogs them; until the family's waterlogging pass they generate dry inside water.
+ * They hold water ({@link Waterloggable}, with Fluidlogged API), and a tree grown in water keeps it around them.
  *
  * <h2>Muddy mangrove roots</h2>
  * A rotated pillar of dirt material (shovel), hardness 0.7: mud and roots, crafted shapeless.
@@ -32,7 +34,7 @@ public final class BlockMangroveRoots {
     }
 
     /** {@code mangrove_roots}. */
-    public static class Roots extends Block {
+    public static class Roots extends Block implements Waterloggable {
 
         public Roots(SoundType sound) {
             super(Material.WOOD, MapColor.OBSIDIAN);

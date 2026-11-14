@@ -97,6 +97,16 @@ jar {
     }
 }
 
+// -PnoFluidlogged: runServer and runClient without Fluidlogged API on the classpath, to test the mod as a game
+// without it (nothing holds water). The classes are compiled as usual (against it), exactly as the release jar is.
+if (project.hasProperty('noFluidlogged')) {
+    afterEvaluate {
+        [runClient, runServer].each { task ->
+            task.classpath = task.classpath.filter { !it.name.contains('fluidlogged') }
+        }
+    }
+}
+
 // -PqueryConfirm: the dev server answers Forge's startup questions (blocks missing from a saved world) with yes,
 // for tests that add or remove a mod between two runs of one world (-Pselftest=goatcarry).
 if (project.hasProperty('queryConfirm')) {

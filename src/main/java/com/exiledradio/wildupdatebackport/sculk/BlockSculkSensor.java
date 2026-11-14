@@ -1,5 +1,7 @@
 package com.exiledradio.wildupdatebackport.sculk;
 
+import com.exiledradio.backportcore.waterlog.Waterloggable;
+import com.exiledradio.backportcore.waterlog.Waterlogging;
 import com.exiledradio.wildupdatebackport.gameevent.GameEvent;
 import com.exiledradio.wildupdatebackport.gameevent.GameEventContext;
 import com.exiledradio.wildupdatebackport.gameevent.GameEvents;
@@ -41,10 +43,13 @@ import java.util.Random;
  * A comparator reads the last vibration's frequency (current Java's, 1-15) while it is active. Stepping on it
  * activates it at full power, sneaking or not; a warden stepping on it does not.
  *
+ * <p>It holds a water source ({@link Waterloggable}, with Fluidlogged API), and a waterlogged sensor clicks
+ * silently: 1.19.2 plays neither {@code sculk_clicking} nor {@code sculk_clicking_stop} for it.
+ *
  * <p>The power lives in the tile entity (phase x power is 48 states, more than metadata holds); 1.19's
  * {@code power} property is not part of any model, so nothing is lost on the client.
  */
-public class BlockSculkSensor extends Block {
+public class BlockSculkSensor extends Block implements Waterloggable {
 
     public enum Phase implements IStringSerializable {
         INACTIVE("inactive"), ACTIVE("active"), COOLDOWN("cooldown");
@@ -149,7 +154,9 @@ public class BlockSculkSensor extends Block {
         }
         world.setBlockState(pos, state.withProperty(PHASE, Phase.COOLDOWN), 3);
         world.scheduleUpdate(pos, state.getBlock(), COOLDOWN_TICKS);
-        world.playSound(null, pos, SculkContent.SENSOR_CLICKING_STOP, SoundCategory.BLOCKS, 1.0F, world.rand.nextFloat() * 0.2F + 0.8F);
+        if (!Waterlogging.hasWater(world, pos)) {
+            world.playSound(null, pos, SculkContent.SENSOR_CLICKING_STOP, SoundCategory.BLOCKS, 1.0F, world.rand.nextFloat() * 0.2F + 0.8F);
+        }
         updateNeighbors(world, pos);
     }
 
@@ -162,8 +169,10 @@ public class BlockSculkSensor extends Block {
         world.scheduleUpdate(pos, state.getBlock(), ACTIVE_TICKS);
         updateNeighbors(world, pos);
         GameEvents.emit(world, GameEvent.SCULK_SENSOR_TENDRILS_CLICKING, pos, GameEventContext.of(source));
-        world.playSound(null, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, SculkContent.SENSOR_CLICKING, SoundCategory.BLOCKS,
-                1.0F, world.rand.nextFloat() * 0.2F + 0.8F);
+        if (!Waterlogging.hasWater(world, pos)) {
+            world.playSound(null, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, SculkContent.SENSOR_CLICKING, SoundCategory.BLOCKS,
+                    1.0F, world.rand.nextFloat() * 0.2F + 0.8F);
+        }
     }
 
     /** 1.19's sculk-to-redstone dust while active; 1.12.2's dust takes one color, so it is sculk's cyan. */

@@ -1,5 +1,7 @@
 package com.exiledradio.wildupdatebackport.mangrove;
 
+import com.exiledradio.backportcore.waterlog.Waterloggable;
+
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.IGrowable;
@@ -26,6 +28,7 @@ import java.util.Random;
  *   <li><b>No sapling drop</b>: mangrove leaves drop only sticks (1-2, at 1.19's chances by Fortune:
  *       2%, 2.2%, 2.5%, 3.3%, 10%); the propagule grows hanging under them instead.</li>
  *   <li><b>Bone meal</b> on leaves with air below grows a new hanging propagule (age 0) under them.</li>
+ *   <li>They hold a water source ({@link Waterloggable}, with Fluidlogged API), as every 1.19 leaf does.</li>
  *   <li>Tinted with 1.19's fixed mangrove color, {@code 0x92C648} (client).</li>
  *   <li><b>Decay at 1.19's range</b>: a mangrove canopy spreads up to 6 blocks from its logs, past
  *       1.12.2's 4-block leaf rule, so these leaves use 1.19's: they stay while a log is within 6 steps
@@ -34,7 +37,7 @@ import java.util.Random;
  * </ul>
  * The two decay properties are vanilla's and are left out of the blockstate file, as vanilla's are.
  */
-public class BlockMangroveLeaves extends BlockLeaves implements IGrowable {
+public class BlockMangroveLeaves extends BlockLeaves implements IGrowable, Waterloggable {
 
     /** 1.19's loot table: the chance of sticks at Fortune 0 to 4. */
     private static final float[] STICK_CHANCE = {0.02F, 0.022222223F, 0.025F, 0.033333335F, 0.1F};

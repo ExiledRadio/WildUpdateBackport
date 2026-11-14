@@ -22,8 +22,8 @@ public interface SculkBehaviour {
             if (facings == null) {
                 return SculkContent.veinBlock().sameSpaceSpreader().spreadAll(world, pos, worldGen) > 0L;
             } else if (!facings.isEmpty()) {
-                // 1.19 also regrows into water; veins are not waterlogged before the waterlogging pass (Wl).
-                return world.isAirBlock(pos) && BlockSculkVein.regrow(world, pos, facings);
+                // Into air, or a water source the vein keeps (1.19; only with Fluidlogged API).
+                return (world.isAirBlock(pos) || BlockSculkVein.waterSource(world, pos)) && BlockSculkVein.regrow(world, pos, facings);
             }
             return SculkBehaviour.super.attemptSpreadVein(world, pos, state, facings, worldGen);
         }

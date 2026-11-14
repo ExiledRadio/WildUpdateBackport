@@ -1,5 +1,7 @@
 package com.exiledradio.wildupdatebackport.mangrove;
 
+import com.exiledradio.backportcore.waterlog.Waterloggable;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockButtonWood;
 import net.minecraft.block.BlockDoor;
@@ -49,7 +51,7 @@ public final class MangroveBuilding {
     }
 
     /** {@code mangrove_stairs}, from the planks. */
-    public static class Stairs extends BlockStairs {
+    public static class Stairs extends BlockStairs implements Waterloggable {
         public Stairs(IBlockState planks) {
             super(planks);
             this.useNeighborBrightness = true;
@@ -57,7 +59,7 @@ public final class MangroveBuilding {
     }
 
     /** {@code mangrove_fence}: hardness 2, resistance 3. */
-    public static class Fence extends BlockFence {
+    public static class Fence extends BlockFence implements Waterloggable {
         public Fence() {
             super(Material.WOOD, MapColor.RED);
             this.setHardness(2.0F);
@@ -109,7 +111,7 @@ public final class MangroveBuilding {
     }
 
     /** {@code mangrove_trapdoor}: hardness 3. */
-    public static class Trapdoor extends BlockTrapDoor {
+    public static class Trapdoor extends BlockTrapDoor implements Waterloggable {
         public Trapdoor() {
             super(Material.WOOD);
             this.setHardness(3.0F);
@@ -155,7 +157,13 @@ public final class MangroveBuilding {
      * answered by the subclass, because {@code BlockSlab}'s constructor calls it before fields are set.
      * Hardness 2, resistance 3, as 1.19's.
      */
-    public abstract static class Slab extends BlockSlab {
+    public abstract static class Slab extends BlockSlab implements Waterloggable {
+
+        /** 1.19: a slab holds water, a double slab (a full block) does not. */
+        @Override
+        public boolean canHoldWater(IBlockState state, IBlockAccess world, BlockPos pos) {
+            return !isDouble();
+        }
 
         public static final PropertyEnum<Variant> VARIANT = PropertyEnum.create("variant", Variant.class);
 
