@@ -1,0 +1,5 @@
+{
+  "conditions": {
+    "goats": "com.exiledradio.wildupdatebackport.goat.GoatCondition"
+  }
+}

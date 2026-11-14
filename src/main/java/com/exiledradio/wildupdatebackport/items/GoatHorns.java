@@ -25,6 +25,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import javax.annotation.Nullable;
 import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 
@@ -38,16 +40,20 @@ import java.util.UUID;
  * {@code docs/CORE_REQUESTS.md} request 6; a goat that knows nothing of this mod can also make the stack by name:
  * {@code wildupdatebackport:goat_horn} with an {@code instrument} string tag.
  *
- * <h2>Caves &amp; Cliffs' goats (until they call the hook)</h2>
- * Their ram has no block-hit ending yet, so this class adds 1.19's {@code RamTarget} one from outside, by name and
- * reflection on their goat's public horn and ram methods: while a goat charges with its head lowered and the block
- * ahead of it (or the one above that) is in 1.19's {@code #snaps_goat_horn}, it plays its ram impact, loses a horn
- * (if it has one; dropped with 1.19's horn-break sound) and ends the ram with a full cooldown. If any of those
- * methods is missing, this logs once and does nothing.
+ * <h2>The goats: Caves &amp; Cliffs', or our copy of it</h2>
+ * Caves &amp; Cliffs' goat (1.17's) has no block-hit ending to its ram, and our copy of it (stream Gt, registered
+ * only without Caves &amp; Cliffs) is the same code. So this class adds 1.19's {@code RamTarget} ending from outside
+ * to either goat, found by registry name ({@code cavesandcliffsbackport:goat} or {@code wildupdatebackport:goat}),
+ * through reflection on its horn and ram methods: while a goat charges with its head lowered, touches no mob, and
+ * the block ahead of it (or the one above that) is in 1.19's {@code #snaps_goat_horn}, it plays its ram impact,
+ * loses a horn (if it has one; dropped with 1.19's horn-break sound) and ends the ram with a full cooldown. If any
+ * of those methods is missing, this logs once and does nothing for that goat.
  */
 public final class GoatHorns {
 
     public static final ResourceLocation CC_GOAT = new ResourceLocation(Owners.CAVES_AND_CLIFFS, "goat");
+    /** Our copy of Caves &amp; Cliffs' goat (stream Gt). */
+    public static final ResourceLocation OUR_GOAT = new ResourceLocation(WildUpdateBackport.MOD_ID, "goat");
 
     private GoatHorns() {
     }
@@ -104,26 +110,25 @@ public final class GoatHorns {
         return Owners.present(Owners.CAVES_AND_CLIFFS) ? Owners.block(Owners.CAVES_AND_CLIFFS, name) : null;
     }
 
-    // --- Caves & Cliffs' goats ----------------------------------------------------------------
+    // --- The goats: Caves & Cliffs', or our copy of it ---------------------------------------
 
-    /** Reflection on Caves &amp; Cliffs' goat, looked up once. */
-    private static final class CcGoat {
+    /** Reflection on one goat class (Caves &amp; Cliffs' or our copy, which has the same methods). */
+    private static final class GoatMethods {
         Method lowering, left, right, setHorns, screaming, setLowering, setCooldown, nextCooldown;
     }
 
-    @Nullable
-    private static CcGoat cc;
-    private static boolean ccFailed;
-    @Nullable
-    private static Class<?> ccClass;
+    /** Goat class to its methods, looked up once; a class whose methods are missing maps to null. */
+    private static final Map<Class<?>, GoatMethods> METHODS = new HashMap<Class<?>, GoatMethods>();
+    /** Entity class to its registry name when it is one of the two goats, else to null. */
+    private static final Map<Class<?>, ResourceLocation> GOATS = new HashMap<Class<?>, ResourceLocation>();
 
     @Nullable
-    private static CcGoat cc(Class<?> type) {
-        if (cc != null || ccFailed) {
-            return cc;
+    private static GoatMethods methods(Class<?> type) {
+        if (METHODS.containsKey(type)) {
+            return METHODS.get(type);
         }
+        GoatMethods g = new GoatMethods();
         try {
-            CcGoat g = new CcGoat();
             g.lowering = method(type, "isLoweringHead");
             g.left = method(type, "hasLeftHorn");
             g.right = method(type, "hasRightHorn");
@@ -132,12 +137,12 @@ public final class GoatHorns {
             g.setLowering = method(type, "setLoweringHead", boolean.class);
             g.setCooldown = method(type, "setRamCooldown", int.class);
             g.nextCooldown = method(type, "nextRamCooldown");
-            cc = g;
         } catch (ReflectiveOperationException e) {
-            ccFailed = true;
-            WildUpdateBackport.LOGGER.warn("Caves & Cliffs' goat has no {}: its goats will not drop goat horns.", e.getMessage());
+            g = null;
+            WildUpdateBackport.LOGGER.warn("The goat {} has no {}: it will not drop goat horns.", type.getName(), e.getMessage());
         }
-        return cc;
+        METHODS.put(type, g);
+        return g;
     }
 
     private static Method method(Class<?> type, String name, Class<?>... args) throws NoSuchMethodException {
@@ -153,16 +158,20 @@ public final class GoatHorns {
         throw new NoSuchMethodException(name);
     }
 
-    private static boolean isCcGoat(EntityLivingBase e) {
-        if (ccClass != null) {
-            return ccClass == e.getClass();
+    /** @return the registry name of Caves &amp; Cliffs' goat or ours, or null for any other entity */
+    @Nullable
+    static ResourceLocation goatName(EntityLivingBase e) {
+        Class<?> type = e.getClass();
+        if (GOATS.containsKey(type)) {
+            return GOATS.get(type);
         }
         EntityEntry entry = EntityRegistry.getEntry(e.getClass());
-        if (entry != null && CC_GOAT.equals(entry.getRegistryName())) {
-            ccClass = e.getClass();
-            return true;
+        ResourceLocation name = entry == null ? null : entry.getRegistryName();
+        if (!CC_GOAT.equals(name) && !OUR_GOAT.equals(name)) {
+            name = null;
         }
-        return false;
+        GOATS.put(type, name);
+        return name;
     }
 
     public static final class Events {
@@ -170,24 +179,31 @@ public final class GoatHorns {
         @SubscribeEvent
         public void update(LivingEvent.LivingUpdateEvent event) {
             EntityLivingBase e = event.getEntityLiving();
-            if (e.world.isRemote || !(e instanceof EntityLiving) || !Owners.present(Owners.CAVES_AND_CLIFFS) || !isCcGoat(e)) {
+            if (e.world.isRemote || !(e instanceof EntityLiving)) {
                 return;
             }
-            CcGoat g = cc(e.getClass());
+            ResourceLocation name = goatName(e);
+            if (name == null) {
+                return;
+            }
+            GoatMethods g = methods(e.getClass());
             if (g == null) {
                 return;
             }
             try {
-                ramTick((EntityLiving) e, g);
+                ramTick((EntityLiving) e, g, name.getNamespace());
             } catch (ReflectiveOperationException | RuntimeException ex) {
-                ccFailed = true;
-                cc = null;
-                WildUpdateBackport.LOGGER.warn("Caves & Cliffs' goat could not be asked about its horns; goats will not drop goat horns.", ex);
+                METHODS.put(e.getClass(), null);
+                WildUpdateBackport.LOGGER.warn("The goat {} could not be asked about its horns; it will not drop goat horns.", name, ex);
             }
         }
     }
 
-    private static void ramTick(EntityLiving goat, CcGoat g) throws ReflectiveOperationException {
+    /**
+     * 1.19.2's {@code RamTarget.tick}, its block half: a charging goat that touches no mob, with a {@code
+     * #snaps_goat_horn} block ahead of it (or above that), plays its ram impact, drops a horn and ends the ram.
+     */
+    private static void ramTick(EntityLiving goat, GoatMethods g, String soundNamespace) throws ReflectiveOperationException {
         if (!(Boolean) g.lowering.invoke(goat)) {
             return;
         }
@@ -196,13 +212,19 @@ public final class GoatHorns {
         if (length < 1.0E-3D) {
             return;
         }
+        // A mob in the goat's box is the ram's own business: 1.19 hits it before it looks at blocks.
+        for (EntityLivingBase other : goat.world.getEntitiesWithinAABB(EntityLivingBase.class, goat.getEntityBoundingBox())) {
+            if (other != goat && other.getClass() != goat.getClass() && other.isEntityAlive()) {
+                return;
+            }
+        }
         World world = goat.world;
         BlockPos ahead = new BlockPos(goat.posX + goat.motionX / length, goat.posY, goat.posZ + goat.motionZ / length);
         if (!snapsHorn(world.getBlockState(ahead)) && !snapsHorn(world.getBlockState(ahead.up()))) {
             return;
         }
         boolean screaming = (Boolean) g.screaming.invoke(goat);
-        sound(world, goat, ccSound(screaming ? "entity.goat.screaming.ram_impact" : "entity.goat.ram_impact"));
+        sound(world, goat, goatSound(soundNamespace, screaming ? "entity.goat.screaming.ram_impact" : "entity.goat.ram_impact"));
         boolean left = (Boolean) g.left.invoke(goat);
         boolean right = (Boolean) g.right.invoke(goat);
         if ((left || right) && ItemsContent.goatHorn() != null) {
@@ -218,8 +240,8 @@ public final class GoatHorns {
     }
 
     @Nullable
-    private static SoundEvent ccSound(String name) {
-        return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(Owners.CAVES_AND_CLIFFS, name));
+    private static SoundEvent goatSound(String namespace, String name) {
+        return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation(namespace, name));
     }
 
     private static void sound(World world, EntityLivingBase at, @Nullable SoundEvent sound) {

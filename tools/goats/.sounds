@@ -1,0 +1,17 @@
+entity.goat.ambient
+entity.goat.death
+entity.goat.eat
+entity.goat.hurt
+entity.goat.long_jump
+entity.goat.milk
+entity.goat.prepare_ram
+entity.goat.ram_impact
+entity.goat.screaming.ambient
+entity.goat.screaming.death
+entity.goat.screaming.eat
+entity.goat.screaming.hurt
+entity.goat.screaming.long_jump
+entity.goat.screaming.milk
+entity.goat.screaming.prepare_ram
+entity.goat.screaming.ram_impact
+entity.goat.step

@@ -7,4 +7,8 @@ public interface SelfTest {
     String name();
 
     void run(Check check) throws Exception;
+
+    /** A test that {@code all} leaves out: it runs only when named ({@code goatcarry} spans two runs). */
+    interface ByNameOnly {
+    }
 }

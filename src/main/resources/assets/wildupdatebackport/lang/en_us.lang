@@ -268,3 +268,27 @@ tile.wildupdatebackport.polished_deepslate_wall.name=Polished Deepslate Wall
 
 # --- deepdark ---
 tile.wildupdatebackport.reinforced_deepslate.name=Reinforced Deepslate
+
+# --- goats ---
+advancements.wildupdatebackport.ride_a_boat_with_a_goat.description=Get in a Boat and float with a Goat
+advancements.wildupdatebackport.ride_a_boat_with_a_goat.title=Whatever Floats Your Goat!
+config.wildupdatebackport.goats.enabled.tooltip=Goats, when Caves & Cliffs is not installed (with it, its goats are used). Off, nothing is registered.
+config.wildupdatebackport.goats.enabled=Enabled
+config.wildupdatebackport.goats.ramming.tooltip=Goats ram players and mobs that stand still near them. Off, goats never ram.
+config.wildupdatebackport.goats.ramming=Ramming
+config.wildupdatebackport.goats.spawnBiomes.tooltip=The biomes goats spawn in, in groups of 1 to 3, on stone, gravel, snow and packed ice.
+config.wildupdatebackport.goats.spawnBiomes=Spawn biomes
+config.wildupdatebackport.goats.spawnWeight.tooltip=How often goats spawn in the biomes of spawnBiomes, next to those biomes' other animals (sheep are 12, cows 8, llamas 5). 0: goats never spawn on their own.
+config.wildupdatebackport.goats.spawnWeight=Spawn weight
+config.wildupdatebackport.goats.tooltip=Goats and screaming goats, when Caves & Cliffs (which owns them) is not installed.
+config.wildupdatebackport.goats=Goats
+entity.wildupdatebackport.goat.name=Goat
+subtitles.wildupdatebackport.entity.goat.ambient=Goat bleats
+subtitles.wildupdatebackport.entity.goat.death=Goat dies
+subtitles.wildupdatebackport.entity.goat.eat=Goat eats
+subtitles.wildupdatebackport.entity.goat.hurt=Goat hurts
+subtitles.wildupdatebackport.entity.goat.long_jump=Goat leaps
+subtitles.wildupdatebackport.entity.goat.milk=Goat gets milked
+subtitles.wildupdatebackport.entity.goat.prepare_ram=Goat stomps
+subtitles.wildupdatebackport.entity.goat.ram_impact=Goat rams
+subtitles.wildupdatebackport.entity.goat.screaming.ambient=Goat bellows

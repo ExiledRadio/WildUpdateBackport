@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:boat"
+    },
+    "title": {
+      "translate": "advancements.wildupdatebackport.ride_a_boat_with_a_goat.title"
+    },
+    "description": {
+      "translate": "advancements.wildupdatebackport.ride_a_boat_with_a_goat.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "minecraft:husbandry/root",
+  "criteria": {
+    "code": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "conditions": [
+    {
+      "type": "wildupdatebackport:goats"
+    }
+  ]
+}

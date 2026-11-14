@@ -57,6 +57,8 @@ public final class SelfTestRunner {
             new ChangesSelfTest(),
             new SwampSelfTest(),
             new DeepDarkSelfTest(),
+            new GoatSelfTest(),
+            new GoatCarrySelfTest(),
     };
 
     private final List<String> wanted;
@@ -86,7 +88,8 @@ public final class SelfTestRunner {
             check.fail("dump: " + e);
         }
         for (SelfTest test : TESTS) {
-            if (this.wanted.contains("all") || this.wanted.contains(test.name())) {
+            boolean inAll = this.wanted.contains("all") && !(test instanceof SelfTest.ByNameOnly);
+            if (inAll || this.wanted.contains(test.name())) {
                 check.section(test.name());
                 try {
                     test.run(check);

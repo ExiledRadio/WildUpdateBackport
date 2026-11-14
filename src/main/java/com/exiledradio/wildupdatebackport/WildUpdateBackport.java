@@ -76,6 +76,7 @@ public final class WildUpdateBackport {
         com.exiledradio.wildupdatebackport.warden.WardenContent.init();
         com.exiledradio.wildupdatebackport.changes.ChangesContent.init();
         com.exiledradio.wildupdatebackport.deepdark.DeepDarkContent.init();
+        com.exiledradio.wildupdatebackport.goat.GoatContent.init();
     }
 
     @Mod.EventHandler
