@@ -384,3 +384,26 @@ reflection for `Beardifier.BEARD_BOX` in Caves & Cliffs' terrain core (`DeepDark
 the shared biome music player stream Sw asks for (request 9). It would need to work for 1.18 terrain's 3D biome, and for a
 1.12.2 world's stand-in region, which only the server knows.
 
+## Wl. Waterlogging: water kept in full-block leaves (stream Wl, 2026-11-13)
+
+Fluidlogged API's built-in list (`whitelist.jsonc`) gives every `BlockLeaves` subclass `"canFluidFlow": true`: water
+kept in leaves flows out of every side. That list's flow override is asked before a block's own
+`IFluidloggable.canFluidFlow`, so Core's `FluidloggedWaterloggable` (which answers by face shape, the right answer for
+a full cube) is never asked for our `mangrove_leaves`. In 1.19.2 waterlogged leaves keep their water: a fluid passes
+between two blocks only where their collision faces do not both fill the side (`FlowingFluid.canPassThroughWall`), and
+leaves are a full cube. Mangrove roots, which extend no listed class, already keep it.
+
+Asked: as `WaterRules` already puts 1.13+'s rules over Fluidlogged API's list for *which* fluids a `Waterloggable`
+block takes, put them over its list for *where the water flows* too:
+
+```java
+public interface Waterloggable {
+    /** @return whether water kept here may flow out through this side; by default, unless the side is a full face */
+    default boolean waterFlowsOut(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing side) { ... }
+}
+```
+
+with Core clearing Fluidlogged API's per-state `ICanFluidFlowHandler` override for `Waterloggable` states after
+Fluidlogged API (re)loads its configs, or answering from the adapter first. Until then our leaves follow Fluidlogged
+API's rule (the self-test logs it), which is also what it already does for vanilla leaves.
+

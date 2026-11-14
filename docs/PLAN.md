@@ -68,8 +68,8 @@ Backport Core is asked to take over unchanged.
 | C | Other 1.19.x changes | `changes` | `changes` | none | 50-54 | 25870 | nothing |
 | Sw | Mangrove swamp biome and its generation | `swamp` | `swamp` | none | 55-59 | 25871 | M, D, F |
 | DD | Deep dark, ancient cities, reinforced deepslate | `deepdark` | `deepDark` | 20-24 | 60-64 | 25872 | S, W, I; local template loader (Core request 2) |
-| Gt | Goats, copied when Caves & Cliffs is absent | `goat` | `goats` | 25-29 | 70-74 | 25874 | Caves & Cliffs' goat code to copy |
-| Wl | Waterlogging pass | (Core's adapter) | - | - | 65-69 | 25873 | Core's `Waterloggable` adapter |
+| Gt | Goats, copied when Caves & Cliffs is absent (done) | `goat` | `goats` | 25 (26-29 free) | 70-74 (none used) | 25874 | Caves & Cliffs' goat code to copy |
+| Wl | Waterlogging pass (done) | (Core's adapter; each stream's blocks) | - | - | 65-69 (none used) | 25873 | Core's `Waterloggable` adapter |
 | Lf | Look and feel (1.19.x's panorama, splashes, menu music, options, F3, defaults) | `lookfeel` | none (Backport Core's `presentation` settings) | none | 75-79 (none used) | 25875 | Backport Core 1.1.0; the `asm` coremod (P1-P3) |
 
 Order: M, D, B (done), then G, S, F, A, W, I, C (blocks, mobs and items first), then Sw and DD (with the
@@ -121,10 +121,8 @@ Core (`CORE_REQUESTS.md`, request 1), so moving it is a package rename.
   Caves & Cliffs is installed, a bee nest (1% normal / tall) when Buzzy Bees is installed.
 - Wandering trader sells 1 propagule for 5 emeralds (Core's `TradeRegistry`, a no-op without a trader).
 - Bonus chest may hold mangrove logs: no (1.12.2's bonus chest is fixed code); listed as not done.
-- Waterloggable in 1.19 and listed for **Wl**: propagule, roots, leaves, slab, stairs, fence, trapdoor,
-  sign. Until then roots and propagules generate in water by leaving it beside them, and the propagule
-  can be placed in water (as Update Aquatic's plants are, with `BlockPseudoWater` if needed; decided in
-  the stream).
+- Waterloggable in 1.19, done in **Wl** (`docs/streams/waterlog.md`): propagule, roots, leaves, slab,
+  stairs, fence, trapdoor, signs; the mangrove tree keeps water in its roots and leaves.
 
 ### D. Mud
 
@@ -172,7 +170,8 @@ Core (`CORE_REQUESTS.md`, request 1), so moving it is a package rename.
   (added as a 1.12.2 game rule).
 - Advancement *It Spreads* (a mob dies near a catalyst).
 - Particles `sculk_soul`, `sculk_charge`, `sculk_charge_pop`, `shriek`: client particles (packet 25).
-- Waterlogged in 1.19, listed for Wl: vein, sensor, shrieker.
+- Waterlogged in 1.19, done in Wl: vein, sensor (silent while waterlogged), shrieker; veins and growths
+  spread into water sources.
 
 ### F. Frogs
 
@@ -236,8 +235,9 @@ Core (`CORE_REQUESTS.md`, request 1), so moving it is a package rename.
   `ItemFishedEvent` and merchant recipe checks, decided in the stream).
 - **Goat horns**: the eight instruments (Ponder, Sing, Seek, Feel, Admire, Call, Yearn, Dream), 140-tick
   cooldown per horn, heard 256 blocks, an `instrument_play` game event; from pillager outposts
-  (Village & Pillage's chest loot, the four regular ones, by loot-table name) and Caves & Cliffs' goats
-  through the hook in the note (four regular from regular goats, four screaming from screaming goats).
+  (Village & Pillage's chest loot, the four regular ones, by loot-table name) and goats ramming a
+  `#snaps_goat_horn` block (four regular from regular goats, four screaming from screaming goats): Caves &
+  Cliffs' goats, or our copy of them (Gt) when Caves & Cliffs is absent, both by registry name.
 
 ### C. Other 1.19.x changes
 
@@ -314,7 +314,7 @@ volume) is `CORE_REQUESTS.md` Lf-1 to Lf-4. Details: `docs/streams/lookfeel.md`.
 3. **Echo shards, disc fragments and Swift Sneak** come from ancient cities, as in vanilla. Only while DD
    is not built, a temporary fallback adds them to stronghold and dungeon chests at ancient-city rates; it
    is removed in the commit that adds ancient cities.
-4. **Waterlogging** of the blocks listed under M, D and S waits for Core's adapter (the family decision).
+4. **Waterlogging** of the blocks listed under M, D and S: done in Wl over Core's `waterlog` adapter.
 
 ## Patches
 
@@ -373,7 +373,7 @@ All soft, by `Loader.isModLoaded` and names:
   moss carpet on mangrove roots, amethyst shards duplicate allays, deepslate for ancient cities, its
   terrain heights for the deep dark.
 - **Buzzy Bees**: bee nests in mangrove trees.
-- **Update Aquatic**: the sea pickle/kelp rules are unaffected; mangrove propagules and roots in water use
-  the same pseudo-water technique until waterlogging.
+- **Update Aquatic**: the sea pickle/kelp rules are unaffected; mangrove propagules and roots hold water
+  through Core's `waterlog` adapter, as Update Aquatic's plants do.
 - **Trails & Tales**: the calibrated sensor on Core's game events; its chest boats through Core's boat-wood
   registry.
