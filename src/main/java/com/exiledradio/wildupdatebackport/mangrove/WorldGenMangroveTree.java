@@ -48,13 +48,17 @@ import java.util.Set;
 public class WorldGenMangroveTree extends WorldGenAbstractTree {
 
     private final boolean tall;
-    /** Block flags: 3 for a grown tree, 2 for generation (as {@code setBlockAndNotifyAdequately}). */
+    /**
+     * Block flags exactly as {@code setBlockAndNotifyAdequately} uses them: 3 for a grown tree; for generation 2, plus
+     * 16 when Forge's {@code fixVanillaCascading} is on, so the blocks placed in water notify no neighbors and load no
+     * further chunks.
+     */
     private final int flags;
 
     public WorldGenMangroveTree(boolean notify, boolean tall) {
         super(notify);
         this.tall = tall;
-        this.flags = notify ? 3 : 2;
+        this.flags = notify ? 3 : net.minecraftforge.common.ForgeModContainer.fixVanillaCascading ? 2 | 16 : 2;
     }
 
     @Override
