@@ -229,6 +229,13 @@ public class BlockSculkSensor extends Block implements Waterloggable {
         return SHAPE;
     }
 
+    /** 1.19's {@code ItemBlockRenderTypes}: cutout, so the open parts of its textures are see-through, not black. */
+    @Override
+    @net.minecraftforge.fml.relauncher.SideOnly(net.minecraftforge.fml.relauncher.Side.CLIENT)
+    public net.minecraft.util.BlockRenderLayer getRenderLayer() {
+        return net.minecraft.util.BlockRenderLayer.CUTOUT;
+    }
+
     @Override
     @SuppressWarnings("deprecation")
     public boolean isOpaqueCube(IBlockState state) {
