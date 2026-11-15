@@ -323,11 +323,35 @@ public final class DeepDarkSelfTest implements SelfTest {
         c.ok(all.minY >= lo && all.maxY < hi, "the city sits in y " + all.minY + "-" + all.maxY);
         // Generate every chunk of it, and the rings around, so each is populated and its deep dark decoration (which
         // waits for the chunks it can reach) runs.
-        for (int x = (all.minX >> 4) - 2; x <= (all.maxX >> 4) + 3; x++) {
-            for (int z = (all.minZ >> 4) - 2; z <= (all.maxZ >> 4) + 3; z++) {
-                world.getChunk(x, z);
+        // A client watching as it generates: each chunk is sent once populated, then only the changes the server
+        // tells clients about. Whatever differs at the end is a block a player sees wrong until it is resent.
+        int mx0 = (all.minX >> 4) - 2, mz0 = (all.minZ >> 4) - 2, mx1 = (all.maxX >> 4) + 3, mz1 = (all.maxZ >> 4) + 3;
+        ClientMirror mirror = new ClientMirror(world, all.minY - 8, all.maxY + 8);
+        try {
+            mirror.sendPopulated(mx0, mz0, mx1, mz1);
+            for (int x = mx0; x <= mx1; x++) {
+                for (int z = mz0; z <= mz1; z++) {
+                    world.getChunk(x, z);
+                    mirror.sendPopulated(mx0, mz0, mx1, mz1);
+                }
+            }
+        } finally {
+            mirror.close();
+        }
+        Map<String, String> unseen = mirror.mismatches();
+        c.ok(mirror.sentChunks() > 0, "a client got " + mirror.sentChunks() + " chunks of the city");
+        c.ok(unseen.isEmpty(), "a client sees every block of the city as the server has it" + (unseen.isEmpty() ? "" : ": " + unseen));
+        Map<String, Integer> lost = new java.util.TreeMap<String, Integer>();
+        for (BlockPos p : BlockPos.getAllInBoxMutable(new BlockPos(all.minX, all.minY, all.minZ), new BlockPos(all.maxX, all.maxY, all.maxZ))) {
+            // The chunk packet carries id and metadata; the client works out the rest from its neighbors.
+            IBlockState s = world.getBlockState(p);
+            IBlockState client = Block.getStateById(Block.getStateId(s));
+            if (client.getActualState(world, p) != s.getActualState(world, p)) {
+                String k = String.valueOf(s);
+                lost.put(k, lost.containsKey(k) ? lost.get(k) + 1 : 1);
             }
         }
+        c.ok(lost.isEmpty(), "every block in the city looks the same from its id and metadata" + (lost.isEmpty() ? "" : ": " + lost));
         DeepDarkPending pending = DeepDarkPending.of(world);
         int waiting = 0;
         for (int x = (all.minX - 8) >> 4; x <= (all.maxX - 8) >> 4; x++) {
