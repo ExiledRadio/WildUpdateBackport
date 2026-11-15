@@ -64,7 +64,9 @@ dependencies {
 // package in case a test build's classes are still in build/classes. A test run needs them IN the jar,
 // because FG2's runServer runs from the jar - which is one more reason a release is built last.
 def selftest = project.findProperty('selftest')
-if (selftest) {
+// A client-side test (./gradlew runClient -Pclienttest=darkness) uses the same test sources, under its own property.
+def clienttest = project.findProperty('clienttest')
+if (selftest || clienttest) {
     sourceSets.main.java.srcDir 'src/selftest/java'
 } else {
     jar {
@@ -88,6 +90,9 @@ jar {
 [runServer, runClient].each { task ->
     task.systemProperty 'fml.coreMods.load', coremod
     task.outputs.upToDateWhen { false }
+    if (clienttest) {
+        task.systemProperty 'wildupdatebackport.clienttest', clienttest
+    }
     if (selftest) {
         task.systemProperty 'wildupdatebackport.selftest', selftest
         // -PselftestNear=x,z: where the deep dark test looks for its ancient city from (default 0,0).

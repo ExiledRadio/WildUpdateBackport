@@ -97,7 +97,7 @@ public final class DarknessClient {
         return FACTOR.get(partialTicks);
     }
 
-    private static float scale() {
+    static float scale() {
         return MathHelper.clamp(com.exiledradio.wildupdatebackport.lookfeel.LookAndFeel.darknessScale(), 0.0F, 1.0F);
     }
 

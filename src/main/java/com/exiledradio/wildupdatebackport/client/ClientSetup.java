@@ -36,6 +36,7 @@ public final class ClientSetup {
 
     public static void init() {
         MinecraftForge.EVENT_BUS.register(new ClientSetup());
+        clientTest();
         // Entity renderers must be registered in pre-init: one line per stream that has entities.
         com.exiledradio.wildupdatebackport.boat.client.BoatClient.init();
         com.exiledradio.wildupdatebackport.gameevent.client.VibrationClient.init();
@@ -71,6 +72,25 @@ public final class ClientSetup {
                 ModelLoader.setCustomStateMapper(entry.getKey(),
                         new StateMap.Builder().ignore(entry.getValue().toArray(new IProperty<?>[0])).build());
             }
+        }
+    }
+
+    /**
+     * A test build's client test, reached by name (a release has no test classes): {@code runClient -Pclienttest=darkness},
+     * or a file {@code selftest-darkness} in the game directory (a test instance, whose JVM arguments the launcher keeps).
+     */
+    private static void clientTest() {
+        String test = System.getProperty(com.exiledradio.wildupdatebackport.WildUpdateBackport.MOD_ID + ".clienttest");
+        if (test == null && new java.io.File(net.minecraft.client.Minecraft.getMinecraft().gameDir, "selftest-darkness").isFile()) {
+            test = "darkness";
+        }
+        if (!"darkness".equals(test)) {
+            return;
+        }
+        try {
+            Class.forName("com.exiledradio.wildupdatebackport.selftest.DarknessClientSelfTest").getMethod("start").invoke(null);
+        } catch (ReflectiveOperationException e) {
+            com.exiledradio.wildupdatebackport.WildUpdateBackport.LOGGER.error("CLIENT SELFTEST DONE pass=0 fail=1: the test classes are not in this build.", e);
         }
     }
 }

@@ -95,7 +95,15 @@ and `MobEffectInstance.FactorData`; the model and animations from `WardenModel`,
 *   **Fog color low in the world**: 1.19 replaces the void darkening with Darkness's; here Darkness's multiplies 1.12's
     (which only applies below y 32).
 *   **Darkness's lightmap** is computed by this mod while the effect runs; another mod that also replaces the lightmap
-    (shader packs) wins, and then the pulse is not seen.
+    wins, and then the pulse is not seen.
+*   **Shader packs (OptiFine)**: a pack replaces lighting and fog, so it draws Darkness itself from the uniforms
+    `darknessFactor` and `darknessLightFactor`, which OptiFine 1.12.2 G5 lacks. Patches P10/P11 (`docs/PATCHES.md`)
+    add them to G5 as 1.19 OptiFine has them, uniforms and custom-uniform variables both, fed once a frame with
+    1.19.2's values (`DarknessShaders`). 1.19 OptiFine sets them when the lightmap is recomputed (once a tick, at that
+    frame's partial tick); here every frame, as Iris does. Packs that only read them under `MC_VERSION >= 11900`
+    still see nothing (Complementary Unbound r5.7.1 reads them unguarded). Tested in a copy of the Showcase instance
+    with that pack: `runClient -Pclienttest=darkness` / a `selftest-darkness` file, screenshots
+    `wu_darkness_<setup>_<phase>.png`.
 *   **Emerging**: kept exactly as 1.19.2's brain has it. The idle activity runs on a warden's very first tick, before
     the emerge activity takes over, so a summoned warden sometimes walks a short random stroll before its emerge
     behavior starts (still invulnerable, still in the emerging pose).
