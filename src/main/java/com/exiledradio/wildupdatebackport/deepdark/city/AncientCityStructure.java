@@ -158,11 +158,43 @@ public final class AncientCityStructure extends ScatteredStructure {
                         CityBeard.carve(world, this.components, chunk);
                     }
                     super.generateStructure(world, random, chunk);
+                    updateVeinsAtEdges(world, this.components, chunk);
                 });
             } catch (RuntimeException e) {
                 throw e;
             } catch (Exception e) {
                 throw new IllegalStateException(e);
+            }
+        }
+    }
+
+    /**
+     * 1.17's {@code StructureTemplate.updateShapeAtEdge}, for the veins: a neighbor's decoration grew veins on rock this
+     * area's pieces and beard have since taken away (the vein at x 7 of a chunk on rock at x 8, where this area starts).
+     * Each vein in the area and the ring around it drops the faces left without support, as 1.19's veins do.
+     */
+    static void updateVeinsAtEdges(World world, List<StructureComponent> components, StructureBoundingBox area) {
+        int lowY = Integer.MAX_VALUE;
+        int highY = Integer.MIN_VALUE;
+        for (StructureComponent c : components) {
+            StructureBoundingBox b = c.getBoundingBox();
+            if (b.maxX + 13 >= area.minX && b.minX - 13 <= area.maxX && b.maxZ + 13 >= area.minZ && b.minZ - 13 <= area.maxZ) {
+                // The beard reaches 12 past a piece.
+                lowY = Math.min(lowY, b.minY - 13);
+                highY = Math.max(highY, b.maxY + 13);
+            }
+        }
+        lowY = Math.max(lowY, WorldHeights.minY(world));
+        highY = Math.min(highY, WorldHeights.maxYExclusive(world) - 1);
+        BlockPos.MutableBlockPos p = new BlockPos.MutableBlockPos();
+        for (int x = area.minX - 1; x <= area.maxX + 1; x++) {
+            for (int z = area.minZ - 1; z <= area.maxZ + 1; z++) {
+                for (int y = lowY; y <= highY; y++) {
+                    p.setPos(x, y, z);
+                    if (com.exiledradio.wildupdatebackport.sculk.BlockSculkVein.isVein(world.getBlockState(p))) {
+                        com.exiledradio.wildupdatebackport.sculk.BlockSculkVein.dropUnsupported(world, p.toImmutable(), 2);
+                    }
+                }
             }
         }
     }

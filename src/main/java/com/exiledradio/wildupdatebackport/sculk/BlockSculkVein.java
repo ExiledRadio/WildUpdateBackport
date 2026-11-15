@@ -136,6 +136,26 @@ public class BlockSculkVein extends Block implements SculkBehaviour, Waterloggab
         return isVein(state) ? unpack(faces(world, pos)) : EnumSet.noneOf(EnumFacing.class);
     }
 
+    /**
+     * 1.19's {@code MultifaceBlock.updateShape} for a neighbor that changed without telling it (world generation): the
+     * faces whose support is gone are dropped, and a vein left with none becomes its water or air.
+     *
+     * @return true if the vein changed
+     */
+    public static boolean dropUnsupported(World world, BlockPos pos, int flags) {
+        int mask = faces(world, pos);
+        if (mask == 0 || !isVein(world.getBlockState(pos))) {
+            return false;
+        }
+        int kept = mask;
+        for (EnumFacing f : EnumFacing.VALUES) {
+            if (has(mask, f) && !canAttachTo(world, f, pos.offset(f))) {
+                kept &= ~bit(f);
+            }
+        }
+        return kept != mask && set(world, pos, kept, flags);
+    }
+
     /** 1.19's {@code MultifaceBlock.canAttachTo}: the support's touching face is full. */
     public static boolean canAttachTo(IBlockAccess world, EnumFacing face, BlockPos support) {
         IBlockState s = world.getBlockState(support);
