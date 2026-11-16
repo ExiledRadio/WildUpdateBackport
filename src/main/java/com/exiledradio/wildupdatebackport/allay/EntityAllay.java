@@ -1,12 +1,12 @@
 package com.exiledradio.wildupdatebackport.allay;
 
-import com.exiledradio.wildupdatebackport.gameevent.GameEvent;
-import com.exiledradio.wildupdatebackport.gameevent.GameEventContext;
-import com.exiledradio.wildupdatebackport.gameevent.GameEventListener;
-import com.exiledradio.wildupdatebackport.gameevent.GameEventTags;
-import com.exiledradio.wildupdatebackport.gameevent.GameEvents;
-import com.exiledradio.wildupdatebackport.gameevent.PositionSource;
-import com.exiledradio.wildupdatebackport.gameevent.VibrationListener;
+import com.exiledradio.backportcore.gameevent.GameEvent;
+import com.exiledradio.backportcore.gameevent.GameEventContext;
+import com.exiledradio.backportcore.gameevent.GameEventListener;
+import com.exiledradio.backportcore.gameevent.GameEventTags;
+import com.exiledradio.backportcore.gameevent.GameEvents;
+import com.exiledradio.backportcore.gameevent.PositionSource;
+import com.exiledradio.backportcore.gameevent.VibrationListener;
 
 import net.minecraft.block.BlockJukebox;
 import net.minecraft.block.state.IBlockState;
@@ -705,6 +705,12 @@ public class EntityAllay extends EntityCreature {
 
     /** 1.19's {@code AllayVibrationListenerConfig}: note blocks only, and only the liked one once it has one. */
     private final class NoteBlockEars implements VibrationListener.Config {
+
+    /** Wild Update's own vibrations setting, also while another backport keeps game events running. */
+    @Override
+    public boolean active() {
+        return com.exiledradio.wildupdatebackport.ModConfig.vibrations.enabled;
+    }
         @Override
         public Set<GameEvent> listenableEvents() {
             return GameEventTags.ALLAY_CAN_LISTEN;

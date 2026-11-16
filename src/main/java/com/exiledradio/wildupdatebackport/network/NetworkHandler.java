@@ -33,8 +33,7 @@ public final class NetworkHandler {
     public static void init() {
         channel = NetworkRegistry.INSTANCE.newSimpleChannel(CHANNEL);
         // Streams register their packets below, in id order.
-        channel.registerMessage(com.exiledradio.wildupdatebackport.gameevent.VibrationPacket.Handler.class,
-                com.exiledradio.wildupdatebackport.gameevent.VibrationPacket.class, 5, net.minecraftforge.fml.relauncher.Side.CLIENT);
+        // 5 was the vibration particle, now Backport Core's (gameevent.GameEventNetwork).
         channel.registerMessage(com.exiledradio.wildupdatebackport.sculk.SculkEffectPacket.Handler.class,
                 com.exiledradio.wildupdatebackport.sculk.SculkEffectPacket.class, 25, net.minecraftforge.fml.relauncher.Side.CLIENT);
         channel.registerMessage(com.exiledradio.wildupdatebackport.warden.SonicBoomPacket.Handler.class,

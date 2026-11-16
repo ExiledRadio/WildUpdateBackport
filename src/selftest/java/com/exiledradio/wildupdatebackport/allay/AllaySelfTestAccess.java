@@ -81,7 +81,7 @@ public final class AllaySelfTestAccess {
         try {
             java.lang.reflect.Field f = EntityAllay.class.getDeclaredField("vibrationListener");
             f.setAccessible(true);
-            ((com.exiledradio.wildupdatebackport.gameevent.VibrationListener) f.get(allay)).tick(allay.world);
+            ((com.exiledradio.backportcore.gameevent.VibrationListener) f.get(allay)).tick(allay.world);
         } catch (ReflectiveOperationException e) {
             throw new RuntimeException(e);
         }

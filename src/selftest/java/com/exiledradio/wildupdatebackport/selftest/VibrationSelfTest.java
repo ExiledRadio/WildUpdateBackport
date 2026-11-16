@@ -1,12 +1,12 @@
 package com.exiledradio.wildupdatebackport.selftest;
 
 import com.exiledradio.wildupdatebackport.ModConfig;
-import com.exiledradio.wildupdatebackport.gameevent.GameEvent;
-import com.exiledradio.wildupdatebackport.gameevent.GameEventContext;
-import com.exiledradio.wildupdatebackport.gameevent.GameEventEmitters;
-import com.exiledradio.wildupdatebackport.gameevent.GameEvents;
-import com.exiledradio.wildupdatebackport.gameevent.PositionSource;
-import com.exiledradio.wildupdatebackport.gameevent.VibrationListener;
+import com.exiledradio.backportcore.gameevent.GameEvent;
+import com.exiledradio.backportcore.gameevent.GameEventContext;
+import com.exiledradio.backportcore.gameevent.GameEventEmitters;
+import com.exiledradio.backportcore.gameevent.GameEvents;
+import com.exiledradio.backportcore.gameevent.PositionSource;
+import com.exiledradio.backportcore.gameevent.VibrationListener;
 
 import net.minecraft.block.BlockDoor;
 import net.minecraft.entity.Entity;
@@ -45,6 +45,12 @@ public final class VibrationSelfTest implements SelfTest {
         final List<GameEvent> heard = new ArrayList<GameEvent>();
         final List<Float> distances = new ArrayList<Float>();
         Entity lastSource;
+
+        /** As this mod's own listeners: deaf while its vibrations are off, whoever else keeps game events on. */
+        @Override
+        public boolean active() {
+            return ModConfig.vibrations.enabled;
+        }
 
         @Override
         public boolean shouldListen(WorldServer world, VibrationListener l, BlockPos origin, GameEvent event, GameEventContext context) {
