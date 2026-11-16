@@ -36,13 +36,19 @@ You also get minecarts with chests, furnaces, TNT or hoppers that drop themselve
 
 Every feature can be turned off in Backport Core's settings screen, under Mod Options.
 
-## Works with
+## Compatibility
 
-With Caves & Cliffs Backport, the deep dark and mangrove swamps generate where 1.19 puts them in its 1.18 worlds, and the goats are its own. Without it, this mod brings its own goats.
+**Caves & Cliffs Backport**: in its 1.18 worlds, the deep dark and mangrove swamps generate where 1.19 puts them, and the goats are its own. Without it, this mod brings its own goats and places the deep dark and mangrove swamps in 1.12 worlds.
+
+**OptiFine**: works, shaders included. Shader packs draw Darkness themselves, as in 1.19, so the warden's Darkness shows with shaders on.
+
+**Quark**: Quark's trapdoor recipe no longer turns mangrove planks into oak trapdoors.
+
+**Fluidlogged API** (optional): mangrove roots, leaves and propagules, mangrove and mud brick stairs, slabs, fences, walls, trapdoors and signs, and sculk veins, sensors and shriekers hold water, and sculk spreads into it. A waterlogged sculk sensor is silent. Without it they stay dry and everything else works.
 
 ## Requirements
 
-Minecraft 1.12.2 with Forge 14.23.5.2847 or newer, and [Backport Core](https://www.curseforge.com/minecraft/mc-mods/backport-core) 1.3.0 or newer. The CurseForge app installs Backport Core and Fluidlogged API with it.
+Minecraft 1.12.2 with Forge 14.23.5.2847 or newer, and [Backport Core](https://www.curseforge.com/minecraft/mc-mods/backport-core) 1.3.0 or newer. The CurseForge app installs Backport Core with it. [Fluidlogged API](https://www.curseforge.com/minecraft/mc-mods/fluidlogged-api) 3.3.3 or newer is optional, for waterlogged blocks.
 
 ***
 

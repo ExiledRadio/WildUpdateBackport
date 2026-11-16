@@ -1,14 +1,11 @@
-# 0.1.0 (beta)
+# 1.0.0
 
-First beta. Everything from 1.19 is in: the deep dark, ancient cities, the warden, sculk, mangrove swamps, mud, frogs, tadpoles, the allay, the recovery compass, Music Disc 5, Swift Sneak, goat horns, boats with chests, and 1.19's smaller changes and title screen.
+First release: all of 1.19 The Wild Update on Minecraft 1.12.2.
 
-Needs Backport Core 1.3.0 or newer.
-
-Superflat worlds generate only what their preset asks for, as in vanilla: no ancient cities, no allays at generation, and sculk or mangroves only with decoration in a deep dark or mangrove swamp preset.
-
-Known limits in this beta:
-
-*   English only for now.
-*   With Fluidlogged API installed, a few sculk veins in the deep dark can generate floating.
-
-Back up worlds before trying it. Report bugs on the Discord.
+*   **The deep dark**: sculk, sculk sensors, shriekers and catalysts deep underground, and ancient cities built from 1.19's own structure files.
+*   **The warden**: blind, follows vibrations and smell, brings Darkness, and digs back down when it loses interest.
+*   **Mangrove swamps**: mangrove trees on their roots, mud, packed mud, mud bricks and every mangrove wood block.
+*   **Mobs**: frogs in three kinds, tadpoles, froglights, and the allay.
+*   **Items**: the recovery compass, Music Disc 5, Swift Sneak, goat horns, and boats with chests.
+*   **The rest of 1.19**: 1.19's smaller changes, menu music, splashes and title screen.
+*   **Works with** Caves & Cliffs Backport's 1.18 worlds, OptiFine and shaders, and Quark.
