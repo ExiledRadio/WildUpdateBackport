@@ -11,7 +11,11 @@ Tales' calibrated sensor (1.20) and Tricky Trials' (1.21) use the same events an
 backport's new blocks (Trails & Tales' decorated pots, Tricky Trials' copper bulbs and crafters) should
 *emit* them so sensors hear them. One dispatcher per world, or sensors from two mods hear different worlds.
 
-**Local shim**: `com.exiledradio.wildupdatebackport.gameevent` (stream G), written to exactly this API.
+**Done** in Backport Core 1.4.0 (`gameevent`, branch `core-game-events`); this mod uses it from
+`wu-core-game-events` and its own package is gone. Core added 1.20.6's rules beside these (`VibrationSystem`,
+`GameEventListener.Rules`, `GameEvents.require(version, switch)`), see Core's `docs/API.md`.
+
+**Local shim** (until then): `com.exiledradio.wildupdatebackport.gameevent` (stream G), written to exactly this API.
 
 ```java
 package com.exiledradio.backportcore.gameevent;

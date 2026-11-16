@@ -50,13 +50,13 @@ session is in the shared notes folder (`wild-update-for-caves-and-cliffs.md`).
 Each stream owns one package under `com.exiledradio.wildupdatebackport`, one config category with an
 `enabled` switch (in `ModConfig`), one block of packet ids and one block of entity ids. Streams never call
 each other's classes; they find each other's content by name with `Owners.ours(...)`, null-safe.
-The game-event shim (`gameevent`) is the exception: every stream may call it, because it is the API
-Backport Core is asked to take over unchanged.
+Game events are Backport Core's (`com.exiledradio.backportcore.gameevent`, Core 1.4.0): every stream may
+call them.
 
 | # | Stream | Package | Config | Entity ids | Packet ids | Port | Needs |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 0 | Scaffold, plan | `common` | - | - | 0-4 | 25860 | - |
-| G | Game events and vibrations | `gameevent` | `vibrations` | none | 5-9 | 25861 | nothing (moves to Core later) |
+| G | Game events and vibrations | Core's `gameevent` (1.4.0) | `vibrations` | none | 5-9 (5 retired) | 25861 | nothing |
 | M | Mangrove wood | `mangrove` | `mangrove` | none | 10-14 | 25862 | nothing |
 | D | Mud | `mud` | `mud` | none | 15-19 | 25863 | nothing |
 | B | Boats (mangrove boat, boats with chests) | `boat` | `boats` | 1-4 | 20-24 | 25864 | M for the mangrove wood (by name) |

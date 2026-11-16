@@ -46,6 +46,12 @@ public final class VibrationSelfTest implements SelfTest {
         final List<Float> distances = new ArrayList<Float>();
         Entity lastSource;
 
+        /** As this mod's own listeners: deaf while its vibrations are off, whoever else keeps game events on. */
+        @Override
+        public boolean active() {
+            return ModConfig.vibrations.enabled;
+        }
+
         @Override
         public boolean shouldListen(WorldServer world, VibrationListener l, BlockPos origin, GameEvent event, GameEventContext context) {
             return true;

@@ -1,9 +1,23 @@
 # Stream G: game events and vibrations
 
-Package `gameevent`. Config `vibrations` (`enabled`). Packet 5. Branch `wu-vibrations`.
+Config `vibrations` (`enabled`). Branch `wu-vibrations`; moved to Backport Core on `wu-core-game-events`.
 
-The API asked of Backport Core in `docs/CORE_REQUESTS.md` (request 1), built here so the sculk, warden and
-allay streams can start. When Core has it, this package is swapped for Core's.
+**Now Backport Core's** (`com.exiledradio.backportcore.gameevent`, Core 1.4.0, `docs/CORE_REQUESTS.md` request 1).
+Everything below moved there unchanged; this mod keeps its listeners and:
+
+*   requires game events with 1.19 rules behind its switch: `GameEvents.require("1.19", () -> vibrations.enabled)`;
+*   its listeners use 1.19.2's dispatch (`GameEventListener.Rules.V1_19`, `VibrationListener`) and are deaf while
+    the switch is off (`active()`), also when another backport keeps game events running;
+*   registers its boats as entity placers (`GameEventEmitters.addEntityPlacer`);
+*   reports sensor activations to Core's `SensorActivation` (Trails & Tales Backport's amethyst resonance).
+
+Renamed: the trigger is `backportcore:avoid_vibration` (Sneak 100's criterion follows); the particle is Core's
+(`backportcore:particle/vibration`, channel `backportcore_ge`); packet 5 is unused.
+
+With a 1.20 backport whose game events are on (Trails & Tales Backport), `GameEventTags.vibrations()` and
+`wardenCanListen()` are 1.20.6's: this mod's sensors, shriekers and wardens also hear mounting, dismounting,
+unequipping and amethyst resonance, and Core's equip emitter follows 1.20's rules. Alone, nothing changed:
+self-tests pass=2435 fail=0 before and after the move.
 
 ## Changelog section
 
