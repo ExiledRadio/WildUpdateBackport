@@ -25,7 +25,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
  */
 @Config(modid = WildUpdateBackport.MOD_ID, name = WildUpdateBackport.MOD_ID)
 public final class ModConfig {
-    @Setting.Feature(icon = "minecraft:noteblock")
+    @Setting.Feature(icon = "wildupdatebackport:sculk_sensor")
     @Config.LangKey("config.wildupdatebackport.vibrations")
     @Config.Comment("Game events and vibrations: what sculk sensors, shriekers, wardens and allays hear.")
     public static final Vibrations vibrations = new Vibrations();
@@ -41,23 +41,23 @@ public final class ModConfig {
     @Config.LangKey("config.wildupdatebackport.boats")
     @Config.Comment("The mangrove boat and boats with chests.")
     public static final Boats boats = new Boats();
-    @Setting.Feature(icon = "minecraft:stained_hardened_clay@9")
+    @Setting.Feature(icon = "wildupdatebackport:sculk")
     @Config.LangKey("config.wildupdatebackport.sculk")
     @Config.Comment("Sculk, sculk veins, sculk catalysts, sculk sensors and sculk shriekers.")
     public static final Sculk sculk = new Sculk();
-    @Setting.Feature(icon = "minecraft:waterlily")
+    @Setting.Feature(icon = "wildupdatebackport:ochre_froglight")
     @Config.LangKey("config.wildupdatebackport.frogs")
     @Config.Comment("Frogs, tadpoles, frogspawn and froglights.")
     public static final Frogs frogs = new Frogs();
-    @Setting.Feature(icon = "minecraft:jukebox")
+    @Setting.Feature(icon = "minecraft:noteblock")
     @Config.LangKey("config.wildupdatebackport.allay")
     @Config.Comment("The allay.")
     public static final Allay allay = new Allay();
-    @Setting.Feature(icon = "minecraft:skull@1")
+    @Setting.Feature(icon = "wildupdatebackport:sculk_shrieker")
     @Config.LangKey("config.wildupdatebackport.warden")
     @Config.Comment("The warden and the Darkness effect.")
     public static final Warden warden = new Warden();
-    @Setting.Feature(icon = "minecraft:compass")
+    @Setting.Feature(icon = "wildupdatebackport:recovery_compass")
     @Config.LangKey("config.wildupdatebackport.items")
     @Config.Comment("The recovery compass, echo shards, music disc 5, disc fragments, goat horns and Swift Sneak.")
     public static final Items items = new Items();
@@ -65,15 +65,15 @@ public final class ModConfig {
     @Config.LangKey("config.wildupdatebackport.changes")
     @Config.Comment("Smaller changes from 1.19 to 1.19.4 to existing blocks, items and mobs.")
     public static final Changes changes = new Changes();
-    @Setting.Feature(icon = "minecraft:vine")
+    @Setting.Feature(icon = "wildupdatebackport:mangrove_propagule")
     @Config.LangKey("config.wildupdatebackport.swamp")
     @Config.Comment("Mangrove swamps.")
     public static final Swamp swamp = new Swamp();
-    @Setting.Feature(icon = "minecraft:stonebrick@2")
+    @Setting.Feature(icon = "wildupdatebackport:reinforced_deepslate")
     @Config.LangKey("config.wildupdatebackport.deepDark")
     @Config.Comment("The deep dark and ancient cities.")
     public static final DeepDark deepDark = new DeepDark();
-    @Setting.Feature(icon = "minecraft:wheat")
+    @Setting.Feature(icon = "wildupdatebackport:goat_horn")
     @Config.LangKey("config.wildupdatebackport.goats")
     @Config.Comment("Goats and screaming goats, when Caves & Cliffs (which owns them) is not installed.")
     public static final Goats goats = new Goats();
