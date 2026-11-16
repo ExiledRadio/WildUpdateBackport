@@ -17,7 +17,7 @@
   },
   "criteria": {
     "avoid_vibration": {
-      "trigger": "wildupdatebackport:avoid_vibration"
+      "trigger": "backportcore:avoid_vibration"
     }
   },
   "requirements": [

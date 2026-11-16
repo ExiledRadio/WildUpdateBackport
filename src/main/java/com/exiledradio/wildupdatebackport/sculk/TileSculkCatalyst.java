@@ -1,10 +1,10 @@
 package com.exiledradio.wildupdatebackport.sculk;
 
-import com.exiledradio.wildupdatebackport.gameevent.GameEvent;
-import com.exiledradio.wildupdatebackport.gameevent.GameEventContext;
-import com.exiledradio.wildupdatebackport.gameevent.GameEventListener;
-import com.exiledradio.wildupdatebackport.gameevent.GameEvents;
-import com.exiledradio.wildupdatebackport.gameevent.PositionSource;
+import com.exiledradio.backportcore.gameevent.GameEvent;
+import com.exiledradio.backportcore.gameevent.GameEventContext;
+import com.exiledradio.backportcore.gameevent.GameEventListener;
+import com.exiledradio.backportcore.gameevent.GameEvents;
+import com.exiledradio.backportcore.gameevent.PositionSource;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
@@ -49,6 +49,18 @@ public class TileSculkCatalyst extends TileEntity implements ITickable, GameEven
     @Override
     public boolean immediate() {
         return true;
+    }
+
+    /** Wild Update Backport 1.0.0's dispatch (1.19.2's). */
+    @Override
+    public Rules rules() {
+        return Rules.V1_19;
+    }
+
+    /** Wild Update's own vibrations setting, also while another backport keeps game events running. */
+    @Override
+    public boolean active() {
+        return com.exiledradio.wildupdatebackport.ModConfig.vibrations.enabled;
     }
 
     @Override

@@ -3,9 +3,9 @@ package com.exiledradio.wildupdatebackport.selftest;
 import com.exiledradio.wildupdatebackport.allay.AllaySelfTestAccess;
 import com.exiledradio.wildupdatebackport.allay.EntityAllay;
 import com.exiledradio.wildupdatebackport.common.Content;
-import com.exiledradio.wildupdatebackport.gameevent.GameEvent;
-import com.exiledradio.wildupdatebackport.gameevent.GameEventContext;
-import com.exiledradio.wildupdatebackport.gameevent.GameEvents;
+import com.exiledradio.backportcore.gameevent.GameEvent;
+import com.exiledradio.backportcore.gameevent.GameEventContext;
+import com.exiledradio.backportcore.gameevent.GameEvents;
 
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.block.BlockJukebox;

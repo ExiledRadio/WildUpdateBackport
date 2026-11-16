@@ -2,9 +2,9 @@ package com.exiledradio.wildupdatebackport.sculk;
 
 import com.exiledradio.backportcore.waterlog.Waterloggable;
 import com.exiledradio.backportcore.waterlog.Waterlogging;
-import com.exiledradio.wildupdatebackport.gameevent.GameEvent;
-import com.exiledradio.wildupdatebackport.gameevent.GameEventContext;
-import com.exiledradio.wildupdatebackport.gameevent.GameEvents;
+import com.exiledradio.backportcore.gameevent.GameEvent;
+import com.exiledradio.backportcore.gameevent.GameEventContext;
+import com.exiledradio.backportcore.gameevent.GameEvents;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.properties.PropertyEnum;
@@ -168,6 +168,9 @@ public class BlockSculkSensor extends Block implements Waterloggable {
         world.setBlockState(pos, state.withProperty(PHASE, Phase.ACTIVE), 3);
         world.scheduleUpdate(pos, state.getBlock(), ACTIVE_TICKS);
         updateNeighbors(world, pos);
+        // Where 1.20 resonates amethyst (another backport's handler; nothing without one).
+        com.exiledradio.backportcore.gameevent.SensorActivation.activated(source, world, pos,
+                te instanceof TileSculkSensor ? ((TileSculkSensor) te).lastVibrationFrequency() : 0);
         GameEvents.emit(world, GameEvent.SCULK_SENSOR_TENDRILS_CLICKING, pos, GameEventContext.of(source));
         if (!Waterlogging.hasWater(world, pos)) {
             world.playSound(null, pos.getX() + 0.5D, pos.getY() + 0.5D, pos.getZ() + 0.5D, SculkContent.SENSOR_CLICKING, SoundCategory.BLOCKS,

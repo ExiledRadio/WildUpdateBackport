@@ -1,12 +1,12 @@
 package com.exiledradio.wildupdatebackport.sculk;
 
 import com.exiledradio.wildupdatebackport.WildUpdateBackport;
-import com.exiledradio.wildupdatebackport.gameevent.GameEvent;
-import com.exiledradio.wildupdatebackport.gameevent.GameEventContext;
-import com.exiledradio.wildupdatebackport.gameevent.GameEventTags;
-import com.exiledradio.wildupdatebackport.gameevent.GameEvents;
-import com.exiledradio.wildupdatebackport.gameevent.PositionSource;
-import com.exiledradio.wildupdatebackport.gameevent.VibrationListener;
+import com.exiledradio.backportcore.gameevent.GameEvent;
+import com.exiledradio.backportcore.gameevent.GameEventContext;
+import com.exiledradio.backportcore.gameevent.GameEventTags;
+import com.exiledradio.backportcore.gameevent.GameEvents;
+import com.exiledradio.backportcore.gameevent.PositionSource;
+import com.exiledradio.backportcore.gameevent.VibrationListener;
 
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
@@ -58,6 +58,12 @@ import java.util.Set;
  * play its emerging animation (1.19's {@code MobSpawnType.TRIGGERED}).
  */
 public class TileSculkShrieker extends TileEntity implements ITickable, VibrationListener.Config {
+
+    /** Wild Update's own vibrations setting, also while another backport keeps game events running. */
+    @Override
+    public boolean active() {
+        return com.exiledradio.wildupdatebackport.ModConfig.vibrations.enabled;
+    }
 
     public static final ResourceLocation WARDEN = new ResourceLocation(WildUpdateBackport.MOD_ID, "warden");
     public static final ResourceLocation DARKNESS = new ResourceLocation(WildUpdateBackport.MOD_ID, "darkness");

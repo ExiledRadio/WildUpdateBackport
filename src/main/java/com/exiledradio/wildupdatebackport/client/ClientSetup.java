@@ -39,7 +39,6 @@ public final class ClientSetup {
         clientTest();
         // Entity renderers must be registered in pre-init: one line per stream that has entities.
         com.exiledradio.wildupdatebackport.boat.client.BoatClient.init();
-        com.exiledradio.wildupdatebackport.gameevent.client.VibrationClient.init();
         com.exiledradio.wildupdatebackport.sculk.client.SculkClient.init();
         com.exiledradio.wildupdatebackport.frog.client.FrogClient.init();
         com.exiledradio.wildupdatebackport.allay.client.AllayClient.init();

@@ -1,10 +1,10 @@
 package com.exiledradio.wildupdatebackport.selftest;
 
 import com.exiledradio.wildupdatebackport.ModConfig;
-import com.exiledradio.wildupdatebackport.gameevent.GameEvent;
-import com.exiledradio.wildupdatebackport.gameevent.GameEventContext;
-import com.exiledradio.wildupdatebackport.gameevent.GameEventTags;
-import com.exiledradio.wildupdatebackport.gameevent.GameEvents;
+import com.exiledradio.backportcore.gameevent.GameEvent;
+import com.exiledradio.backportcore.gameevent.GameEventContext;
+import com.exiledradio.backportcore.gameevent.GameEventTags;
+import com.exiledradio.backportcore.gameevent.GameEvents;
 import com.exiledradio.wildupdatebackport.warden.AngerLevel;
 import com.exiledradio.wildupdatebackport.warden.AngerManagement;
 import com.exiledradio.wildupdatebackport.warden.DarknessFactor;
@@ -149,7 +149,7 @@ public final class WardenSelfTest implements SelfTest {
         c.eq(0.9F, w.width, "width");
         c.eq(2.9F, w.height, "height");
         c.ok(GameEventTags.dampens(w), "the warden's own vibrations are dampened");
-        c.ok(GameEventTags.WARDEN_CAN_LISTEN.contains(GameEvent.SHRIEK), "the warden hears shrieks");
+        c.ok(GameEventTags.wardenCanListen().contains(GameEvent.SHRIEK), "the warden hears shrieks");
     }
 
     private void angerManagement(Check c) {

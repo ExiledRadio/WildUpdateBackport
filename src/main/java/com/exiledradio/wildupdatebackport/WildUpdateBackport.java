@@ -31,7 +31,7 @@ import org.apache.logging.log4j.Logger;
         acceptedMinecraftVersions = "[1.12.2]",
         // Loaded before quark, so recipes are listed first: its trapdoor recipe takes any planks, and listed
         // ahead of this mod's it turned this mod's planks into oak trapdoors instead of their own.
-        dependencies = "required-after:backportcore@[1.3.0,);before:quark"
+        dependencies = "required-after:backportcore@[1.4.0,);before:quark"
 )
 public final class WildUpdateBackport {
 
@@ -50,7 +50,11 @@ public final class WildUpdateBackport {
         // placement).
         com.exiledradio.backportcore.creative.CreativePlacement.placeSpawnEggs(MOD_ID);
         NetworkHandler.init();
-        com.exiledradio.wildupdatebackport.gameevent.AvoidVibrationTrigger.register();
+        // Game events and vibrations are Backport Core's (gameevent/), with 1.19.2's rules for this mod's
+        // listeners; Core registers the avoid_vibration trigger and the vibration particle.
+        com.exiledradio.backportcore.gameevent.GameEvents.require("1.19", () -> ModConfig.vibrations.enabled);
+        com.exiledradio.backportcore.gameevent.GameEventEmitters.addEntityPlacer(
+                stack -> stack.getItem().getClass().getName().startsWith("com.exiledradio.wildupdatebackport.boat."));
         com.exiledradio.wildupdatebackport.sculk.KillMobNearCatalystTrigger.register();
         com.exiledradio.wildupdatebackport.frog.FrogContent.registerTriggers();
         com.exiledradio.wildupdatebackport.allay.AllayContent.preInit();

@@ -1,10 +1,10 @@
 package com.exiledradio.wildupdatebackport.selftest;
 
-import com.exiledradio.wildupdatebackport.gameevent.GameEvent;
-import com.exiledradio.wildupdatebackport.gameevent.GameEventContext;
-import com.exiledradio.wildupdatebackport.gameevent.GameEvents;
-import com.exiledradio.wildupdatebackport.gameevent.PositionSource;
-import com.exiledradio.wildupdatebackport.gameevent.VibrationListener;
+import com.exiledradio.backportcore.gameevent.GameEvent;
+import com.exiledradio.backportcore.gameevent.GameEventContext;
+import com.exiledradio.backportcore.gameevent.GameEvents;
+import com.exiledradio.backportcore.gameevent.PositionSource;
+import com.exiledradio.backportcore.gameevent.VibrationListener;
 import com.exiledradio.wildupdatebackport.sculk.BlockSculkCatalyst;
 import com.exiledradio.wildupdatebackport.sculk.BlockSculkSensor;
 import com.exiledradio.wildupdatebackport.sculk.BlockSculkShrieker;
