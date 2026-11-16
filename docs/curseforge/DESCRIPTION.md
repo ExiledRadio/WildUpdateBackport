@@ -8,33 +8,33 @@ All of 1.19 The Wild Update, on Minecraft 1.12.2. It needs Backport Core on the 
 
 Deep underground, under high ground, the deep dark spreads sculk over the cave floors. Sculk sensors hear footsteps, thrown items and opened chests. Sculk shriekers call the warden.
 
-![Sculk sensors and shriekers in the deep dark](PENDING:wu-deep-dark)
+![Sculk sensors and shriekers in the deep dark](https://media.forgecdn.net/attachments/2215/386/wu-deep-dark-jpg.jpg)
 
 The warden is blind. It follows vibrations and smell, gives you Darkness, and hits hard enough to end most fights. It digs back into the ground when it loses interest.
 
-![The warden in an ancient city](PENDING:wu-warden)
+![The warden in an ancient city](https://media.forgecdn.net/attachments/2215/400/wu-warden-jpg.jpg)
 
 Ancient cities sit in the deep dark, built from 1.19's own structure files and laid out as 1.19 lays them out. Their chests hold echo shards, disc fragments, Swift Sneak books and the rest of 1.19's loot. The portal frame is reinforced deepslate.
 
-![An ancient city street](PENDING:wu-ancient-city)
+![An ancient city street](https://media.forgecdn.net/attachments/2215/382/wu-ancient-city-jpg.jpg)
 
 ## Mangrove swamps
 
 Mangrove swamps are warm swamps with mud underfoot, shallow teal water and mangrove trees standing on their roots. Mangrove wood comes in every 1.19 shape. Mud and wheat make packed mud, and packed mud makes mud bricks. Mud under pointed dripstone turns into clay.
 
-![A mangrove swamp](PENDING:wu-mangrove-swamp)
+![A mangrove swamp](https://media.forgecdn.net/attachments/2215/398/wu-mangrove-swamp-jpg.jpg)
 
-![A mud brick and mangrove hut](PENDING:wu-blocks)
+![A mud brick and mangrove hut](https://media.forgecdn.net/attachments/2215/385/wu-blocks-jpg.jpg)
 
 ## Mobs
 
 Frogs come in three kinds, one for each climate. They eat slimes and small magma cubes, and a frog eating a magma cube drops a froglight in that frog's color. Tadpoles grow from frogspawn and can be carried in a bucket.
 
-![The three frogs and their froglights](PENDING:wu-frogs)
+![The three frogs and their froglights](https://media.forgecdn.net/attachments/2215/396/wu-frogs-jpg.jpg)
 
 The allay collects the item you hand it and brings copies to you or to a note block it heard. Dancing to a jukebox, it can be duplicated with an amethyst shard.
 
-![Allays by a note block](PENDING:wu-allay)
+![Allays by a note block](https://media.forgecdn.net/attachments/2215/383/wu-allay-jpg.jpg)
 
 ## Items
 
@@ -44,7 +44,7 @@ The allay collects the item you hand it and brings copies to you or to a note bl
 *   Goat horns in all eight sounds.
 *   Mangrove boats, and boats with chests for every wood.
 
-![Boats with chests, a goat horn and the recovery compass](PENDING:wu-items)
+![Boats with chests, a goat horn and the recovery compass](https://media.forgecdn.net/attachments/2215/397/wu-items-jpg.jpg)
 
 ## The rest of 1.19
 
@@ -52,7 +52,7 @@ You also get minecarts with chests, furnaces, TNT or hoppers that drop themselve
 
 Every feature can be turned off in Backport Core's settings screen, under Mod Options.
 
-![Wild Update Backport's settings](PENDING:wu-settings)
+![Wild Update Backport's settings](https://media.forgecdn.net/attachments/2215/399/wu-settings-jpg.jpg)
 
 ## Compatibility
 
