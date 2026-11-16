@@ -1,0 +1,8 @@
+{
+  "modid": "wildupdatebackport",
+  "lang_dir": "src/main/resources/assets/wildupdatebackport/lang",
+  "mojang_versions": ["1.19.4", "1.19", "26.3"],
+  "ours_prefixes": ["config.", "commands.", "gui.", "jei.", "itemGroup.", "generator."],
+  "banned_words": ["Future MC", "FutureMC", "Raids Backport", "RAIDS_BACKPORT", "Crossbows Backport", "Oceanic Expanse", "Deeper Depths", "Aqua Acrobatics"],
+  "cache": "G:/MojangLang"
+}
