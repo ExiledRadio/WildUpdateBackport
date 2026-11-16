@@ -1,0 +1,15 @@
+# our.key = mojang.key forces a match; our.key = ! forces "ours". Read by build_langs.py.
+# Goat horn instruments (1.19.3+ keys; the tool has no instrument rule).
+instrument.wildupdatebackport.ponder_goat_horn = instrument.minecraft.ponder_goat_horn
+instrument.wildupdatebackport.sing_goat_horn = instrument.minecraft.sing_goat_horn
+instrument.wildupdatebackport.seek_goat_horn = instrument.minecraft.seek_goat_horn
+instrument.wildupdatebackport.feel_goat_horn = instrument.minecraft.feel_goat_horn
+instrument.wildupdatebackport.admire_goat_horn = instrument.minecraft.admire_goat_horn
+instrument.wildupdatebackport.call_goat_horn = instrument.minecraft.call_goat_horn
+instrument.wildupdatebackport.yearn_goat_horn = instrument.minecraft.yearn_goat_horn
+instrument.wildupdatebackport.dream_goat_horn = instrument.minecraft.dream_goat_horn
+# Video settings tooltips are 1.19 keys of their own (.tooltip keys are ours by default).
+options.darknessEffectScale.tooltip = options.darknessEffectScale.tooltip
+options.damageTiltStrength.tooltip = options.damageTiltStrength.tooltip
+options.glintSpeed.tooltip = options.glintSpeed.tooltip
+options.glintStrength.tooltip = options.glintStrength.tooltip
