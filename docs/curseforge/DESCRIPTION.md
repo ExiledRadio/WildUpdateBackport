@@ -8,19 +8,33 @@ All of 1.19 The Wild Update, on Minecraft 1.12.2. It needs Backport Core on the 
 
 Deep underground, under high ground, the deep dark spreads sculk over the cave floors. Sculk sensors hear footsteps, thrown items and opened chests. Sculk shriekers call the warden.
 
+![Sculk sensors and shriekers in the deep dark](PENDING:wu-deep-dark)
+
 The warden is blind. It follows vibrations and smell, gives you Darkness, and hits hard enough to end most fights. It digs back into the ground when it loses interest.
 
+![The warden in an ancient city](PENDING:wu-warden)
+
 Ancient cities sit in the deep dark, built from 1.19's own structure files and laid out as 1.19 lays them out. Their chests hold echo shards, disc fragments, Swift Sneak books and the rest of 1.19's loot. The portal frame is reinforced deepslate.
+
+![An ancient city street](PENDING:wu-ancient-city)
 
 ## Mangrove swamps
 
 Mangrove swamps are warm swamps with mud underfoot, shallow teal water and mangrove trees standing on their roots. Mangrove wood comes in every 1.19 shape. Mud and wheat make packed mud, and packed mud makes mud bricks. Mud under pointed dripstone turns into clay.
 
+![A mangrove swamp](PENDING:wu-mangrove-swamp)
+
+![A mud brick and mangrove hut](PENDING:wu-blocks)
+
 ## Mobs
 
 Frogs come in three kinds, one for each climate. They eat slimes and small magma cubes, and a frog eating a magma cube drops a froglight in that frog's color. Tadpoles grow from frogspawn and can be carried in a bucket.
 
+![The three frogs and their froglights](PENDING:wu-frogs)
+
 The allay collects the item you hand it and brings copies to you or to a note block it heard. Dancing to a jukebox, it can be duplicated with an amethyst shard.
+
+![Allays by a note block](PENDING:wu-allay)
 
 ## Items
 
@@ -30,11 +44,15 @@ The allay collects the item you hand it and brings copies to you or to a note bl
 *   Goat horns in all eight sounds.
 *   Mangrove boats, and boats with chests for every wood.
 
+![Boats with chests, a goat horn and the recovery compass](PENDING:wu-items)
+
 ## The rest of 1.19
 
 You also get minecarts with chests, furnaces, TNT or hoppers that drop themselves, experience from ores blown up by a player's TNT, iron and snow golem spawn eggs, creepers lit by fire charges, and 1.19's menu music, splashes and title screen.
 
 Every feature can be turned off in Backport Core's settings screen, under Mod Options.
+
+![Wild Update Backport's settings](PENDING:wu-settings)
 
 ## Compatibility
 
