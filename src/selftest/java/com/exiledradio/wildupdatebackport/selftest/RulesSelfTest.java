@@ -136,7 +136,18 @@ public final class RulesSelfTest implements SelfTest {
                     // The SRG jar is the merged one: the spawner's client-only getCachedEntity is there too.
                     c.ok(r != null && r.hooks >= sites[i], "SRG " + t + " patched, " + (r == null ? "-" : r.hooks) + " sites");
                     verify(c, "SRG " + t, r);
+                    if (r != null) {
+                        String error = FrameCheck.verify(srg, t, r.bytes);
+                        c.ok(error == null, "SRG " + t + " passes the JVM's verifier with Mojang's frames"
+                                + (error == null ? "" : ": " + error));
+                    }
                 }
+                // The check has teeth: the first P16 (loading the server parameter, dead by then in CommandClone's
+                // ProGuard frames) is refused.
+                ZipEntry clone = zip.getEntry(RulesTransformer.TARGETS[5].replace('.', '/') + ".class");
+                byte[] bad = clone == null ? null : deadLoad(read(zip.getInputStream(clone)));
+                c.ok(bad != null && FrameCheck.verify(srg, RulesTransformer.TARGETS[5], bad) != null,
+                        "the JVM's verifier refuses CommandClone loading its dead server parameter (the first P16)");
             } finally {
                 zip.close();
             }
@@ -148,6 +159,29 @@ public final class RulesSelfTest implements SelfTest {
         for (String t : RulesTransformer.TARGETS) {
             c.ok(RulesTransformer.APPLIED.containsKey(t), "patched on this server: " + t);
         }
+    }
+
+    /** CommandClone with {@code ALOAD 1; POP} before each {@code 32768}, as the first P16 loaded it; null if not found. */
+    private static byte[] deadLoad(byte[] bytes) {
+        org.objectweb.asm.tree.ClassNode node = new org.objectweb.asm.tree.ClassNode();
+        new org.objectweb.asm.ClassReader(bytes).accept(node, 0);
+        int found = 0;
+        for (org.objectweb.asm.tree.MethodNode m : node.methods) {
+            for (org.objectweb.asm.tree.AbstractInsnNode i = m.instructions.getFirst(); i != null; i = i.getNext()) {
+                if (i instanceof org.objectweb.asm.tree.LdcInsnNode
+                        && Integer.valueOf(32768).equals(((org.objectweb.asm.tree.LdcInsnNode) i).cst)) {
+                    m.instructions.insertBefore(i, new org.objectweb.asm.tree.VarInsnNode(org.objectweb.asm.Opcodes.ALOAD, 1));
+                    m.instructions.insertBefore(i, new org.objectweb.asm.tree.InsnNode(org.objectweb.asm.Opcodes.POP));
+                    found++;
+                }
+            }
+        }
+        if (found == 0) {
+            return null;
+        }
+        org.objectweb.asm.ClassWriter w = new org.objectweb.asm.ClassWriter(org.objectweb.asm.ClassWriter.COMPUTE_MAXS);
+        node.accept(w);
+        return w.toByteArray();
     }
 
     /** ASM's stack check on every method of a patched class, and its hook calls counted. */

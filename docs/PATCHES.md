@@ -25,7 +25,7 @@ superclass and a hook, with no jump either.
 | P13 | C | `WorldServer.updateBlocks` / `func_147456_g` | its one `canSnowAt(pos, true)` becomes `RulesHooks.snowAt(world, pos, true)`: with `snowAccumulationHeight` above 1, a snow layer under that height (at most 8) gains one and the call answers false; 0, no snow; 1, 1.12.2's answer | 1.19.3's `ServerLevel.tickChunk`. Precipitation is inside the random block tick loop. |
 | P14 | C | `World.playBroadcastSound` / `func_175669_a` | each listener's `broadcastSound` becomes `RulesHooks.broadcastSound(listener, id, pos, data, this)`: `playEvent` (heard near the place only) when `globalSoundEvents` is false | 1.19.3's `ServerLevel.globalLevelEvent` (the wither's spawn, the dragon's death, the end portal). No event sees world events. |
 | P15 | C | `BlockVine.updateTick` / `func_180650_b` | its `worldIn.rand.nextInt(4)` passes through `RulesHooks.vineRoll(roll, world)`: 1 (never spreads) when `doVinesSpread` is false | 1.19.4's `VineBlock.randomTick`. Vines have no growth event. |
-| P16 | C | `CommandFill.execute` and `CommandClone.execute` / `func_184881_a` | both `32768`s (the test and the message) become `RulesHooks.blockLimit(server)`: `commandModificationBlockLimit` | 1.19.4's rule; the limit is a constant inside the commands. |
+| P16 | C | `CommandFill.execute` and `CommandClone.execute` / `func_184881_a` | both `32768`s (the test and the message) become `RulesHooks.blockLimit()` (it finds the server itself; the `server` parameter is dead there in Mojang's frames): `commandModificationBlockLimit` | 1.19.4's rule; the limit is a constant inside the commands. |
 | P17 | C | `MobSpawnerBaseLogic` | the field initializer's `new WeightedSpawnerEntity()` passes through `RulesHooks.newSpawnData` (an empty one), `isActivated` / `func_98279_f`'s result through `spawnerActive` (false with no mob), and (client) `getCachedEntity` / `func_184994_d`'s `AnvilChunkLoader.readWorldEntity` becomes `spawnerEntity` (none with no mob, so no warning every frame) | 1.19.3's `BaseSpawner` starts with an empty `SpawnData`. A spawner's default mob is set in its own constructor. |
 | P18 | C | `ItemArmorStand.onItemUse` / `func_180614_a`; `EntityArmorStand.dropBlock` / `func_175421_A` | the item's `ItemMonsterPlacer.applyItemEntityDataToEntity` becomes `RulesHooks.armorStandData` (the same, then the item's name onto the stand); the dropped `new ItemStack(Items.ARMOR_STAND)` passes through `armorStandItem` (the stand's name onto the item) | 1.19.4 (23w03a). The stand is placed and dropped inside these methods; no event sees either. |
 
@@ -49,7 +49,27 @@ a shader pack.
 
 P12 to P18 (`asm.RulesTransformer`) run on the server (P17's `getCachedEntity` site on the client only). The self-test
 (`-Pselftest=rules`) runs them on the dev jar's MCP-named classes and on Forge's SRG-named jar, counts the hook calls, runs
-ASM's stack verifier on every method, checks which classes the running server patched, and plays each rule and change.
+ASM's stack verifier on every method plus the JVM's own verifier on the SRG classes (they keep Mojang's ProGuard frames,
+which ASM ignores), checks which classes the running server patched, and plays each rule and change.
 `waterSourceConversion` and `lavaSourceConversion` need no patch (`BlockEvent.CreateFluidSourceEvent`), nor do the
 chorus and scaffolding spawns (`LivingSpawnEvent.CheckSpawn`), leaves (Fluidlogged API's `FluidloggableEvent`) or the
 bonus chest (`LootTableLoadEvent`).
+
+## Release check: Mojang's frames
+
+Mojang's classes that Forge does not patch (here `CommandClone`, `ItemArmorStand`, `BlockJukebox`, `ItemPotion`,
+`BlockShulkerBox`, two minecarts and `GenLayerShore`) keep ProGuard's stack-map frames, which mark a local TOP once
+vanilla stops reading it, even a parameter. A patch that loads such a local further down is a `VerifyError` in the
+real game only, when the class loads: dev runs recompile Minecraft with javac, which keeps every parameter in every
+frame. The first P16 did that (`ALOAD 1`, the server, in `CommandClone.execute`) and stopped every dedicated server at
+start. So:
+
+- an inserted load reads only `this` or a value vanilla still reads after that point; a hook finds what else it
+  needs itself (P16 asks Forge for the server);
+- the `changes` and `rules` self-tests have the JVM verify each patched SRG class, and check that it refuses the first
+  P16's dead load;
+- before a release, `tools/release/boot-server.sh <server dir> <log> <Backport Core jar> build/libs/<this mod>.jar`
+  boots the release jars on a plain dedicated Forge server. With `-Dwildupdatebackport.loadPatched=true` the mod
+  (`PatchCheck`) loads and verifies every class it patches once the server has started, and the script fails without
+  its `PATCHCHECK ok` line. The family's frame verifier (`family-notes/tools/verify/ScanAll.java`) checks both sides,
+  client classes included, against the real client jar.
