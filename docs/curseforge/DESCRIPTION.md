@@ -56,7 +56,17 @@ Every feature can be turned off in Backport Core's settings screen, under Mod Op
 
 ## Compatibility
 
-**Caves & Cliffs Backport**: in its 1.18 worlds, the deep dark and mangrove swamps generate where 1.19 puts them, and the goats are its own. Without it, this mod brings its own goats and places the deep dark and mangrove swamps in 1.12 worlds.
+**[Caves & Cliffs Backport](https://www.curseforge.com/minecraft/mc-mods/caves-cliffs-backport)**: in its 1.18 worlds, the deep dark and mangrove swamps generate where 1.19 puts them, and the goats are its own. Ancient cities hold its Otherside disc, candles, amethyst and glow berries, allays duplicate with its amethyst shards, water turns its rooted dirt into mud, mud under its pointed dripstone turns into clay, and sculk spreads over its stone. Without it, this mod brings its own goats and deepslate and places the deep dark and mangrove swamps in 1.12 worlds.
+
+**[Village & Pillage Backport](https://www.curseforge.com/minecraft/mc-mods/villager-backport)**: pillager outposts get the allay cage and goat horns, the wandering trader sells propagules, the composter takes mangrove leaves, roots and propagules, scaffolding burns as fuel, and ancient city chests can hold suspicious stew.
+
+**[Update Aquatic Backport](https://www.curseforge.com/minecraft/mc-mods/update-aquatic-backport)**: tropical fish live in mangrove swamps, and the swamps keep their own water color.
+
+**[Buzzy Bees Backport](https://www.curseforge.com/minecraft/mc-mods/buzzy-bees-backport)**: some mangrove trees grow bee nests.
+
+**[Nether Update Backport](https://www.curseforge.com/minecraft/mc-mods/nether-update-backport)**: ancient city chests can hold soul torches.
+
+**[Trails & Tales Backport](https://www.curseforge.com/minecraft/mc-mods/trails-tales-backport)**: mangrove hanging signs, the ward and silence templates in ancient cities, mud for the sniffer to dig, and the calibrated sculk sensor made from the sculk sensor.
 
 **OptiFine**: works, shaders included. Shader packs draw Darkness themselves, as in 1.19, so the warden's Darkness shows with shaders on.
 
