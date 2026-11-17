@@ -8,7 +8,8 @@ loot table files. The deepslate copies are tools/deepdark/deepslate.py's.
 * Pools: 1.19.2's AncientCityStructurePieces / AncientCityStructurePools, entry for entry, in the JSON form 1.18+
   writes (worldgen/template_pool/ancient_city/...). 1.19.2 builds them in code; the jar has no files for them.
   ancient_city/walls/no_corners names intact_horizontal_wall_stairs_5, which 1.19.2 does not ship either: it stays,
-  so the pool shuffles as 1.19.2's does, and loads as an empty template that joins nothing.
+  so the pool shuffles as 1.19.2's does, and an empty template file stands in for it (1.19.2's getOrCreate hands it
+  an empty template) that joins nothing.
 * Processor lists: named only; the city's pieces run 1.19's lists in code (deepdark/city/CityProcessors).
 * Loot tables: empty files the code fills (deepdark/AncientCityLoot).
 """
@@ -31,6 +32,32 @@ for info in assets.JAR.infolist():
     if info.filename.startswith(PREFIX) and info.filename.endswith(".nbt"):
         assets.write("structures/ancient_city/" + info.filename[len(PREFIX):], assets.jar_bytes(info.filename))
         count += 1
+
+
+def empty_template():
+    """What 1.19.2's StructureTemplate.save writes for a new StructureTemplate(): no blocks, palette or entities,
+    size 0 0 0, DataVersion 3120 (1.19.2). Gzipped NBT, written by hand: a root compound of five tags."""
+    import gzip
+    import struct
+
+    def name(t, n):
+        b = n.encode("utf-8")
+        return bytes([t]) + struct.pack(">H", len(b)) + b
+
+    def empty_list(n):
+        return name(9, n) + bytes([0]) + struct.pack(">i", 0)
+
+    body = (empty_list("blocks") + empty_list("palette") + empty_list("entities")
+            + name(9, "size") + bytes([3]) + struct.pack(">i", 3) + struct.pack(">iii", 0, 0, 0)
+            + name(3, "DataVersion") + struct.pack(">i", 3120))
+    raw = name(10, "") + body + bytes([0])
+    return gzip.compress(raw, mtime=0)
+
+
+# 1.19.2's walls/no_corners pool names intact_horizontal_wall_stairs_5, which its jar does not have:
+# StructureTemplateManager.getOrCreate quietly hands that element an empty template. The same empty template here,
+# so the pool shuffles and joins as 1.19.2's does without Core reporting a missing file.
+assets.write("structures/ancient_city/walls/intact_horizontal_wall_stairs_5.nbt", empty_template())
 
 # ---- pools
 START = "minecraft:ancient_city_start_degradation"

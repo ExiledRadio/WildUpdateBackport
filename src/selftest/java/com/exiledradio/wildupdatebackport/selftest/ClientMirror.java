@@ -37,8 +37,8 @@ final class ClientMirror implements IWorldEventListener {
 
     ClientMirror(WorldServer world, int minY, int maxY) {
         this.world = world;
-        this.minY = Math.max(0, minY);
-        this.maxY = Math.min(255, maxY);
+        this.minY = Math.max(com.exiledradio.wildupdatebackport.deepdark.DeepDark.minY(world), minY);
+        this.maxY = Math.min(com.exiledradio.wildupdatebackport.deepdark.DeepDark.maxYExclusive(world) - 1, maxY);
         world.addEventListener(this);
     }
 
