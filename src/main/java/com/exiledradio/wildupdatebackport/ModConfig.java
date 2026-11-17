@@ -216,7 +216,7 @@ public final class ModConfig {
         @Config.LangKey("config.wildupdatebackport.changes.scaffoldingFuel")
         public boolean scaffoldingFuel = true;
 
-        @Config.Comment("All leaves can be waterlogged, not only mangrove leaves (1.19). Needs Fluidlogged API.")
+        @Config.Comment("All leaves can be waterlogged (1.19), the other backports' leaves too, such as azalea leaves, which are otherwise kept dry as in 1.18. Needs Fluidlogged API, which waterlogs vanilla's leaves by itself.")
         @Config.LangKey("config.wildupdatebackport.changes.leavesWaterlog")
         public boolean leavesWaterlog = true;
 

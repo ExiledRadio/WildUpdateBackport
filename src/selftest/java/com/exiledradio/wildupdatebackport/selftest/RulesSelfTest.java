@@ -121,6 +121,7 @@ public final class RulesSelfTest implements SelfTest {
             byte[] dev = classBytes(t);
             RulesTransformer.Result r = dev == null ? null : RulesTransformer.patch(t, dev);
             c.ok(r != null && r.hooks >= sites[i], "dev " + t + " patched, " + (r == null ? "-" : r.hooks) + " sites");
+            verify(c, "dev " + t, r);
         }
         File srg = new File(System.getProperty("user.home"),
                 ".gradle/caches/minecraft/net/minecraftforge/forge/1.12.2-14.23.5.2847/stable/39/forge-1.12.2-14.23.5.2847-srgBin.jar");
@@ -134,6 +135,7 @@ public final class RulesSelfTest implements SelfTest {
                     RulesTransformer.Result r = bytes == null ? null : RulesTransformer.patch(t, bytes);
                     // The SRG jar is the merged one: the spawner's client-only getCachedEntity is there too.
                     c.ok(r != null && r.hooks >= sites[i], "SRG " + t + " patched, " + (r == null ? "-" : r.hooks) + " sites");
+                    verify(c, "SRG " + t, r);
                 }
             } finally {
                 zip.close();
@@ -146,6 +148,31 @@ public final class RulesSelfTest implements SelfTest {
         for (String t : RulesTransformer.TARGETS) {
             c.ok(RulesTransformer.APPLIED.containsKey(t), "patched on this server: " + t);
         }
+    }
+
+    /** ASM's stack check on every method of a patched class, and its hook calls counted. */
+    private static void verify(Check c, String what, RulesTransformer.Result r) {
+        if (r == null) {
+            return;
+        }
+        org.objectweb.asm.tree.ClassNode node = new org.objectweb.asm.tree.ClassNode();
+        new org.objectweb.asm.ClassReader(r.bytes).accept(node, 0);
+        int calls = 0;
+        for (org.objectweb.asm.tree.MethodNode m : node.methods) {
+            for (org.objectweb.asm.tree.AbstractInsnNode i = m.instructions.getFirst(); i != null; i = i.getNext()) {
+                if (i instanceof org.objectweb.asm.tree.MethodInsnNode
+                        && ((org.objectweb.asm.tree.MethodInsnNode) i).owner.endsWith("changes/RulesHooks")) {
+                    calls++;
+                }
+            }
+            try {
+                new org.objectweb.asm.tree.analysis.Analyzer<org.objectweb.asm.tree.analysis.BasicValue>(
+                        new org.objectweb.asm.tree.analysis.BasicVerifier()).analyze(node.name, m);
+            } catch (Exception e) {
+                c.fail(what + "." + m.name + " fails ASM's stack check: " + e);
+            }
+        }
+        c.eq(r.hooks, calls, what + ": hook calls");
     }
 
     private static void defaults(Check c) {
@@ -485,10 +512,25 @@ public final class RulesSelfTest implements SelfTest {
             world.setBlockState(p, azalea.getDefaultState(), 2);
             c.ok(Waterlogging.canHoldWater(azalea.getDefaultState(), world, p), "Caves & Cliffs' azalea leaves too");
         }
-        ModConfig.changes.leavesWaterlog = false;
+        // A family mod's leaves (not Waterloggable): Backport Core refuses them, as 1.18 keeps them dry; 1.19 takes water.
+        IBlockState oak = Blocks.LEAVES.getDefaultState();
         BlockPos p = at.add(0, 0, 8);
-        world.setBlockState(p, Blocks.LEAVES.getDefaultState(), 2);
-        c.ok(!Waterlogging.canHoldWater(Blocks.LEAVES.getDefaultState(), world, p), "switch off: oak leaves hold no water");
+        git.jbredwards.fluidlogged_api.api.event.FluidloggableEvent refused = new git.jbredwards.fluidlogged_api.api.event.FluidloggableEvent(
+                oak, world, p, git.jbredwards.fluidlogged_api.api.util.FluidState.of(Blocks.WATER));
+        refused.setCanceled(true);
+        refused.setResult(Event.Result.DENY);
+        com.exiledradio.wildupdatebackport.changes.LeavesWater.fluidloggable(refused);
+        c.ok(!refused.isCanceled() && refused.getResult() == Event.Result.ALLOW, "leaves Backport Core refused take a water source");
+        git.jbredwards.fluidlogged_api.api.event.FluidloggableEvent lava = new git.jbredwards.fluidlogged_api.api.event.FluidloggableEvent(
+                oak, world, p, git.jbredwards.fluidlogged_api.api.util.FluidState.of(Blocks.LAVA));
+        com.exiledradio.wildupdatebackport.changes.LeavesWater.fluidloggable(lava);
+        c.ok(lava.getResult() != Event.Result.ALLOW, "... never lava");
+        ModConfig.changes.leavesWaterlog = false;
+        git.jbredwards.fluidlogged_api.api.event.FluidloggableEvent off = new git.jbredwards.fluidlogged_api.api.event.FluidloggableEvent(
+                oak, world, p, git.jbredwards.fluidlogged_api.api.util.FluidState.of(Blocks.WATER));
+        off.setCanceled(true);
+        com.exiledradio.wildupdatebackport.changes.LeavesWater.fluidloggable(off);
+        c.ok(off.isCanceled(), "switch off: a refusal stands");
         ModConfig.changes.leavesWaterlog = true;
     }
 

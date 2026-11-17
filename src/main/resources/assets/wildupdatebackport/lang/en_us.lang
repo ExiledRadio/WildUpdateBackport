@@ -239,6 +239,18 @@ config.wildupdatebackport.changes.netherSpawnLight=Nether Spawn Light
 config.wildupdatebackport.changes.netherSpawnLight.tooltip=Endermen and skeletons spawn in the Nether at light level 7 and below (1.19.3).
 config.wildupdatebackport.changes.scaffoldingFuel=Scaffolding Fuel
 config.wildupdatebackport.changes.scaffoldingFuel.tooltip=Scaffolding burns in a furnace as long as bamboo (1.19).
+config.wildupdatebackport.changes.leavesWaterlog=Waterlogged Leaves
+config.wildupdatebackport.changes.leavesWaterlog.tooltip=All leaves can be waterlogged (1.19), the other backports' leaves too, such as azalea leaves, which are otherwise kept dry as in 1.18. Needs Fluidlogged API, which waterlogs vanilla's leaves by itself.
+config.wildupdatebackport.changes.gameRules=1.19.3 and 1.19.4 Game Rules
+config.wildupdatebackport.changes.gameRules.tooltip=The game rules of 1.19.3 and 1.19.4: blockExplosionDropDecay, mobExplosionDropDecay, tntExplosionDropDecay, snowAccumulationHeight, waterSourceConversion, lavaSourceConversion, globalSoundEvents, commandModificationBlockLimit and doVinesSpread. At their defaults the game plays as 1.12.2 does, except that every block TNT blows up drops.
+config.wildupdatebackport.changes.spawnBlocks=No Spawning on Chorus or Scaffolding
+config.wildupdatebackport.changes.spawnBlocks.tooltip=Mobs do not spawn on chorus flowers or scaffolding (1.19.3).
+config.wildupdatebackport.changes.emptySpawners=Empty Spawners
+config.wildupdatebackport.changes.emptySpawners.tooltip=A spawner placed or set without a mob is empty: no pig, no flames, no spawning until a spawn egg is used on it (1.19.3).
+config.wildupdatebackport.changes.armorStandNames=Armor Stand Names
+config.wildupdatebackport.changes.armorStandNames.tooltip=A renamed armor stand keeps its name when placed, and the armor stand item keeps it when the stand is broken (1.19.4).
+config.wildupdatebackport.changes.mangroveBonusChest=Mangrove Logs in Bonus Chests
+config.wildupdatebackport.changes.mangroveBonusChest.tooltip=Bonus chests can hold mangrove logs (1.19).
 
 # --- deepdark-deepslate ---
 tile.wildupdatebackport.chiseled_deepslate.name=Chiseled Deepslate

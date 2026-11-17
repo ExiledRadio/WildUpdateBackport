@@ -240,6 +240,18 @@ config.wildupdatebackport.changes.netherSpawnLight=Lumière d'apparition du Neth
 config.wildupdatebackport.changes.netherSpawnLight.tooltip=Les Endermen et les squelettes apparaissent dans le Nether à un niveau de lumière de 7 ou moins (1.19.3).
 config.wildupdatebackport.changes.scaffoldingFuel=Échafaudage combustible
 config.wildupdatebackport.changes.scaffoldingFuel.tooltip=L'échafaudage brûle dans un fourneau aussi longtemps que le bambou (1.19).
+config.wildupdatebackport.changes.leavesWaterlog=Feuilles immergées
+config.wildupdatebackport.changes.leavesWaterlog.tooltip=Toutes les feuilles peuvent être immergées (1.19), y compris celles des autres backports, comme les feuilles d'azalée, sinon gardées sèches comme en 1.18. Nécessite Fluidlogged API, qui immerge déjà de lui-même les feuilles du jeu de base.
+config.wildupdatebackport.changes.gameRules=Règles du jeu de la 1.19.3 et de la 1.19.4
+config.wildupdatebackport.changes.gameRules.tooltip=Les règles du jeu de la 1.19.3 et de la 1.19.4 : blockExplosionDropDecay, mobExplosionDropDecay, tntExplosionDropDecay, snowAccumulationHeight, waterSourceConversion, lavaSourceConversion, globalSoundEvents, commandModificationBlockLimit et doVinesSpread. À leurs valeurs par défaut, le jeu se joue comme en 1.12.2, sauf que chaque bloc détruit par la TNT est lâché.
+config.wildupdatebackport.changes.spawnBlocks=Pas d'apparition sur chorus ou échafaudage
+config.wildupdatebackport.changes.spawnBlocks.tooltip=Les créatures n'apparaissent pas sur les fleurs de chorus ni les échafaudages (1.19.3).
+config.wildupdatebackport.changes.emptySpawners=Générateurs vides
+config.wildupdatebackport.changes.emptySpawners.tooltip=Un générateur posé sans créature est vide : pas de cochon, pas de flammes, aucune apparition tant qu'un œuf d'apparition n'y est pas utilisé (1.19.3).
+config.wildupdatebackport.changes.armorStandNames=Noms des porte-armures
+config.wildupdatebackport.changes.armorStandNames.tooltip=Un porte-armure renommé garde son nom une fois posé, et l'objet le garde quand le porte-armure est cassé (1.19.4).
+config.wildupdatebackport.changes.mangroveBonusChest=Bûches de palétuvier dans les coffres bonus
+config.wildupdatebackport.changes.mangroveBonusChest.tooltip=Les coffres bonus peuvent contenir des bûches de palétuvier (1.19).
 
 # --- deepdark-deepslate ---
 tile.wildupdatebackport.chiseled_deepslate.name=Ardoise des abîmes sculptée

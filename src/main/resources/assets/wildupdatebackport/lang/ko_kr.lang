@@ -240,6 +240,18 @@ config.wildupdatebackport.changes.netherSpawnLight=네더 생성 밝기
 config.wildupdatebackport.changes.netherSpawnLight.tooltip=엔더맨과 스켈레톤이 네더에서 밝기 7 이하일 때 생성됩니다(1.19.3).
 config.wildupdatebackport.changes.scaffoldingFuel=비계 연료
 config.wildupdatebackport.changes.scaffoldingFuel.tooltip=비계가 화로에서 대나무만큼 오래 탑니다(1.19).
+config.wildupdatebackport.changes.leavesWaterlog=물에 잠긴 나뭇잎
+config.wildupdatebackport.changes.leavesWaterlog.tooltip=모든 나뭇잎을 물에 잠기게 할 수 있습니다(1.19). 진달래 잎처럼 다른 백포트의 나뭇잎도 포함되며, 그렇지 않으면 1.18처럼 마른 상태로 남습니다. Fluidlogged API가 필요합니다(바닐라 나뭇잎은 Fluidlogged API가 스스로 처리합니다).
+config.wildupdatebackport.changes.gameRules=1.19.3과 1.19.4의 게임 규칙
+config.wildupdatebackport.changes.gameRules.tooltip=1.19.3과 1.19.4의 게임 규칙: blockExplosionDropDecay, mobExplosionDropDecay, tntExplosionDropDecay, snowAccumulationHeight, waterSourceConversion, lavaSourceConversion, globalSoundEvents, commandModificationBlockLimit, doVinesSpread. 기본값에서는 1.12.2와 같이 플레이되지만, TNT로 파괴된 블록은 모두 떨어집니다.
+config.wildupdatebackport.changes.spawnBlocks=후렴과 비계 위 생성 없음
+config.wildupdatebackport.changes.spawnBlocks.tooltip=몹이 후렴 꽃이나 비계 위에 생성되지 않습니다(1.19.3).
+config.wildupdatebackport.changes.emptySpawners=빈 생성기
+config.wildupdatebackport.changes.emptySpawners.tooltip=몹 없이 설치한 생성기는 비어 있습니다: 생성 알을 사용하기 전까지 돼지도, 불꽃도, 생성도 없습니다(1.19.3).
+config.wildupdatebackport.changes.armorStandNames=갑옷 거치대 이름
+config.wildupdatebackport.changes.armorStandNames.tooltip=이름을 바꾼 갑옷 거치대는 설치해도 이름을 유지하고, 부수면 아이템도 그 이름을 유지합니다(1.19.4).
+config.wildupdatebackport.changes.mangroveBonusChest=보너스 상자의 맹그로브 나무
+config.wildupdatebackport.changes.mangroveBonusChest.tooltip=보너스 상자에 맹그로브 나무가 들어 있을 수 있습니다(1.19).
 
 # --- deepdark-deepslate ---
 tile.wildupdatebackport.chiseled_deepslate.name=조각된 심층암
