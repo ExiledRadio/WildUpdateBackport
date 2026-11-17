@@ -215,6 +215,33 @@ public final class ModConfig {
         @Config.Comment("Scaffolding burns in a furnace as long as bamboo (1.19).")
         @Config.LangKey("config.wildupdatebackport.changes.scaffoldingFuel")
         public boolean scaffoldingFuel = true;
+
+        @Config.Comment("All leaves can be waterlogged, not only mangrove leaves (1.19). Needs Fluidlogged API.")
+        @Config.LangKey("config.wildupdatebackport.changes.leavesWaterlog")
+        public boolean leavesWaterlog = true;
+
+        @Config.Comment({"The game rules of 1.19.3 and 1.19.4: blockExplosionDropDecay, mobExplosionDropDecay, tntExplosionDropDecay,",
+                "snowAccumulationHeight, waterSourceConversion, lavaSourceConversion, globalSoundEvents, commandModificationBlockLimit",
+                "and doVinesSpread. At their defaults the game plays as 1.12.2 does, except that every block TNT blows up drops."})
+        @Config.LangKey("config.wildupdatebackport.changes.gameRules")
+        public boolean gameRules = true;
+
+        @Config.Comment("Mobs do not spawn on chorus flowers or scaffolding (1.19.3).")
+        @Config.LangKey("config.wildupdatebackport.changes.spawnBlocks")
+        public boolean spawnBlocks = true;
+
+        @Config.Comment("A spawner placed or set without a mob is empty: no pig, no flames, no spawning until a spawn egg is used on it (1.19.3).")
+        @Config.LangKey("config.wildupdatebackport.changes.emptySpawners")
+        public boolean emptySpawners = true;
+
+        @Config.Comment("A renamed armor stand keeps its name when placed, and the armor stand item keeps it when the stand is broken (1.19.4).")
+        @Config.LangKey("config.wildupdatebackport.changes.armorStandNames")
+        public boolean armorStandNames = true;
+
+        @Config.RequiresWorldRestart
+        @Config.Comment("Bonus chests can hold mangrove logs (1.19).")
+        @Config.LangKey("config.wildupdatebackport.changes.mangroveBonusChest")
+        public boolean mangroveBonusChest = true;
     }
 
     public static final class Swamp {
