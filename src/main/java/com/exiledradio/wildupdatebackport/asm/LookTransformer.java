@@ -36,6 +36,9 @@ public final class LookTransformer implements IClassTransformer {
     static final String ITEM = "net.minecraft.client.renderer.RenderItem";
     static final String ARMOR = "net.minecraft.client.renderer.entity.layers.LayerArmorBase";
 
+    /** The targets (all client-only), for {@code PatchCheck}. */
+    public static final String[] TARGETS = {RENDERER, ITEM, ARMOR};
+
     /** Set once each class has been patched; the client self-test reads them. */
     public static volatile boolean appliedP1;
     public static volatile boolean appliedP2;

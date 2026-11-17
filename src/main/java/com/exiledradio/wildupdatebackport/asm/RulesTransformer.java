@@ -19,8 +19,10 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * Patches P12 to P17 ({@code docs/PATCHES.md}), the low-impact 1.19.x changes: the 1.19.3 and 1.19.4 game rules, empty
  * spawners and armor stand names. Each puts a static call to {@code changes.RulesHooks} between a vanilla value and its
- * use, or swaps one call for a hook of the same shape (loading {@code this} or a parameter for it, no jump, no new
- * local, no new frame). With its setting off (or the game rule at its 1.12.2 value) each hook gives back 1.12.2's value.
+ * use, or swaps one call for a hook of the same shape (loading at most {@code this} or a parameter the method still
+ * reads after that point, no jump, no new local, no new frame). Mojang's classes that Forge does not patch keep
+ * ProGuard's stack-map frames, which mark a local TOP once vanilla stops reading it; a load past that point is a
+ * VerifyError only in the real game. {@code tools/release/boot-server.sh} and the family's frame verifier catch it. With its setting off (or the game rule at its 1.12.2 value) each hook gives back 1.12.2's value.
  *
  * <ul>
  *   <li><b>P12</b> {@code Explosion.doExplosionB}: the drop chance {@code 1.0F / this.size} through {@code dropChance}
@@ -32,7 +34,7 @@ import java.util.concurrent.ConcurrentHashMap;
  *   <li><b>P15</b> {@code BlockVine.updateTick}: its {@code worldIn.rand.nextInt(4)} through {@code vineRoll}
  *       (doVinesSpread).</li>
  *   <li><b>P16</b> {@code CommandFill.execute} and {@code CommandClone.execute}: both {@code 32768}s become {@code
- *       blockLimit(server)} (commandModificationBlockLimit).</li>
+ *       blockLimit()} (commandModificationBlockLimit).</li>
  *   <li><b>P17</b> {@code MobSpawnerBaseLogic}: the {@code new WeightedSpawnerEntity()} of its field initializer through
  *       {@code newSpawnData}, {@code isActivated}'s result through {@code spawnerActive}, and (client) {@code
  *       getCachedEntity}'s {@code AnvilChunkLoader.readWorldEntity} becomes {@code spawnerEntity} (empty spawners).</li>
@@ -256,7 +258,11 @@ public final class RulesTransformer implements IClassTransformer {
         return new Result(Asm.write(node), 1);
     }
 
-    /** P16: each {@code LDC 32768} becomes {@code ALOAD 1; blockLimit} (the server is the first parameter). */
+    /**
+     * P16: each {@code LDC 32768} becomes {@code blockLimit()}, which finds the server itself. Loading the {@code server}
+     * parameter here would be a VerifyError in the real game: in Mojang's ProGuard-framed {@code CommandClone} that
+     * local is TOP by the time the limit is read (dev runs recompile Minecraft with javac and never show it).
+     */
     private static Result limit(byte[] bytes, String target) {
         ClassNode node = Asm.read(bytes);
         MethodNode m = Asm.method(node, "execute", "func_184881_a",
@@ -266,8 +272,7 @@ public final class RulesTransformer implements IClassTransformer {
             return null;
         }
         for (AbstractInsnNode n : found) {
-            m.instructions.insertBefore(n, new VarInsnNode(Opcodes.ALOAD, 1));
-            m.instructions.set(n, hook("blockLimit", "(Lnet/minecraft/server/MinecraftServer;)I"));
+            m.instructions.set(n, hook("blockLimit", "()I"));
         }
         return new Result(Asm.write(node), 2);
     }

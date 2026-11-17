@@ -153,6 +153,11 @@ public final class ChangesSelfTest implements SelfTest {
                     byte[] bytes = entry == null ? null : read(zip.getInputStream(entry));
                     byte[] patched = bytes == null ? null : ChangesTransformer.patchForTest(t, bytes);
                     check(c, "SRG " + t, patched, want.get(t));
+                    if (patched != null) {
+                        String error = FrameCheck.verify(srg, t, patched);
+                        c.ok(error == null, "SRG " + t + " passes the JVM's verifier with Mojang's frames"
+                                + (error == null ? "" : ": " + error));
+                    }
                     if (patched != null && t.endsWith("BlockJukebox")) {
                         ClassNode n = node(patched);
                         boolean srgNames = false;

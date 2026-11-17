@@ -21,6 +21,9 @@ public final class SwampTransformer implements IClassTransformer {
     private static final String HOOKS = "com/exiledradio/wildupdatebackport/swamp/SwampHooks";
     static final String SHORE = "net.minecraft.world.gen.layer.GenLayerShore";
 
+    /** The target, for {@code PatchCheck}. */
+    public static final String[] TARGETS = {SHORE};
+
     /** Set once the class has been patched; the self-test reads it. */
     public static volatile boolean appliedP9;
 

@@ -24,6 +24,7 @@ import net.minecraft.world.GameRules;
 import net.minecraft.world.IWorldEventListener;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.storage.AnvilChunkLoader;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 
 import java.lang.reflect.Field;
@@ -163,7 +164,12 @@ public final class RulesHooks {
         return !rulesOn() || bool(world, VINES, true) ? roll : 1;
     }
 
-    /** P16: commandModificationBlockLimit (1.19.4), for /fill and /clone. */
+    /** P16: commandModificationBlockLimit (1.19.4), for /fill and /clone, on the running server. */
+    public static int blockLimit() {
+        return blockLimit(FMLCommonHandler.instance().getMinecraftServerInstance());
+    }
+
+    /** commandModificationBlockLimit on {@code server}, or 1.12.2's 32768. */
     public static int blockLimit(MinecraftServer server) {
         if (!rulesOn() || server == null || server.worlds.length == 0) {
             return 32768;
