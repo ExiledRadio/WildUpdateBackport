@@ -68,7 +68,44 @@ public final class DeepDark {
 
     /** @return how far 1.19's y moves in this world: 0 where the world goes down to y -64, else 59 */
     public static int shift(World world) {
-        return WorldHeights.minY(world) < 0 ? 0 : SHIFT;
+        return minY(world) < 0 ? 0 : SHIFT;
+    }
+
+    /** By world: its whole height range, {min, max exclusive}. */
+    private static final java.util.Map<World, int[]> HEIGHTS = new java.util.WeakHashMap<World, int[]>();
+
+    /**
+     * @return the world's lowest buildable y, whatever height scope the caller is in. Farmer's Future Delight answers
+     *     0 inside the legacy scope it populates in, so asking there would move the deep dark and its cities up 59 to
+     *     1.12's heights; asked inside {@link WorldHeights#enterFullHeight} it answers its real -64, as it does for
+     *     {@code /locate}.
+     */
+    public static int minY(World world) {
+        return heights(world)[0];
+    }
+
+    /** @return one above the world's highest buildable y, whatever height scope the caller is in */
+    public static int maxYExclusive(World world) {
+        return heights(world)[1];
+    }
+
+    private static int[] heights(World world) {
+        synchronized (HEIGHTS) {
+            int[] h = HEIGHTS.get(world);
+            if (h != null) {
+                return h;
+            }
+        }
+        int[] h;
+        try (AutoCloseable full = WorldHeights.enterFullHeight()) {
+            h = new int[] {WorldHeights.minY(world), WorldHeights.maxYExclusive(world)};
+        } catch (Exception e) {
+            h = new int[] {WorldHeights.minY(world), WorldHeights.maxYExclusive(world)};
+        }
+        synchronized (HEIGHTS) {
+            HEIGHTS.put(world, h);
+        }
+        return h;
     }
 
     /** @return true when 1.18 terrain answers this world's 3D biomes */

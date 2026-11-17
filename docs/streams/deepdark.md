@@ -51,7 +51,11 @@ Values are from 1.19.2's `Blocks.REINFORCED_DEEPSLATE`:
   - in: base height 0.45 or more, or Forge's `HILLS` or `MOUNTAIN`;
   - out: oceans, rivers and beaches;
   - heights: 1.19's -58 to -19, moved up 59 to y 1-40.
-- `DeepDark.shift(world)` is 0 where the world starts below 0 (`WorldHeights.minY`), else 59.
+- `DeepDark.shift(world)` is 0 where the world starts below 0, else 59. The minimum comes from `DeepDark.minY`, which
+  asks `WorldHeights.minY` inside `WorldHeights.enterFullHeight()` and keeps the answer per world. Farmer's Future
+  Delight answers 0 inside the legacy scope it populates in and -64 outside it. Asking from the populate step put its
+  cities 59 blocks too high (floor at y 8), while `/locate` used -64. The city's start height, layout, biome check,
+  beard, chunk box and the features' heights all use `DeepDark.minY` and `DeepDark.maxYExclusive`.
 
 ### Deep dark features (`DeepDarkFeatures`, an `IWorldGenerator`)
 
@@ -76,8 +80,11 @@ Two things keep it close to 1.19's generation in 1.12.2:
 - **No cascading generation, no sculk lost** (`DeepDarkPending`): 1.19 decorates inside a 3 x 3 chunk region; 1.12.2
   only guarantees the 2 x 2 below the populate offset, and a vein's search (20 blocks) or a patch's charges reach
   further. So a populated chunk's deep dark decoration (the city's sculk patches in its area, then the two features)
-  waits until the 4 x 4 chunks it can touch are generated, and then runs whole, from a random of the chunk's own: on
-  its own populate if they are, else on a later populate nearby. The waiting list is saved with the world. The first
+  waits until the 4 x 4 chunks it can touch are loaded, and then runs whole, from a random of the chunk's own: on its
+  own populate if they are, else on a later populate nearby, else on a server tick (every 20) once they are. The
+  waiting list is saved with the world. The check was "generated" until 2026-11-17. A pregenerator unloads chunks as
+  it goes, so the decoration reloaded saved, unpopulated chunks, and each load populated the neighbors it completed:
+  205 cascading warnings around a Farmer's Future Delight city. The first
   version skipped the tries that reached too far instead, which lost half the sculk (16,184 blocks in the test city,
   against 35,882 now).
 
@@ -144,14 +151,15 @@ whole height, otherwise a 1.18 terrain city at y -51 placed nothing.
 
 **Assets** (`tools/deepdark/generate.py`):
 
-- the 58 templates, copied unchanged from the 1.19.2 jar;
+- the 58 templates, copied unchanged from the 1.19.2 jar, and the empty stand-in below;
 - the seven pools, written from 1.19.2's `AncientCityStructurePools`, which builds them in code;
 - named-only processor lists;
 - empty loot table files.
 
 `ancient_city/walls/no_corners` names `intact_horizontal_wall_stairs_5`, which 1.19.2 does not ship. It stays in the
-pool so the shuffle draws as 1.19.2's does; it loads as an empty template with no jigsaws, so it never joins (Core logs
-it once as missing).
+pool so the shuffle draws as 1.19.2's does. 1.19.2's `StructureTemplateManager.getOrCreate` quietly hands it an empty
+template, so `generate.py` writes the same empty template (no blocks, size 0 0 0). It has no jigsaws and never joins,
+and Core no longer logs it as missing.
 
 **Blocks** come through Core's `ModernPalette`:
 
@@ -282,8 +290,7 @@ above it, as vanilla's does. The before picture shows flat-topped boxes.
 - Anything visual: the models and textures of reinforced deepslate and the deepslate copies, and how a city looks.
 - A city's portal, wardens summoned in a city (the shrieker and warden are streams S and W, tested there), and
   hand-opening chests.
-- A world with Farmer's Future Delight or another extended-height mod without `ModernGeneration`. Heights there are
-  1.19's (shift 0), with the high-ground stand-in.
+- Extended-height mods without `ModernGeneration` other than Farmer's Future Delight (tested below).
 
 ## Not done
 
@@ -295,3 +302,26 @@ above it, as vanilla's does. The before picture shows flat-topped boxes.
   from vanilla's; its amounts match (see the census), and positions, layouts and the beard are exact.
 - **Dropped items**: 1.12.2's own populate (a water spring's first tick) still updates blocks next to the city. A
   ladder whose wall `block_rot` removed then drops, about ten per city. Vanilla 1.19 leaves them floating.
+
+### Farmer's Future Delight (2026-11-17)
+
+FFD 1.4.6, `level-type=ffd_cac` (1.18 terrain, y -64 to 319), seed -3892104814965596348, Forge 2860. The city at 576,
+-304, area pregenerated with Chunk Pregenerator (radius 12).
+
+Before:
+- The city was whole but 59 blocks too high (floor y 8, blocks y 8-37), because the populate step saw FFD's legacy
+  minimum of 0.
+- `walls/intact_horizontal_wall_stairs_5` was logged as missing.
+- 10 cascading-generation warnings from this mod.
+
+After (release jar):
+- The city's blocks span y -51 to -22, with its floor at -51, as in 1.19.2. 56 reinforced deepslate, 30 chests.
+- `/locate` finds it at 576, -304, before and after the area is generated.
+- No missing structures.
+- No cascading-generation warnings from this mod (FFD logs 5 of its own).
+- After the pregenerator, 26 populate chunks in the city were still waiting for their neighbors to be loaded together.
+  With the world spawn on the city and the server restarted, the spawn chunks loaded and the tick ran them: 0 left.
+- Self-tests: `-Pselftest=all`, Default world, 2,579 pass, 0 fail. The city at 848, 912 is unchanged (97 pieces,
+  y 7-37, tiles 4,803, sculk 37,220, shriekers 44 of 44). `-Pselftest=deepdark` in a `cavesandcliffs` world, seed 12345,
+  with Caves & Cliffs 1.1.0: 51 of 51, the city at -288, -288 (90 pieces, y -52 to -22). That run needed the self-test's
+  `ClientMirror` to use the world's heights instead of 0-255.

@@ -41,7 +41,7 @@ import java.util.Random;
  * </ul>
  * Heights are 1.19's, moved by {@link DeepDark#shift}. With Caves &amp; Cliffs' 1.18 terrain these run after its own
  * decoration (it places no sculk) rather than at their place in 1.19's feature order. They run, with the city's sculk
- * patches before them, once the chunks they can reach are generated ({@link DeepDarkPending}), from a random of the
+ * patches before them, once the chunks they can reach are loaded ({@link DeepDarkPending}), from a random of the
  * chunk's own.
  *
  * <p>{@link Spawns}: nothing spawns naturally in the deep dark (1.19's empty {@code MobSpawnSettings}). Spawners and
@@ -80,7 +80,7 @@ public final class DeepDarkFeatures implements IWorldGenerator {
         int x0 = (chunkX << 4) + 8;
         int z0 = (chunkZ << 4) + 8;
         int shift = DeepDark.shift(world);
-        int bottom = WorldHeights.minY(world) < 0 ? WorldHeights.minY(world) : -64;
+        int bottom = DeepDark.minY(world) < 0 ? DeepDark.minY(world) : -64;
         try (AutoCloseable full = WorldHeights.enterFullHeight()) {
             QuietGen.run(world, () -> {
                 for (BlockPos p : entry.patches) {
@@ -123,7 +123,7 @@ public final class DeepDarkFeatures implements IWorldGenerator {
     }
 
     private static boolean inWorld(World world, BlockPos p) {
-        return p.getY() > WorldHeights.minY(world) && p.getY() < WorldHeights.maxYExclusive(world);
+        return p.getY() > DeepDark.minY(world) && p.getY() < DeepDark.maxYExclusive(world);
     }
 
     // ---- MultifaceGrowthFeature
@@ -200,6 +200,19 @@ public final class DeepDarkFeatures implements IWorldGenerator {
         }
         Collections.shuffle(out, random);
         return out;
+    }
+
+    /** Runs the deep dark decoration left waiting once its chunks are loaded together ({@link DeepDarkPending#tick}). */
+    public static final class Waiting {
+        @SubscribeEvent
+        public void worldTick(net.minecraftforge.fml.common.gameevent.TickEvent.WorldTickEvent event) {
+            World world = event.world;
+            if (event.phase != net.minecraftforge.fml.common.gameevent.TickEvent.Phase.END || world.isRemote
+                    || world.provider.getDimension() != 0 || !DeepDarkContent.enabled()) {
+                return;
+            }
+            DeepDarkPending.of(world).tick(world, DeepDarkFeatures::decorate);
+        }
     }
 
     /** No natural spawns in the deep dark. */

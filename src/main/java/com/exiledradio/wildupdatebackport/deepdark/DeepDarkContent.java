@@ -125,6 +125,7 @@ public final class DeepDarkContent {
         }
         MinecraftForge.EVENT_BUS.register(new AncientCityLoot());
         MinecraftForge.EVENT_BUS.register(new DeepDarkFeatures.Spawns());
+        MinecraftForge.EVENT_BUS.register(new DeepDarkFeatures.Waiting());
         GameRegistry.registerWorldGenerator(new DeepDarkFeatures(), 1);
         MapGenStructureIO.registerStructure(AncientCityStructure.Start.class, AncientCityStructure.SAVE_NAME);
         MapGenStructureIO.registerStructureComponent(CityPiece.class, "WUB_AncientCityPiece");

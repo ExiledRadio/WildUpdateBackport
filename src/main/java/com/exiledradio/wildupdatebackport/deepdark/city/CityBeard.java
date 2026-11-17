@@ -1,6 +1,6 @@
 package com.exiledradio.wildupdatebackport.deepdark.city;
 
-import com.exiledradio.backportcore.terrain.WorldHeights;
+import com.exiledradio.wildupdatebackport.deepdark.DeepDark;
 import com.exiledradio.wildupdatebackport.deepdark.DeepDarkContent;
 import com.exiledradio.wildupdatebackport.sculk.BlockSculkVein;
 import net.minecraft.block.material.Material;
@@ -106,7 +106,7 @@ public final class CityBeard {
      */
     static void carve(World world, List<StructureComponent> components, StructureBoundingBox chunk) {
         BlockPos.MutableBlockPos p = new BlockPos.MutableBlockPos();
-        carve(components, chunk, WorldHeights.minY(world) + 1, WorldHeights.maxYExclusive(world) - 1, new Blocks2() {
+        carve(components, chunk, DeepDark.minY(world) + 1, DeepDark.maxYExclusive(world) - 1, new Blocks2() {
             @Override
             public IBlockState get(int x, int y, int z) {
                 return world.getBlockState(p.setPos(x, y, z));

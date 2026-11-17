@@ -21,9 +21,12 @@ import java.util.Map;
  * charges reach into them. 1.12.2 populates a half chunk in, with only the 2 x 2 chunks under the area sure to exist;
  * reaching further generates chunks in the middle of populating (cascading generation), and leaving those tries out
  * loses half the sculk. So each populated chunk's deep dark decoration (the city's sculk patches in its area, then the
- * two features) waits here until the 4 x 4 chunks its reach can touch ({@link #REACH}) are generated, and runs then,
- * whole, from the chunk's own random: on the chunk's populate if they are, else on a later populate nearby. Kept with
- * the world, so a chunk left waiting at the edge of the explored area is decorated when exploring resumes.
+ * two features) waits here until the 4 x 4 chunks its reach can touch ({@link #REACH_BEFORE}, {@link #REACH_AFTER})
+ * are loaded, and runs then, whole, from the chunk's own random: on the chunk's populate if they are, else on a later
+ * populate nearby, else on a server tick once they are ({@link #tick}). Loaded, not just generated: reading a saved
+ * chunk loads it, and a chunk's load populates the unpopulated neighbors it completes, which is cascading generation
+ * all the same (a pregenerator, which unloads as it goes, showed it). Kept with the world, so a chunk left waiting at
+ * the edge of the explored area is decorated when exploring resumes.
  */
 public final class DeepDarkPending extends WorldSavedData {
 
@@ -128,12 +131,40 @@ public final class DeepDarkPending extends WorldSavedData {
         }
     }
 
-    /** @return true when every chunk a populate area's decoration can touch is generated */
+    /** How often, in ticks, {@link #tick} looks for decoration whose chunks have come to be loaded together. */
+    static final int TICK_INTERVAL = 20;
+
+    /**
+     * Runs every waiting decoration whose chunks are all loaded: for those left waiting once populating stops nearby
+     * (a pregenerator unloads chunks as it goes, so their 4 x 4 may only come together when a player comes by).
+     */
+    void tick(World world, Decorator decorator) {
+        if (this.running || this.entries.isEmpty() || world.getTotalWorldTime() % TICK_INTERVAL != 0) {
+            return;
+        }
+        this.running = true;
+        try {
+            for (Long k : new ArrayList<Long>(this.entries.keySet())) {
+                int x = (int) (long) k;
+                int z = (int) (k >> 32);
+                Entry e = this.entries.get(k);
+                if (e != null && ready(world, x, z)) {
+                    this.entries.remove(k);
+                    markDirty();
+                    decorator.decorate(world, x, z, e);
+                }
+            }
+        } finally {
+            this.running = false;
+        }
+    }
+
+    /** @return true when every chunk a populate area's decoration can touch is loaded */
     static boolean ready(World world, int chunkX, int chunkZ) {
         IChunkProvider provider = world.getChunkProvider();
         for (int x = chunkX - REACH_BEFORE; x <= chunkX + REACH_AFTER; x++) {
             for (int z = chunkZ - REACH_BEFORE; z <= chunkZ + REACH_AFTER; z++) {
-                if (!provider.isChunkGeneratedAt(x, z)) {
+                if (provider.getLoadedChunk(x, z) == null) {
                     return false;
                 }
             }

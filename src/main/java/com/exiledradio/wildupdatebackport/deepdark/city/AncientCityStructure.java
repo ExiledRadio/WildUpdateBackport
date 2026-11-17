@@ -149,8 +149,8 @@ public final class AncientCityStructure extends ScatteredStructure {
         @Override
         public void generateStructure(World world, Random random, StructureBoundingBox box) {
             // 1.12.2's MapGenStructure clips each chunk to y 1-255; a world that goes down to -64 builds the whole height.
-            StructureBoundingBox chunk = new StructureBoundingBox(box.minX, Math.min(box.minY, WorldHeights.minY(world)), box.minZ,
-                    box.maxX, Math.max(box.maxY, WorldHeights.maxYExclusive(world) - 1), box.maxZ);
+            StructureBoundingBox chunk = new StructureBoundingBox(box.minX, Math.min(box.minY, DeepDark.minY(world)), box.minZ,
+                    box.maxX, Math.max(box.maxY, DeepDark.maxYExclusive(world) - 1), box.maxZ);
             try (AutoCloseable full = WorldHeights.enterFullHeight()) {
                 QuietGen.run(world, () -> {
                     // Where the chunk generator let the beard into its primer (PrimerBeard), this finds it there.
@@ -184,8 +184,8 @@ public final class AncientCityStructure extends ScatteredStructure {
                 highY = Math.max(highY, b.maxY + 13);
             }
         }
-        lowY = Math.max(lowY, WorldHeights.minY(world));
-        highY = Math.min(highY, WorldHeights.maxYExclusive(world) - 1);
+        lowY = Math.max(lowY, DeepDark.minY(world));
+        highY = Math.min(highY, DeepDark.maxYExclusive(world) - 1);
         BlockPos.MutableBlockPos p = new BlockPos.MutableBlockPos();
         for (int x = area.minX - 1; x <= area.maxX + 1; x++) {
             for (int z = area.minZ - 1; z <= area.maxZ + 1; z++) {
