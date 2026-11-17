@@ -49,6 +49,7 @@ public final class ChangesContent {
         if (ChangesHooks.on(ModConfig.changes.potionColors)) {
             potionColors();
         }
+        RulesEvents.init();
     }
 
     static void golemEggs() {

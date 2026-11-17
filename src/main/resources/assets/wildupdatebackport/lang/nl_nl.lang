@@ -240,6 +240,18 @@ config.wildupdatebackport.changes.netherSpawnLight=Spawnlicht in de Nether
 config.wildupdatebackport.changes.netherSpawnLight.tooltip=Endermen en skeletten spawnen in de Nether bij lichtniveau 7 en lager (1.19.3).
 config.wildupdatebackport.changes.scaffoldingFuel=Steiger als brandstof
 config.wildupdatebackport.changes.scaffoldingFuel.tooltip=Steigers branden in een oven even lang als bamboe (1.19).
+config.wildupdatebackport.changes.leavesWaterlog=Ondergelopen bladeren
+config.wildupdatebackport.changes.leavesWaterlog.tooltip=Alle bladeren kunnen onderlopen (1.19), ook die van de andere backports, zoals azaleabladeren, die anders droog blijven zoals in 1.18. Vereist Fluidlogged API, dat de bladeren van het basisspel zelf al laat onderlopen.
+config.wildupdatebackport.changes.gameRules=Spelregels uit 1.19.3 en 1.19.4
+config.wildupdatebackport.changes.gameRules.tooltip=De spelregels uit 1.19.3 en 1.19.4: blockExplosionDropDecay, mobExplosionDropDecay, tntExplosionDropDecay, snowAccumulationHeight, waterSourceConversion, lavaSourceConversion, globalSoundEvents, commandModificationBlockLimit en doVinesSpread. Met hun standaardwaarden speelt het spel als in 1.12.2, behalve dat elk blok dat TNT opblaast valt.
+config.wildupdatebackport.changes.spawnBlocks=Geen verschijnen op chorus of steigers
+config.wildupdatebackport.changes.spawnBlocks.tooltip=Wezens verschijnen niet op chorusbloemen of steigers (1.19.3).
+config.wildupdatebackport.changes.emptySpawners=Lege spawners
+config.wildupdatebackport.changes.emptySpawners.tooltip=Een spawner die zonder wezen wordt geplaatst, is leeg: geen varken, geen vlammen en niets verschijnt tot er een spawnei op wordt gebruikt (1.19.3).
+config.wildupdatebackport.changes.armorStandNames=Namen van harnasstandaarden
+config.wildupdatebackport.changes.armorStandNames.tooltip=Een hernoemde harnasstandaard houdt zijn naam bij het plaatsen, en het voorwerp houdt die als de standaard wordt gebroken (1.19.4).
+config.wildupdatebackport.changes.mangroveBonusChest=Mangrovestammen in bonuskisten
+config.wildupdatebackport.changes.mangroveBonusChest.tooltip=Bonuskisten kunnen mangrovestammen bevatten (1.19).
 
 # --- deepdark-deepslate ---
 tile.wildupdatebackport.chiseled_deepslate.name=Gebeiteld wrevelsteen
