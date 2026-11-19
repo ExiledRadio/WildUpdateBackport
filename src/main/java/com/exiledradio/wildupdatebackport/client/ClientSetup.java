@@ -75,7 +75,8 @@ public final class ClientSetup {
     }
 
     /**
-     * A test build's client test, reached by name (a release has no test classes): {@code runClient -Pclienttest=darkness},
+     * A test build's client test, reached by name (a release has no test classes): {@code runClient -Pclienttest=darkness}
+     * (or {@code rootscrack}),
      * or a file {@code selftest-darkness} in the game directory (a test instance, whose JVM arguments the launcher keeps).
      */
     private static void clientTest() {
@@ -83,11 +84,16 @@ public final class ClientSetup {
         if (test == null && new java.io.File(net.minecraft.client.Minecraft.getMinecraft().gameDir, "selftest-darkness").isFile()) {
             test = "darkness";
         }
-        if (!"darkness".equals(test)) {
+        String type;
+        if ("darkness".equals(test)) {
+            type = "DarknessClientSelfTest";
+        } else if ("rootscrack".equals(test)) {
+            type = "RootsCrackClientSelfTest";
+        } else {
             return;
         }
         try {
-            Class.forName("com.exiledradio.wildupdatebackport.selftest.DarknessClientSelfTest").getMethod("start").invoke(null);
+            Class.forName("com.exiledradio.wildupdatebackport.selftest." + type).getMethod("start").invoke(null);
         } catch (ReflectiveOperationException e) {
             com.exiledradio.wildupdatebackport.WildUpdateBackport.LOGGER.error("CLIENT SELFTEST DONE pass=0 fail=1: the test classes are not in this build.", e);
         }

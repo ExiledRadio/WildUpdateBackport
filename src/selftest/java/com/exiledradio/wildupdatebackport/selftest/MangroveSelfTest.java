@@ -67,6 +67,20 @@ public final class MangroveSelfTest implements SelfTest {
             c.ok(!selfReferencedParticle(model), model + ": the particle texture is named, not '#' one of the model's own");
         }
 
+        // 0. the roots' destroy crack (RootsCrack): the model's layers all take it, as in 1.19 ------------
+        try {
+            RootsCrackCheck.run(c);
+        } catch (Exception e) {
+            c.fail("roots crack check threw " + e);
+        }
+        IBlockState roots = MangroveContent.roots();
+        if (c.ok(roots != null, "mangrove roots registered for the crack check")) {
+            c.ok(roots instanceof net.minecraftforge.common.property.IExtendedBlockState, "mangrove roots' states carry the crack view property");
+            c.ok(roots.getBlock().getExtendedState(roots, world, BlockPos.ORIGIN) == roots,
+                    "mangrove roots' extended state is the plain state outside the client's crack pass");
+            c.eq(0, roots.getBlock().getMetaFromState(roots), "mangrove roots keep meta 0");
+        }
+
         // 1. registration and metadata ----------------------------------------------------------
         for (String name : BLOCKS) {
             Block b = block(name);
