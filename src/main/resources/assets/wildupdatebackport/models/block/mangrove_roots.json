@@ -3,7 +3,7 @@
   "textures": {
     "side": "wildupdatebackport:block/mangrove_roots_side",
     "top": "wildupdatebackport:block/mangrove_roots_top",
-    "particle": "#side"
+    "particle": "wildupdatebackport:block/mangrove_roots_side"
   },
   "elements": [
     {
