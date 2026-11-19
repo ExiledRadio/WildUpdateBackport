@@ -62,6 +62,11 @@ public final class MangroveSelfTest implements SelfTest {
     public void run(Check c) {
         WorldServer world = c.world;
 
+        // 0. the roots' break particles: 1.12.2 cannot resolve a '#' naming the model's own texture (missingno)
+        for (String model : new String[]{"mangrove_roots", "muddy_mangrove_roots"}) {
+            c.ok(!selfReferencedParticle(model), model + ": the particle texture is named, not '#' one of the model's own");
+        }
+
         // 1. registration and metadata ----------------------------------------------------------
         for (String name : BLOCKS) {
             Block b = block(name);
@@ -290,6 +295,29 @@ public final class MangroveSelfTest implements SelfTest {
         }
         c.ok(trade, "the wandering trader sells a propagule for 5 emeralds, 8 times");
         c.ok(Content.ignored(block("mangrove_door")).contains(BlockDoor.POWERED), "the door's power is left out of its blockstate");
+    }
+
+    /** @return whether the block model's particle is '#x' for a texture x of its own textures (missingno in 1.12.2) */
+    private static boolean selfReferencedParticle(String model) {
+        java.io.InputStream in = MangroveSelfTest.class.getResourceAsStream("/assets/wildupdatebackport/models/block/" + model + ".json");
+        if (in == null) {
+            return true;
+        }
+        try {
+            com.google.gson.JsonObject json = new com.google.gson.JsonParser().parse(
+                    new java.io.InputStreamReader(in, java.nio.charset.StandardCharsets.UTF_8)).getAsJsonObject();
+            if (!json.has("textures")) {
+                return false;
+            }
+            com.google.gson.JsonObject t = json.getAsJsonObject("textures");
+            String p = t.has("particle") ? t.get("particle").getAsString() : "";
+            return p.startsWith("#") && t.has(p.substring(1));
+        } finally {
+            try {
+                in.close();
+            } catch (java.io.IOException ignored) {
+            }
+        }
     }
 
     /** Checks one grown tree: logs, leaves near logs, roots reaching the dirt floor. */

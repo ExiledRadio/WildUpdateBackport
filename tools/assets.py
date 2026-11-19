@@ -154,6 +154,7 @@ def port_model(path, ours=None, textures_from_jar=True):
     * Textures named 'minecraft:block/x' are copied to ours and renamed 'wildupdatebackport:block/x'.
     * A parent 1.12.2 also has (block/cube_all, block/cross, item/generated, ...) is kept as vanilla's;
       any other vanilla parent is ported too, recursively.
+    * A '#name' for one of the model's own textures is replaced by that texture (1.12.2 cannot resolve it).
     @return our model name, 'wildupdatebackport:<ours or path>'
     """
     ours = ours or path
@@ -172,6 +173,17 @@ def port_model(path, ours=None, textures_from_jar=True):
         tns, _, tpath = value.rpartition(":")
         if (tns or "minecraft") == "minecraft" and textures_from_jar:
             data["textures"][key] = vanilla_or_ours(tpath)
+    # 1.12.2's ModelBlock cannot resolve a '#name' naming a texture of the same model ("upward reference": it
+    # becomes missingno, the black and pink particle of 1.19's mangrove_roots, "particle": "#side"). 1.19 can;
+    # here such a reference is replaced by the texture itself. A '#name' the model does not define is the
+    # parent's to resolve and is left alone.
+    textures = data.get("textures", {})
+    for key, value in list(textures.items()):
+        seen = set()
+        while value.startswith("#") and value[1:] in textures and value[1:] not in seen:
+            seen.add(value[1:])
+            value = textures[value[1:]]
+        textures[key] = value
     write_json("models/%s.json" % ours, data)
     return "%s:%s" % (MODID, ours)
 
