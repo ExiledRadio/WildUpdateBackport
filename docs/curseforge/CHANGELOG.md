@@ -1,3 +1,7 @@
+# 1.1.1
+
+*   **Fixed: mangrove roots broke into black and pink particles** instead of their own texture.
+
 # 1.1.0
 
 *   **1.19.3 and 1.19.4 game rules**: blockExplosionDropDecay, mobExplosionDropDecay, tntExplosionDropDecay, snowAccumulationHeight, waterSourceConversion, lavaSourceConversion, globalSoundEvents, commandModificationBlockLimit and doVinesSpread. At their defaults every block TNT blows up drops; the rest plays as 1.12.2.
