@@ -1,3 +1,7 @@
+# 1.1.2
+
+*   **No name tags in ancient city chests** with Game Drops Backport installed, as in 26.1.
+
 # 1.1.1
 
 *   **Fixed: mangrove roots broke into black and pink particles** instead of their own texture.

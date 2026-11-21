@@ -253,7 +253,7 @@ public final class DeepDarkSelfTest implements SelfTest {
         LootTable table = c.world.getLootTableManager().getLootTableFromLocation(AncientCityLoot.CITY);
         c.ok(table.getPool("wildupdatebackport:ancient_city") != null, "the ancient city table has its pool");
         Random random = new Random(5);
-        int chests = 4000, shards = 0, fragments = 0, books = 0, apples = 0, stacks = 0;
+        int chests = 4000, shards = 0, fragments = 0, books = 0, apples = 0, stacks = 0, tags = 0;
         for (int i = 0; i < chests; i++) {
             for (ItemStack s : table.generateLootForPools(random, new LootContext.Builder(c.world).build())) {
                 stacks++;
@@ -266,6 +266,8 @@ public final class DeepDarkSelfTest implements SelfTest {
                     books++;
                 } else if (s.getItem() == Items.GOLDEN_APPLE && s.getMetadata() == 1) {
                     apples++;
+                } else if (s.getItem() == Items.NAME_TAG) {
+                    tags++;
                 }
             }
         }
@@ -276,6 +278,8 @@ public final class DeepDarkSelfTest implements SelfTest {
         c.ok(Math.abs(books / (double) chests - wantBooks) < 0.03, "Swift Sneak books per chest " + books / (double) chests + " (1.19: " + wantBooks + ")");
         c.ok(Math.abs(apples / (double) chests - wantApples) < 0.025, "enchanted golden apples per chest " + apples / (double) chests);
         c.ok(stacks / (double) chests <= 10.0D, "at most 10 rolls");
+        boolean gameDrops = net.minecraftforge.fml.common.Loader.isModLoaded("gamedropsbackport");
+        c.ok(gameDrops ? tags == 0 : tags > 0, "name tags in ancient city chests only without Game Drops (26.1): " + tags);
         LootTable ice = c.world.getLootTableManager().getLootTableFromLocation(AncientCityLoot.ICE_BOX);
         int snow = 0;
         for (int i = 0; i < 200; i++) {

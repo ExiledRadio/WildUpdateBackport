@@ -65,7 +65,10 @@ public final class AncientCityLoot {
         add(e, Owners.item(Owners.CAVES_AND_CLIFFS, "music_disc_otherside"), "music_disc_otherside", 1);
         add(e, Items.COMPASS, 2, 0);
         add(e, item("sculk_catalyst"), "sculk_catalyst", 2, count(1, 2));
-        add(e, Items.NAME_TAG, 2, 0);
+        if (!Owners.present(Owners.GAME_DROPS)) {
+            // 26.1 took the name tag out of the ancient city's chests: gone once Game Drops Backport (26.x) is installed.
+            add(e, Items.NAME_TAG, 2, 0);
+        }
         add(e, Items.DIAMOND_HOE, 2, 0, new SetDamage(NONE, new RandomValueRange(0.8F, 1.0F)), levels(30, 50));
         add(e, Items.LEAD, 2, 0);
         add(e, Items.DIAMOND_HORSE_ARMOR, 2, 0);

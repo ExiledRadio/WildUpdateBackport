@@ -33,6 +33,8 @@ public final class Owners {
 
     /** 1.13: kelp, seagrass and the water plants' technique. */
     public static final String UPDATE_AQUATIC = "updateaquaticbackport";
+    /** Game Drops Backport (26.x): 26.1 took name tags out of the ancient city's chests. */
+    public static final String GAME_DROPS = "gamedropsbackport";
 
     private Owners() {
     }
