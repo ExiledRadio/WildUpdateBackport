@@ -93,8 +93,6 @@ item.wildupdatebackport.jungle_chest_boat.name=Bote da Selva com Baú
 item.wildupdatebackport.acacia_chest_boat.name=Bote de Acácia com Baú
 item.wildupdatebackport.dark_oak_chest_boat.name=Bote de Carvalho Escuro com Baú
 item.wildupdatebackport.mangrove_chest_boat.name=Bote de Mangue com Baú
-entity.wildupdatebackport.boat.name=Bote
-entity.wildupdatebackport.chest_boat.name=Bote com Baú
 
 # --- sculk ---
 tile.wildupdatebackport.sculk.name=Sculk

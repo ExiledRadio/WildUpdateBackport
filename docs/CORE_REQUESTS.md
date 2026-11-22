@@ -128,6 +128,10 @@ per `EnumFacing.getIndex()`) is the same layout Core's would use.
 
 ## 4. Wood types for boats and signs
 
+**Boats: done** in Core 1.4.4 (`boat/`: `BoatWood`, `backportcore:boat` and `chest_boat`, `ItemWoodBoat`,
+`Boats.renamed`; branch `core-boats`). Our mangrove boat and the seven chest boats are Core's entities; ours saved
+before load as Core's. Signs: still open.
+
 **Why**: new woods arrive in four updates (mangrove 1.19; cherry and bamboo 1.20; pale oak 1.21.4).
 1.12.2's boat type enum indexes a texture array, so no mod can add a wood to vanilla's boat; each needs
 its own boat, chest boat and sign entity and renderer. One registry keeps their save format and their

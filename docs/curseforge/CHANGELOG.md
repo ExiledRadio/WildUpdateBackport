@@ -1,5 +1,7 @@
-# 1.1.3
+# 1.1.4
 
+*   **Boats are now Backport Core's**, one boat and one boat with chest for every backport's wood (needs Backport Core 1.4.4). Mangrove boats and every boat with chest look, float, steer and drop as before, and boats already in your worlds are kept, with their wood, the chest's contents and whoever rides them.
+*   **A boat with chest broken by a creative player now drops what was inside**, as in 1.19.
 *   **Golden dandelions lock tadpoles** with Game Drops Backport, as in 26.1: a locked tadpole stops growing and won't eat slimeballs, and a bucket of tadpole keeps the lock. Use another golden dandelion to let it grow again.
 
 Needs Backport Core 1.4.4 or newer.

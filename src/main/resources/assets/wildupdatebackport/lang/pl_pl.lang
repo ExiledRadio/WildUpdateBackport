@@ -93,8 +93,6 @@ item.wildupdatebackport.jungle_chest_boat.name=Tropikalna łódka ze skrzynią
 item.wildupdatebackport.acacia_chest_boat.name=Akacjowa łódka ze skrzynią
 item.wildupdatebackport.dark_oak_chest_boat.name=Ciemnodębowa łódka ze skrzynią
 item.wildupdatebackport.mangrove_chest_boat.name=Namorzynowa łódka ze skrzynią
-entity.wildupdatebackport.boat.name=Łódka
-entity.wildupdatebackport.chest_boat.name=Łódka ze skrzynią
 
 # --- sculk ---
 tile.wildupdatebackport.sculk.name=Sculk

@@ -93,8 +93,6 @@ item.wildupdatebackport.jungle_chest_boat.name=儲物箱叢林木船
 item.wildupdatebackport.acacia_chest_boat.name=儲物箱相思木船
 item.wildupdatebackport.dark_oak_chest_boat.name=儲物箱黑橡木船
 item.wildupdatebackport.mangrove_chest_boat.name=儲物箱紅樹林木船
-entity.wildupdatebackport.boat.name=船
-entity.wildupdatebackport.chest_boat.name=儲物箱船
 
 # --- sculk ---
 tile.wildupdatebackport.sculk.name=伏聆

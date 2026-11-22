@@ -92,8 +92,6 @@ item.wildupdatebackport.jungle_chest_boat.name=Jungle Boat with Chest
 item.wildupdatebackport.acacia_chest_boat.name=Acacia Boat with Chest
 item.wildupdatebackport.dark_oak_chest_boat.name=Dark Oak Boat with Chest
 item.wildupdatebackport.mangrove_chest_boat.name=Mangrove Boat with Chest
-entity.wildupdatebackport.boat.name=Boat
-entity.wildupdatebackport.chest_boat.name=Boat with Chest
 
 # --- sculk ---
 tile.wildupdatebackport.sculk.name=Sculk

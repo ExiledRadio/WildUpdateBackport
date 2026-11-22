@@ -93,8 +93,6 @@ item.wildupdatebackport.jungle_chest_boat.name=Barca di mogano con baule
 item.wildupdatebackport.acacia_chest_boat.name=Barca di acacia con baule
 item.wildupdatebackport.dark_oak_chest_boat.name=Barca di quercia scura con baule
 item.wildupdatebackport.mangrove_chest_boat.name=Barca di mangrovia con baule
-entity.wildupdatebackport.boat.name=Barca
-entity.wildupdatebackport.chest_boat.name=Barca con baule
 
 # --- sculk ---
 tile.wildupdatebackport.sculk.name=Sculk

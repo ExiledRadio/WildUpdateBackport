@@ -93,8 +93,6 @@ item.wildupdatebackport.jungle_chest_boat.name=チェスト付きのジャング
 item.wildupdatebackport.acacia_chest_boat.name=チェスト付きのアカシアのボート
 item.wildupdatebackport.dark_oak_chest_boat.name=チェスト付きのダークオークのボート
 item.wildupdatebackport.mangrove_chest_boat.name=チェスト付きのマングローブのボート
-entity.wildupdatebackport.boat.name=ボート
-entity.wildupdatebackport.chest_boat.name=チェスト付きのボート
 
 # --- sculk ---
 tile.wildupdatebackport.sculk.name=スカルク
