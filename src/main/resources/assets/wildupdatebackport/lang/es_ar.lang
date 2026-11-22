@@ -93,8 +93,6 @@ item.wildupdatebackport.jungle_chest_boat.name=Bote de jungla con cofre
 item.wildupdatebackport.acacia_chest_boat.name=Bote de acacia con cofre
 item.wildupdatebackport.dark_oak_chest_boat.name=Bote de roble oscuro con cofre
 item.wildupdatebackport.mangrove_chest_boat.name=Bote de mangle con cofre
-entity.wildupdatebackport.boat.name=Bote
-entity.wildupdatebackport.chest_boat.name=Bote con cofre
 
 # --- sculk ---
 tile.wildupdatebackport.sculk.name=Sculk

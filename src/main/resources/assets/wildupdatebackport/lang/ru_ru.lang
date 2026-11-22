@@ -93,8 +93,6 @@ item.wildupdatebackport.jungle_chest_boat.name=Грузовая лодка из 
 item.wildupdatebackport.acacia_chest_boat.name=Акациевая грузовая лодка
 item.wildupdatebackport.dark_oak_chest_boat.name=Грузовая лодка из тёмного дуба
 item.wildupdatebackport.mangrove_chest_boat.name=Мангровая грузовая лодка
-entity.wildupdatebackport.boat.name=Лодка
-entity.wildupdatebackport.chest_boat.name=Грузовая лодка
 
 # --- sculk ---
 tile.wildupdatebackport.sculk.name=Скалк

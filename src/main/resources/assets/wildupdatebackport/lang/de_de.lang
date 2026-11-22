@@ -93,8 +93,6 @@ item.wildupdatebackport.jungle_chest_boat.name=Tropenholztruhenboot
 item.wildupdatebackport.acacia_chest_boat.name=Akazienholztruhenboot
 item.wildupdatebackport.dark_oak_chest_boat.name=Schwarzeichenholztruhenboot
 item.wildupdatebackport.mangrove_chest_boat.name=Mangrovenholztruhenboot
-entity.wildupdatebackport.boat.name=Boot
-entity.wildupdatebackport.chest_boat.name=Truhenboot
 
 # --- sculk ---
 tile.wildupdatebackport.sculk.name=Sculk

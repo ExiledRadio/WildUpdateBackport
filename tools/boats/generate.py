@@ -18,7 +18,6 @@ for w in WOODS:
     assets.port_item("%s_chest_boat" % w)
     assets.texture("entity/chest_boat/%s" % w)
     lines.append("item.%s.%s_chest_boat.name=%s" % (M, w, assets.name("item.minecraft.%s_chest_boat" % w)))
-lines.append("entity.%s.boat.name=%s" % (M, assets.name("entity.minecraft.boat")))
-lines.append("entity.%s.chest_boat.name=%s" % (M, assets.name("entity.minecraft.chest_boat")))
+# The boat entities are Backport Core's (its boat/), named there.
 assets.merge_lang("boats", lines)
 print("boats: %d lang lines" % len(lines))

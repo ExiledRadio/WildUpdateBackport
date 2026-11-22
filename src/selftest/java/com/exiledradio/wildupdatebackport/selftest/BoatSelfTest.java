@@ -1,9 +1,11 @@
 package com.exiledradio.wildupdatebackport.selftest;
 
-import com.exiledradio.wildupdatebackport.boat.BoatWood;
-import com.exiledradio.wildupdatebackport.boat.EntityWoodBoat;
-import com.exiledradio.wildupdatebackport.boat.EntityWoodChestBoat;
-import com.exiledradio.wildupdatebackport.boat.ItemWoodBoat;
+import com.exiledradio.backportcore.boat.BoatWood;
+import com.exiledradio.backportcore.boat.EntityWoodBoat;
+import com.exiledradio.backportcore.boat.EntityWoodChestBoat;
+import com.exiledradio.backportcore.boat.ItemWoodBoat;
+import com.exiledradio.backportcore.boat.Boats;
+import com.exiledradio.wildupdatebackport.boat.BoatContent;
 import com.exiledradio.wildupdatebackport.common.Owners;
 
 import net.minecraft.entity.EntityList;
@@ -65,7 +67,13 @@ public final class BoatSelfTest implements SelfTest {
         boat.setInventorySlotContents(3, new ItemStack(Items.DIAMOND, 5));
         NBTTagCompound tag = new NBTTagCompound();
         boat.writeToNBTOptional(tag);
-        c.eq("wildupdatebackport:chest_boat", tag.getString("id"), "the chest boat saves under its entity name");
+        c.eq("backportcore:chest_boat", tag.getString("id"), "the chest boat saves as Backport Core's");
+        c.eq("wildupdatebackport:mangrove", tag.getString("Wood"), "with the wood's id");
+        c.eq(Boats.BOAT, Boats.renamedTo(new net.minecraft.util.ResourceLocation("wildupdatebackport", "boat")), "our old boats load as Core's");
+        c.eq(Boats.CHEST_BOAT, Boats.renamedTo(new net.minecraft.util.ResourceLocation("wildupdatebackport", "chest_boat")), "our old chest boats load as Core's");
+        c.eq(8, BoatContent.items().size(), "eight items: the mangrove boat and seven chest boats");
+        c.eq(Items.BOAT, BoatWood.get("minecraft:oak").boatItem(), "an oak chest boat is made from vanilla's boat");
+        c.ok(BoatWood.get("minecraft:oak").chestBoatTexture() != null && "wildupdatebackport".equals(BoatWood.get("minecraft:oak").chestBoatTexture().getNamespace()), "vanilla woods' chest boats wear our 1.19 textures");
         EntityWoodChestBoat back = (EntityWoodChestBoat) EntityList.createEntityFromNBT(tag, world);
         c.ok(back != null && back.getWood() == mangrove, "the wood survives saving");
         c.ok(back != null && back.getStackInSlot(3).getItem() == Items.DIAMOND && back.getStackInSlot(3).getCount() == 5,

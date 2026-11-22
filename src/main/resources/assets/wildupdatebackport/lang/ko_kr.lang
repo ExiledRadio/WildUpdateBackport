@@ -93,8 +93,6 @@ item.wildupdatebackport.jungle_chest_boat.name=상자가 실린 정글나무 보
 item.wildupdatebackport.acacia_chest_boat.name=상자가 실린 아카시아나무 보트
 item.wildupdatebackport.dark_oak_chest_boat.name=상자가 실린 짙은 참나무 보트
 item.wildupdatebackport.mangrove_chest_boat.name=상자가 실린 맹그로브나무 보트
-entity.wildupdatebackport.boat.name=보트
-entity.wildupdatebackport.chest_boat.name=상자가 실린 보트
 
 # --- sculk ---
 tile.wildupdatebackport.sculk.name=스컬크

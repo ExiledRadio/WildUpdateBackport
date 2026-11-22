@@ -93,8 +93,6 @@ item.wildupdatebackport.jungle_chest_boat.name=Тропічний човен з�
 item.wildupdatebackport.acacia_chest_boat.name=Акацієвий човен зі скринею
 item.wildupdatebackport.dark_oak_chest_boat.name=Темно-дубовий човен зі скринею
 item.wildupdatebackport.mangrove_chest_boat.name=Мангровий човен зі скринею
-entity.wildupdatebackport.boat.name=Човен
-entity.wildupdatebackport.chest_boat.name=Човен зі скринею
 
 # --- sculk ---
 tile.wildupdatebackport.sculk.name=Скалк

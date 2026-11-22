@@ -93,8 +93,6 @@ item.wildupdatebackport.jungle_chest_boat.name=Oerwoudhouten boot met kist
 item.wildupdatebackport.acacia_chest_boat.name=Acaciahouten boot met kist
 item.wildupdatebackport.dark_oak_chest_boat.name=Donkere eikenhouten boot met kist
 item.wildupdatebackport.mangrove_chest_boat.name=Mangrovehouten boot met kist
-entity.wildupdatebackport.boat.name=Boot
-entity.wildupdatebackport.chest_boat.name=Boot met kist
 
 # --- sculk ---
 tile.wildupdatebackport.sculk.name=Sculk

@@ -93,8 +93,6 @@ item.wildupdatebackport.jungle_chest_boat.name=丛林木运输船
 item.wildupdatebackport.acacia_chest_boat.name=金合欢木运输船
 item.wildupdatebackport.dark_oak_chest_boat.name=深色橡木运输船
 item.wildupdatebackport.mangrove_chest_boat.name=红树木运输船
-entity.wildupdatebackport.boat.name=船
-entity.wildupdatebackport.chest_boat.name=运输船
 
 # --- sculk ---
 tile.wildupdatebackport.sculk.name=幽匿块

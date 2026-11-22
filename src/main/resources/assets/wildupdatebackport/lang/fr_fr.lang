@@ -93,8 +93,6 @@ item.wildupdatebackport.jungle_chest_boat.name=Bateau de stockage en acajou
 item.wildupdatebackport.acacia_chest_boat.name=Bateau de stockage en acacia
 item.wildupdatebackport.dark_oak_chest_boat.name=Bateau de stockage en chêne noir
 item.wildupdatebackport.mangrove_chest_boat.name=Bateau de stockage en palétuvier
-entity.wildupdatebackport.boat.name=Bateau
-entity.wildupdatebackport.chest_boat.name=Bateau de stockage
 
 # --- sculk ---
 tile.wildupdatebackport.sculk.name=Sculk

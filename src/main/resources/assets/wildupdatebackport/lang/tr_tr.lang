@@ -93,8 +93,6 @@ item.wildupdatebackport.jungle_chest_boat.name=Sandıklı Orman Ağacı Tekne
 item.wildupdatebackport.acacia_chest_boat.name=Sandıklı Akasya Tekne
 item.wildupdatebackport.dark_oak_chest_boat.name=Sandıklı Koyu Meşe Tekne
 item.wildupdatebackport.mangrove_chest_boat.name=Sandıklı Mangrov Tekne
-entity.wildupdatebackport.boat.name=Tekne
-entity.wildupdatebackport.chest_boat.name=Sandıklı Tekne
 
 # --- sculk ---
 tile.wildupdatebackport.sculk.name=Sculk
