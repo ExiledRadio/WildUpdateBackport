@@ -88,6 +88,8 @@ public final class ClientSetup {
             type = "DarknessClientSelfTest";
         } else if ("rootscrack".equals(test)) {
             type = "RootsCrackClientSelfTest";
+        } else if ("eggs".equals(test)) {
+            type = "EggsClientSelfTest";
         } else {
             return;
         }

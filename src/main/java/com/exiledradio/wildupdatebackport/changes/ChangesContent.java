@@ -39,6 +39,8 @@ public final class ChangesContent {
             for (Object[] egg : GOLEM_EGGS) {
                 CreativePlacement.placeSpawnEgg(new ResourceLocation("minecraft", (String) egg[0]), (String) egg[3]);
             }
+            // In the egg list before the client builds its textures, so Core's per-mob egg textures see them.
+            golemEggs();
         }
     }
 
@@ -60,7 +62,11 @@ public final class ChangesContent {
             if (entry == null || entry.getEgg() != null || EntityList.ENTITY_EGGS.containsKey(id)) {
                 continue;
             }
-            entry.setEgg(new EntityList.EntityEggInfo(id, (Integer) egg[1], (Integer) egg[2]));
+            EntityList.EntityEggInfo info = new EntityList.EntityEggInfo(id, (Integer) egg[1], (Integer) egg[2]);
+            entry.setEgg(info);
+            // Forge copies an entry's egg into ENTITY_EGGS only when the entry is registered, long before init; the
+            // egg list (colors, Core's per-mob egg textures, creative listing) reads ENTITY_EGGS.
+            EntityList.ENTITY_EGGS.put(id, info);
         }
     }
 
