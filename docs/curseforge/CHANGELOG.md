@@ -1,3 +1,9 @@
+# 1.1.3
+
+*   **Golden dandelions lock tadpoles** with Game Drops Backport, as in 26.1: a locked tadpole stops growing and won't eat slimeballs, and a bucket of tadpole keeps the lock. Use another golden dandelion to let it grow again.
+
+Needs Backport Core 1.4.4 or newer.
+
 # 1.1.2
 
 *   **No name tags in ancient city chests** with Game Drops Backport installed, as in 26.1.

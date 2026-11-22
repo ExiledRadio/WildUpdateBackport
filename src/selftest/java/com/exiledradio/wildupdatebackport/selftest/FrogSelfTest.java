@@ -494,6 +494,21 @@ public final class FrogSelfTest implements SelfTest {
         t.setAge(10000);
         t.processInteract(player, EnumHand.MAIN_HAND);
         c.eq(11400, t.getAge(), "(14000 left -> 1400 more)");
+        // 26.1's age lock (Core's AgeLockable; Game Drops Backport holds it): no food while locked, the bucket keeps it.
+        c.ok(t instanceof com.exiledradio.backportcore.mechanics.AgeLockable, "a tadpole is AgeLockable");
+        c.ok(t.isBaby() && t.startAge() == 0, "always a baby, starting at age 0");
+        t.getEntityData().setBoolean(com.exiledradio.backportcore.mechanics.AgeLockable.LOCKED, true);
+        t.processInteract(player, EnumHand.MAIN_HAND);
+        c.eq(11400, t.getAge(), "a locked tadpole is not fed");
+        c.eq(1, player.getHeldItem(EnumHand.MAIN_HAND).getCount(), "and the slimeball stays");
+        ItemStack lockedBucket = new ItemStack(Items.WATER_BUCKET);
+        t.saveToBucketTag(lockedBucket);
+        c.ok(lockedBucket.getTagCompound().getBoolean("AgeLocked"), "its bucket keeps the lock");
+        EntityTadpole poured = new EntityTadpole(world);
+        poured.loadFromBucketTag(lockedBucket.getTagCompound());
+        c.ok(com.exiledradio.backportcore.mechanics.AgeLockable.isLocked(poured), "and pours it out locked");
+        t.getEntityData().removeTag(com.exiledradio.backportcore.mechanics.AgeLockable.LOCKED);
+        player.setHeldItem(EnumHand.MAIN_HAND, new ItemStack(Items.SLIME_BALL, 2));
         // Following a slimeball.
         tick(world, 1, null, t);
         c.ok(t.memory.temptingPlayer == null, "a player far away tempts nothing");

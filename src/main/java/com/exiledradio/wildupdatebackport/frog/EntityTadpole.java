@@ -1,5 +1,6 @@
 package com.exiledradio.wildupdatebackport.frog;
 
+import com.exiledradio.backportcore.mechanics.AgeLockable;
 import com.exiledradio.wildupdatebackport.common.Owners;
 
 import net.minecraft.entity.MoverType;
@@ -35,9 +36,12 @@ import javax.annotation.Nullable;
  *       the time left.</li>
  *   <li>A water bucket picks it up into a bucket of tadpole that keeps its age. It never despawns and drops
  *       no experience.</li>
+ *   <li>26.1's age lock ({@link AgeLockable}, held by Game Drops Backport's golden dandelion): a locked tadpole
+ *       stays at its age (the lock puts it back to 0), refuses slimeballs, and its bucket keeps the lock
+ *       ({@code AgeLocked}), as 26.3's {@code Tadpole}.</li>
  * </ul>
  */
-public class EntityTadpole extends EntityCreature implements IAnimals {
+public class EntityTadpole extends EntityCreature implements IAnimals, AgeLockable {
 
     public static final float WIDTH = 0.4F;
     public static final float HEIGHT = 0.3F;
@@ -109,16 +113,30 @@ public class EntityTadpole extends EntityCreature implements IAnimals {
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(1.0D);
     }
 
+    @Override
     public int getAge() {
         return this.age;
     }
 
     /** Sets the age, growing into a frog at {@link #TICKS_TO_BE_FROG}. */
+    @Override
     public void setAge(int age) {
         this.age = age;
         if (this.age >= TICKS_TO_BE_FROG) {
             growUp();
         }
+    }
+
+    /** A tadpole is always a baby the age lock can hold. */
+    @Override
+    public boolean isBaby() {
+        return true;
+    }
+
+    /** 26.3's {@code Tadpole.setAgeLockedData}: the lock puts its age back to 0. */
+    @Override
+    public int startAge() {
+        return 0;
     }
 
     public int ticksLeftUntilAdult() {
@@ -184,7 +202,8 @@ public class EntityTadpole extends EntityCreature implements IAnimals {
     @Override
     public boolean processInteract(EntityPlayer player, EnumHand hand) {
         ItemStack stack = player.getHeldItem(hand);
-        if (FrogMemory.tempts(stack)) {
+        // 26.3: a locked tadpole is not fed (the slimeball stays in the hand).
+        if (FrogMemory.tempts(stack) && !AgeLockable.isLocked(this)) {
             if (!player.capabilities.isCreativeMode) {
                 stack.shrink(1);
             }
@@ -251,6 +270,9 @@ public class EntityTadpole extends EntityCreature implements IAnimals {
         }
         tag.setFloat("Health", this.getHealth());
         tag.setInteger("Age", this.age);
+        if (AgeLockable.isLocked(this)) {
+            tag.setBoolean("AgeLocked", true);
+        }
         stack.setTagCompound(tag);
     }
 
@@ -276,6 +298,9 @@ public class EntityTadpole extends EntityCreature implements IAnimals {
         }
         if (tag.hasKey("Age")) {
             this.setAge(tag.getInteger("Age"));
+        }
+        if (tag.getBoolean("AgeLocked")) {
+            this.getEntityData().setBoolean(AgeLockable.LOCKED, true);
         }
     }
 
