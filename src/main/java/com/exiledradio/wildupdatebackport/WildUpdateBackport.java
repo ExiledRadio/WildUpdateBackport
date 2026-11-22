@@ -31,6 +31,8 @@ import org.apache.logging.log4j.Logger;
         acceptedMinecraftVersions = "[1.12.2]",
         // Loaded before quark, so recipes are listed first: its trapdoor recipe takes any planks, and listed
         // ahead of this mod's it turned this mod's planks into oak trapdoors instead of their own.
+        // Newer releases, read by Forge's update check and Backport Core's settings screen.
+        updateJSON = "https://raw.githubusercontent.com/ExiledRadio/BackportCore/main/updates/wildupdatebackport.json",
         dependencies = "required-after:backportcore@[1.4.4,);before:quark"
 )
 public final class WildUpdateBackport {
