@@ -80,8 +80,14 @@ public final class LookFeelSelfTest implements SelfTest {
                 {"textures/gui/title/mojangstudios.png", null},
                 {"textures/gui/widgets.png", "256x256"},
                 {"textures/gui/checkbox.png", "64x64"},
+                // 1.19.3's creative tab sprites (Core's ModernTabs draws them; Core 1.4.5 and later).
+                {"textures/gui/container/creative_inventory/tabs.png", "256x256"},
         };
         for (String[] a : assets) {
+            if (a[0].endsWith("tabs.png") && !com.exiledradio.wildupdatebackport.lookfeel.LookAndFeel.coreDrawsModernTabs()) {
+                c.ok(Presentation.asset(a[0]) == null, "an older Core keeps 1.12.2's tab sprites");
+                continue;
+            }
             ResourceLocation src = Presentation.asset(a[0]);
             c.eq(new ResourceLocation(ID, a[0]), src, "Core serves vanilla's " + a[0] + " from 1.19's");
             int[] size;

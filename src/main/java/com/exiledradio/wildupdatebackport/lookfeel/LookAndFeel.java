@@ -24,7 +24,9 @@ import net.minecraft.util.ResourceLocation;
  *   <li>F3 + F (cycle render distance) removed in 1.19 (22w11a); the F3 screen's "Allocation rate" line (client,
  *       {@code lookfeel.client.LookAndFeelClient});</li>
  *   <li>Darkness Pulsing (22w12a, Accessibility Settings): the scale the warden stream's Darkness reads;</li>
- *   <li>1.19.3: Panorama Scroll Speed is Core's own option and shows once 1.19.3 is installed;</li>
+ *   <li>1.19.3: Panorama Scroll Speed is Core's own option and shows once 1.19.3 is installed; 1.19.3's creative tabs
+ *       (Building Blocks, Colored Blocks, Natural Blocks ...) are Core's too, drawn with 1.19.3's {@code tabs.png}
+ *       from this mod;</li>
  *   <li>1.19.4: Auto-Jump off by default (23w03a), applied once per instance; Damage Tilt (23w06a) and Glint Speed and
  *       Glint Strength (23w05a, also on Video Settings), through patches P1 to P3 ({@code docs/PATCHES.md});</li>
  *   <li>vanilla's own text as 1.19.4 words it ({@code vanilla_text/}, Mojang's own translations).</li>
@@ -81,6 +83,9 @@ public final class LookAndFeel {
             ID + ":music/game/swamp/labyrinthine",
     };
 
+    /** 1.19.3's creative tab sprites (vanilla's path; the copy in this mod's assets is the same path). */
+    static final String CREATIVE_TABS = "textures/gui/container/creative_inventory/tabs.png";
+
     private static boolean registered;
 
     private LookAndFeel() {
@@ -125,8 +130,15 @@ public final class LookAndFeel {
         v119.option(DARKNESS.after("netherupdatebackport:fov_effect_scale"));
 
         Presentation.version("1.19.1").addSplashes(new ResourceLocation(ID, "texts/splashes_added_1_19_1.txt"));
-        // 1.19.3: Panorama Scroll Speed is Backport Core's (it shows from 1.19.3 on).
-        Presentation.version("1.19.3").addSplashes(new ResourceLocation(ID, "texts/splashes_added_1_19_3.txt"));
+        // 1.19.3: Panorama Scroll Speed is Backport Core's (it shows from 1.19.3 on), and so are 1.19.3's creative tabs
+        // (Core's creative.client.ModernTabs, patch P47); their sprites are 1.19.3's tabs.png, seven 26-pixel tabs a row
+        // where 1.12.2's had six 28-pixel ones.
+        Contribution v1193 = Presentation.version("1.19.3").addSplashes(new ResourceLocation(ID, "texts/splashes_added_1_19_3.txt"));
+        if (coreDrawsModernTabs()) {
+            // Only a Core that lays the tabs out 26 wide (1.4.5 and later): an older one would draw these sprites at
+            // 1.12.2's 28.
+            v1193.replaceAsset(CREATIVE_TABS, new ResourceLocation(ID, CREATIVE_TABS));
+        }
 
         // 1.19.4: Video Settings ends ... Entity Shadows, Distortion Effects, Entity Distance, FOV Effects, Autosave
         // Indicator, Glint Speed, Glint Strength: 1.12.2 has no autosave indicator, so the two go to the end there.
@@ -137,6 +149,11 @@ public final class LookAndFeel {
                 .option(DAMAGE_TILT.after(DARKNESS.id()))
                 .option(GLINT_SPEED.after(DAMAGE_TILT.id()))
                 .option(GLINT_STRENGTH.after(GLINT_SPEED.id()));
+    }
+
+    /** @return true when the installed Backport Core has 1.19.3's creative tabs (1.4.5 and later) */
+    public static boolean coreDrawsModernTabs() {
+        return LookAndFeel.class.getResource("/com/exiledradio/backportcore/creative/client/ModernTabs.class") != null;
     }
 
     /** @return Darkness Pulsing, 0 to 1 (1.19.4's {@code darknessEffectScale().get()}) */

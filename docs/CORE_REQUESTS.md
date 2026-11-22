@@ -318,6 +318,10 @@ one tab, recolored and narrower tab icons, the "Operator Utilities" tab for comm
 jigsaw, debug stick when the option is on and the player may use them), search grouped by tab. `creativeOrder` sorts
 inside 1.12.2's tabs only; this needs Core to own the tab list. The tab names 1.19.3 gave ("Redstone Blocks",
 "Tools & Utilities") are left out of our vanilla text until the tabs hold what those names say.
+**Done** in Backport Core 1.4.5 (`creative.client.ModernTabs`, patch P47), with Operator Items Tab on Controls: this
+mod supplies 1.19.3's `tabs.png` (`lookfeel.LookAndFeel`). Core's tabs use their own lang keys, so 1.12.2's
+`itemGroup.redstone` and `itemGroup.tools` keep their words. Not done: the search tab keeps 1.12.2's order (1.19.3's
+lists the tabs' items in tab order); 1.12.2 has no jigsaw or debug stick for Operator Utilities.
 
 **Lf-4. Screens, 1.19.x.**
 - *Create New World* (1.19.4, 23w05a): three tabs, Game / World / More, Ctrl+Tab and Ctrl+number switching, the save
