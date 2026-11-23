@@ -87,6 +87,7 @@ public final class SwampContent {
         biome.setRegistryName(Content.id(NAME));
         event.getRegistry().register(biome);
         BiomeDictionary.addTypes(biome, BiomeDictionary.Type.WET, BiomeDictionary.Type.SWAMP);
+        rtgTerrain(biome, "SWAMP");
         entry = new BiomeManager.BiomeEntry(biome, WEIGHT);
         applyPlacement();
     }
@@ -266,6 +267,20 @@ public final class SwampContent {
             return Boolean.TRUE.equals(sourcePlaces.invoke(generator, world, feature));
         } catch (ReflectiveOperationException | RuntimeException e) {
             return false;
+        }
+    }
+
+    /**
+     * Realistic Terrain Generation builds only biomes registered with it, and makes any other one plains. Backport
+     * Core's {@code RtgBiomes} (1.4.5) registers this biome on the terrain of the vanilla biome named here; reached by
+     * name, so with an older Core the biome simply stays RTG's patch biome in RTG worlds.
+     */
+    private static void rtgTerrain(Biome biome, String template) {
+        try {
+            Class.forName("com.exiledradio.backportcore.terrain.RtgBiomes").getMethod("register", Biome.class, String.class)
+                    .invoke(null, biome, template);
+        } catch (ReflectiveOperationException | LinkageError e) {
+            // A Backport Core without RtgBiomes.
         }
     }
 }
