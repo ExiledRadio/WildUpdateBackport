@@ -1,5 +1,6 @@
 # 1.1.2
 
+*   **Realistic Terrain Generation** (and RTG Unofficial): mangrove swamps now generate in RTG worlds, on RTG's swamp terrain. RTG turned them into plains. Needs Backport Core 1.4.5.
 *   **1.19.3's creative tabs**: Building Blocks, Colored Blocks, Natural Blocks, Functional Blocks, Redstone Blocks, Tools & Utilities, Combat, Food & Drinks, Ingredients and Spawn Eggs, with 1.19.3's tab sprites. Operator Utilities shows with Operator Items Tab in Controls. Needs Backport Core 1.4.5; with an older Core the tabs stay 1.12.2's.
 *   **Boats are now Backport Core's**, one boat and one boat with chest for every backport's wood. Mangrove boats and boats with chest look, float, steer and drop as before, and boats already in your worlds are kept, with their wood, the chest's contents and whoever rides them.
 *   **A boat with chest broken by a creative player now drops what was inside**, as in 1.19.
