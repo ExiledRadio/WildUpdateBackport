@@ -135,6 +135,8 @@ public final class DeepDarkContent {
                         ? new AncientCityStructure() : null);
         StructureLocate.scattered("minecraft:ancient_cities", Structures.ANCIENT_CITY, null, "minecraft:ancient_city");
         MinecraftForge.TERRAIN_GEN_BUS.register(new AncientCityStructure.PrimerBeard());
+        // 1.19's carver lava level around a city (springs and lakes: patches P19 and P20).
+        MinecraftForge.TERRAIN_GEN_BUS.register(new com.exiledradio.wildupdatebackport.deepdark.city.CityLiquids.Carvers());
         // 1.19's terrain_adaptation beard_box: a terrain that adapts to structures carves the city's cavern.
         TerrainAdaptation.register(Structures.ANCIENT_CITY, TerrainAdaptation.Kind.BEARD_BOX, (world, cx, cz, out) -> {
             ScatteredStructure s = ScatteredStructure.of(world, Structures.ANCIENT_CITY);

@@ -30,6 +30,7 @@ public final class WildUpdateCore implements IFMLLoadingPlugin {
                 SwampTransformer.class.getName(),
                 ShadersTransformer.class.getName(),
                 RulesTransformer.class.getName(),
+                DeepDarkTransformer.class.getName(),
         };
     }
 

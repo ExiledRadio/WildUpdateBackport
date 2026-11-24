@@ -325,3 +325,48 @@ After (release jar):
   y 7-37, tiles 4,803, sculk 37,220, shriekers 44 of 44). `-Pselftest=deepdark` in a `cavesandcliffs` world, seed 12345,
   with Caves & Cliffs 1.1.0: 51 of 51, the city at -288, -288 (90 pieces, y -52 to -22). That run needed the self-test's
   `ClientMirror` to use the world's heights instead of 0-255.
+
+### Lava, water and floating lichen in cities (2026-11-23)
+
+Reported in an RTG world: cities full of lava and water source blocks, glow lichen hanging in the air around them.
+Not RTG-specific: Default worlds had the same, and 1.18 terrain (Caves & Cliffs' `cavesandcliffs`) did not.
+
+Causes, in 1.12 terrain (vanilla's and RTG's):
+- **Lava (about 85%)**: 1.12.2's carvers (`MapGenCaves`, `MapGenRavine`) fill with lava up to y 10. That is 1.19's -49
+  moved up by the 59 shift, so every cave and ravine near a city's floor (y 8) was a lava lake. 1.19's carvers fill
+  with lava only at and below -56 (here 3). Nearly all the sources were at y 8-10.
+- **Water and the rest of the lava**: 1.12.2's springs (`WorldGenLiquids`, and RTG's falls, which use it) and lakes
+  (`WorldGenLakes`). 26.3's deep dark has neither. Springs on the cavern walls ran into the city, and a populate after
+  the city's area was built could still pour into it. A run with every lake and spring turned off removed all the
+  flowing liquid and all non-carver sources, except the sauna's own pool (1.19.2's template water).
+- **Floating lichen**: Caves & Cliffs' glow lichen at the last column of one populate area (x or z = 7 mod 16), on rock
+  at the first column of the next. That area's city pieces then removed the rock. Every floating lichen was on that
+  line. It is the same edge problem the sculk veins had (`updateVeinsAtEdges`). Lichen placement itself checks for an
+  attached face, as 26.3's does.
+
+Fixes:
+- `CityLiquids.Carvers` wraps the cave and ravine generators (`InitMapGenEvent`, lowest priority). After each one,
+  lava from y 4 to 10 within 16 blocks of a city piece becomes air, in the primer: 1.19's lava level around the city.
+- Patches P19 and P20 (`docs/PATCHES.md`): no spring and no lake whose liquid could reach a city's space (pieces plus
+  12 blocks of beard, plus 8 for the run).
+- `CityBeard.carve` (the populate-time carve) clears liquid as well as rock where the beard carves: anything another
+  mod left in the cavern before the city is built.
+- `updateVeinsAtEdges` also gives the area's glow lichen a neighbor update, so faces whose rock went are dropped.
+- 1.18 terrain is untouched: its carvers, aquifers and features are 1.18's.
+
+Census (`CityStrays`, in `-Pselftest=deepdark`): the city's box grown by 12, liquid in a piece's box or where the
+beard carves, the sauna's pool left out, and glow lichen with no face on a solid face. The test now requires 0 liquid
+in 1.12 terrain and at most 1% floating lichen.
+
+| world (seed, mods) | city | before: sources / flowing / floating lichen | after |
+|---|---|---|---|
+| Default 1013, C&C 1.1.3 | 848, 912 | 2,120 (1,938 lava) / 153 / 166 of 265 | 0 / 0 / 0 of 87 |
+| RTG 1013, C&C 1.1.3 | 848, 912 | 1,569 (1,240 lava) / 80 / 180 of 272 | 0 / 0 / 0 of 108 |
+| RTG 777, C&C 1.1.3 | 128, 192 | (not run) | 0 / 0 / 0 of 41 |
+| Default 1013, WU alone | 848, 912 | (not run) | 0 / 0 / no lichen without C&C |
+| `cavesandcliffs` 12345, C&C 1.1.3 | -288, -288 | 165 / 0 / 0 of 0 | unchanged |
+
+Vanilla 26.3's own server (`tools/deepdark/vanilla26/run.sh`), seed 12345, the same city (`tools/deepdark/strays.py` on its save, with the piece list the
+self-test writes to `eclipse/city-pieces-city.txt`): 164 lava sources (105 in the beard, 59 in pieces), 20 flowing
+lava, 117 flowing water, 2 glow lichen, none floating. Ours in a `cavesandcliffs` world has the same 105 and 59 lava
+sources: they are 1.18 aquifer lava that 26.3 has too. Our 1.12-terrain cities now have none.

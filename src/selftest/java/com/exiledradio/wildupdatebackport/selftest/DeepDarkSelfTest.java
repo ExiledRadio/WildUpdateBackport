@@ -64,9 +64,94 @@ public final class DeepDarkSelfTest implements SelfTest {
     @Override
     public void run(Check c) throws Exception {
         blocks(c);
+        patches(c);
         oracle(c);
         loot(c);
         world(c);
+    }
+
+    // ---- P19 and P20: no springs or lakes near a city
+
+    private void patches(Check c) throws Exception {
+        java.io.File srg = new java.io.File(System.getProperty("user.home"),
+                ".gradle/caches/minecraft/net/minecraftforge/forge/1.12.2-14.23.5.2847/stable/39/forge-1.12.2-14.23.5.2847-srgBin.jar");
+        String[] targets = com.exiledradio.wildupdatebackport.asm.DeepDarkTransformer.TARGETS;
+        for (int n = 0; n < targets.length; n++) {
+            String t = targets[n];
+            String path = t.replace('.', '/') + ".class";
+            byte[] dev = readAll(DeepDarkSelfTest.class.getResourceAsStream("/" + path));
+            checkPatch(c, "dev " + t, n == 0 ? com.exiledradio.wildupdatebackport.asm.DeepDarkTransformer.patchSprings(dev)
+                    : com.exiledradio.wildupdatebackport.asm.DeepDarkTransformer.patchLakes(dev), n == 0 ? "springBlock" : "lakeHeight");
+            if (!c.ok(srg.isFile(), "Forge's SRG jar is in the Gradle cache")) {
+                continue;
+            }
+            java.util.zip.ZipFile zip = new java.util.zip.ZipFile(srg);
+            try {
+                java.util.zip.ZipEntry e = zip.getEntry(path);
+                byte[] bytes = e == null ? null : readAll(zip.getInputStream(e));
+                byte[] patched = bytes == null ? null : n == 0 ? com.exiledradio.wildupdatebackport.asm.DeepDarkTransformer.patchSprings(bytes)
+                        : com.exiledradio.wildupdatebackport.asm.DeepDarkTransformer.patchLakes(bytes);
+                checkPatch(c, "SRG " + t, patched, n == 0 ? "springBlock" : "lakeHeight");
+                if (patched != null) {
+                    String error = FrameCheck.verify(srg, t, patched);
+                    c.ok(error == null, "the JVM verifies the patched SRG " + t + (error == null ? "" : ": " + error));
+                }
+            } finally {
+                zip.close();
+            }
+        }
+        // Loading them patches them (1.18 terrain never uses either).
+        Class.forName(com.exiledradio.wildupdatebackport.asm.DeepDarkTransformer.TARGETS[0]);
+        Class.forName(com.exiledradio.wildupdatebackport.asm.DeepDarkTransformer.TARGETS[1]);
+        c.ok(com.exiledradio.wildupdatebackport.asm.DeepDarkTransformer.appliedP19, "P19 patched WorldGenLiquids in this game");
+        c.ok(com.exiledradio.wildupdatebackport.asm.DeepDarkTransformer.appliedP20, "P20 patched WorldGenLakes in this game");
+        // Far from any city the hooks change nothing.
+        WorldServer world = c.world;
+        BlockPos far = new BlockPos(30000000 - 64, 20, 30000000 - 64);
+        c.eq(7, com.exiledradio.wildupdatebackport.deepdark.city.CityLiquids.lakeHeight(7, new BlockPos(0, 7, 0).add(-1000000, 0, 0), world),
+                "a lake far from any city keeps its height");
+        c.eq(3, com.exiledradio.wildupdatebackport.deepdark.city.CityLiquids.lakeHeight(3, far, world), "a lake too low is left to vanilla's own test");
+    }
+
+    private static void checkPatch(Check c, String what, byte[] patched, String hook) {
+        if (!c.ok(patched != null, what + " was patched")) {
+            return;
+        }
+        org.objectweb.asm.tree.ClassNode node = new org.objectweb.asm.tree.ClassNode();
+        new org.objectweb.asm.ClassReader(patched).accept(node, 0);
+        int hooks = 0;
+        for (org.objectweb.asm.tree.MethodNode m : node.methods) {
+            for (org.objectweb.asm.tree.AbstractInsnNode i = m.instructions.getFirst(); i != null; i = i.getNext()) {
+                if (i instanceof org.objectweb.asm.tree.MethodInsnNode && ((org.objectweb.asm.tree.MethodInsnNode) i).owner.endsWith("city/CityLiquids")
+                        && hook.equals(((org.objectweb.asm.tree.MethodInsnNode) i).name)) {
+                    hooks++;
+                }
+            }
+            try {
+                new org.objectweb.asm.tree.analysis.Analyzer<org.objectweb.asm.tree.analysis.BasicValue>(
+                        new org.objectweb.asm.tree.analysis.BasicVerifier()).analyze(node.name, m);
+            } catch (Exception e) {
+                c.fail(what + "." + m.name + " fails ASM's stack check: " + e);
+            }
+        }
+        c.eq(1, hooks, what + ": one call to CityLiquids." + hook);
+    }
+
+    private static byte[] readAll(java.io.InputStream in) throws java.io.IOException {
+        if (in == null) {
+            return null;
+        }
+        try {
+            java.io.ByteArrayOutputStream out = new java.io.ByteArrayOutputStream();
+            byte[] buf = new byte[8192];
+            int n;
+            while ((n = in.read(buf)) > 0) {
+                out.write(buf, 0, n);
+            }
+            return out.toByteArray();
+        } finally {
+            in.close();
+        }
     }
 
     // ---- blocks
@@ -323,6 +408,14 @@ public final class DeepDarkSelfTest implements SelfTest {
             all.expandTo(p.getBoundingBox());
         }
         c.ok(layout.size() > 20, "the city has " + layout.size() + " pieces");
+        BlockPos inCity = new BlockPos(layout.get(0).getBoundingBox().minX, layout.get(0).getBoundingBox().minY + 3, layout.get(0).getBoundingBox().minZ);
+        if (!modern) {
+            // 1.12.2's lakes need y 5 and up; 1.18 terrain has its own.
+            c.eq(0, com.exiledradio.wildupdatebackport.deepdark.city.CityLiquids.lakeHeight(inCity.getY(), inCity, world),
+                    "a lake that would reach the city is not placed (P20)");
+        }
+        c.eq(Blocks.AIR, com.exiledradio.wildupdatebackport.deepdark.city.CityLiquids.springBlock(world, inCity.up()).getBlock(),
+                "a spring that would run into the city finds no stone over it (P19)");
         int lo = modern ? -63 : 1, hi = modern ? 4 : 64;
         c.ok(all.minY >= lo && all.maxY < hi, "the city sits in y " + all.minY + "-" + all.maxY);
         // Generate every chunk of it, and the rings around, so each is populated and its deep dark decoration (which
@@ -541,5 +634,15 @@ public final class DeepDarkSelfTest implements SelfTest {
         c.ok(floating * 200 <= veins, "sculk veins rest on something: " + floating + " of " + veins + " float"
                 + (firstFloating == null ? "" : " (first at " + firstFloating + ")"));
         com.exiledradio.wildupdatebackport.WildUpdateBackport.LOGGER.info("SELFTEST veins {}", veins);
+
+        // 26.3: no liquid in the city's space (no deep dark lakes, springs or aquifer fluid, the carvers' lava below the
+        // city), and no glow lichen left hanging on nothing. 1.18 terrain is vanilla's own generation (its carvers and
+        // aquifers): only its count is logged.
+        CityStrays strays = CityStrays.count(world, layout, all, lo, hi, "city");
+        if (!modern) {
+            c.eq(0, strays.sources + strays.flowing, "no liquid in the city's space (" + strays.byKind + ")");
+        }
+        c.ok(strays.floatingLichen * 100 <= Math.max(strays.lichen, 1), "glow lichen around the city rests on something: "
+                + strays.floatingLichen + " of " + strays.lichen + " float");
     }
 }

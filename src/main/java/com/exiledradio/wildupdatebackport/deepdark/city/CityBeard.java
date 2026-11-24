@@ -167,7 +167,8 @@ public final class CityBeard {
                     }
                     Material m = s.getMaterial();
                     boolean open = m == Material.AIR || m.isLiquid();
-                    if (!open && ROCK + beard < 0.0D) {
+                    if (ROCK + beard < 0.0D && m != Material.AIR) {
+                        // Rock, or liquid 1.12.2 left in the cavern: 26.3's beard is in the noise, before any liquid.
                         blocks.set(x, y, z, air);
                     } else if (open && beard - ROCK > 0.0D && s != fill) {
                         blocks.set(x, y, z, fill);

@@ -1,6 +1,7 @@
 package com.exiledradio.wildupdatebackport;
 
 import com.exiledradio.wildupdatebackport.asm.ChangesTransformer;
+import com.exiledradio.wildupdatebackport.asm.DeepDarkTransformer;
 import com.exiledradio.wildupdatebackport.asm.LookTransformer;
 import com.exiledradio.wildupdatebackport.asm.RulesTransformer;
 import com.exiledradio.wildupdatebackport.asm.SwampTransformer;
@@ -34,6 +35,7 @@ public final class PatchCheck {
         out.addAll(Arrays.asList(ChangesTransformer.TARGETS));
         out.addAll(Arrays.asList(RulesTransformer.TARGETS));
         out.addAll(Arrays.asList(SwampTransformer.TARGETS));
+        out.addAll(Arrays.asList(DeepDarkTransformer.TARGETS));
         if (client) {
             out.addAll(Arrays.asList(LookTransformer.TARGETS));
         }
