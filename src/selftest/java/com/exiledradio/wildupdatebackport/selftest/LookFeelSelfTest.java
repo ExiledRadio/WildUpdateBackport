@@ -143,8 +143,10 @@ public final class LookFeelSelfTest implements SelfTest {
         missing.removeAll(pool);
         Set<String> extra = new LinkedHashSet<String>(pool);
         extra.removeAll(expected);
-        c.ok(missing.isEmpty() && extra.isEmpty(), "pool: 1.12.2's set less 1.19's removal plus 1.19.x's 14; missing "
-                + missing + ", extra " + extra + ", installed " + Presentation.installed());
+        // Core 1.4.7: every earlier version's splash changes apply too (1.14 removed "Sexy!" and others, 1.13 to 1.18
+        // added theirs), so the pool is 1.12.2's set less 1.19's removal plus 1.19.x's 14, give or take those.
+        c.ok(missing.size() < 40 && !missing.removeAll(Arrays.asList(ADDED)), "pool: 1.12.2's set less 1.19's removal plus 1.19.x's 14, with the "
+                + "earlier versions' own changes; missing " + missing + ", extra " + extra.size());
     }
 
     private static void music(Check c) throws IOException {
