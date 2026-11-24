@@ -169,9 +169,10 @@ public final class AncientCityStructure extends ScatteredStructure {
     }
 
     /**
-     * 1.17's {@code StructureTemplate.updateShapeAtEdge}, for the veins: a neighbor's decoration grew veins on rock this
-     * area's pieces and beard have since taken away (the vein at x 7 of a chunk on rock at x 8, where this area starts).
-     * Each vein in the area and the ring around it drops the faces left without support, as 1.19's veins do.
+     * 1.17's {@code StructureTemplate.updateShapeAtEdge}, for the veins and the glow lichen: a neighbor's decoration grew
+     * them on rock this area's pieces and beard have since taken away (the vein or lichen at x 7 of a chunk on rock at
+     * x 8, where this area starts). Each one in the area and the ring around it drops the faces left without support,
+     * as 1.19's multiface blocks do; 26.3 has the beard in the noise, so no rock goes after the lichen grows.
      */
     static void updateVeinsAtEdges(World world, List<StructureComponent> components, StructureBoundingBox area) {
         int lowY = Integer.MAX_VALUE;
@@ -191,12 +192,24 @@ public final class AncientCityStructure extends ScatteredStructure {
             for (int z = area.minZ - 1; z <= area.maxZ + 1; z++) {
                 for (int y = lowY; y <= highY; y++) {
                     p.setPos(x, y, z);
-                    if (com.exiledradio.wildupdatebackport.sculk.BlockSculkVein.isVein(world.getBlockState(p))) {
+                    net.minecraft.block.state.IBlockState s = world.getBlockState(p);
+                    if (com.exiledradio.wildupdatebackport.sculk.BlockSculkVein.isVein(s)) {
                         com.exiledradio.wildupdatebackport.sculk.BlockSculkVein.dropUnsupported(world, p.toImmutable(), 2);
+                    } else if (isLichen(s)) {
+                        // Caves & Cliffs' glow lichen drops the faces it lost, as its neighbor update does.
+                        BlockPos at = p.toImmutable();
+                        s.neighborChanged(world, at, net.minecraft.init.Blocks.AIR, at);
                     }
                 }
             }
         }
+    }
+
+    /** @return true for Caves &amp; Cliffs' glow lichen (any of its four blocks) */
+    static boolean isLichen(net.minecraft.block.state.IBlockState s) {
+        net.minecraft.util.ResourceLocation id = s.getBlock().getRegistryName();
+        return id != null && com.exiledradio.wildupdatebackport.common.Owners.CAVES_AND_CLIFFS.equals(id.getNamespace())
+                && id.getPath().startsWith("glow_lichen");
     }
 
     /**

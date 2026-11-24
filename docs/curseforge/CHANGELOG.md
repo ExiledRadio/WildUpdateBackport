@@ -6,6 +6,7 @@
 *   **A boat with chest broken by a creative player now drops what was inside**, as in 1.19.
 *   **With Game Drops Backport, golden dandelions lock tadpoles**, as in 26.1, and **ancient city chests have no name tags**.
 *   **Fixed: the iron golem and snow golem spawn eggs had no texture of their own** with Backport Core's newer textures.
+*   **Fixed: ancient cities were full of lava and water**, and glow lichen (from Caves & Cliffs Backport) hung in the air around them. Around a city, caves now fill with lava only below it, as in 1.19, and no springs or lakes form. New chunks only.
 
 Needs Backport Core 1.4.4 or newer.
 

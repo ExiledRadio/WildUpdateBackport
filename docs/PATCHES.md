@@ -28,6 +28,8 @@ superclass and a hook, with no jump either.
 | P16 | C | `CommandFill.execute` and `CommandClone.execute` / `func_184881_a` | both `32768`s (the test and the message) become `RulesHooks.blockLimit()` (it finds the server itself; the `server` parameter is dead there in Mojang's frames): `commandModificationBlockLimit` | 1.19.4's rule; the limit is a constant inside the commands. |
 | P17 | C | `MobSpawnerBaseLogic` | the field initializer's `new WeightedSpawnerEntity()` passes through `RulesHooks.newSpawnData` (an empty one), `isActivated` / `func_98279_f`'s result through `spawnerActive` (false with no mob), and (client) `getCachedEntity` / `func_184994_d`'s `AnvilChunkLoader.readWorldEntity` becomes `spawnerEntity` (none with no mob, so no warning every frame) | 1.19.3's `BaseSpawner` starts with an empty `SpawnData`. A spawner's default mob is set in its own constructor. |
 | P18 | C | `ItemArmorStand.onItemUse` / `func_180614_a`; `EntityArmorStand.dropBlock` / `func_175421_A` | the item's `ItemMonsterPlacer.applyItemEntityDataToEntity` becomes `RulesHooks.armorStandData` (the same, then the item's name onto the stand); the dropped `new ItemStack(Items.ARMOR_STAND)` passes through `armorStandItem` (the stand's name onto the item) | 1.19.4 (23w03a). The stand is placed and dropped inside these methods; no event sees either. |
+| P19 | DD | `WorldGenLiquids.generate` / `func_180709_b` | its first `worldIn.getBlockState(position.up())` (the stone a spring needs over it) becomes `CityLiquids.springBlock(worldIn, position.up())`: air where the spring's water or lava could reach an ancient city's space (its pieces and beard, 12 blocks, plus 8 for the run), so no spring there | 26.3's deep dark has no springs. 1.12.2's springs (and RTG's falls, which use the same class) are drawn inside `BiomeDecorator`; `DecorateBiomeEvent.Decorate` only turns all of a chunk's springs on or off, before their positions are drawn. |
+| P20 | DD | `WorldGenLakes.generate` / `func_180709_b` | the height in `if (position.getY() <= 4) return false`, once the lake has gone down through the air, passes through `CityLiquids.lakeHeight(y, position, worldIn)`: 0 where its 16 x 8 x 16 could reach a city's space, so no lake there | 26.3's deep dark has no lakes. `PopulateChunkEvent.Populate` (LAKE, LAVA) comes before the lake's position is drawn. |
 
 P1 to P3 are client classes: a dedicated server never loads them. P9 runs on both sides wherever 1.12.2's biome layers are made; the self-test (`-Pselftest=swamp`) patches the dev and SRG classes, checks the hook call and the stack, and runs the patched layer. The self-test (`-Pselftest=lookfeel`) runs each
 patch on the dev jar's MCP-named class and on Forge's SRG-named jar from the Gradle cache, counts the hook calls and
@@ -54,6 +56,12 @@ which ASM ignores), checks which classes the running server patched, and plays e
 `waterSourceConversion` and `lavaSourceConversion` need no patch (`BlockEvent.CreateFluidSourceEvent`), nor do the
 chorus and scaffolding spawns (`LivingSpawnEvent.CheckSpawn`), leaves (Fluidlogged API's `FluidloggableEvent`) or the
 bonus chest (`LootTableLoadEvent`).
+
+P19 and P20 (`asm.DeepDarkTransformer`) run on the server wherever 1.12.2's springs and lakes generate. Neither
+loads a local vanilla stops reading: P19 replaces a call with one of the same stack shape, P20 loads `position` and
+`worldIn`, which vanilla reads right after. The self-test (`-Pselftest=deepdark`) patches the dev and SRG classes,
+counts the hook calls, runs ASM's stack check and the JVM's verifier on the SRG classes, checks the running game
+patched both, and asks both hooks near a city and far from one.
 
 ## Release check: Mojang's frames
 
