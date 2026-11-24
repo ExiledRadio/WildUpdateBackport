@@ -200,12 +200,6 @@ subtitles.wildupdatebackport.entity.warden.tendril_clicks=Hoederhoorsprieten kli
 # --- lookfeel ---
 options.darknessEffectScale=Pulserende duisternis
 options.darknessEffectScale.tooltip=Bepaalt hoeveel het duisterniseffect pulseert wanneer een hoeder of sculkkrijser het aan je geeft.
-options.damageTiltStrength=Schadekanteling
-options.damageTiltStrength.tooltip=Hoeveel de camera kantelt wanneer je gewond raakt.
-options.glintSpeed=Glanssnelheid
-options.glintSpeed.tooltip=Bepaalt hoe snel het glanseffect beweegt over betoverde voorwerpen.
-options.glintStrength=Glanssterkte
-options.glintStrength.tooltip=Bepaalt de transparantie van het glanseffect op betoverde voorwerpen.
 
 # --- changes ---
 config.wildupdatebackport.changes.minecarts=Buit en recepten van mijnkarren

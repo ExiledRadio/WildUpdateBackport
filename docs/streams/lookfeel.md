@@ -1,5 +1,13 @@
 # Stream Lf: 1.19.x look and feel
 
+**Since 1.1.3 (Backport Core 1.4.7) most of this stream is Backport Core's** (`presentation.versions.Look119`, patches
+P73 to P75 in place of this mod's P1 to P3), so any 1.19 or later backport has it: the title logo, Mojang Studios
+logo, widgets, check box, creative tab sprites and Accessibility icon, the multiplayer warning, the splashes, the
+vanilla text, F3 + F's removal, the "Allocation rate" line, Auto-Jump off, Damage Tilt, Glint Speed and Glint
+Strength. This mod keeps the panorama and its overlay, the menu music and Darkness Pulsing. `tools/lookfeel/generate.py`
+still writes the moved files; their copies now live in Core's `assets/backportcore/look/1.19*/`. The notes below are
+the stream as first built.
+
 Package `lookfeel` (client part in `lookfeel.client`), patches in `asm` (the mod's first coremod, `WildUpdateCore`).
 No config category: the options are Backport Core's `presentation` options, saved by Core. No blocks, items, entities
 or packets (ids 75-79 are claimed and unused). Dev-server port 25875. Also changed outside the package: one line each

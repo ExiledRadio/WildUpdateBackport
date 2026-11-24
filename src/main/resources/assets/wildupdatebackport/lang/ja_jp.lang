@@ -200,12 +200,6 @@ subtitles.wildupdatebackport.entity.warden.tendril_clicks=ウォーデンが触�
 # --- lookfeel ---
 options.darknessEffectScale=暗闇の脈動
 options.darknessEffectScale.tooltip=ウォーデンまたはスカルクシュリーカーが暗闇の効果を与える時にどの程度脈動するかを設定できます。
-options.damageTiltStrength=被ダメージ時の画面の揺れ
-options.damageTiltStrength.tooltip=被ダメージ時に発生する画面の揺れの強さを設定できます。
-options.glintSpeed=オーラの速度
-options.glintSpeed.tooltip=エンチャントされたアイテムを覆うオーラの揺らめきの速度を設定できます。
-options.glintStrength=オーラの濃さ
-options.glintStrength.tooltip=エンチャントされたアイテムを覆うオーラの透明度を設定できます。
 
 # --- changes ---
 config.wildupdatebackport.changes.minecarts=トロッコのドロップとレシピ

@@ -200,12 +200,6 @@ subtitles.wildupdatebackport.entity.warden.tendril_clicks=Antenas de warden vibr
 # --- lookfeel ---
 options.darknessEffectScale=Pulso de oscuridad
 options.darknessEffectScale.tooltip=Controla el pulso del efecto de oscuridad cuando un warden o chillador de sculk te lo da.
-options.damageTiltStrength=Tambaleo por daño
-options.damageTiltStrength.tooltip=El tambaleo de cámara por daño recibido.
-options.glintSpeed=Velocidad de brillo
-options.glintSpeed.tooltip=Controla la velocidad de brillo en los ítems encantados.
-options.glintStrength=Intensidad de brillo
-options.glintStrength.tooltip=Controla la transparencia de brillo en los ítems encantados.
 
 # --- changes ---
 config.wildupdatebackport.changes.minecarts=Botín y recetas de vagones

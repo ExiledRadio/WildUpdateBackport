@@ -200,12 +200,6 @@ subtitles.wildupdatebackport.entity.warden.tendril_clicks=Wärterranken klicken
 # --- lookfeel ---
 options.darknessEffectScale=Pulsierende Dunkelheit
 options.darknessEffectScale.tooltip=Steuert, wie stark der Effekt „Dunkelheit“ pulsiert, wenn ein Wärter oder Sculk‐Kreischer ihn an dich weitergibt.
-options.damageTiltStrength=Schadensneigung
-options.damageTiltStrength.tooltip=Die Stärke des Kamerawackelns, das beim Erleiden von Schaden auftritt.
-options.glintSpeed=Schimmerbewegung
-options.glintSpeed.tooltip=Steuert, wie schnell sich der Schimmer verzauberter Gegenstände bewegt.
-options.glintStrength=Schimmerstärke
-options.glintStrength.tooltip=Steuert, wie deutlich der Schimmer verzauberter Gegenstände sichtbar ist.
 
 # --- changes ---
 config.wildupdatebackport.changes.minecarts=Loren-Drops und -Rezepte

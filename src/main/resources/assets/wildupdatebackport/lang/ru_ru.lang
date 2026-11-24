@@ -200,12 +200,6 @@ subtitles.wildupdatebackport.entity.warden.tendril_clicks=Усики храни�
 # --- lookfeel ---
 options.darknessEffectScale=Пульсация тьмы
 options.darknessEffectScale.tooltip=Отвечает за интенсивность пульсации эффекта тьмы, получаемого от хранителя или скалкового крикуна.
-options.damageTiltStrength=Наклон при уроне
-options.damageTiltStrength.tooltip=Сила наклона камеры при получении урона.
-options.glintSpeed=Мерцание чар
-options.glintSpeed.tooltip=Скорость распространения мерцания по зачарованным предметам.
-options.glintStrength=Заметность чар
-options.glintStrength.tooltip=Интенсивность мерцания чар на предметах.
 
 # --- changes ---
 config.wildupdatebackport.changes.minecarts=Вагонетки: добыча и рецепты

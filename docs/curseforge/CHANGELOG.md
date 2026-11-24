@@ -1,3 +1,9 @@
+# 1.1.3
+
+*   **1.19's look and feel is now Backport Core's**, so it shows with any 1.19 or later backport, with or without this mod: the title logo, the button, check box and creative tab textures, the Accessibility icon, the Mojang Studios logo, the multiplayer warning, 1.19.x's splashes and wording, F3 + F's removal and the F3 "Allocation rate" line, Auto-Jump off by default, and Damage Tilt, Glint Speed and Glint Strength. Your settings are kept. The mangrove swamp panorama, the menu music and Darkness Pulsing stay in this mod.
+
+Needs Backport Core 1.4.7 or newer.
+
 # 1.1.2
 
 *   **Realistic Terrain Generation** (and RTG Unofficial): mangrove swamps now generate in RTG worlds, on RTG's swamp terrain. RTG turned them into plains. Needs Backport Core 1.4.5.

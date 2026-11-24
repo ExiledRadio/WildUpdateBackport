@@ -200,12 +200,6 @@ subtitles.wildupdatebackport.entity.warden.tendril_clicks=伏守者的觸鬚抖�
 # --- lookfeel ---
 options.darknessEffectScale=黑暗波動效果
 options.darknessEffectScale.tooltip=控制你會受到多少伏守者與伏聆嘯口造成的黑暗效果脈動。
-options.damageTiltStrength=受傷抖動效果
-options.damageTiltStrength.tooltip=受到傷害導致遊戲視角晃動的程度。
-options.glintSpeed=附魔光效閃爍速度
-options.glintSpeed.tooltip=控制附魔物品的光效閃動速度。
-options.glintStrength=附魔光效閃爍強度
-options.glintStrength.tooltip=控制附魔物品的光效透明程度。
 
 # --- changes ---
 config.wildupdatebackport.changes.minecarts=礦車掉落與配方

@@ -200,12 +200,6 @@ subtitles.wildupdatebackport.entity.warden.tendril_clicks=워든의 더듬이가
 # --- lookfeel ---
 options.darknessEffectScale=어둠 고동 세기
 options.darknessEffectScale.tooltip=워든이나 스컬크 비명체가 거는 어둠 효과가 얼마나 고동치는지 조절합니다.
-options.damageTiltStrength=피해 흔들림
-options.damageTiltStrength.tooltip=상처를 입었을 때 카메라가 흔들리는 강도.
-options.glintSpeed=반짝임 속도
-options.glintSpeed.tooltip=마법이 부여된 아이템이 반짝이는 속도를 조절합니다.
-options.glintStrength=반짝임 세기
-options.glintStrength.tooltip=마법이 부여된 아이템이 반짝이는 효과의 투명도를 조절합니다.
 
 # --- changes ---
 config.wildupdatebackport.changes.minecarts=광산 수레 드롭과 조합법

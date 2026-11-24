@@ -200,12 +200,6 @@ subtitles.wildupdatebackport.entity.warden.tendril_clicks=Gavinhas de Sentinela 
 # --- lookfeel ---
 options.darknessEffectScale=Escuridão pulsante
 options.darknessEffectScale.tooltip=Define a intensidade da Escuridão pulsante causada por Sentinelas ou Emissores de Sculk.
-options.damageTiltStrength=Balanço de dano
-options.damageTiltStrength.tooltip=A intensidade do balanço da visão ao sofrer dano.
-options.glintSpeed=Velocidade da cintilação
-options.glintSpeed.tooltip=Define a velocidade da cintilação em itens encantados.
-options.glintStrength=Intensidade da cintilação
-options.glintStrength.tooltip=Define a transparência da cintilação em itens encantados.
 
 # --- changes ---
 config.wildupdatebackport.changes.minecarts=Drops e receitas de carrinhos

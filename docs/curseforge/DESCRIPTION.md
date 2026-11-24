@@ -76,7 +76,7 @@ Every feature can be turned off in Backport Core's settings screen, under Mod Op
 
 ## Requirements
 
-Minecraft 1.12.2 with Forge 14.23.5.2847 or newer, and [Backport Core](https://www.curseforge.com/minecraft/mc-mods/backport-core) 1.4.4 or newer. The CurseForge app installs Backport Core with it. [Fluidlogged API](https://www.curseforge.com/minecraft/mc-mods/fluidlogged-api) 3.3.3 or newer is optional, for waterlogged blocks.
+Minecraft 1.12.2 with Forge 14.23.5.2847 or newer, and [Backport Core](https://www.curseforge.com/minecraft/mc-mods/backport-core) 1.4.7 or newer. The CurseForge app installs Backport Core with it. [Fluidlogged API](https://www.curseforge.com/minecraft/mc-mods/fluidlogged-api) 3.3.3 or newer is optional, for waterlogged blocks.
 
 ***
 

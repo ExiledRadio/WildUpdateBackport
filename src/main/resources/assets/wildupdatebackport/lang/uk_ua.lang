@@ -200,12 +200,6 @@ subtitles.wildupdatebackport.entity.warden.tendril_clicks=Вусики боро�
 # --- lookfeel ---
 options.darknessEffectScale=Пульсація темряви
 options.darknessEffectScale.tooltip=Керує тим, наскільки пульсує ефект темряви, коли вам його дає боронитель або скалковий крикун.
-options.damageTiltStrength=Нахил від шкоди
-options.damageTiltStrength.tooltip=Ступінь трясіння камери, викликаного пораненням.
-options.glintSpeed=Швидкість блиску
-options.glintSpeed.tooltip=Керує тим, як швидко візуальний блиск переливається на зачарованих предметах.
-options.glintStrength=Сила блиску
-options.glintStrength.tooltip=Керує тим, наскільки прозорим є візуальний блиск на зачарованих предметах.
 
 # --- changes ---
 config.wildupdatebackport.changes.minecarts=Вагонетки: здобич і рецепти

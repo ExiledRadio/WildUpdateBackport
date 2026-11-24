@@ -200,12 +200,6 @@ subtitles.wildupdatebackport.entity.warden.tendril_clicks=Muhafızın antenleri 
 # --- lookfeel ---
 options.darknessEffectScale=Karanlık Çarpıyor
 options.darknessEffectScale.tooltip=Bir Muhafız veya Sculk Çığırtkanı size Karanlık etkisi verdiğinde etkinin ne kadar titreşeceğini ayarlamanızı sağlar.
-options.damageTiltStrength=Hasar Sarsıntısı
-options.damageTiltStrength.tooltip=Hasar alındığındaki kamera sarsıntısının şiddeti.
-options.glintSpeed=Parıltı Hızı
-options.glintSpeed.tooltip=Görsel parıltının büyülü eşyalar üzerinde ne kadar hızlı parıldadığını kontrol eder.
-options.glintStrength=Parıltı Gücü
-options.glintStrength.tooltip=Görsel parıltının büyülü eşyalar üzerinde ne kadar şeffaf olduğunu kontrol eder.
 
 # --- changes ---
 config.wildupdatebackport.changes.minecarts=Vagon Düşürme ve Tarifleri

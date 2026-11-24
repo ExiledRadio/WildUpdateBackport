@@ -11,22 +11,12 @@ import com.exiledradio.backportcore.presentation.option.OptionScreen;
 import com.exiledradio.backportcore.presentation.option.PresentationOption;
 import com.exiledradio.backportcore.presentation.option.SliderOption;
 import com.exiledradio.wildupdatebackport.WildUpdateBackport;
-import com.exiledradio.wildupdatebackport.asm.LookTransformer;
 import com.exiledradio.wildupdatebackport.lookfeel.LookAndFeel;
-import com.exiledradio.wildupdatebackport.lookfeel.LookHooks;
+import com.exiledradio.backportcore.presentation.versions.Look119;
 import net.minecraft.util.ResourceLocation;
-import org.objectweb.asm.ClassReader;
-import org.objectweb.asm.tree.AbstractInsnNode;
-import org.objectweb.asm.tree.ClassNode;
-import org.objectweb.asm.tree.MethodInsnNode;
-import org.objectweb.asm.tree.MethodNode;
-import org.objectweb.asm.tree.analysis.Analyzer;
-import org.objectweb.asm.tree.analysis.BasicValue;
-import org.objectweb.asm.tree.analysis.BasicVerifier;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -38,10 +28,11 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipFile;
 
-/** Stream Lf: 1.19.x's look and feel registered with Backport Core, its assets, patches P1 to P3, and the text. */
+/**
+ * Stream Lf: 1.19.x's look and feel registered with Backport Core: this mod's panorama, music and Darkness Pulsing, and
+ * Core's own 1.19 pieces (Core 1.4.7 took them over) showing with this mod installed.
+ */
 public final class LookFeelSelfTest implements SelfTest {
 
     private static final String ID = WildUpdateBackport.MOD_ID;
@@ -60,8 +51,6 @@ public final class LookFeelSelfTest implements SelfTest {
         debugKeys(c);
         options(c);
         defaults(c);
-        hooks(c);
-        patches(c);
         lang(c);
     }
 
@@ -75,34 +64,35 @@ public final class LookFeelSelfTest implements SelfTest {
         // On its own (this dev server) 1.19.4 is the newest version: 1.19 wins every single-slot piece.
         c.eq(GameVersion.parse("1.19.4"), Presentation.newest(), "the newest installed version");
         c.ok(Presentation.isAtLeast("1.19.3"), "isAtLeast(1.19.3)");
+        // Core's own 1.19 pieces (Core 1.4.7): served from Core's jar now that this mod declares 1.19.
         String[][] assets = {
-                {"textures/gui/title/minecraft.png", "256x256"},
-                {"textures/gui/title/mojangstudios.png", null},
-                {"textures/gui/widgets.png", "256x256"},
-                {"textures/gui/checkbox.png", "64x64"},
-                // 1.19.3's creative tab sprites (Core's ModernTabs draws them; Core 1.4.5 and later).
-                {"textures/gui/container/creative_inventory/tabs.png", "256x256"},
+                {"textures/gui/title/minecraft.png", "look/1.19/", "256x256"},
+                {"textures/gui/title/mojangstudios.png", "look/1.19/", null},
+                {"textures/gui/widgets.png", "look/1.19/", "256x256"},
+                {"textures/gui/checkbox.png", "look/1.19/", "64x64"},
+                {"textures/gui/container/creative_inventory/tabs.png", "look/1.19.3/", "256x256"},
         };
         for (String[] a : assets) {
-            if (a[0].endsWith("tabs.png") && !com.exiledradio.wildupdatebackport.lookfeel.LookAndFeel.coreDrawsModernTabs()) {
-                c.ok(Presentation.asset(a[0]) == null, "an older Core keeps 1.12.2's tab sprites");
-                continue;
-            }
             ResourceLocation src = Presentation.asset(a[0]);
-            c.eq(new ResourceLocation(ID, a[0]), src, "Core serves vanilla's " + a[0] + " from 1.19's");
+            c.eq(new ResourceLocation("backportcore", a[1] + a[0]), src, "Core serves vanilla's " + a[0] + " from its own 1.19 pieces");
             int[] size;
             try {
                 size = src == null ? null : pngSize(src);
             } catch (IOException e) {
                 size = null;
             }
-            c.ok(size != null && (a[1] == null || a[1].equals(size[0] + "x" + size[1])), a[0] + " is in the jar: " + Arrays.toString(size));
+            c.ok(size != null && (a[2] == null || a[2].equals(size[0] + "x" + size[1])), a[0] + " is in Core's jar: " + Arrays.toString(size));
         }
-        c.eq(new ResourceLocation(ID, "textures/gui/accessibility.png"), Presentation.titleAccessibilityIcon(), "the title screen's Accessibility icon");
+        c.eq(new ResourceLocation("backportcore", "look/1.19/textures/gui/accessibility.png"), Presentation.titleAccessibilityIcon(),
+                "the title screen's Accessibility icon");
         String[] warn = Presentation.multiplayerWarning();
         c.ok(warn != null && "multiplayerWarning.header".equals(warn[0]) && "multiplayerWarning.check".equals(warn[2]),
                 "the multiplayer warning uses vanilla's keys: " + Arrays.toString(warn));
-        c.ok(Presentation.vanillaTexts().contains(new ResourceLocation(ID, "vanilla_text")), "1.19's vanilla text is registered");
+        c.ok(Presentation.vanillaTexts().contains(new ResourceLocation("backportcore", "look/1.19/vanilla_text")), "1.19's vanilla text (Core's) is registered");
+        c.ok(!Presentation.vanillaTexts().contains(new ResourceLocation(ID, "vanilla_text")), "this mod has no vanilla text of its own any more");
+        for (String gone : new String[] {"textures/gui/widgets.png", "textures/gui/title/minecraft.png", "texts/splashes_added_1_19.txt", "vanilla_text/en_us.lang"}) {
+            c.ok(LookFeelSelfTest.class.getResourceAsStream("/assets/" + ID + "/" + gone) == null, "moved to Core: " + gone);
+        }
         c.eq(com.exiledradio.backportcore.presentation.VanillaRevisions.Startup.STUDIOS_1_16,
                 com.exiledradio.backportcore.presentation.VanillaRevisions.startup(), "the startup screen is 1.16's (1.19 kept it)");
     }
@@ -130,10 +120,10 @@ public final class LookFeelSelfTest implements SelfTest {
             "I'm glad you're here!", "You are welcome here!", "Your gender is valid!", "Contains infinite genders!", "Made with lave!"};
 
     private static void splashes(Check c) throws IOException {
-        c.eq(7, lines(new ResourceLocation(ID, "texts/splashes_added_1_19.txt")).size(), "1.19 adds 7 splashes to 1.18.2's");
-        c.eq(1, lines(new ResourceLocation(ID, "texts/splashes_removed_1_19.txt")).size(), "1.19 removes one");
-        c.eq(1, lines(new ResourceLocation(ID, "texts/splashes_added_1_19_1.txt")).size(), "1.19.1 adds one");
-        c.eq(6, lines(new ResourceLocation(ID, "texts/splashes_added_1_19_3.txt")).size(), "1.19.3 adds 6");
+        c.eq(7, lines(new ResourceLocation("backportcore", "look/1.19/texts/splashes_added.txt")).size(), "1.19 adds 7 splashes to 1.18.2's");
+        c.eq(1, lines(new ResourceLocation("backportcore", "look/1.19/texts/splashes_removed.txt")).size(), "1.19 removes one");
+        c.eq(1, lines(new ResourceLocation("backportcore", "look/1.19.1/texts/splashes_added.txt")).size(), "1.19.1 adds one");
+        c.eq(6, lines(new ResourceLocation("backportcore", "look/1.19.3/texts/splashes_added.txt")).size(), "1.19.3 adds 6");
         List<String> base = lines("/assets/minecraft/texts/splashes.txt");
         c.ok(base.size() > 300, "1.12.2's splashes.txt is readable: " + base.size());
         List<String> pool = Splashes.pool(base, Presentation.installed(), f -> lines(f));
@@ -144,7 +134,7 @@ public final class LookFeelSelfTest implements SelfTest {
         for (String s : base) {
             expected.add(s.trim()); // as Core's pool reads them
         }
-        List<String> removed = lines(new ResourceLocation(ID, "texts/splashes_removed_1_19.txt"));
+        List<String> removed = lines(new ResourceLocation("backportcore", "look/1.19/texts/splashes_removed.txt"));
         c.ok(base.contains("Привет Россия!") && !pool.contains("Привет Россия!") && removed.contains("Привет Россия!"),
                 "1.19 took 1.12.2's \"Привет Россия!\" out of the pool");
         expected.removeAll(removed);
@@ -208,9 +198,9 @@ public final class LookFeelSelfTest implements SelfTest {
         }
         Object[][] want = {
                 {LookAndFeel.DARKNESS, "1.19", "options.darknessEffectScale", 1.0},
-                {LookAndFeel.DAMAGE_TILT, "1.19.4", "options.damageTiltStrength", 1.0},
-                {LookAndFeel.GLINT_SPEED, "1.19.4", "options.glintSpeed", 0.5},
-                {LookAndFeel.GLINT_STRENGTH, "1.19.4", "options.glintStrength", 0.75},
+                {Look119.DAMAGE_TILT, "1.19.4", "options.damageTiltStrength", 1.0},
+                {Look119.GLINT_SPEED, "1.19.4", "options.glintSpeed", 0.5},
+                {Look119.GLINT_STRENGTH, "1.19.4", "options.glintStrength", 0.75},
         };
         for (Object[] w : want) {
             SliderOption o = (SliderOption) w[0];
@@ -226,19 +216,19 @@ public final class LookFeelSelfTest implements SelfTest {
             c.ok(o.isShown(), o.id() + " shows at the newest version");
         }
         c.eq("netherupdatebackport:fov_effect_scale", LookAndFeel.DARKNESS.after(), "Darkness Pulsing follows FOV Effects");
-        c.eq(LookAndFeel.DARKNESS.id(), LookAndFeel.DAMAGE_TILT.after(), "Damage Tilt follows Darkness Pulsing");
-        c.eq(LookAndFeel.DAMAGE_TILT.id(), LookAndFeel.GLINT_SPEED.after(), "Glint Speed follows Damage Tilt");
-        c.eq(LookAndFeel.GLINT_SPEED.id(), LookAndFeel.GLINT_STRENGTH.after(), "Glint Strength follows Glint Speed");
+        c.eq(LookAndFeel.DARKNESS.id(), Look119.DAMAGE_TILT.after(), "Damage Tilt follows Darkness Pulsing");
+        c.eq(Look119.DAMAGE_TILT.id(), Look119.GLINT_SPEED.after(), "Glint Speed follows Damage Tilt");
+        c.eq(Look119.GLINT_SPEED.id(), Look119.GLINT_STRENGTH.after(), "Glint Strength follows Glint Speed");
         List<String> access = ids(Presentation.optionsOn(OptionScreen.ACCESSIBILITY));
         int d = access.indexOf(LookAndFeel.DARKNESS.id());
-        int t = access.indexOf(LookAndFeel.DAMAGE_TILT.id());
-        int s = access.indexOf(LookAndFeel.GLINT_SPEED.id());
-        int g = access.indexOf(LookAndFeel.GLINT_STRENGTH.id());
+        int t = access.indexOf(Look119.DAMAGE_TILT.id());
+        int s = access.indexOf(Look119.GLINT_SPEED.id());
+        int g = access.indexOf(Look119.GLINT_STRENGTH.id());
         c.ok(d >= 0 && t > d && s > t && g > s, "Accessibility Settings: Darkness Pulsing, Damage Tilt, Glint Speed, Glint Strength: " + access);
         c.ok(access.contains("backportcore:panorama_speed"), "Core's Panorama Scroll Speed shows from 1.19.3 on: " + access);
         List<String> video = ids(Presentation.optionsOn(OptionScreen.VIDEO));
-        c.ok(video.contains(LookAndFeel.GLINT_SPEED.id()) && video.contains(LookAndFeel.GLINT_STRENGTH.id())
-                && !video.contains(LookAndFeel.DAMAGE_TILT.id()), "Video Settings has the two glint sliders, and only them: " + video);
+        c.ok(video.contains(Look119.GLINT_SPEED.id()) && video.contains(Look119.GLINT_STRENGTH.id())
+                && !video.contains(Look119.DAMAGE_TILT.id()), "Video Settings has the two glint sliders, and only them: " + video);
         c.eq(1.0F, LookAndFeel.darknessScale(), "Darkness Pulsing reads 100% by default");
     }
 
@@ -260,94 +250,9 @@ public final class LookFeelSelfTest implements SelfTest {
         c.ok(autoJump, "1.19.4's Auto-Jump OFF waits for the client's first title screen (a server never applies it)");
     }
 
-    private static void hooks(Check c) {
-        c.eq(14.0F, LookHooks.damageTilt(14.0F), "Damage Tilt at 100% keeps vanilla's 14 degrees");
-        LookAndFeel.DAMAGE_TILT.set(0.5);
-        c.eq(7.0F, LookHooks.damageTilt(14.0F), "Damage Tilt at 50% halves it");
-        LookAndFeel.DAMAGE_TILT.set(0.0);
-        c.eq(0.0F, LookHooks.damageTilt(14.0F), "Damage Tilt off removes it");
-        LookAndFeel.DAMAGE_TILT.reset();
-
-        c.eq(5000L, LookHooks.glintTime(10000L), "Glint Speed's default 50% runs the clock at half speed (1.19.4's millis * 0.5 * 8)");
-        LookAndFeel.GLINT_SPEED.set(1.0);
-        c.eq(10000L, LookHooks.glintTime(10000L), "Glint Speed 100% is 1.19.3's speed");
-        c.eq(3.0F, LookHooks.glintTicks(3.0F), "and the armor glint's clock too");
-        LookAndFeel.GLINT_SPEED.set(0.0);
-        c.eq(0L, LookHooks.glintTime(10000L), "Glint Speed off stops the glint");
-        LookAndFeel.GLINT_SPEED.reset();
-
-        // 0xFF8040CC at the default 75%: 0x80 * 0.75 = 0x60, 0x40 * 0.75 = 0x30, 0xCC * 0.75 = 153 = 0x99.
-        c.eq(0xFF603099, LookHooks.glintColor(-8372020), "Glint Strength 75% scales the item glint's color, not its alpha");
-        c.eq(0.38F * 0.75F, LookHooks.glintComponent(0.38F), "and the armor glint's");
-        LookAndFeel.GLINT_STRENGTH.set(1.0);
-        c.eq(-8372020, LookHooks.glintColor(-8372020), "Glint Strength 100% is 1.12.2's color");
-        LookAndFeel.GLINT_STRENGTH.reset();
-    }
-
-    /** P1 to P3 against the dev jar's MCP-named classes and Forge's SRG-named jar, then a stack check. */
-    private static void patches(Check c) throws IOException {
-        Object[][] targets = {
-                {"net.minecraft.client.renderer.EntityRenderer", "hurtCameraEffect", "func_78482_e", new String[] {"damageTilt"}, new int[] {1}},
-                {"net.minecraft.client.renderer.RenderItem", "renderEffect", "func_191966_a", new String[] {"glintTime", "glintColor"}, new int[] {2, 2}},
-                {"net.minecraft.client.renderer.entity.layers.LayerArmorBase", "renderEnchantedGlint", "func_188364_a",
-                        new String[] {"glintTicks", "glintComponent"}, new int[] {1, 3}},
-        };
-        for (Object[] t : targets) {
-            byte[] dev = classBytes((String) t[0]);
-            check(c, "dev " + t[0], dev == null ? null : LookTransformer.patchForTest((String) t[0], dev), t);
-        }
-        File srg = new File(System.getProperty("user.home"),
-                ".gradle/caches/minecraft/net/minecraftforge/forge/1.12.2-14.23.5.2847/stable/39/forge-1.12.2-14.23.5.2847-srgBin.jar");
-        if (!c.ok(srg.isFile(), "Forge's SRG jar is in the Gradle cache: " + srg)) {
-            return;
-        }
-        ZipFile zip = new ZipFile(srg);
-        try {
-            for (Object[] t : targets) {
-                ZipEntry entry = zip.getEntry(((String) t[0]).replace('.', '/') + ".class");
-                byte[] bytes = entry == null ? null : read(zip.getInputStream(entry));
-                check(c, "SRG " + t[0], bytes == null ? null : LookTransformer.patchForTest((String) t[0], bytes), t);
-            }
-        } finally {
-            zip.close();
-        }
-        c.ok(!LookTransformer.appliedP1 && !LookTransformer.appliedP2 && !LookTransformer.appliedP3,
-                "a dedicated server never loads the patched client classes");
-    }
-
-    private static void check(Check c, String what, byte[] patched, Object[] t) {
-        if (!c.ok(patched != null, what + " was read")) {
-            return;
-        }
-        String[] hooks = (String[]) t[3];
-        int[] want = (int[]) t[4];
-        ClassNode node = new ClassNode();
-        new ClassReader(patched).accept(node, 0);
-        int[] found = new int[hooks.length];
-        for (MethodNode m : node.methods) {
-            for (AbstractInsnNode i = m.instructions.getFirst(); i != null; i = i.getNext()) {
-                if (i instanceof MethodInsnNode && ((MethodInsnNode) i).owner.endsWith("lookfeel/LookHooks")) {
-                    int k = Arrays.asList(hooks).indexOf(((MethodInsnNode) i).name);
-                    c.ok(k >= 0 && (m.name.equals(t[1]) || m.name.equals(t[2])),
-                            what + ": LookHooks." + ((MethodInsnNode) i).name + " is called in " + t[1] + ", found in " + m.name);
-                    if (k >= 0) {
-                        found[k]++;
-                    }
-                }
-            }
-            try {
-                new Analyzer<BasicValue>(new BasicVerifier()).analyze(node.name, m);
-            } catch (Exception e) {
-                c.fail(what + "." + m.name + " fails ASM's stack check: " + e);
-            }
-        }
-        for (int k = 0; k < hooks.length; k++) {
-            c.eq(want[k], found[k], what + ": calls to LookHooks." + hooks[k]);
-        }
-    }
-
-    private static final String[] OPTION_KEYS = {"options.darknessEffectScale", "options.damageTiltStrength", "options.glintSpeed",
-            "options.glintStrength"};
+    private static final String[] OPTION_KEYS = {"options.darknessEffectScale"};
+    /** The option labels Core has now (Core 1.4.7), no longer in this mod's lang. */
+    private static final String[] CORE_KEYS = {"options.damageTiltStrength", "options.glintSpeed", "options.glintStrength"};
 
     /** Vanilla's own keys as 1.19.4 words them (vanilla_text/), newest version wins. */
     private static final String[][] VANILLA = {
@@ -360,41 +265,32 @@ public final class LookFeelSelfTest implements SelfTest {
             {"multiplayerWarning.header", "Caution: Third-Party Online Play"},
     };
 
-    private static final String[] LANGUAGES = {"de_de", "es_ar", "es_es", "es_mx", "es_uy", "es_ve", "fr_fr", "it_it", "ja_jp",
-            "ko_kr", "nl_nl", "pl_pl", "pt_br", "ru_ru", "tr_tr", "uk_ua", "zh_cn", "zh_tw"};
-
     private static void lang(Check c) throws IOException {
-        Map<String, String> en = langFile("lang", "en_us");
-        Map<String, String> ven = langFile("vanilla_text", "en_us");
+        Map<String, String> en = langFile(ID, "lang", "en_us");
+        Map<String, String> core = langFile("backportcore", "lang", "en_us");
+        Map<String, String> ven = langFile("backportcore", "look/1.19/vanilla_text", "en_us");
         c.eq("Darkness Pulsing", en.get("options.darknessEffectScale"), "en_us options.darknessEffectScale");
-        c.eq("Damage Tilt", en.get("options.damageTiltStrength"), "en_us options.damageTiltStrength");
+        c.eq("Damage Tilt", core.get("options.damageTiltStrength"), "Core's en_us options.damageTiltStrength");
         for (String k : OPTION_KEYS) {
             c.ok(en.get(k) != null && en.get(k + ".tooltip") != null, "en_us has " + k + " and its tooltip");
             c.ok(!ven.containsKey(k), k + " is the mod's own lang, not vanilla text");
         }
+        for (String k : CORE_KEYS) {
+            c.ok(core.get(k) != null && core.get(k + ".tooltip") != null, "Core's en_us has " + k + " and its tooltip");
+            c.ok(!en.containsKey(k), k + " is no longer in this mod's lang");
+        }
         for (String[] kv : VANILLA) {
-            c.eq(kv[1], ven.get(kv[0]), "vanilla_text en_us " + kv[0]);
+            c.eq(kv[1], ven.get(kv[0]), "Core's 1.19 vanilla_text en_us " + kv[0]);
             c.ok(!en.containsKey(kv[0]), kv[0] + " is not in the mod's own lang (load order would decide it)");
         }
         c.ok(!ven.containsKey("debug.cycle_renderdistance.help"), "F3 + F's help line is not reworded: 1.19 removed the key");
-        for (String code : LANGUAGES) {
-            Map<String, String> v = langFile("vanilla_text", code);
-            c.eq(ven.size(), v.size(), code + "'s vanilla text has every key");
-            int empty = 0;
-            for (String value : v.values()) {
-                if (value.isEmpty()) {
-                    empty++;
-                }
-            }
-            c.eq(0, empty, code + "'s vanilla text has no empty line");
-        }
     }
 
     // ------------------------------------------------------------------------------------------
 
-    private static Map<String, String> langFile(String folder, String code) throws IOException {
+    private static Map<String, String> langFile(String domain, String folder, String code) throws IOException {
         Map<String, String> out = new HashMap<String, String>();
-        for (String line : lines(new ResourceLocation(ID, folder + "/" + code + ".lang"))) {
+        for (String line : lines(new ResourceLocation(domain, folder + "/" + code + ".lang"))) {
             int eq = line.indexOf('=');
             if (eq > 0 && !line.startsWith("#")) {
                 out.put(line.substring(0, eq), line.substring(eq + 1));
@@ -441,11 +337,6 @@ public final class LookFeelSelfTest implements SelfTest {
 
     private static int readInt(byte[] b, int at) {
         return (b[at] & 0xFF) << 24 | (b[at + 1] & 0xFF) << 16 | (b[at + 2] & 0xFF) << 8 | (b[at + 3] & 0xFF);
-    }
-
-    private static byte[] classBytes(String name) throws IOException {
-        InputStream in = LookFeelSelfTest.class.getResourceAsStream("/" + name.replace('.', '/') + ".class");
-        return in == null ? null : read(in);
     }
 
     private static byte[] read(InputStream in) throws IOException {

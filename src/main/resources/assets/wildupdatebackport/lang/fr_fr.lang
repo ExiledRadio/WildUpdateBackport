@@ -200,12 +200,6 @@ subtitles.wildupdatebackport.entity.warden.tendril_clicks=Vrilles de Warden qui 
 # --- lookfeel ---
 options.darknessEffectScale=Pulsations d'obscurité
 options.darknessEffectScale.tooltip=Détermine la quantité de pulsations de l'effet d'obscurité reçu de la part d'un Warden ou d'un hurleur sculk.
-options.damageTiltStrength=Secousse de dégâts
-options.damageTiltStrength.tooltip=Contrôle l'intensité de la secousse de la vue causée par les dégâts reçus.
-options.glintSpeed=Vitesse de scintillement
-options.glintSpeed.tooltip=Détermine la vitesse du scintillement des objets enchantés.
-options.glintStrength=Force de scintillement
-options.glintStrength.tooltip=Détermine la transparence du scintillement des objets enchantés.
 
 # --- changes ---
 config.wildupdatebackport.changes.minecarts=Wagonnets : butin et recettes

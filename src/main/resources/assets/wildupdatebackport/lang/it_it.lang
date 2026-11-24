@@ -200,12 +200,6 @@ subtitles.wildupdatebackport.entity.warden.tendril_clicks=Antenne del sorveglian
 # --- lookfeel ---
 options.darknessEffectScale=Pulsazione oscurità
 options.darknessEffectScale.tooltip=Determina l'intensità della pulsazione per l'effetto di oscurità, quando ricevuto da un sorvegliante o uno sculk urlatore.
-options.damageTiltStrength=Oscillazione al colpo
-options.damageTiltStrength.tooltip=Il livello di oscillazione della visuale quando si riceve danno.
-options.glintSpeed=Velocità del luccichio
-options.glintSpeed.tooltip=Determina la velocità del luccichio degli oggetti incantati.
-options.glintStrength=Intensità del luccichio
-options.glintStrength.tooltip=Determina l'opacità del luccichio degli oggetti incantati.
 
 # --- changes ---
 config.wildupdatebackport.changes.minecarts=Vagonetti: bottino e ricette

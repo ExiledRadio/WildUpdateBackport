@@ -200,12 +200,6 @@ subtitles.wildupdatebackport.entity.warden.tendril_clicks=Zarcillos de warden ch
 # --- lookfeel ---
 options.darknessEffectScale=Pulsación de oscuridad
 options.darknessEffectScale.tooltip=Controla la pulsación del efecto de oscuridad cuando un warden o chillador de sculk te lo provoca.
-options.damageTiltStrength=Sacudida por daño
-options.damageTiltStrength.tooltip=La sacudida de la cámara sufrida al recibir daño.
-options.glintSpeed=Velocidad de destello
-options.glintSpeed.tooltip=Controla la velocidad del destello visual que brilla en los objetos encantados.
-options.glintStrength=Intensidad de destello
-options.glintStrength.tooltip=Controla la transparencia del destello visual en los objetos encantados.
 
 # --- changes ---
 config.wildupdatebackport.changes.minecarts=Botín y recetas de vagonetas

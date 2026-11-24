@@ -43,7 +43,6 @@ public final class ClientSetup {
         com.exiledradio.wildupdatebackport.allay.client.AllayClient.init();
         com.exiledradio.wildupdatebackport.items.client.ItemsClient.init();
         com.exiledradio.wildupdatebackport.warden.client.WardenClient.init();
-        com.exiledradio.wildupdatebackport.lookfeel.client.LookAndFeelClient.init();
         com.exiledradio.wildupdatebackport.changes.client.ChangesClient.init();
         com.exiledradio.wildupdatebackport.goat.client.GoatClient.init();
     }

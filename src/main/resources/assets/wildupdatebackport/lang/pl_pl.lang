@@ -200,12 +200,6 @@ subtitles.wildupdatebackport.entity.warden.tendril_clicks=Czułki nadzorcy drgaj
 # --- lookfeel ---
 options.darknessEffectScale=Miganie mroku
 options.darknessEffectScale.tooltip=Wpływa na stopień migania efektu mroku otrzymanego od nadzorcy lub sculkowego wrzeszczydła.
-options.damageTiltStrength=Zadrżenie od obrażeń
-options.damageTiltStrength.tooltip=Natężenie drżenia kamery spowodowane otrzymaniem obrażeń.
-options.glintSpeed=Prędkość poświaty
-options.glintSpeed.tooltip=Określa prędkość animacji poświaty zaklętych przedmiotów.
-options.glintStrength=Siła poświaty
-options.glintStrength.tooltip=Określa przezroczystość poświaty zaklętych przedmiotów.
 
 # --- changes ---
 config.wildupdatebackport.changes.minecarts=Upuszczanie i receptury wagoników
