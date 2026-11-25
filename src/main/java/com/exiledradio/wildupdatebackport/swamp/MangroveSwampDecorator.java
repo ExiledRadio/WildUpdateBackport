@@ -99,7 +99,10 @@ public class MangroveSwampDecorator extends BiomeDecorator {
                 // propagule again.
                 boolean tall = random.nextFloat() < TALL_CHANCE;
                 if (propaguleSurvives(world, floor)) {
-                    new WorldGenMangroveTree(false, tall).generate(world, random, floor);
+                    // With Dynamic Trees - Backport, a dynamic mangrove grows in the static one's place.
+                    if (!com.exiledradio.backportcore.compat.DynamicTrees.grow(world, floor, random, tall ? "dtbackport:tallmangrove" : "dtbackport:mangrove")) {
+                        new WorldGenMangroveTree(false, tall).generate(world, random, floor);
+                    }
                 }
             }
         }
